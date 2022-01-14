@@ -1,0 +1,6 @@
+
+State Machine - |UART|state
+Name state.DEB state.RxTx state.START 
+state.START 0 0 0 
+state.RxTx 0 1 1 
+state.DEB 1 0 1 
