@@ -33,6 +33,9 @@ architecture behavioral of my_UART is
 	signal sync_tx			: unsigned(15 downto 0) := x"0000";
 	signal position_tx 	: unsigned(3 downto 0) := x"0";
 	
+	-- Signals for debugging
+	signal sample_rx		: std_logic := '0';
+	
 begin
 	-- Assignments
 	data_rx <= data_out;
@@ -52,7 +55,7 @@ begin
 				position_rx <= x"0";
 				data_out <= x"00";
 			elsif state_rx = START and next_state_rx = START then
-				sync_rx <= sync_tx + 1;
+				sync_rx <= sync_rx + 1;
 			elsif state_rx = START and next_state_rx = DATA then
 				sync_rx <= x"0000";
 			elsif state_rx = DATA and next_state_rx = DATA then
@@ -64,8 +67,10 @@ begin
 				elsif sync_rx = shift_right(clk_div, 1) then
 					data_out <= data_out + shift_left(unsigned'('0'&rx), to_integer(position_rx));
 					sync_rx <= sync_rx + 1;
+					sample_rx <= '1';
 				else
 					sync_rx <= sync_rx + 1;
+					sample_rx <= '0';
 				end if;
 			elsif state_rx = DATA and next_state_rx = IDLE then
 				rx_flag <= '1';
@@ -82,9 +87,9 @@ begin
 			next_state_rx <= next_state_rx;
 		elsif state_rx = IDLE and rx = '0' then
 			next_state_rx <= START;
-		elsif state_rx = START and sync_rx = clk_div then
+		elsif state_rx = START and sync_rx >= clk_div then
 			next_state_rx <= DATA;
-		elsif state_rx = DATa and position_rx = x"8" then
+		elsif state_rx = DATa and position_rx >= x"8" then
 			next_state_rx <= IDLE;
 		end if;
 	end process;
@@ -129,9 +134,9 @@ begin
 			next_state_tx <= next_state_tx;
 		elsif state_tx = IDLE and tx_flag = '1' then
 			next_state_tx <= START;
-		elsif state_tx = START and sync_tx = clk_div then
+		elsif state_tx = START and sync_tx >= clk_div then
 			next_state_tx <= DATA;
-		elsif state_tx = DATA and position_tx = x"8" then
+		elsif state_tx = DATA and position_tx >= x"8" then
 			next_state_tx <= IDLE;
 		end if;
 	end process;

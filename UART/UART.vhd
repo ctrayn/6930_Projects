@@ -65,7 +65,7 @@ begin
 	process (ADC_CLK_10, KEY(0), RX_flag) begin
 		if (KEY(0) = '0') then
 			state <= START;
-			TX_flag <= '1';
+			TX_flag <= '0';
 			data_tx <= A_upper;
 		else
 			if rising_edge(ADC_CLK_10) then
