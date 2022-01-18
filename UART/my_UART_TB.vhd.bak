@@ -1,0 +1,12 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use IEEE.NUMERIC_STD.all;
+
+entity my_UART_TB is
+end entity my_UART_TB;
+
+architecture behavioral of my_UART_TB is
+
+begin
+
+end architecture behavioral;
