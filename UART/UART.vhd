@@ -29,7 +29,7 @@ architecture behavioral of UART is
 	constant Z_upper : unsigned(7 downto 0) := X"5A";
 	constant a_lower : unsigned(7 downto 0) := X"61";
 	constant z_lower : unsigned(7 downto 0) := X"7A";
-	constant twenty  : unsigned(7 downto 0) := X"14";
+	constant twenty  : unsigned(7 downto 0) := X"20";
 	
 	component my_UART
 		port
@@ -66,7 +66,7 @@ begin
 		if (KEY(0) = '0') then
 			state <= START;
 			TX_flag <= '0';
-			data_tx <= A_upper;
+			data_tx <= (others => '0');
 		else
 			if rising_edge(ADC_CLK_10) then
 				case state is
