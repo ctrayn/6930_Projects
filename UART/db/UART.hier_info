@@ -11,19 +11,19 @@ ADC_CLK_10 => data_tx[7].CLK
 ADC_CLK_10 => TX_flag.CLK
 ADC_CLK_10 => state~3.DATAIN
 KEY[0] => my_UART:dut.rst_l
-KEY[0] => data_tx[0].PRESET
+KEY[0] => data_tx[0].ACLR
 KEY[0] => data_tx[1].ACLR
 KEY[0] => data_tx[2].ACLR
 KEY[0] => data_tx[3].ACLR
 KEY[0] => data_tx[4].ACLR
 KEY[0] => data_tx[5].ACLR
-KEY[0] => data_tx[6].PRESET
+KEY[0] => data_tx[6].ACLR
 KEY[0] => data_tx[7].ACLR
 KEY[0] => TX_flag.ACLR
 KEY[0] => state~5.DATAIN
 KEY[1] => ~NO_FANOUT~
 RX => my_UART:dut.RX
-Tx << my_UART:dut.TX
+TX << my_UART:dut.TX
 
 
 |UART|my_UART:dut
@@ -158,8 +158,6 @@ clk_div[15] => Equal1.IN1
 clk_div[15] => LessThan0.IN1
 clk_div[15] => Equal2.IN0
 clk_div[15] => LessThan2.IN1
-rst_l => next_state_tx.START.IN1
-rst_l => next_state_rx.DATA.IN1
 rst_l => sync_rx.OUTPUTSELECT
 rst_l => sync_rx.OUTPUTSELECT
 rst_l => sync_rx.OUTPUTSELECT
@@ -210,6 +208,12 @@ rst_l => position_tx.OUTPUTSELECT
 rst_l => position_tx.OUTPUTSELECT
 rst_l => position_tx.OUTPUTSELECT
 rst_l => tx.OUTPUTSELECT
+rst_l => next_state_tx.IDLE.OUTPUTSELECT
+rst_l => next_state_tx.START.OUTPUTSELECT
+rst_l => next_state_tx.DATA.OUTPUTSELECT
+rst_l => next_state_rx.IDLE.OUTPUTSELECT
+rst_l => next_state_rx.START.OUTPUTSELECT
+rst_l => next_state_rx.DATA.OUTPUTSELECT
 tx <= tx~reg0.DB_MAX_OUTPUT_PORT_TYPE
 rx => data_out.DATAB
 rx => data_out.DATAB

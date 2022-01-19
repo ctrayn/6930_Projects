@@ -10,7 +10,7 @@ entity UART is
 		
 		--OUTPUT
 		RX : in  std_logic;			--Connected to pin 40 on J1 (white wire)
-		Tx : out std_logic 			--Connected to pin 39 on J1 (green wire)
+		TX : out std_logic 			--Connected to pin 39 on J1 (green wire)
 	);										--Ground is pin 30 on J1 (black wire); Leave power disconnected (red wire)
 end entity UART;
 

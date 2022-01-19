@@ -82,15 +82,17 @@ begin
 	end process;
 	
 	-- Async
-	process (rx, position_rx, rst_l, sync_rx) begin
+	process (rx, position_rx, rst_l, sync_rx, state_rx, clk_div) begin
 		if rst_l = '0' then
-			next_state_rx <= next_state_rx;
+			next_state_rx <= IDLE;
 		elsif state_rx = IDLE and rx = '0' then
 			next_state_rx <= START;
 		elsif state_rx = START and sync_rx >= clk_div then
 			next_state_rx <= DATA;
 		elsif state_rx = DATa and position_rx >= x"8" then
 			next_state_rx <= IDLE;
+		else
+			next_state_rx <= state_rx;
 		end if;
 	end process;
 
@@ -129,15 +131,17 @@ begin
 	end process;
 	
 	-- Async
-	process (tx_flag, position_tx, rst_l, sync_tx) begin
+	process (tx_flag, position_tx, rst_l, sync_tx, state_tx, clk_div) begin
 		if rst_l = '0' then
-			next_state_tx <= next_state_tx;
+			next_state_tx <= IDLE;
 		elsif state_tx = IDLE and tx_flag = '1' then
 			next_state_tx <= START;
 		elsif state_tx = START and sync_tx >= clk_div then
 			next_state_tx <= DATA;
 		elsif state_tx = DATA and position_tx >= x"8" then
 			next_state_tx <= IDLE;
+		else
+			next_state_tx <= state_tx;
 		end if;
 	end process;
 

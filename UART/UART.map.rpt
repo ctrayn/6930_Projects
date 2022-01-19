@@ -1,5 +1,5 @@
 Analysis & Synthesis report for UART
-Tue Jan 18 16:50:59 2022
+Wed Jan 19 09:54:39 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -16,15 +16,14 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   8. State Machine - |UART|state
   9. State Machine - |UART|my_UART:dut|state_tx
  10. State Machine - |UART|my_UART:dut|state_rx
- 11. User-Specified and Inferred Latches
- 12. Registers Removed During Synthesis
- 13. General Register Statistics
- 14. Inverted Register Statistics
- 15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Port Connectivity Checks: "my_UART:dut"
- 17. Post-Synthesis Netlist Statistics for Top Partition
- 18. Elapsed Time Per Partition
- 19. Analysis & Synthesis Messages
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Port Connectivity Checks: "my_UART:dut"
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
 
 
 
@@ -51,15 +50,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jan 18 16:50:59 2022       ;
+; Analysis & Synthesis Status        ; Successful - Wed Jan 19 09:54:39 2022       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; UART                                        ;
 ; Top-level Entity Name              ; UART                                        ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 136                                         ;
-;     Total combinational functions  ; 135                                         ;
-;     Dedicated logic registers      ; 67                                          ;
-; Total registers                    ; 67                                          ;
+; Total logic elements               ; 134                                         ;
+;     Total combinational functions  ; 132                                         ;
+;     Dedicated logic registers      ; 66                                          ;
+; Total registers                    ; 66                                          ;
 ; Total pins                         ; 5                                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -188,20 +187,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+------------------+
 ; Resource                                    ; Usage            ;
 +---------------------------------------------+------------------+
-; Estimated Total logic elements              ; 136              ;
+; Estimated Total logic elements              ; 134              ;
 ;                                             ;                  ;
-; Total combinational functions               ; 135              ;
+; Total combinational functions               ; 132              ;
 ; Logic element usage by number of LUT inputs ;                  ;
-;     -- 4 input functions                    ; 58               ;
-;     -- 3 input functions                    ; 18               ;
-;     -- <=2 input functions                  ; 59               ;
+;     -- 4 input functions                    ; 68               ;
+;     -- 3 input functions                    ; 19               ;
+;     -- <=2 input functions                  ; 45               ;
 ;                                             ;                  ;
 ; Logic elements by mode                      ;                  ;
-;     -- normal mode                          ; 100              ;
-;     -- arithmetic mode                      ; 35               ;
+;     -- normal mode                          ; 102              ;
+;     -- arithmetic mode                      ; 30               ;
 ;                                             ;                  ;
-; Total registers                             ; 67               ;
-;     -- Dedicated logic registers            ; 67               ;
+; Total registers                             ; 66               ;
+;     -- Dedicated logic registers            ; 66               ;
 ;     -- I/O registers                        ; 0                ;
 ;                                             ;                  ;
 ; I/O pins                                    ; 5                ;
@@ -209,9 +208,9 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0                ;
 ;                                             ;                  ;
 ; Maximum fan-out node                        ; ADC_CLK_10~input ;
-; Maximum fan-out                             ; 67               ;
-; Total fan-out                               ; 640              ;
-; Average fan-out                             ; 3.02             ;
+; Maximum fan-out                             ; 66               ;
+; Total fan-out                               ; 650              ;
+; Average fan-out                             ; 3.13             ;
 +---------------------------------------------+------------------+
 
 
@@ -220,8 +219,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
-; |UART                      ; 135 (20)            ; 67 (11)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 5    ; 0            ; 0          ; |UART               ; UART        ; work         ;
-;    |my_UART:dut|           ; 115 (115)           ; 56 (56)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |UART|my_UART:dut   ; my_UART     ; work         ;
+; |UART                      ; 132 (12)            ; 66 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 5    ; 0            ; 0          ; |UART               ; UART        ; work         ;
+;    |my_UART:dut|           ; 120 (120)           ; 56 (56)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |UART|my_UART:dut   ; my_UART     ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -262,30 +261,15 @@ Encoding Type:  One-Hot
 +----------------+---------------+----------------+---------------+
 
 
-+---------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                           ;
-+----------------------------------------------------+---------------------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal             ; Free of Timing Hazards ;
-+----------------------------------------------------+---------------------------------+------------------------+
-; my_UART:dut|next_state_tx.START_680                ; my_UART:dut|next_state_tx.START ; yes                    ;
-; my_UART:dut|next_state_tx.DATA_668                 ; my_UART:dut|next_state_tx.START ; yes                    ;
-; my_UART:dut|next_state_tx.IDLE_692                 ; my_UART:dut|next_state_tx.START ; yes                    ;
-; my_UART:dut|next_state_rx.START_1017               ; my_UART:dut|next_state_rx.DATA  ; yes                    ;
-; my_UART:dut|next_state_rx.DATA_1005                ; my_UART:dut|next_state_rx.DATA  ; yes                    ;
-; my_UART:dut|next_state_rx.IDLE_1029                ; my_UART:dut|next_state_rx.DATA  ; yes                    ;
-; Number of user-specified and inferred latches = 6  ;                                 ;                        ;
-+----------------------------------------------------+---------------------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
-+------------------------------------------------------------+
-; Registers Removed During Synthesis                         ;
-+---------------------------------------+--------------------+
-; Register name                         ; Reason for Removal ;
-+---------------------------------------+--------------------+
-; state.DEB                             ; Lost fanout        ;
-; Total Number of Removed Registers = 1 ;                    ;
-+---------------------------------------+--------------------+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; state.DEB                             ; Lost fanout                            ;
+; data_tx[7]                            ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 2 ;                                        ;
++---------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -293,12 +277,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 67    ;
+; Total registers                              ; 66    ;
 ; Number of registers using Synchronous Clear  ; 41    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 11    ;
+; Number of registers using Asynchronous Clear ; 10    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 48    ;
+; Number of registers using Clock Enable       ; 45    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -309,22 +293,22 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
 ; my_UART:dut|tx                         ; 2       ;
-; data_tx[6]                             ; 1       ;
-; data_tx[0]                             ; 1       ;
-; Total number of inverted registers = 3 ;         ;
+; Total number of inverted registers = 1 ;         ;
 +----------------------------------------+---------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |UART|my_UART:dut|position_tx[3] ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |UART|my_UART:dut|position_rx[1] ;
-; 7:1                ; 16 bits   ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |UART|my_UART:dut|sync_tx[3]     ;
-; 7:1                ; 16 bits   ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |UART|my_UART:dut|sync_rx[13]    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |UART|my_UART:dut|position_tx[3]     ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |UART|my_UART:dut|position_rx[3]     ;
+; 7:1                ; 16 bits   ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |UART|my_UART:dut|sync_tx[8]         ;
+; 7:1                ; 16 bits   ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |UART|my_UART:dut|sync_rx[9]         ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |UART|my_UART:dut|next_state_tx.DATA ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |UART|my_UART:dut|next_state_rx.DATA ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
 
 
 +---------------------------------------------------+
@@ -346,25 +330,24 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 5                           ;
-; cycloneiii_ff         ; 67                          ;
+; cycloneiii_ff         ; 66                          ;
 ;     CLR               ; 3                           ;
-;     ENA               ; 8                           ;
-;     ENA CLR           ; 8                           ;
+;     ENA               ; 6                           ;
+;     ENA CLR           ; 7                           ;
 ;     ENA SCLR          ; 32                          ;
 ;     SCLR              ; 9                           ;
-;     plain             ; 7                           ;
-; cycloneiii_lcell_comb ; 136                         ;
-;     arith             ; 35                          ;
-;         2 data inputs ; 31                          ;
-;         3 data inputs ; 4                           ;
-;     normal            ; 101                         ;
-;         1 data inputs ; 5                           ;
-;         2 data inputs ; 24                          ;
-;         3 data inputs ; 14                          ;
-;         4 data inputs ; 58                          ;
+;     plain             ; 9                           ;
+; cycloneiii_lcell_comb ; 133                         ;
+;     arith             ; 30                          ;
+;         2 data inputs ; 30                          ;
+;     normal            ; 103                         ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 13                          ;
+;         3 data inputs ; 19                          ;
+;         4 data inputs ; 68                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 7.00                        ;
-; Average LUT depth     ; 3.89                        ;
+; Average LUT depth     ; 3.77                        ;
 +-----------------------+-----------------------------+
 
 
@@ -383,7 +366,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Tue Jan 18 16:50:35 2022
+    Info: Processing started: Wed Jan 19 09:54:09 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off UART -c UART
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -402,52 +385,20 @@ Info (12021): Found 2 design units, including 1 entities, in source file uart_tb
 Info (12127): Elaborating entity "UART" for the top level hierarchy
 Info (12128): Elaborating entity "my_UART" for hierarchy "my_UART:dut" File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/UART.vhd Line: 51
 Warning (10036): Verilog HDL or VHDL warning at my_UART.vhd(37): object "sample_rx" assigned a value but never read File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/my_UART.vhd Line: 37
-Warning (10492): VHDL Process Statement warning at my_UART.vhd(87): signal "next_state_rx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/my_UART.vhd Line: 87
-Warning (10492): VHDL Process Statement warning at my_UART.vhd(88): signal "state_rx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/my_UART.vhd Line: 88
-Warning (10492): VHDL Process Statement warning at my_UART.vhd(90): signal "state_rx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/my_UART.vhd Line: 90
-Warning (10492): VHDL Process Statement warning at my_UART.vhd(90): signal "clk_div" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/my_UART.vhd Line: 90
-Warning (10492): VHDL Process Statement warning at my_UART.vhd(92): signal "state_rx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/my_UART.vhd Line: 92
-Warning (10631): VHDL Process Statement warning at my_UART.vhd(85): inferring latch(es) for signal or variable "next_state_rx", which holds its previous value in one or more paths through the process File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/my_UART.vhd Line: 85
-Warning (10492): VHDL Process Statement warning at my_UART.vhd(134): signal "next_state_tx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/my_UART.vhd Line: 134
-Warning (10492): VHDL Process Statement warning at my_UART.vhd(135): signal "state_tx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/my_UART.vhd Line: 135
-Warning (10492): VHDL Process Statement warning at my_UART.vhd(137): signal "state_tx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/my_UART.vhd Line: 137
-Warning (10492): VHDL Process Statement warning at my_UART.vhd(137): signal "clk_div" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/my_UART.vhd Line: 137
-Warning (10492): VHDL Process Statement warning at my_UART.vhd(139): signal "state_tx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/my_UART.vhd Line: 139
-Warning (10631): VHDL Process Statement warning at my_UART.vhd(132): inferring latch(es) for signal or variable "next_state_tx", which holds its previous value in one or more paths through the process File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/my_UART.vhd Line: 132
-Info (10041): Inferred latch for "next_state_tx.DATA" at my_UART.vhd(132) File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/my_UART.vhd Line: 132
-Info (10041): Inferred latch for "next_state_tx.START" at my_UART.vhd(132) File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/my_UART.vhd Line: 132
-Info (10041): Inferred latch for "next_state_tx.IDLE" at my_UART.vhd(132) File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/my_UART.vhd Line: 132
-Info (10041): Inferred latch for "next_state_rx.DATA" at my_UART.vhd(85) File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/my_UART.vhd Line: 85
-Info (10041): Inferred latch for "next_state_rx.START" at my_UART.vhd(85) File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/my_UART.vhd Line: 85
-Info (10041): Inferred latch for "next_state_rx.IDLE" at my_UART.vhd(85) File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/my_UART.vhd Line: 85
-Warning (13012): Latch my_UART:dut|next_state_tx.START_680 has unsafe behavior File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/my_UART.vhd Line: 132
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal TX_flag File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/UART.vhd Line: 22
-Warning (13012): Latch my_UART:dut|next_state_tx.DATA_668 has unsafe behavior File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/my_UART.vhd Line: 132
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal my_UART:dut|state_tx.START File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/my_UART.vhd Line: 31
-Warning (13012): Latch my_UART:dut|next_state_tx.IDLE_692 has unsafe behavior File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/my_UART.vhd Line: 132
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal TX_flag File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/UART.vhd Line: 22
-Warning (13012): Latch my_UART:dut|next_state_rx.START_1017 has unsafe behavior File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/my_UART.vhd Line: 85
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal RX File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/UART.vhd Line: 12
-Warning (13012): Latch my_UART:dut|next_state_rx.DATA_1005 has unsafe behavior File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/my_UART.vhd Line: 85
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal my_UART:dut|state_rx.START File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/my_UART.vhd Line: 25
-Warning (13012): Latch my_UART:dut|next_state_rx.IDLE_1029 has unsafe behavior File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/my_UART.vhd Line: 85
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal RX File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/UART.vhd Line: 12
-Info (13000): Registers with preset signals will power-up high File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/UART.vhd Line: 71
-Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[1]" File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/UART.vhd Line: 9
-Info (21057): Implemented 145 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 141 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 140 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 28 warnings
-    Info: Peak virtual memory: 4784 megabytes
-    Info: Processing ended: Tue Jan 18 16:50:59 2022
-    Info: Elapsed time: 00:00:24
-    Info: Total CPU time (on all processors): 00:00:49
+    Info (21061): Implemented 136 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4774 megabytes
+    Info: Processing ended: Wed Jan 19 09:54:39 2022
+    Info: Elapsed time: 00:00:30
+    Info: Total CPU time (on all processors): 00:01:05
 
 
