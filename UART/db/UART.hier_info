@@ -23,7 +23,7 @@ KEY[0] => TX_flag.ACLR
 KEY[0] => state~5.DATAIN
 KEY[1] => ~NO_FANOUT~
 RX => my_UART:dut.RX
-Tx <= my_UART:dut.TX
+Tx << my_UART:dut.TX
 
 
 |UART|my_UART:dut
@@ -211,7 +211,14 @@ rst_l => position_tx.OUTPUTSELECT
 rst_l => position_tx.OUTPUTSELECT
 rst_l => tx.OUTPUTSELECT
 tx <= tx~reg0.DB_MAX_OUTPUT_PORT_TYPE
-rx => ShiftLeft0.IN2
+rx => data_out.DATAB
+rx => data_out.DATAB
+rx => data_out.DATAB
+rx => data_out.DATAB
+rx => data_out.DATAB
+rx => data_out.DATAB
+rx => data_out.DATAB
+rx => data_out.DATAB
 rx => process_1.IN0
 tx_flag => process_3.IN0
 rx_flag <= rx_flag~reg0.DB_MAX_OUTPUT_PORT_TYPE

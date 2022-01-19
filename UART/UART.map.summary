@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Tue Jan 18 16:02:16 2022
+Analysis & Synthesis Status : Successful - Tue Jan 18 16:50:59 2022
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : UART
 Top-level Entity Name : UART
 Family : MAX 10
-Total logic elements : 133
-    Total combinational functions : 132
+Total logic elements : 136
+    Total combinational functions : 135
     Dedicated logic registers : 67
 Total registers : 67
 Total pins : 5

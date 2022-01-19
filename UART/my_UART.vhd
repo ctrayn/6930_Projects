@@ -65,7 +65,7 @@ begin
 					sync_rx <= x"0000";
 				-- Sample once in the midle. Right shift on unsigned is logical. This is esentialy div by 2.
 				elsif sync_rx = shift_right(clk_div, 1) then
-					data_out <= data_out + shift_left(unsigned'('0'&rx), to_integer(position_rx));
+					data_out(to_integer(position_rx)) <= rx;
 					sync_rx <= sync_rx + 1;
 					sample_rx <= '1';
 				else
