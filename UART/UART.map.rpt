@@ -1,5 +1,5 @@
 Analysis & Synthesis report for UART
-Wed Jan 19 09:54:39 2022
+Wed Jan 19 11:16:59 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -50,7 +50,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Jan 19 09:54:39 2022       ;
+; Analysis & Synthesis Status        ; Successful - Wed Jan 19 11:16:59 2022       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; UART                                        ;
 ; Top-level Entity Name              ; UART                                        ;
@@ -160,26 +160,26 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processors 2-12        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                                  ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------+---------+
-; my_UART.vhd                      ; yes             ; User VHDL File  ; //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/my_UART.vhd ;         ;
-; UART.vhd                         ; yes             ; User VHDL File  ; //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/UART.vhd    ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                   ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                            ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------+---------+
+; my_UART.vhd                      ; yes             ; User VHDL File  ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/UART/my_UART.vhd ;         ;
+; UART.vhd                         ; yes             ; User VHDL File  ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/UART/UART.vhd    ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------------+---------+
 
 
 +----------------------------------------------------------------+
@@ -356,7 +356,7 @@ Encoding Type:  One-Hot
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -366,39 +366,39 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Wed Jan 19 09:54:09 2022
+    Info: Processing started: Wed Jan 19 11:16:48 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off UART -c UART
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file my_uart.vhd
-    Info (12022): Found design unit 1: my_UART-behavioral File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/my_UART.vhd Line: 21
-    Info (12023): Found entity 1: my_UART File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/my_UART.vhd Line: 5
+    Info (12022): Found design unit 1: my_UART-behavioral File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/UART/my_UART.vhd Line: 21
+    Info (12023): Found entity 1: my_UART File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/UART/my_UART.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file uart.vhd
-    Info (12022): Found design unit 1: UART-behavioral File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/UART.vhd Line: 17
-    Info (12023): Found entity 1: UART File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/UART.vhd Line: 5
+    Info (12022): Found design unit 1: UART-behavioral File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/UART/UART.vhd Line: 17
+    Info (12023): Found entity 1: UART File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/UART/UART.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file my_uart_tb.vhd
-    Info (12022): Found design unit 1: my_UART_TB-behavioral File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/my_UART_TB.vhd Line: 8
-    Info (12023): Found entity 1: my_UART_TB File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/my_UART_TB.vhd Line: 5
+    Info (12022): Found design unit 1: my_UART_TB-behavioral File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/UART/my_UART_TB.vhd Line: 8
+    Info (12023): Found entity 1: my_UART_TB File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/UART/my_UART_TB.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file uart_tb.vhd
-    Info (12022): Found design unit 1: UART_TB-behavioral File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/UART_TB.vhd Line: 8
-    Info (12023): Found entity 1: UART_TB File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/UART_TB.vhd Line: 5
+    Info (12022): Found design unit 1: UART_TB-behavioral File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/UART/UART_TB.vhd Line: 8
+    Info (12023): Found entity 1: UART_TB File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/UART/UART_TB.vhd Line: 5
 Info (12127): Elaborating entity "UART" for the top level hierarchy
-Info (12128): Elaborating entity "my_UART" for hierarchy "my_UART:dut" File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/UART.vhd Line: 51
-Warning (10036): Verilog HDL or VHDL warning at my_UART.vhd(37): object "sample_rx" assigned a value but never read File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/my_UART.vhd Line: 37
+Info (12128): Elaborating entity "my_UART" for hierarchy "my_UART:dut" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/UART/UART.vhd Line: 51
+Warning (10036): Verilog HDL or VHDL warning at my_UART.vhd(37): object "sample_rx" assigned a value but never read File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/UART/my_UART.vhd Line: 37
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[1]" File: //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/UART/UART.vhd Line: 9
+    Warning (15610): No output dependent on input pin "KEY[1]" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/UART/UART.vhd Line: 9
 Info (21057): Implemented 141 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 1 output pins
     Info (21061): Implemented 136 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4774 megabytes
-    Info: Processing ended: Wed Jan 19 09:54:39 2022
-    Info: Elapsed time: 00:00:30
-    Info: Total CPU time (on all processors): 00:01:05
+    Info: Peak virtual memory: 4835 megabytes
+    Info: Processing ended: Wed Jan 19 11:16:59 2022
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:19
 
 
