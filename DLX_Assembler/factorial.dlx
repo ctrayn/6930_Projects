@@ -43,7 +43,7 @@ break
 	JR	R30		; Return to top
 
 exit
-	SW	f(0), R3	; Store the solution in f
+	SW	f(R0), R2	; Store the solution in f
 
 done
 	J	done
