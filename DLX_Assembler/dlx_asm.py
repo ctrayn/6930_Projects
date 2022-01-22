@@ -2,6 +2,7 @@
 
 import sys
 
+
 def run():
     if len(sys.argv) < 3:
         print("Not enough arguments, needs 3")
@@ -26,19 +27,20 @@ def run():
 
     # Parse the .data section
     #       This section shouldn't change from file to file
-    data_file.write("DEPTH = 1024;\n")
-    data_file.write("WIDTH = 32;\n")
-    data_file.write("ADDRESS_RADIX = HEX;\n")
-    data_file.write("DATA_RADIX = HEX;\n")
-    data_file.write("CONTENT\n")
-    data_file.write("BEGIN\n")
-    data_file.write("\n")
+    data_file.write("DEPTH = 1024; \n")
+    data_file.write("WIDTH = 32; \n")
+    data_file.write("ADDRESS_RADIX = HEX; \n")
+    data_file.write("DATA_RADIX = HEX; \n")
+    data_file.write("CONTENT \n")
+    data_file.write("BEGIN \n")
+    data_file.write(" \n")
 
     line = source_file.readline()
     i = 0
     variable = {}
-    while line != "\t.text\n":
-        if (';' in line) or (line == "\t.data\n") or (line == "\n") or (line == " \n") or (line == "\t\n"):  # Skip lines
+    while line.strip("\t") != ".text\n":
+        if (';' in line) or (line.strip("\t") == ".data\n") or (line == "\n") or (line == ".data\n")\
+                or (line == " \n") or (line == "\t\n"):  # Skip lines
             pass
         else:
             line = line.strip("\n")
@@ -51,25 +53,25 @@ def run():
             if len(values) != int(data[1]):
                 print(f"Error: {data[1]} != {len(values)}")
                 sys.exit(1)
+            variable[data[0]] = i   # Save the addresses for reference in the code
             for index in range(len(values)):
-                data_file.write(f"{i:>03X} : {int(values[index]):>08X};\t--{data[0]}[{index}]\n")
-                variable[data[0]] = i   # Save the addresses for reference in the code
+                data_file.write(f"{i:>03X} : {int(values[index]):>08X};  --{data[0]}[{index}] \n")
                 i += 1
 
         line = source_file.readline()
 
-    data_file.write("\nEND;\n")
+    data_file.write(" \nEND; ")
     data_file.close()
 
     # Parse the .text section
 
-    code_file.write("DEPTH = 1024;\n")
-    code_file.write("WIDTH = 32;\n")
-    code_file.write("ADDRESS_RADIX = HEX;\n")
-    code_file.write("DATA_RADIX = HEX;\n")
-    code_file.write("CONTENT\n")
-    code_file.write("BEGIN\n")
-    code_file.write("\n")
+    code_file.write("DEPTH = 1024; \n")
+    code_file.write("WIDTH = 32; \n")
+    code_file.write("ADDRESS_RADIX = HEX; \n")
+    code_file.write("DATA_RADIX = HEX; \n")
+    code_file.write("CONTENT \n")
+    code_file.write("BEGIN \n")
+    code_file.write(" \n")
 
     i = 0
     labels = {}
@@ -77,8 +79,8 @@ def run():
 
     # Read all the labels
     while line != '':
-        if (';' in line) or (line == "\t.text\n") or (line == "\n") or (line == " \n") or (line == "\t\n") \
-                or (line == "\t\t\n") or (line == "\t"):  # Skip lines
+        if (';' in line) or (line.strip("\t") == ".text\n") or (line.strip("\t") == "\n") or (line.strip(" ") == "\n") \
+                or (line == "\t"):  # Skip lines
             pass
         else:
             line = line.strip("\n")
@@ -299,11 +301,14 @@ def run():
             else:
                 print(f"\033[31m Error: OPCODE '{items[0]}' unknown \033[0m")
 
-            print(f"{i:>03X} : {int(word,2):>08X};\t--{items[0]:<10}{items[1]}")
+            for label in labels:                # Replace labels with their absolute addresses
+                if label in items[1].split(", "):
+                    items[1] = items[1].replace(f"{label}", f"{labels[label]:>03X}")
+            code_file.write(f"{i:>03X} : {int(word,2):>08X};  --{items[0]:<5}{items[1]} \n")
             i += 1
         line = source_file.readline()
 
-    code_file.write("\nEND;\n")
+    code_file.write(" \nEND; ")
     code_file.close()
     source_file.close()
 
@@ -331,7 +336,7 @@ def parse_immediate(regs):
     rs1 = params[1].replace('R', '')
     rs1 = bin(int(rs1))[2:]
     to_return += f"{rs1:>05}"
-    to_return += f"{int(params[2]):>016b}"
+    to_return += f"{bin(int(params[2]))[2:]:>016}"
     return to_return
 
 

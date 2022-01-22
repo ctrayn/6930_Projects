@@ -28,7 +28,7 @@ loop
 	BEQZ	R9, loop_done
 	ANDI	R10, R2, 1
 	BEQZ	R10, if_done
-	ADDI	R8, R8, R1
+	ADDI	R8, R8, 1
 	
 if_done
 	SLLI	R1, R1, 1
