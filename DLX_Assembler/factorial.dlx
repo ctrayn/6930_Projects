@@ -1,0 +1,49 @@
+; Program for calculating the factorial of a number.
+; By: Jonah Boe & Calvin Passmore
+; For ECE 6930 - Utah State University
+
+; The data
+.data
+n	1	15
+f	1	0
+
+; The code
+.text
+	LW	R1, n(R0)	; The initial n
+	ADDI	R2, R0, 0	; The solution
+
+; Main loop: uses R1 - R3
+main
+	SEQI	R3, R1, 0	; If R1 is 0, store in R3
+	BNEZ	R3, exit	; Exit the program if R1 is 0
+	JAL	multiply
+	SUBUI	R1, R1, 1	; Decrament for next cycle
+	J	main		; Repeat
+
+; Multiplies R1 by R2 and stores solution in R2: uses R4 - R8
+multiply
+	ADDI	R30, R31, 0	; Move our callback to R30
+	ADDI	R4, R1, 0	; Copy our current n to R4
+	ADDI	R5, R0, 1	; Initialize a mask with 1
+loop
+	SEQI    R6, R4, 0       ; If R4 is 0, store in R6
+        BNEZ    R6, break       ; Break from multiply loop if R4 is 0
+	JAL	add		; Add togeather
+	SLLI	R4, R4, 1	; Shift our second variable
+	SLLI	R5, R5, 1	; Shift our mask
+	J	loop		; Continue looping
+add
+	AND	R7, R1, R5	; We are only interested in one bit at a time
+	SEQI    R8, R7, 0       ; If R7 is 0, store in R8
+        BNEZ    R8, continue	; Continue if R7 is 0
+	ADDU	R2, R2, R4	; Add this to our solution
+continue
+	JR	R31		; Go tot next add
+break
+	JR	R30		; Return to top
+
+exit
+	SW	f(R0), R2	; Store the solution in f
+
+done
+	J	done
