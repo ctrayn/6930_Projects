@@ -111,3 +111,4 @@ set_location_assignment PIN_V20 -to DRAM_WE_N
 
 
 set_global_assignment -name QIP_FILE InstructionMemory.qip
+set_global_assignment -name VHDL_FILE Fetch_TB.vhd
