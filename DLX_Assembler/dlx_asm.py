@@ -116,6 +116,10 @@ def run():
             word = "000000"
             if items[0] == "NOP":
                 word = "0" * 32
+                code_file.write(f"{i:>03X} : {int(word, 2):>08X};  --NOP \n")
+                i += 1
+                line = source_file.readline()
+                continue
             elif items[0] == "LW":
                 word = "000001"  # opcode
                 params = items[1].split(", ")

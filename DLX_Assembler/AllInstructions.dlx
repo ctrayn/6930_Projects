@@ -1,0 +1,63 @@
+; Program for calculating the factorial of a number.
+; By: Jonah Boe & Calvin Passmore
+; For ECE 6930 - Utah State University
+
+; The data
+.data
+n	1	15
+f	1	0
+
+; The code
+.text
+	NOP
+	LW	R1, n(R0)
+	SW	f(R0), R1
+	ADD	R1, R0, R1
+	ADDI	R1, R0, 5
+	ADDU	R1, R1, R1
+	ADDUI	R1, R1, 8
+	SUB	R1, R1, R3
+	SUBI	R1, R1, 2
+	SUBU	R1, R1, R0
+	SUBUI	R1, R1, 1
+	AND	R1, R1, R0
+	ANDI	R1, R1, 7
+	OR	R1, R1, R0
+	ORI	R1, R1, 17
+	XOR	R1, R1, R0
+	XORI	R1, R1, 2
+	SLL	R1, R1, R0
+	SLLI	R1, R1, 2
+	SRL	R1, R1, R0
+	SRLI	R1, R1, 1
+	SRA	R1, R1, R0
+	SRAI	R1, R2, 4
+	SLT	R1, R1, R0
+	SLTI	R1, R1, 1
+	SLTU	R1, R1, R0
+	SLTUI	R1, R1, 3
+	SGT	R1, R1, R0
+	SGTI	R1, R1, 2
+	SGTU	R1, R1, R0
+	SGTUI	R1, R1, 1
+	SLE	R1, R2, R0
+	SLEI	R1, R2, 1
+	SLEU	R1, R1, R0
+	SLEUI	R2, R3, 1
+	SGE	R3, R5, R3
+	SGEI	R6, R7, 3
+	SGEU	R9, R10, R11
+	SGEUI	R12, R13, 5
+	SEQ	R14, R15, R8
+	SEQI	R16, R17, 7
+	SNE	R18, R19, R20
+	SNEI	R21, R22, 8
+	BEQZ	R0, done
+	BNEZ	R0, done
+	J	done
+	JR	R25
+	JAL	done
+	JALR	R26
+
+done
+	J	done

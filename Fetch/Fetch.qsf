@@ -109,3 +109,5 @@ set_location_assignment PIN_V20 -to DRAM_WE_N
 # End of pin assignments by Terasic System Builder
 #============================================================
 
+
+set_global_assignment -name QIP_FILE InstructionMemory.qip
