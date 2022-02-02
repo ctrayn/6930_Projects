@@ -25,7 +25,7 @@ architecture behavioral of Fetch_TB is
 	signal clk 				: std_logic := '0';
 	signal rst_l 			: std_logic := '1';
 	signal branch_taken 	: std_logic := '0';
-	signal branch_addr  	: std_logic := (others => '0');
+	signal branch_addr  	: std_logic_vector(9 downto 0) := (others => '0');
 	signal IR 				: std_logic_vector(31 downto 0);
 	signal pc_addr 		: std_logic_vector(9 downto 0);
 	
@@ -36,16 +36,16 @@ begin
 			clk => clk,
 			rst_l => rst_l,
 			br_taken => branch_taken,
-			br_addr => branch_address,
+			br_addr => branch_addr,
 			IR => IR,
 			pc_addr => pc_addr
 		);
 		
 	clk_process : process begin
 		clk <= '0';
-		wait for clk_period / 2;
+		wait for CLK_PERIOD/2;
 		clk <= '1';
-		wait for clk_period/2;
+		wait for CLK_PERIOD/2;
 	end process;
 	
 	stm_process: process begin
@@ -55,28 +55,14 @@ begin
 --		wait;
 		rst_l <= '1';
 		branch_taken <= '0';
+		wait for CLK_PERIOD/2;
 		branch_addr <= B"0000000000";
-		wait for CLK_PERIOD * 2;
-		wait for CLK_PERIOD * 2;
-		wait for CLK_PERIOD * 2;
-		wait for CLK_PERIOD * 2;
+		wait for CLK_PERIOD * 5;
+		branch_addr <= B"0000000111";
 		branch_taken <= '1';
-		wait for CLK_PERIOD * 2;
+		wait for CLK_PERIOD;
 		branch_taken <= '0';
-		branch_addr <= B"0000001111";
-		wait for CLK_PERIOD * 2;
-		wait for CLK_PERIOD * 2;
-		wait for CLK_PERIOD * 2;
-		wait for CLK_PERIOD * 2;
-		branch_taken <= '1';
-		branch_addr <= B"0000000001";
-		wait for CLK_PERIOD * 2;
-		branch_taken <= '1';
-		branch_addr <= B"0000000001";
-		wait for CLK_PERIOD * 2;
-		wait for CLK_PERIOD * 2;
-		branch_taken <= '0';
-		branch_addr <= B"1111111111";
+		wait for CLK_PERIOD * 4;
 		wait;
 	end process;
 

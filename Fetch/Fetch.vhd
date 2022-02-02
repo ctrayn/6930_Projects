@@ -10,8 +10,8 @@ entity Fetch is
 		br_taken 	: in std_logic;
 		br_addr		: in std_logic_vector(9 downto 0);
 		--OUTPUT
-		ir				: out std_logic_vector(31 downto 0);		-- Instruction Register
-		pc_addr		: out std_logic_vector(9  downto 0)			-- Address of the output PC, but didn't want to call it pc
+		ir				: out std_logic_vector(31 downto 0);							-- Instruction Register
+		pc_addr		: out std_logic_vector(9  downto 0) := (others => '0')	-- Address of the output PC, but didn't want to call it pc
 	);
 end entity Fetch;
 
@@ -24,26 +24,31 @@ architecture behavioral of Fetch is
 		);
 	end component;
 	
-	signal pc : unsigned(9 downto 0):= x"0000";
+	signal pc_in	: std_logic_vector(9 downto 0):= B"0000000000";
+	signal pc_out 	: std_logic_vector(9 downto 0):= B"0000000000";
 begin
 	-- Instance of our instruction memory
 	im : InstructionMemory port map (
-		address => pc,
+		address => pc_out,
 		clock => clk,
 		q => ir
 	);
 	
-	-- Assignment 
-	pc_addr <= pc
+	-- Some assignments
+	pc_in <= std_logic_vector(unsigned(pc_out) + 1);
 	
 	-- Main process
-	process(clk) begin
+	process(clk, rst_l) begin
 		if rising_edge(clk) then
 			-- PC logic
-			if br_taken = '1' then
-				pc <= br_addr;
+			if rst_l = '0' then
+				pc_out <= B"0000000000";
+			elsif br_taken = '1' then
+				pc_out <= br_addr;
 			else
-				pc <= pc + 1;
+				pc_out <= pc_in;
+			end if;
+			pc_addr <= pc_out;
 		end if;
-	end process
+	end process;
 end architecture behavioral;
