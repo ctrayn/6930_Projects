@@ -5,7 +5,7 @@ use IEEE.NUMERIC_STD.all;
 entity Fetch_TB is
 end entity Fetch_TB;
 
-architecture behavioral of VGA_TB is
+architecture behavioral of Fetch_TB is
 	component Fetch
 		port(
 			--INPUT
