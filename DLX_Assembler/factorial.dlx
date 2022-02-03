@@ -4,7 +4,7 @@
 
 ; The data
 .data
-n	1	15
+n	1	2
 f	1	0
 
 ; The code

@@ -14,7 +14,7 @@ Z1 w1643831729
 Z2 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 83
+!i122 128
 R0
 Z5 8//Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/Fetch/Fetch.vhd
 Z6 F//Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/Fetch/Fetch.vhd
@@ -24,9 +24,9 @@ V5@Ud9zhzcQagE[SnLgS:X2
 !s100 Ob7N2Iz^?NOC1Y^96Qd7d1
 Z7 OV;C;2020.1;71
 32
-Z8 !s110 1643831737
+Z8 !s110 1643873913
 !i10b 1
-Z9 !s108 1643831737.000000
+Z9 !s108 1643873913.000000
 Z10 !s90 -reportprogress|300|-work|work|//Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/Fetch/Fetch.vhd|
 Z11 !s107 //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/Fetch/Fetch.vhd|
 !i113 1
@@ -37,7 +37,7 @@ R2
 R3
 R4
 DEx4 work 5 fetch 0 22 5@Ud9zhzcQagE[SnLgS:X2
-!i122 83
+!i122 128
 l29
 L18 37
 V^mF`ZejzPXTg67:QZkGGY2
@@ -53,11 +53,11 @@ R11
 R12
 R13
 Efetch_tb
-Z14 w1643828916
+Z14 w1643873896
 R2
 R3
 R4
-!i122 84
+!i122 129
 R0
 Z15 8//Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/Fetch/Fetch_TB.vhd
 Z16 F//Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/Fetch/Fetch_TB.vhd
@@ -67,9 +67,9 @@ V^]0h3HF6WKGe[VlDV0bAh3
 !s100 MWPlRhM:eEz^CK4oQC<fH1
 R7
 32
-Z17 !s110 1643831738
+Z17 !s110 1643873914
 !i10b 1
-Z18 !s108 1643831738.000000
+Z18 !s108 1643873914.000000
 Z19 !s90 -reportprogress|300|-work|work|//Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/Fetch/Fetch_TB.vhd|
 Z20 !s107 //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/Fetch/Fetch_TB.vhd|
 !i113 1
@@ -80,11 +80,11 @@ R2
 R3
 R4
 DEx4 work 8 fetch_tb 0 22 ^]0h3HF6WKGe[VlDV0bAh3
-!i122 84
+!i122 129
 l32
-L8 62
-VeA`OUWDadTzBn:acVIhza1
-!s100 _J<ZGR2c5^P=K3fG>9:232
+L8 118
+VoGz<EXh^@?4E<b[6>Iza70
+!s100 b@G_EHe?G:ilhdDE85KR;2
 R7
 32
 R17
@@ -100,7 +100,7 @@ Z21 w1643828014
 Z22 DPx9 altera_mf 20 altera_mf_components 0 22 BN6nPmY:UEbXa[^5b@FTW1
 R3
 R4
-!i122 85
+!i122 130
 R0
 Z23 8//Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/Fetch/InstructionMemory.vhd
 Z24 F//Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/Fetch/InstructionMemory.vhd
@@ -123,14 +123,14 @@ R22
 R3
 R4
 Z27 DEx4 work 17 instructionmemory 0 22 g_4]gCD3Di:OcBbaeR?Km0
-!i122 85
+!i122 130
 l57
 Z28 L53 33
 Z29 VUVG=]HzFbTUAFP0C^6@Eg0
 Z30 !s100 Cdc18zJ@z700CRWMaIO[R3
 R7
 32
-R17
+!s110 1643873915
 !i10b 1
 R18
 R25

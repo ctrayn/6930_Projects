@@ -57,66 +57,68 @@ begin
 		branch_taken <= '0';
 		wait for CLK_PERIOD/2;
 		branch_addr <= B"0000000000";
+		
 		wait for CLK_PERIOD * 5;
-		branch_addr <= B"0000000111";			-- JAL 007
+		
+		branch_addr <= B"0000000111";			-- JAL 007: multiply
 		branch_taken <= '1';
 		wait for CLK_PERIOD;
 		branch_taken <= '0';
-		wait for CLK_PERIOD * 4;
-		branch_addr <= B"0000010000";			-- JAL 010
+		
+		wait for CLK_PERIOD * 6;
+		
+		branch_addr <= B"0000010000";			-- JAL 010: add
 		branch_taken <= '1';
-		wait for CLK_PERIOD;
-		branch_addr <= B"0000010101";			-- BNEZ continue
-		br_taken<= '1';
-		wait for CLK_PERIOD;
-		branch_addr <= B"0000001101";			-- JR 31
+		wait for CLK_PERIOD;			
+		branch_taken <= '0';
+		
+		wait for CLK_PERIOD * 5;
+		
+		branch_addr <= B"0000001101";			-- JR 00D: R31
 		branch_taken <= '1';
 		wait for CLK_PERIOD;
 		branch_taken <= '0';
+		
+		wait for CLK_PERIOD * 3;
+		
+		branch_addr <= B"0000001010";			-- JAL 00A: loop
+		branch_taken <= '1';
+		wait for CLK_PERIOD;			
+		branch_taken <= '0';
+		
 		wait for CLK_PERIOD * 2;
-		branch_addr <= B"0000001101";			-- J loop
+		
+		branch_addr <= B"0000010101";			-- BNEZ 015: break
 		branch_taken <= '1';
 		wait for CLK_PERIOD;
 		branch_taken <= '0';
 		
-		for count in 0 to 30 loop
-			wait for CLK_PERIOD * 2;		
-			branch_addr <= B"0000010000";			-- J add
-			branch_taken <= '1';
-			wait for CLK_PERIOD;
-			branch_taken <= '0';
-			wait for CLK_PERIOD * 4;
-			branch_addr <= B"0000000111";			-- JR 31
-			branch_taken <= '1';
-			wait for CLK_PERIOD;
-			branch_taken <= '0';
-			wait for CLK_PERIOD * 2;
-			branch_addr <= B"0000001101";			-- J loop
-			branch_taken <= '1';
-			wait for CLK_PERIOD;
-			branch_taken <= '0';	
-		end loop;
+		wait for CLK_PERIOD;
+		
+		branch_addr <= B"0000000101";			-- JR 005: R30
+		branch_taken <= '1';
+		wait for CLK_PERIOD;
+		branch_taken <= '0';
 		
 		wait for CLK_PERIOD;
-		branch_addr <= B"00000010110";			-- BNEZ break
-		branch_taken <= '1';
-		wait for CLK_PERIOD;
-		branch_addr <= B"0000000111";				-- JR R30
-		wait for CLK_PERIOD;
-		branch_taken <= '0';
-		wait for CLK_PERIOD;
-		branch_addr <= B"0000000010";				-- J main
+		
+		branch_addr <= B"0000000010";			-- J 002: main
 		branch_taken <= '1';
 		wait for CLK_PERIOD;
 		branch_taken <= '0';
-		wait for CLK_PERIOD;
-		branch_addr <= B"0000010111";				-- BNEZ exit
+		
+		wait for CLK_PERIOD * 2;
+		
+		branch_addr <= B"0000010110";			-- BNEZ 016: exit
 		branch_taken <= '1';
 		wait for CLK_PERIOD;
 		branch_taken <= '0';
-		wait for CLK_PERIOD;
-		branch_addr <= B"0000011000";				--J done
-		br_taken <= '1';
+		
+		wait for CLK_PERIOD * 2;
+		
+		branch_addr <= B"0000010111";			-- J 017: done
+		branch_taken <= '1';
+		
 		wait;
 	end process;
 
