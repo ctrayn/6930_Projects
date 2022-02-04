@@ -107,7 +107,7 @@ begin
 		
 		wait for CLK_PERIOD * 8;
 		
-		while 1 = 1 loop								--gets stuck in a loop
+		while 1 loop								--gets stuck in a loop
 			branch_addr <= B"0000010001";		-- J 009
 			branch_taken <= '1';
 			wait for CLK_PERIOD;
