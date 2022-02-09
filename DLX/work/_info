@@ -13,8 +13,8 @@ Pcommon
 Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 22
-Z4 w1644435275
+!i122 24
+Z4 w1644436398
 R0
 Z5 8//Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/DLX/Common.vhd
 Z6 F//Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/DLX/Common.vhd
@@ -25,9 +25,9 @@ Vog]2RCPGQWaSUj@?FAbWh0
 Z7 OV;C;2020.1;71
 32
 b1
-Z8 !s110 1644435516
+Z8 !s110 1644436684
 !i10b 1
-Z9 !s108 1644435516.000000
+Z9 !s108 1644436684.000000
 Z10 !s90 -reportprogress|300|-work|work|//Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/DLX/Common.vhd|
 Z11 !s107 //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/DLX/Common.vhd|
 !i113 1
@@ -38,7 +38,7 @@ Z14 DPx4 work 6 common 0 22 og]2RCPGQWaSUj@?FAbWh0
 R1
 R2
 R3
-!i122 22
+!i122 24
 l0
 L71 1
 VSW7>0TUKzQ8^O5FOHAQ102
@@ -59,7 +59,7 @@ R14
 R1
 R2
 R3
-!i122 23
+!i122 25
 R0
 Z15 8//Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/DLX/Decode.vhd
 Z16 F//Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/DLX/Decode.vhd
@@ -69,11 +69,11 @@ VoUjbNWcE@U5]DhKGH1:0e2
 !s100 HokjWdkojfcGb]ZfeTfi31
 R7
 32
-R8
+Z17 !s110 1644436685
 !i10b 1
-R9
-Z17 !s90 -reportprogress|300|-work|work|//Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/DLX/Decode.vhd|
-Z18 !s107 //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/DLX/Decode.vhd|
+Z18 !s108 1644436685.000000
+Z19 !s90 -reportprogress|300|-work|work|//Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/DLX/Decode.vhd|
+Z20 !s107 //Mac/Home/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/6930_Projects/DLX/Decode.vhd|
 !i113 1
 R12
 R13
@@ -82,19 +82,19 @@ R14
 R1
 R2
 R3
-DEx4 work 6 decode 0 22 oUjbNWcE@U5]DhKGH1:0e2
-!i122 19
+Z21 DEx4 work 6 decode 0 22 oUjbNWcE@U5]DhKGH1:0e2
+!i122 25
 l46
-L32 84
-VSf]ziSj=]nneK1[ePl3Ho1
-!s100 0m`0fSU^W232OJU6hLd7^2
+L32 154
+VE_jWUYhNb=0L0`]HBOJQW0
+!s100 ab9kWCQ7b=^j33A:3_3Cf1
 R7
 32
-!s110 1644371465
-!i10b 1
-!s108 1644371465.000000
 R17
+!i10b 1
 R18
+R19
+R20
 !i113 1
 R12
 R13

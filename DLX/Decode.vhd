@@ -17,13 +17,13 @@ entity Decode is
 		clk					: in std_logic;
 		rst_l					: in std_logic;
 		pc_in					: in std_logic_vector(9  downto 0);
-		instruction_in		: in std_logic_vector(31 downto 0);
-		w_instruction		: in std_logic_vector(4  downto 0);			--Write address
+		inst_in				: in std_logic_vector(31 downto 0);
+		w_inst				: in std_logic_vector(31 downto 0);			--Write instruction
 		w_data				: in std_logic_vector(31 downto 0);			--Write data
 		--OUTPUT
 		Imm					: out std_logic_vector(31 downto 0);		--Immediate value
 		pc_out				: out std_logic_vector(9  downto 0);		--Program counter, delayed by 1 cycle
-		instruction_out	: out std_logic_vector(31 downto 0);		--The instruction, delayed by 1 cycle
+		inst_out				: out std_logic_vector(31 downto 0);		--The instruction, delayed by 1 cycle
 		RS1					: out std_logic_vector(31 downto 0);		--The data from RS1
 		RS2					: out std_logic_vector(31 downto 0)			--The data from RS2
 	);
@@ -46,26 +46,28 @@ architecture behavioral of Decode is
 begin
 
 	--rename some parts of the input instruction
-	opcode 	<= instruction_in(31 downto 26);
-	rd	   	<= to_integer(unsigned(instruction_in(25 downto 21)));
-	r1			<= to_integer(unsigned(instruction_in(20 downto 16)));
-	r2 		<= to_integer(unsigned(instruction_in(15 downto 11)));
-	im_val 	<= instruction_in(15 downto 0);
+	opcode 	<= inst_in(31 downto 26);
+	rd	   	<= to_integer(unsigned(inst_in(25 downto 21)));
+	r1			<= to_integer(unsigned(inst_in(20 downto 16)));
+	r2 		<= to_integer(unsigned(inst_in(15 downto 11)));
+	im_val 	<= inst_in(15 downto 0);
 
 	--Signals that just get delayed and passed on
 	process(clk) begin
 		if rising_edge(clk) then
 			pc_out <= pc_in;
-			instruction_out <= instruction_in;
+			inst_out <= inst_in;
 		end if;
 	end process;
 
 	--Write
 	process(clk) begin
-		if rising_edge(clk) and opIsWriteBack(w_instruction(31 downto 26)) = '1' and w_instruction(25 downto 21) /= B"00000" then
-			ram(to_integer(unsigned(w_instruction(25 downto 21)))) <= w_data;
-		else
-			ram(0) <= X"00000000";
+		if rising_edge(clk) then
+			if opIsWriteBack(w_inst(31 downto 26)) = '1' and w_inst(25 downto 21) /= B"00000" then
+				ram(to_integer(unsigned(w_inst(25 downto 21)))) <= w_data;
+			else
+				ram(0) <= X"00000000"; -- Register 0 must allways contain 0
+			end if;
 		end if;
 	end process;
 
@@ -93,13 +95,13 @@ begin
 					RS1 <= (others => '0');
 					RS2 <= (others => '0');
 					Imm(31 downto 26) <= (others => '0');
-					Imm(25 downto 0) <= instruction_in(25 downto 0);
+					Imm(25 downto 0) <= inst_in(25 downto 0);
 
 				when OP_BEQZ | OP_BNEZ =>
 					RS1 <= ram(rd);
 					RS2 <= (others => '0');
 					Imm(31 downto 21) <= (others => '0');
-					Imm(20 downto 0) <= instruction_in(20 downto 0);
+					Imm(20 downto 0) <= inst_in(20 downto 0);
 
 				when OP_ADD | OP_ADDU | OP_SUB | OP_SUBU =>
 					RS1 <= ram(r1);
