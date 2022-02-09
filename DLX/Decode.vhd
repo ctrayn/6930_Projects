@@ -173,6 +173,11 @@ begin
 					Imm(15 downto 0) <= im_val;
 					Imm(16 downto 0) <= (others => '0');
 
+				when others =>
+					RS1 <= (others => '0');
+					RS2 <= (others => '0');
+					Imm <= (others => '0');
+
 			end case;
 		end if;
 	end process;
