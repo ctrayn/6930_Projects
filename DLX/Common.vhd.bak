@@ -1,0 +1,45 @@
+---------------------------------------------------------
+-- DLX Processor
+--
+-- Jonah Boe
+-- Calvin Passmore
+-- Utah State University
+-- ECE 6930, Spring 2022
+---------------------------------------------------------
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+
+-- Our states need to be accesable to everyone
+package common is
+	-- Flag states
+   type flags is (FRANCE, ITALY, IRELAND, BELGIUM, MALI, CHAD, NIGERIA, IVORY,
+							  POLAND, GERMANY, AUSTRIA, CONGO);
+	
+	-- Function to advance the flag
+	function advance (F : flags) return flags;
+	
+	-- VGA Colors
+	constant BLACK 		: std_logic_vector (11 downto 0) := x"000";
+	constant WHITE 		: std_logic_vector (11 downto 0) := x"FFF";
+	constant RED 			: std_logic_vector (11 downto 0) := x"F00";
+	constant GREEN 		: std_logic_vector (11 downto 0) := x"0A0";
+	constant BLUE 			: std_logic_vector (11 downto 0) := x"00F";
+	constant ORANGE 		: std_logic_vector (11 downto 0) := x"F80";
+	constant YELLOW 		: std_logic_vector (11 downto 0) := x"FF0";
+	end common;
+
+package body common is
+	-- Function to advance the flag
+   function advance (F : flags) return flags is 
+		variable TEMP : flags;
+	begin
+		if (F = flags'RIGHT) then -- If we are at the last element recycle
+			TEMP := FRANCE;
+		else
+			TEMP := flags'SUCC(F);
+		end if;
+		return TEMP;
+	end advance;
+end common;
