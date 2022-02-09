@@ -1,3 +1,11 @@
+---------------------------------------------------------
+-- DLX Processor
+--
+-- Jonah Boe
+-- Calvin Passmore
+-- Utah State University
+-- ECE 6930, Spring 2022
+---------------------------------------------------------
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
