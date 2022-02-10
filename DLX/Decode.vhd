@@ -18,8 +18,8 @@ entity Decode is
 		rst_l					: in std_logic;
 		pc_in					: in std_logic_vector(9  downto 0);
 		inst_in				: in std_logic_vector(31 downto 0);
-		w_inst				: in std_logic_vector(31 downto 0);			--Write instruction
-		w_data				: in std_logic_vector(31 downto 0);			--Write data
+		wb_inst				: in std_logic_vector(31 downto 0);			--Write instruction
+		wb_data				: in std_logic_vector(31 downto 0);			--Write data
 		--OUTPUT
 		Imm					: out std_logic_vector(31 downto 0);		--Immediate value
 		pc_out				: out std_logic_vector(9  downto 0);		--Program counter, delayed by 1 cycle
@@ -63,8 +63,9 @@ begin
 	--Write
 	process(clk) begin
 		if rising_edge(clk) then
-			if opIsWriteBack(w_inst(31 downto 26)) = '1' and w_inst(25 downto 21) /= B"00000" then
-				ram(to_integer(unsigned(w_inst(25 downto 21)))) <= w_data;
+			if wb_inst(31 downto 26) = OP_LW or wb_inst(31 downto 26) = OP_ADDI or wb_inst(31 downto 26) = OP_SEQI then
+			--if opIsWriteBack(wb_inst(31 downto 26)) = '1' and wb_inst(25 downto 21) /= B"00000" then
+				ram(to_integer(unsigned(wb_inst(25 downto 21)))) <= wb_data;
 			else
 				ram(0) <= X"00000000"; -- Register 0 must allways contain 0
 			end if;

@@ -52,7 +52,7 @@ package common is
 	constant OP_SGE	: std_logic_vector(5 downto 0) := B"100011";
 	constant OP_SGEI	: std_logic_vector(5 downto 0) := B"100100";
 	constant OP_SGEU	: std_logic_vector(5 downto 0) := B"100101";
-	constant OP_SGEUI	: std_logic_vector(5 downto 0) := B"100110";	
+	constant OP_SGEUI	: std_logic_vector(5 downto 0) := B"100110";
 	constant OP_SEQ	: std_logic_vector(5 downto 0) := B"100111";
 	constant OP_SEQI	: std_logic_vector(5 downto 0) := B"101000";
 	constant OP_SNE	: std_logic_vector(5 downto 0) := B"101001";
@@ -63,7 +63,7 @@ package common is
 	constant OP_JR		: std_logic_vector(5 downto 0) := B"101110";
 	constant OP_JAL	: std_logic_vector(5 downto 0) := B"101111";
 	constant OP_JALR	: std_logic_vector(5 downto 0) := B"110000";
-	
+
 	-- Function 1: returns '1' if function is a store function
 	function OpIsWriteBack (op : std_logic_vector(5 downto 0)) return std_logic;
 end common;
@@ -72,7 +72,7 @@ package body common is
 	-- Function 1 body: returns '1' if function is a store function
    function OpIsWriteBack (op : std_logic_vector(5 downto 0)) return std_logic is
 	begin
-		if unsigned(op) = B"000001" or (unsigned(op) >= X"000011" and unsigned(op) <= X"101010") then
+		if op = OP_LW or op = OP_ADD or op = OP_ADDI then
 			return '1';
 		else
 			return '0';

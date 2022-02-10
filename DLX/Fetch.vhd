@@ -18,7 +18,7 @@ entity Fetch is
 		br_taken 	: in std_logic;
 		br_addr		: in std_logic_vector(9 downto 0);
 		--OUTPUT
-		inst_out	: out std_logic_vector(31 downto 0);								-- Instruction Register
+		inst_out		: out std_logic_vector(31 downto 0);								-- Instruction Register
 		pc_out		: out std_logic_vector(9  downto 0) := (others => '0')	-- Address of the output PC, but didn't want to call it pc
 	);
 end entity Fetch;

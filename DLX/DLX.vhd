@@ -14,19 +14,24 @@ entity DLX is
 	port(
 		-- INPUT
 		ADC_CLK_10 			: in 	std_logic;
-		MAX10_CLK1_50		: in  std_logic;
-		MAX10_CLK2_50		: in  std_logic;
+		--MAX10_CLK1_50		: in  std_logic;
+		--MAX10_CLK2_50		: in  std_logic;
 		RST_L					: in  std_logic;
-		KEY1					: in  std_logic;
-		RX						: in  std_logic;
+		--KEY1					: in  std_logic;
+		--RX						: in  std_logic;
 		-- OUTPUT
-		TX						: out std_logic;
+		--TX						: out std_logic;
 
 		-- TEMP: for testing
-		br_taken	: in std_logic;
-		br_addr	: in std_logic_vector(9 downto 0);
-		w_inst	: in std_logic_vector(31 downto 0);
-		w_data	: in std_logic_vector(31 downto 0)
+		br_taken	: in  std_logic;
+		br_addr	: in  std_logic_vector(9 downto 0);
+		wb_inst	: in  std_logic_vector(31 downto 0);
+		wb_data	: in  std_logic_vector(31 downto 0);
+		pc_DE 	: out std_logic_vector(9 downto 0);
+		inst_DE 	: out std_logic_vector(31 downto 0);
+		imm_DE	: out std_logic_vector(31 downto 0);
+		rs1_DE	: out std_logic_vector(31 downto 0);
+		rs2_DE	: out std_logic_vector(31 downto 0)
 	);
 end entity DLX;
 
@@ -53,8 +58,8 @@ architecture behavioral of DLX is
 			rst_l				: in std_logic;
 			pc_in				: in std_logic_vector(9  downto 0);
 			inst_in			: in std_logic_vector(31 downto 0);
-			w_inst			: in std_logic_vector(31 downto 0);
-			w_data			: in std_logic_vector(31 downto 0);
+			wb_inst			: in std_logic_vector(31 downto 0);
+			wb_data			: in std_logic_vector(31 downto 0);
 			-- OUTPUT
 			Imm				: out std_logic_vector(31 downto 0);
 			pc_out			: out std_logic_vector(9  downto 0);
@@ -69,11 +74,11 @@ architecture behavioral of DLX is
 	signal pc_FD 			: std_logic_vector(9 downto 0);
 	signal inst_FD 		: std_logic_vector(31 downto 0);
 	-- Between decode and execute
-	signal pc_DE 			: std_logic_vector(9 downto 0);
-	signal inst_DE 		: std_logic_vector(31 downto 0);
-	signal imm_DE			: std_logic_vector(31 downto 0);
-	signal rs1_DE			: std_logic_vector(31 downto 0);
-	signal rs2_DE			: std_logic_vector(31 downto 0);
+	--signal pc_DE 			: std_logic_vector(9 downto 0);
+	--signal inst_DE 		: std_logic_vector(31 downto 0);
+	--signal imm_DE			: std_logic_vector(31 downto 0);
+	--signal rs1_DE			: std_logic_vector(31 downto 0);
+	--signal rs2_DE			: std_logic_vector(31 downto 0);
 	-- Between execute and memory
 
 	-- Between memory and writeBack
@@ -97,8 +102,8 @@ begin
 		rst_l	=> RST_L,
 		pc_in	=> pc_FD,
 		inst_in => inst_FD,
-		w_inst => w_inst,					-- TEST!!!
-		w_data => w_data,					-- TEST!!!
+		wb_inst => wb_inst,				-- TEST!!!
+		wb_data => wb_data,				-- TEST!!!
 		Imm => imm_DE,
 		pc_out => pc_DE,
 		inst_out => inst_DE,
