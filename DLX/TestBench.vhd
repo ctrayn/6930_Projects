@@ -77,41 +77,77 @@ begin
       wb_data <= X"00000000";
 		wait for CLK_PERIOD/2;
 
-		wait for CLK_PERIOD * 3;
+		wait for CLK_PERIOD * 2;
 
+		wait for CLK_PERIOD / 2;			-- LW set wb_data
       wb_data <= X"00000002";
       wait for CLK_PERIOD;
       wb_data <= X"00000000";
+		wait for CLK_PERIOD / 2;
 
-      wait for CLK_PERIOD * 1;
+      wait for CLK_PERIOD;
 
 		br_addr <= B"0000000111";			-- JAL 007: multiply
 		br_taken <= '1';
 		wait for CLK_PERIOD;
 		br_taken <= '0';
 
-		wait for CLK_PERIOD * 6;
+		wait for CLK_PERIOD / 2;			-- 004: set wb_data
+      wb_data <= X"00000005";
+      wait for CLK_PERIOD;
+      wb_data <= X"00000001";
+		wait for CLK_PERIOD;
+      wb_data <= X"00000005";
+      wait for CLK_PERIOD;
+      wb_data <= X"00000002";
+		wait for CLK_PERIOD;
+		wb_data <= X"00000001";
+		wait for CLK_PERIOD;
+		wb_data <= X"00000000";
+		wait for CLK_PERIOD / 2;
 
 		br_addr <= B"0000010000";			-- JAL 010: add
 		br_taken <= '1';
 		wait for CLK_PERIOD;
 		br_taken <= '0';
 
-		wait for CLK_PERIOD * 5;
+		wait for CLK_PERIOD / 2;			-- 00C: set wb_data
+      wb_data <= X"0000000D";
+      wait for CLK_PERIOD;
+      wb_data <= X"00000000";
+		wait for CLK_PERIOD * 2;
+		wb_data <= X"00000001";
+		wait for CLK_PERIOD;
+		wb_data <= X"00000000";
+		wait for CLK_PERIOD / 2;
 
 		br_addr <= B"0000001101";			-- JR 00D: R31
 		br_taken <= '1';
-		wait for CLK_PERIOD;
+		wait for CLK_PERIOD / 2;
+		wb_data <= X"00000002";
+		wait for CLK_PERIOD / 2;
 		br_taken <= '0';
 
-		wait for CLK_PERIOD * 3;
+		wait for CLK_PERIOD / 2;
+		wb_data <= X"00000000";
+		wait for CLK_PERIOD / 2;
+
+		wait for CLK_PERIOD;
+
+		wait for CLK_PERIOD / 2;			-- 00D: set wb_data
+		wb_data <= X"00000002";
+		wait for CLK_PERIOD / 2;
 
 		br_addr <= B"0000001010";			-- JAL 00A: loop
 		br_taken <= '1';
 		wait for CLK_PERIOD;
 		br_taken <= '0';
 
-		wait for CLK_PERIOD * 2;
+		wait for CLK_PERIOD / 2;
+		wb_data <= X"00000000";
+		wait for CLK_PERIOD / 2;
+
+		wait for CLK_PERIOD;
 
 		br_addr <= B"0000010101";			-- BNEZ 015: break
 		br_taken <= '1';
@@ -136,10 +172,13 @@ begin
 
 		br_addr <= B"0000010110";			-- BNEZ 016: exit
 		br_taken <= '1';
-		wait for CLK_PERIOD;
-		br_taken <= '0';
 
-		wait for CLK_PERIOD * 2;
+		wait for CLK_PERIOD / 2;			-- 002: set wb_data
+      wb_data <= X"00000001";
+		wait for CLK_PERIOD / 2;
+		br_taken <= '0';
+		wait for CLK_PERIOD / 2;
+      wb_data <= X"00000000";
 
 		br_addr <= B"0000010111";			-- J 017: done
 		br_taken <= '1';

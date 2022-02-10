@@ -65,14 +65,16 @@ package common is
 	constant OP_JALR	: std_logic_vector(5 downto 0) := B"110000";
 
 	-- Function 1: returns '1' if function is a store function
-	function OpIsWriteBack (op : std_logic_vector(5 downto 0)) return std_logic;
+	function OpIsWriteBack (opcode : std_logic_vector(5 downto 0)) return std_logic;
 end common;
 
 package body common is
 	-- Function 1 body: returns '1' if function is a store function
-   function OpIsWriteBack (op : std_logic_vector(5 downto 0)) return std_logic is
+   function OpIsWriteBack (opcode : std_logic_vector(5 downto 0)) return std_logic is
 	begin
-		if op = OP_LW or op = OP_ADD or op = OP_ADDI then
+		if opcode = OP_LW then
+			return '1';
+		elsif unsigned(opcode) >= unsigned(OP_ADD) and unsigned(opcode) <= unsigned(OP_SNEI) then
 			return '1';
 		else
 			return '0';

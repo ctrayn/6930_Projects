@@ -63,9 +63,10 @@ begin
 	--Write
 	process(clk) begin
 		if rising_edge(clk) then
-			if wb_inst(31 downto 26) = OP_LW or wb_inst(31 downto 26) = OP_ADDI or wb_inst(31 downto 26) = OP_SEQI then
-			--if opIsWriteBack(wb_inst(31 downto 26)) = '1' and wb_inst(25 downto 21) /= B"00000" then
+			if opIsWriteBack(wb_inst(31 downto 26)) = '1' and wb_inst(25 downto 21) /= B"00000" then
 				ram(to_integer(unsigned(wb_inst(25 downto 21)))) <= wb_data;
+			elsif wb_inst(31 downto 26) = OP_JAL or wb_inst(31 downto 26) = OP_JALR then
+				ram(31) <= wb_data;
 			else
 				ram(0) <= X"00000000"; -- Register 0 must allways contain 0
 			end if;
