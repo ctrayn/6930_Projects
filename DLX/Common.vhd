@@ -63,9 +63,13 @@ package common is
 	constant OP_JR		: std_logic_vector(5 downto 0) := B"101110";
 	constant OP_JAL	: std_logic_vector(5 downto 0) := B"101111";
 	constant OP_JALR	: std_logic_vector(5 downto 0) := B"110000";
+	
+	constant ONES		: std_logic_vector(31 downto 0) := X"FFFFFFFF";
+	constant ZEROS 	: std_logic_vector(31 downto 0) := X"00000000";
 
 	-- Function 1: returns '1' if function is a store function
 	function OpIsWriteBack (opcode : std_logic_vector(5 downto 0)) return std_logic;
+	function OpIsImmediate (opcode : std_logic_vector(5 downto 0)) return std_logic;
 end common;
 
 package body common is
@@ -80,4 +84,13 @@ package body common is
 			return '0';
 		end if;
 	end OpIsWriteBack;
+	
+	function OpIsImmediate (opcode : std_logic_vector(5 downto 0)) return std_logic is
+	begin
+		if (unsigned(opcode) >= unsigned(OP_AND)) and (unsigned(opcode) <= unsigned(OP_SNEI)) and (opcode(0) = '0') then
+			return '1';
+		else
+			return '0';
+		end if;
+	end OpIsImmediate;
 end common;
