@@ -4,7 +4,7 @@
 
 ; The data
 .data
-n	1	2
+n	1	12
 f	1	0
 
 ; The code
@@ -17,21 +17,21 @@ f	1	0
 	ADDI	R2, R1, 0
 	NOP
 	NOP
-; Main loop: uses R1 - R3
+; Main loop
 main
-; Subtract 1 from R2 and set R9 back to 0
+; Subtract 1 from R2 and set R3 back to 0
 	SUBUI	R2, R2, 1
-	ADDI	R9, R0, 0
+	ADDI	R3, R0, 0
 	NOP
 	NOP
 	NOP
-; If R2 is 0 or 1, store in R3
-	SLEI	R3, R2, 1
+; If R2 is 0 or 1, store in R4
+	SLEI	R4, R2, 1
 	NOP
 	NOP
 	NOP
 ; Exit the program if R1 is 1
-	BNEZ	R3, exit
+	BNEZ	R4, exit
 	NOP
 	NOP
 ; Start multiplying
@@ -41,7 +41,7 @@ main
 	NOP
 	NOP
 ; Move the current solution to R1
-	ADDI	R1, R9, 0
+	ADDI	R1, R3, 0
 ; Repeat
 	J	main
 	NOP
@@ -49,50 +49,50 @@ main
 	NOP
 	NOP
 
-; Multiplies R1 by R2 and stores solution in R2: uses R4 - R8
+; Multiplies R1 by R2 and stores solution in R3
 multiply
-; Initialize R4 with a mask of 1 and R5 with 0
-	ADDI	R4, R0, 1
-	ADDI	R5, R0, 0
+; Initialize R5 with a mask of 1 and R6 with 0
+	ADDI	R5, R0, 1
+	ADDI	R6, R0, 0
 	NOP
 	NOP
 	NOP
 loop
-; Cover R2 with the mask and store in R6
-	AND	R6, R4, R2
+; Cover R2 with the mask and store in R7
+	AND	R7, R5, R2
 	NOP
 	NOP
 	NOP
 ; If the masked value is 0
-	SEQI	R7, R6, 0
+	SEQI	R8, R7, 0
 	NOP
 	NOP
 	NOP
 ; Then continue
-	BNEZ	R7, continue
+	BNEZ	R8, continue
 	NOP
 	NOP
 	NOP
 	NOP
-; Shift R1 by the result and add to R9
-	SLL	R8, R1, R5
+; Shift R1 by the result and add to R3
+	SLL	R9, R1, R6
 	NOP
 	NOP
 	NOP
-	ADD	R9, R9, R8
+	ADD	R3, R3, R9
 continue
-	; Shift the mask and add 1 to R5
-	SLLI	R4, R4, 1
-	ADDI	R5, R5, 1
+	; Shift the mask and add 1 to R6
+	SLLI	R5, R5, 1
+	ADDI	R6, R6, 1
 	NOP
 	NOP
-; If our mask is all 0, store in R7
-	SEQI	R7, R4, 0
+; If our mask is all 0, store in R8
+	SEQI	R8, R5, 0
 	NOP
 	NOP
 	NOP
 ; If the mask is 0, exit multiply
-	BNEZ	R7, break
+	BNEZ	R8, break
 	NOP
 	NOP
 	NOP

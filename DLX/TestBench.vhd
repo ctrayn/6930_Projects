@@ -45,7 +45,7 @@ begin
 	stm_process: process begin
 		rst_l <= '1';
 		wait for CLK_PERIOD * 4;
-		mems <= x"00000003";
+		mems <= x"0000000C";
 		wait for CLK_PERIOD;
 		mems <= x"00000000";
 		wait;
