@@ -82,14 +82,20 @@ begin
 					RS2 <= (others => '0');
 					Imm <= (others => '0');
 
-				when OP_LW | OP_SW =>
+				when OP_LW =>
+					RS1 <= (others => '0');
+					RS2 <= ram(r1);
+					Imm(31 downto 16) <= (others => '0');
+					Imm(15 downto 0)  <= im_val;
+
+				when OP_SW =>
 					RS1 <= ram(rd);
 					RS2 <= ram(r1);
 					Imm(31 downto 16) <= (others => '0');
 					Imm(15 downto 0)  <= im_val;
 
 				when OP_JR | OP_JALR =>
-					RS1 <= ram(rd);
+					RS1 <= ram(r1);
 					RS2 <= (others => '0');
 					Imm <= (others => '0');
 
