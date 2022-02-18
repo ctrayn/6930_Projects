@@ -291,7 +291,9 @@ def run():
                 word = "101110"
                 rs1 = items[1].replace('R', '')
                 rs1 = bin(int(rs1))[2:]
-                word += f"{rs1:>026}"
+                print (rs1)
+                word += f"{rs1:>05}"
+                word += "0" * 21
             elif items[0] == "JAL":
                 word = "101111"
                 adr = labels.get(items[1])
@@ -301,7 +303,8 @@ def run():
                 word = "110000"
                 rs1 = items[1].replace('R', '')
                 rs1 = bin(int(rs1))[2:]
-                word += f"{rs1:>026}"
+                word += f"{rs1:>05}"
+                word += "0" * 21
             else:
                 print(f"\033[31m Error: OPCODE '{items[0]}' unknown \033[0m")
 
