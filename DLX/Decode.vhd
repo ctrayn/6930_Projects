@@ -136,7 +136,7 @@ begin
 				when OP_ANDI | OP_ORI | OP_XORI =>
 					RS1 <= ram(r1);
 					RS2 <= (others => '0');
-					Imm(16 downto 0) <= (others => '0');
+					Imm(31 downto 16) <= (others => '0');
 					Imm(15 downto 0) <= im_val;
 
 				when OP_SLL | OP_SRL | OP_SRA =>
@@ -147,7 +147,8 @@ begin
 				when OP_SLLI | OP_SRLI | OP_SRAI =>
 					RS1 <= ram(r1);
 					RS2 <= ram(r2);
-					Imm <= (others => '0');
+					Imm(31 downto 16) <= (others => '0');
+					Imm(15 downto 0) <= im_val;
 
 				when OP_SLT | OP_SLTU | OP_SGT | OP_SGTU =>
 					RS1 <= ram(r1);

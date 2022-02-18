@@ -131,23 +131,13 @@ begin
 
 				when OP_SLL | OP_SLLI =>
 					br_taken <= '0';
-					ALU_out(31 downto to_integer(unsigned(InTwo))) <= RS1(31 - to_integer(unsigned(InTwo)) downto 0);
-					ALU_out(to_integer(unsigned(InTwo)) downto 0) <= ZEROS(to_integer(unsigned(InTwo)) downto 0);
+					ALU_out <= std_logic_vector(shift_left(unsigned(RS1), to_integer(unsigned(InTwo))));
 
 				when OP_SRL | OP_SRLI =>
-					br_taken <= '0';
-					ALU_out(31 downto 31 - to_integer(unsigned(InTwo))) <= ZEROS(to_integer(unsigned(InTwo)) downto 0);
-					ALU_out(31 - to_integer(unsigned(InTwo)) downto 0) <= RS1(31 downto to_integer(unsigned(InTwo)));
+					ALU_out <= std_logic_vector(shift_right(unsigned(RS1), to_integer(unsigned(InTwo))));
 
 				when OP_SRA | OP_SRAI =>
-					br_taken <= '0';
-					if (RS1(31) = '0') then
-						ALU_out(31 downto 31 - to_integer(unsigned(InTwo))) <= ZEROS(to_integer(unsigned(InTwo)) downto 0);
-						ALU_out(31 - to_integer(unsigned(InTwo)) downto 0) <= RS1(31 downto to_integer(unsigned(InTwo)));
-					else
-						ALU_out(31 downto 31 - to_integer(unsigned(InTwo))) <= ONES(to_integer(unsigned(InTwo)) downto 0);
-						ALU_out(31 - to_integer(unsigned(InTwo)) downto 0)  <= RS1(31 downto to_integer(unsigned(InTwo)));
-					end if;
+					ALU_out <= std_logic_vector(shift_right(signed(RS1), to_integer(unsigned(InTwo))));
 
 				when OP_SLT | OP_SLTI =>
 					br_taken <= '0';
