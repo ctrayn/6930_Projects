@@ -13,18 +13,36 @@ f	1	0
 	LW	R1, n(R0)
 ; The solution
 	ADDI	R2, R0, 0
+	NOP
+	NOP
 
 ; Main loop: uses R1 - R3
 main
-; If R1 is 0, store in R3
-	SEQI	R3, R1, 0
-; Exit the program if R1 is 0
+; If R1 is 1, store in R3
+	SEQI	R3, R1, 1
+	NOP
+	NOP
+	NOP
+; Exit the program if R1 is 1
 	BNEZ	R3, exit
+	NOP
+	NOP
 	JAL	multiply
+	NOP
+	NOP
+	NOP
+	NOP
 ; Decrament for next cycle
 	SUBUI	R1, R1, 1
+	NOP
+	NOP
+	NOP
 ; Repeat
-	J	main		
+	J	main
+	NOP
+	NOP
+	NOP
+	NOP
 
 ; Multiplies R1 by R2 and stores solution in R2: uses R4 - R8
 multiply
@@ -34,38 +52,81 @@ multiply
 	ADDI	R4, R1, 0
 ; Initialize a mask with 1
 	ADDI	R5, R0, 1
+	NOP
+	NOP
+	NOP
 loop
 ; If R4 is 0, store in R6
 	SEQI	R6, R4, 0
+	NOP
+	NOP
+	NOP
 ; Break from multiply loop if R4 is 0
 	BNEZ	R6, break
+	NOP
+	NOP
+	NOP
+	NOP
 ; Add togeather
 	JAL	add
+	NOP
+	NOP
+	NOP
+	NOP
 ; Shift our second variable
 	SLLI	R4, R4, 1
+	NOP
+	NOP
+	NOP
 ; Shift our mask
 	SLLI	R5, R5, 1
+	NOP
+	NOP
+	NOP
 ; Continue looping
 	J	loop
+	NOP
+	NOP
+	NOP
+	NOP
 add
 ; We are only interested in one bit at a time
 	AND	R7, R1, R5
+	NOP
+	NOP
+	NOP
 ; If R7 is 0, store in R8
 	SEQI	R8, R7, 0
+	NOP
+	NOP
+	NOP
 ; Continue if R7 is 0
 	BNEZ	R8, continue
+	NOP
+	NOP
+	NOP
+	NOP
 ; Add this to our solution
 	ADDU	R2, R2, R4
+	NOP
+	NOP
+	NOP
 continue
 ; Go to next add
 	JR	R31
+	NOP
+	NOP
+	NOP
+	NOP
 break
 ; Return to top
 	JR	R30
-
+	NOP
+	NOP
+	NOP
+	NOP
 exit
 ; Store the solution in f
 	SW	f(R0), R2
-
 done
 	J	done
