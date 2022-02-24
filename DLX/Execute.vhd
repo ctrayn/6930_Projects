@@ -61,6 +61,10 @@ begin
 					br_taken <= '0';
 					ALU_out <= ZEROS;
 
+				when OP_SW =>
+					br_taken <= '0';
+					ALU_out <= std_logic_vector(unsigned(RS1) + unsigned(Imm));
+
 				when OP_J =>
 					br_taken <= '1';
 					br_addr <= inst_in(9 downto 0);
