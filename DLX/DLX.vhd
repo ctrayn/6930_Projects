@@ -16,13 +16,11 @@ entity DLX is
 		ADC_CLK_10 			: in 	std_logic;
 		--MAX10_CLK1_50		: in  std_logic;
 		--MAX10_CLK2_50		: in  std_logic;
-		RST_L					: in  std_logic;
+		RST_L					: in  std_logic
 		--KEY1					: in  std_logic;
 		--RX						: in  std_logic;
 		-- OUTPUT
 		--TX						: out std_logic
-		-- TEST
-		mems					: in std_logic_vector(31 downto 0)
 	);
 end entity DLX;
 
@@ -79,6 +77,20 @@ architecture behavioral of DLX is
 		);
 	end component;
 
+	component Memory is
+		port (
+			--INPUT
+			clk 		: in std_logic;
+			rst_l 	: in std_logic;
+			ALU_in 	: in std_logic_vector(31 downto 0);
+			RS2_in	: in std_logic_vector(31 downto 0);
+			inst_in	: in std_logic_vector(31 downto 0);
+			--OUTPUT
+			data_out	: out std_logic_vector(31 downto 0);
+			inst_out : out std_logic_vector(31 downto 0)
+		);
+	end component;
+
 	-- Singnals
 	-- Between fetch and decode
 	signal pc_FD 			: std_logic_vector(9  downto 0);
@@ -96,11 +108,11 @@ architecture behavioral of DLX is
 	-- Between execute and fetch
 	signal br_taken		: std_logic;
 	signal br_addr			: std_logic_vector(9  downto 0);
-	-- Between memory and writeBack
+	-- Between memory and decode
+	signal wb_data			: std_logic_vector(31 downto 0);
+	signal wb_inst 		: std_logic_vector(31 downto 0);
 
-	signal memss : std_logic_vector(31 downto 0);
 begin
-	memss <= mems or alu_EM;
 
 	-- Instance of fetch
 	fet : Fetch port map(
@@ -121,8 +133,8 @@ begin
 		rst_l	=> RST_L,
 		pc_in	=> pc_FD,
 		inst_in => inst_FD,
-		wb_inst => inst_EM,				-- TEST!!!
-		wb_data => memss,					-- TEST!!!
+		wb_inst => wb_inst,
+		wb_data => wb_data,
 		-- OUTPUT
 		Imm => imm_DE,
 		pc_out => pc_DE,
@@ -131,6 +143,7 @@ begin
 		RS2 => rs2_DE
 	);
 
+	-- Instance of execute
 	exc : Execute port map(
 		--INPUT
 		clk => ADC_CLK_10,
@@ -147,4 +160,18 @@ begin
 		RS2_out => rs2_EM,
 		inst_out => inst_EM
 	);
+
+	-- Instance of memory
+	mem : Memory port map(
+		--INPUT
+		clk => ADC_CLK_10,
+		rst_l => rst_l,
+		ALU_in => alu_EM,
+		RS2_in => rs2_EM,
+		inst_in => inst_EM,
+		--OUTPUT
+		data_out	=> wb_data,
+		inst_out => wb_inst
+	);
+
 end architecture behavioral;

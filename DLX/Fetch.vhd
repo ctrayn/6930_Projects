@@ -34,7 +34,9 @@ architecture behavioral of Fetch is
 
 	signal pc_in_loc	: std_logic_vector(9 downto 0):= B"0000000000";
 	signal pc_out_loc : std_logic_vector(9 downto 0):= B"0000000000";
+
 begin
+	
 	-- Instance of our instruction memory
 	im : InstructionMemory port map (
 		address => pc_out_loc,

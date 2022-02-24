@@ -10,10 +10,8 @@ architecture behavioral of TestBench is
       port(
          -- INPUT
          ADC_CLK_10 		: in 	std_logic;
-         RST_L				: in  std_logic;
+         RST_L				: in  std_logic
          -- OUTPUT
-			-- TEST
-			mems				: in std_logic_vector(31 downto 0)
       );
 	end component;
 
@@ -22,15 +20,13 @@ architecture behavioral of TestBench is
 
 	signal clk           : std_logic := '0';
 	signal rst_l         : std_logic := '1';
-	signal mems				: std_logic_vector(31 downto 0) := x"00000000";
 begin
 
    -- Our unit under test
 	dut : DLX
 		port map (
 			ADC_CLK_10 => clk,
-			RST_L => rst_l,
-			mems => mems
+			RST_L => rst_l
 		);
 
    -- Clock process
@@ -44,10 +40,6 @@ begin
    -- Test process
 	stm_process: process begin
 		rst_l <= '1';
-		wait for CLK_PERIOD * 4;
-		mems <= x"0000000C";
-		wait for CLK_PERIOD;
-		mems <= x"00000000";
 		wait;
 	end process;
 
