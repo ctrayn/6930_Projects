@@ -13,8 +13,10 @@ f	1	0
 	LW	R1, n(R0)
 	NOP
 	NOP
+	NOP
 ; The second factor for multiplication
 	ADDI	R2, R1, 0
+	NOP
 	NOP
 	NOP
 ; Main loop
