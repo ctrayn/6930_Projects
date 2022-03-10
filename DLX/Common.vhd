@@ -70,6 +70,7 @@ package common is
 	-- Function 1: returns '1' if function is a store function
 	function OpIsWriteBack (opcode : std_logic_vector(5 downto 0)) return std_logic;
 	function OpIsImmediate (opcode : std_logic_vector(5 downto 0)) return std_logic;
+	function OpIsRegister  (opcode : std_logic_vector(5 downto 0)) return std_logic;
 end common;
 
 package body common is
@@ -93,4 +94,13 @@ package body common is
 			return '0';
 		end if;
 	end OpIsImmediate;
+	
+	function OpIsRegister (opcode : std_logic_vector(5 downto 0)) return std_logic is
+	begin
+		if (unsigned(opcode) >= unsigned(OP_ADD)) and (unsigned(opcode) <= unsigned(OP_SNEI)) and (opcode(0) = '0') then
+			return '0';
+		else
+			return '1';
+		end if;
+	end OpIsRegister;
 end common;
