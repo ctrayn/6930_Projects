@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DLX
-Thu Mar 10 11:33:22 2022
+Mon Mar 14 13:49:26 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -52,7 +52,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Mar 10 11:33:22 2022       ;
+; Analysis & Synthesis Status        ; Successful - Mon Mar 14 13:49:26 2022       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; DLX                                         ;
 ; Top-level Entity Name              ; DLX                                         ;
@@ -1629,7 +1629,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Thu Mar 10 11:33:10 2022
+    Info: Processing started: Mon Mar 14 13:49:14 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DLX -c DLX
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -1722,15 +1722,14 @@ Warning (10036): Verilog HDL or VHDL warning at Execute.vhd(41): object "memwr_O
 Warning (10492): VHDL Process Statement warning at Execute.vhd(62): signal "exmem_rd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Execute.vhd Line: 62
 Warning (10492): VHDL Process Statement warning at Execute.vhd(62): signal "rs1_new" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Execute.vhd Line: 62
 Warning (10492): VHDL Process Statement warning at Execute.vhd(63): signal "ALU_readback" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Execute.vhd Line: 63
-Warning (10492): VHDL Process Statement warning at Execute.vhd(64): signal "memwr_rd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Execute.vhd Line: 64
-Warning (10492): VHDL Process Statement warning at Execute.vhd(64): signal "rs1_new" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Execute.vhd Line: 64
-Warning (10492): VHDL Process Statement warning at Execute.vhd(65): signal "ALU_MW" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Execute.vhd Line: 65
+Warning (10492): VHDL Process Statement warning at Execute.vhd(64): signal "OP_MW" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Execute.vhd Line: 64
+Warning (10620): VHDL warning at Execute.vhd(64): comparison between unequal length operands always returns FALSE File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Execute.vhd Line: 64
 Warning (10492): VHDL Process Statement warning at Execute.vhd(75): signal "exmem_rd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Execute.vhd Line: 75
 Warning (10492): VHDL Process Statement warning at Execute.vhd(75): signal "rs1_new" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Execute.vhd Line: 75
 Warning (10492): VHDL Process Statement warning at Execute.vhd(76): signal "ALU_readback" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Execute.vhd Line: 76
 Warning (10492): VHDL Process Statement warning at Execute.vhd(77): signal "memwr_rd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Execute.vhd Line: 77
 Warning (10492): VHDL Process Statement warning at Execute.vhd(77): signal "rs1_new" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Execute.vhd Line: 77
-Warning (10492): VHDL Process Statement warning at Execute.vhd(78): signal "ALU_MW" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Execute.vhd Line: 78
+Warning (10492): VHDL Process Statement warning at Execute.vhd(78): signal "MW_LW" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Execute.vhd Line: 78
 Warning (10492): VHDL Process Statement warning at Execute.vhd(80): signal "RS1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Execute.vhd Line: 80
 Info (12128): Elaborating entity "Memory" for hierarchy "Memory:mem" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.vhd Line: 171
 Warning (10492): VHDL Process Statement warning at Memory.vhd(80): signal "inst_wb" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Memory.vhd Line: 80
@@ -1869,10 +1868,10 @@ Warning (21074): Design contains 2 input pin(s) that do not drive logic
 Info (21057): Implemented 2 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 0 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 88 warnings
-    Info: Peak virtual memory: 4801 megabytes
-    Info: Processing ended: Thu Mar 10 11:33:22 2022
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 87 warnings
+    Info: Peak virtual memory: 4808 megabytes
+    Info: Processing ended: Mon Mar 14 13:49:26 2022
     Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:21
+    Info: Total CPU time (on all processors): 00:00:20
 
 

@@ -21,7 +21,7 @@ entity Execute is
 		RS1 		: in std_logic_vector(31 downto 0);
 		RS2 		: in std_logic_vector(31 downto 0);
 		Imm 		: in std_logic_vector(31 downto 0);
-		ALU_MW	: in std_logic_vector(31 downto 0);
+		MW_LW		: in std_logic_vector(31 downto 0);		--Memory/WriteBack Loaded Word
 		OP_EM		: in std_logic_vector(31 downto 0);
 		OP_MW		: in std_logic_vector(31 downto 0);
 		--OUTPUT
@@ -61,8 +61,8 @@ begin
 	process(clk, Imm, RS2, opcode) begin
 		if OpIsRegister(opcode) = '1' and (exmem_rd = rs1_new) then
 			InTwo <= ALU_readback;
-		elsif OpIsRegister(opcode) = '1' and (memwr_rd = rs1_new) then
-			InTwo <= ALU_MW;
+		elsif OP_MW = OP_LW and (memwr_rd = rs1_new) then
+			InTwo <= MW_LW;
 		elsif OpIsImmediate(opcode) = '1' then
 			InTwo <= Imm;
 		else
@@ -75,7 +75,7 @@ begin
 		if (exmem_rd = rs1_new) then		--Data Hazards
 			InOne <= ALU_readback;
 		elsif(memwr_rd = rs1_new) then
-			InOne <= ALU_MW;				--two cycles ago alu output
+			InOne <= MW_LW;				--two cycles ago alu output
 		else
 			InOne <= RS1;
 		end if;

@@ -1,5 +1,5 @@
 Fitter report for DLX
-Thu Mar 10 11:33:30 2022
+Mon Mar 14 13:49:36 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -61,7 +61,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Thu Mar 10 11:33:30 2022       ;
+; Fitter Status                      ; Successful - Mon Mar 14 13:49:36 2022       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; DLX                                         ;
 ; Top-level Entity Name              ; DLX                                         ;
@@ -147,7 +147,7 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 12          ;
 ; Maximum allowed            ; 12          ;
 ;                            ;             ;
-; Average used               ; 1.04        ;
+; Average used               ; 1.03        ;
 ; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
@@ -1130,7 +1130,7 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "MAX10_CLK2_50" is assigned to location or region, but does not exist in design
     Warning (15706): Node "RX" is assigned to location or region, but does not exist in design
     Warning (15706): Node "TX" is assigned to location or region, but does not exist in design
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
@@ -1156,9 +1156,9 @@ Warning (169177): 2 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2
     Info (169178): Pin RST_L uses I/O standard 3.3 V Schmitt Trigger at B8 File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.vhd Line: 19
 Info (144001): Generated suppressed messages file G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 14 warnings
-    Info: Peak virtual memory: 6185 megabytes
-    Info: Processing ended: Thu Mar 10 11:33:31 2022
-    Info: Elapsed time: 00:00:08
+    Info: Peak virtual memory: 6176 megabytes
+    Info: Processing ended: Mon Mar 14 13:49:37 2022
+    Info: Elapsed time: 00:00:10
     Info: Total CPU time (on all processors): 00:00:10
 
 
