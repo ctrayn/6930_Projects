@@ -23,7 +23,7 @@ KEY[0] => TX_flag.ACLR
 KEY[0] => state~5.DATAIN
 KEY[1] => ~NO_FANOUT~
 RX => my_UART:dut.RX
-TX << my_UART:dut.TX
+TX <= my_UART:dut.TX
 
 
 |UART|my_UART:dut

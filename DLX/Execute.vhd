@@ -61,7 +61,7 @@ begin
 	process(clk, Imm, RS2, opcode) begin
 		if OpIsRegister(opcode) = '1' and (exmem_rd = rs1_new) then
 			InTwo <= ALU_readback;
-		elsif OP_MW = OP_LW and (memwr_rd = rs1_new) then
+		elsif OP_MW(31 downto 26) = OP_LW and (memwr_rd = rs1_new) then
 			InTwo <= MW_LW;
 		elsif OpIsImmediate(opcode) = '1' then
 			InTwo <= Imm;
