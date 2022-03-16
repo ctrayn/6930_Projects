@@ -34,22 +34,12 @@ main
 	NOP
 ; Exit the program if R1 is 1
 	BNEZ	R4, exit
-	NOP
-	NOP
 ; Start multiplying
 	JAL	multiply
-	NOP
-	NOP
-	NOP
-	NOP
 ; Move the current solution to R1
 	ADDI	R1, R3, 0
 ; Repeat
 	J	main
-	NOP
-	NOP
-	NOP
-	NOP
 
 ; Multiplies R1 by R2 and stores solution in R3
 multiply
@@ -72,10 +62,6 @@ loop
 	NOP
 ; Then continue
 	BNEZ	R8, continue
-	NOP
-	NOP
-	NOP
-	NOP
 ; Shift R1 by the result and add to R3
 	SLL	R9, R1, R6
 	NOP
@@ -95,24 +81,12 @@ continue
 	NOP
 ; If the mask is 0, exit multiply
 	BNEZ	R8, break
-	NOP
-	NOP
-	NOP
-	NOP
 ; Otherwise do it again
 	J		loop
-	NOP
-	NOP
-	NOP
-	NOP
 break
-	JR	R31
-	NOP
-	NOP
-	NOP
-	NOP
+	JR		R31
 exit
 ; Store the solution in f
-	SW	f(R0), R1
+	SW		f(R0), R1
 done
-	J	done
+	J		done

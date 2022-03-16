@@ -41,8 +41,18 @@ architecture behavioral of Execute is
 	signal branch	: std_logic := '0';
 
 begin
-	opcode <= inst_in(31 downto 26);
+	-- Open signals
 	br_taken <= branch;
+
+	-- We want to clear the input instruction in case of branches
+	process(inst_in, branch) begin	
+		if branch = '0' then
+			opcode <= inst_in(31 downto 26);
+		else
+			opcode <= (others => '0');
+		end if;
+	end process;
+
 	--signals that just get delayed and passed on
 	process (clk) begin
 		if rising_edge(clk) then
@@ -99,7 +109,7 @@ begin
 					ALU_out(9 downto 0) <= pc_in;
 
 				when OP_BEQZ =>
-					if (RS1 = ZEROS) then
+					if RS1 = ZEROS then
 						branch <= '1';
 					else
 						branch <= '0';
@@ -108,7 +118,7 @@ begin
 					ALU_out <= ZEROS;
 
 				when OP_BNEZ =>
-					if (RS1 = ZEROS) then
+					if RS1 = ZEROS then
 						branch <= '0';
 					else
 						branch <= '1';

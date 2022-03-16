@@ -32,9 +32,11 @@ architecture behavioral of Fetch is
 		);
 	end component;
 
-	signal pc_in_loc	: std_logic_vector(9 downto 0):= B"0000000000";
-	signal pc_out_loc : std_logic_vector(9 downto 0):= B"0000000000";
-	signal inst_mem	: std_logic_vector(31 downto 0);
+	signal pc_in_loc		: std_logic_vector(9 downto 0):= B"0000000000";
+	signal pc_out_loc 	: std_logic_vector(9 downto 0):= B"0000000000";
+	signal inst_mem		: std_logic_vector(31 downto 0);
+	signal was_branch1	: std_logic := '0';
+	signal was_branch2	: std_logic := '0';
 
 begin
 	
@@ -45,9 +47,17 @@ begin
 		q => inst_mem
 	);
 
+	-- Register for storing the past about branches
+	process(clk) begin
+		if rising_edge(clk) then
+			was_branch2 <= was_branch1;
+			was_branch1 <= br_taken;
+		end if;
+	end process;
+
 	-- Make sure to block any outputs when branch is taken
 	process(inst_mem, br_taken) begin
-		if br_taken = '0' then
+		if br_taken = '0' and was_branch1 = '0' and was_branch2 = '0' then
 			inst_out <= inst_mem;
 		else
 			inst_out <= (others => '0');
