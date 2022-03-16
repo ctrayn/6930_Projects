@@ -22,8 +22,6 @@ entity Memory is
 		--OUTPUT
 		data_out	: out std_logic_vector(31 downto 0);
 		inst_out : out std_logic_vector(31 downto 0);
-		inst_ME	: out std_logic_vector(31 downto 0);
-		data_ME	: out std_logic_vector(31 downto 0);
 		inst_WE	: out std_logic_vector(31 downto 0);
 		data1_WE	: out std_logic_vector(31 downto 0);
 		data2_WE	: out std_logic_vector(31 downto 0)

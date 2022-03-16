@@ -21,8 +21,6 @@ entity Execute is
 		RS1 		: in std_logic_vector(31 downto 0);
 		RS2 		: in std_logic_vector(31 downto 0);
 		Imm 		: in std_logic_vector(31 downto 0);
-		inst_ME	: in std_logic_vector(31 downto 0);
-		data_ME	: in std_logic_vector(31 downto 0);
 		inst_WE	: in std_logic_vector(31 downto 0);
 		data1_WE	: in std_logic_vector(31 downto 0);
 		data2_WE	: in std_logic_vector(31 downto 0);
@@ -36,14 +34,32 @@ entity Execute is
 end entity Execute;
 
 architecture behavioral of Execute is
-	signal opcode 	: std_logic_vector(5 downto 0);
-	signal InOne	: std_logic_vector(31 downto 0);
-	signal InTwo	: std_logic_vector(31 downto 0);
-	signal branch	: std_logic := '0';
+	signal opcode 		: std_logic_vector(5 downto 0);
+	signal InOne		: std_logic_vector(31 downto 0);
+	signal InTwo		: std_logic_vector(31 downto 0);
+	signal branch		: std_logic := '0';
+	signal ALU_result	: std_logic_vector(31 downto 0);
+
+	-- Signals for fast forwarding
+	-- This stage
+	signal IdEx_Rs1		: std_logic_vector(4 downto 0);
+	signal IdEx_Rs2		: std_logic_vector(4 downto 0);
+	-- Memory stage
+	signal ExMem_inst 	: std_logic_vector(31 downto 0);
+	signal ExMem_opcode	: std_logic_vector(5 downto 0); 
+	signal ExMem_rd 		: std_logic_vector(4 downto 0); 
 
 begin
 	-- Open signals
 	br_taken <= branch;
+	ALU_out <= ALU_result;
+	-- This stage
+	IdEx_Rs1 <= inst_in(20 downto 16);
+	IdEx_Rs2 <= inst_in(15 downto 11);
+	-- Memory stage
+	inst_out <= ExMem_inst;
+	ExMem_opcode <= ExMem_inst(31 downto 26);
+	ExMem_rd <= ExMem_inst(25 downto 21);
 
 	-- We want to clear the input instruction in case of branches
 	process(inst_in, branch) begin	
@@ -58,15 +74,24 @@ begin
 	process (clk) begin
 		if rising_edge(clk) then
 			if branch = '0' then
-				inst_out <= inst_in;
+				ExMem_inst <= inst_in;
 			else
-				inst_out <= (others => '0');
+				ExMem_inst <= (others => '0');
 			end if;
 			RS2_out <= (others => '0');
 		end if;
 	end process;
 
 	--MUX 1
+	process(RS1) begin
+		--if OpIsALU(ExMem_opcode) = '1' and ExMem_rd = IdEx_Rs1 then
+		--	InOne <= ALU_result;
+		--else
+			InOne <= RS1;
+		--end if;
+	end process;
+
+	--MUX 2
 	process(opcode, Imm, RS2) begin
 		if OpIsImmediate(opcode) = '1' or opcode = OP_SW then
 			InTwo <= Imm;
@@ -75,44 +100,39 @@ begin
 		end if;
 	end process;
 
-	--MUX 2
-	process(RS1) begin
-		InOne <= RS1;
-	end process;
-
 	--ALU process
 	process (clk) begin
 		if rising_edge(clk) then
 			case opcode is
 				when OP_NOP | OP_LW =>
 					branch <= '0';
-					ALU_out <= ZEROS;
+					ALU_result <= ZEROS;
 
 				when OP_SW =>
 					branch <= '0';
-					ALU_out <= std_logic_vector(unsigned(InOne) + unsigned(InTwo));
+					ALU_result <= std_logic_vector(unsigned(InOne) + unsigned(InTwo));
 
 				when OP_J =>
 					branch <= '1';
 					br_addr <= inst_in(9 downto 0);
-					ALU_out <= ZEROS;
+					ALU_result <= ZEROS;
 
 				when OP_JAL =>
 					branch <= '1';
 					br_addr <= inst_in(9 downto 0);
-					ALU_out(31 downto 10) <= (others => '0');
-					ALU_out(9 downto 0) <= pc_in;
+					ALU_result(31 downto 10) <= (others => '0');
+					ALU_result(9 downto 0) <= pc_in;
 
 				when OP_JR =>
 					branch <= '1';
 					br_addr <= InOne(9 downto 0);
-					ALU_out <= ZEROS;
+					ALU_result <= ZEROS;
 
 				when OP_JALR =>
 					branch <= '1';
 					br_addr <= InOne(9 downto 0);
-					ALU_out(31 downto 10) <= (others => '0');
-					ALU_out(9 downto 0) <= pc_in;
+					ALU_result(31 downto 10) <= (others => '0');
+					ALU_result(9 downto 0) <= pc_in;
 
 				when OP_BEQZ =>
 					if RS1 = ZEROS then
@@ -121,7 +141,7 @@ begin
 						branch <= '0';
 					end if;
 					br_addr <= inst_in(9 downto 0);
-					ALU_out <= ZEROS;
+					ALU_result <= ZEROS;
 
 				when OP_BNEZ =>
 					if RS1 = ZEROS then
@@ -130,129 +150,129 @@ begin
 						branch <= '1';
 					end if;
 					br_addr <= inst_in(9 downto 0);
-					ALU_out <= ZEROS;
+					ALU_result <= ZEROS;
 
 				when OP_ADD | OP_ADDI =>
 					branch <= '0';
-					ALU_out <= std_logic_vector(signed(InOne) + signed(InTwo));
+					ALU_result <= std_logic_vector(signed(InOne) + signed(InTwo));
 
 				when OP_ADDU | OP_ADDUI =>
 					branch <= '0';
-					ALU_out <= std_logic_vector(unsigned(InOne) + unsigned(InTwo));
+					ALU_result <= std_logic_vector(unsigned(InOne) + unsigned(InTwo));
 
 				when OP_SUB | OP_SUBI =>
 					branch <= '0';
-					ALU_out <= std_logic_vector(signed(InOne) - signed(InTwo));
+					ALU_result <= std_logic_vector(signed(InOne) - signed(InTwo));
 
 				when OP_SUBU | OP_SUBUI =>
 					branch <= '0';
-					ALU_out <= std_logic_vector(unsigned(InOne) - unsigned(InTwo));
+					ALU_result <= std_logic_vector(unsigned(InOne) - unsigned(InTwo));
 
 				when OP_AND | OP_ANDI =>
 					branch <= '0';
-					ALU_out <= InOne and InTwo;
+					ALU_result <= InOne and InTwo;
 
 				when OP_OR | OP_ORI =>
 					branch <= '0';
-					ALU_out <= InOne or InTwo;
+					ALU_result <= InOne or InTwo;
 
 				when OP_XOR | OP_XORI =>
 					branch <= '0';
-					ALU_out <= InOne xor InTwo;
+					ALU_result <= InOne xor InTwo;
 
 				when OP_SLL | OP_SLLI =>
 					branch <= '0';
-					ALU_out <= std_logic_vector(shift_left(unsigned(InOne), to_integer(unsigned(InTwo))));
+					ALU_result <= std_logic_vector(shift_left(unsigned(InOne), to_integer(unsigned(InTwo))));
 
 				when OP_SRL | OP_SRLI =>
-					ALU_out <= std_logic_vector(shift_right(unsigned(InOne), to_integer(unsigned(InTwo))));
+					ALU_result <= std_logic_vector(shift_right(unsigned(InOne), to_integer(unsigned(InTwo))));
 
 				when OP_SRA | OP_SRAI =>
-					ALU_out <= std_logic_vector(shift_right(signed(InOne), to_integer(unsigned(InTwo))));
+					ALU_result <= std_logic_vector(shift_right(signed(InOne), to_integer(unsigned(InTwo))));
 
 				when OP_SLT | OP_SLTI =>
 					branch <= '0';
 					if (signed(InOne) < signed(InTwo)) then
-						ALU_out <= X"00000001";
+						ALU_result <= X"00000001";
 					else
-						ALU_out <= X"00000000";
+						ALU_result <= X"00000000";
 					end if;
 
 				when OP_SLTU | OP_SLTUI =>
 					branch <= '0';
 					if (unsigned(InOne) < unsigned(InTwo)) then
-						ALU_out <= X"00000001";
+						ALU_result <= X"00000001";
 					else
-						ALU_out <= X"00000000";
+						ALU_result <= X"00000000";
 					end if;
 
 				when OP_SGT | OP_SGTI =>
 					branch <= '0';
 					if (signed(InOne) > signed(InTwo)) then
-						ALU_out <= X"00000001";
+						ALU_result <= X"00000001";
 					else
-						ALU_out <= X"00000000";
+						ALU_result <= X"00000000";
 					end if;
 
 				when OP_SGTU | OP_SGTUI =>
 					branch <= '0';
 					if (unsigned(InOne) > unsigned(InTwo)) then
-						ALU_out <= X"00000001";
+						ALU_result <= X"00000001";
 					else
-						ALU_out <= X"00000000";
+						ALU_result <= X"00000000";
 					end if;
 
 				when OP_SLE | OP_SLEI =>
 					branch <= '0';
 					if (signed(InOne) <= signed(InTwo)) then
-						ALU_out <= X"00000001";
+						ALU_result <= X"00000001";
 					else
-						ALU_out <= X"00000000";
+						ALU_result <= X"00000000";
 					end if;
 
 				when OP_SLEU | OP_SLEUI =>
 					branch <= '0';
 					if (unsigned(InOne) <= unsigned(InTwo)) then
-						ALU_out <= X"00000001";
+						ALU_result <= X"00000001";
 					else
-						ALU_out <= X"00000000";
+						ALU_result <= X"00000000";
 					end if;
 
 				when OP_SGE | OP_SGEI =>
 					branch <= '0';
 					if (signed(InOne) >= signed(InTwo)) then
-						ALU_out <= X"00000001";
+						ALU_result <= X"00000001";
 					else
-						ALU_out <= X"00000000";
+						ALU_result <= X"00000000";
 					end if;
 
 				when OP_SGEU | OP_SGEUI =>
 					branch <= '0';
 					if (unsigned(InOne) >= unsigned(InTwo)) then
-						ALU_out <= X"00000001";
+						ALU_result <= X"00000001";
 					else
-						ALU_out <= X"00000000";
+						ALU_result <= X"00000000";
 					end if;
 
 				when OP_SEQ | OP_SEQI =>
 					branch <= '0';
 					if (unsigned(InOne) = unsigned(InTwo)) then
-						ALU_out <= X"00000001";
+						ALU_result <= X"00000001";
 					else
-						ALU_out <= X"00000000";
+						ALU_result <= X"00000000";
 					end if;
 
 				when OP_SNE | OP_SNEI =>
 					branch <= '0';
 					if (unsigned(InOne) = unsigned(InTwo)) then
-						ALU_out <= X"00000000";
+						ALU_result <= X"00000000";
 					else
-						ALU_out <= X"00000001";
+						ALU_result <= X"00000001";
 					end if;
 
 				when others =>
 					branch <= '0';
-					ALU_out <= ZEROS;
+					ALU_result <= ZEROS;
 			end case;
 		end if;
 	end process;
