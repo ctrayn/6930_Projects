@@ -35,11 +35,10 @@ entity Execute is
 end entity Execute;
 
 architecture behavioral of Execute is
-	signal opcode : std_logic_vector(5 downto 0);
+	signal Curr_OP : std_logic_vector(5 downto 0);
 	signal InTwo, InOne : std_logic_vector(31 downto 0);
 	
-	signal MemWr_Rd, ExMem_Rd, RS1_curr, ExMem_RS1	: std_logic_vector(4 downto 0);
-	signal ExMem_Inst, MemWr_Inst : std_logic_vector(31 downto 0);
+	signal MemWr_Rd, ExMem_Rd, Curr_RS1, ExMem_RS1	: std_logic_vector(4 downto 0);
 	signal ExMem_Op, MemWr_Op		: std_logic_vector(5 downto 0);
 	signal stall1, stall2, stall_out : std_logic := '0';
 	signal true	: std_logic;
@@ -48,39 +47,35 @@ begin
 	stall_out <= stall1 or stall2;
 	stall <= stall_out;
 	
+	Curr_OP   <= inst_in(31 downto 26);		--This cycle
+	Curr_RS1	 <= inst_in(20 downto 16);
+	ExMem_OP	 <= OP_EM(31 downto 26);		--Last cycles Curr_OP
+	ExMem_Rd  <= OP_EM(25 downto 21);
+	ExMem_RS1 <= OP_EM(20 downto 16);
+	MemWr_OP	 <= OP_MW(31 downto 26);		--2 cycles ago Curr_OP
+	MemWr_Rd  <= OP_MW(25 downto 21);
 	
-	opcode <= inst_in(31 downto 26);
 	--signals that just get delayed and passed on
 	process (clk) begin
 		if rising_edge(clk) then
 			if (stall_out = '1') or (rst_l = '0') then
-				RS2_out <= (others => '0');
+				RS2_out  <= (others => '0');
 				inst_out <= (others => '0');
-				ExMem_Inst <= (others => '0');
 			else
-				RS2_out <= RS2;
+				RS2_out  <= RS2;
 				inst_out <= inst_in;
-				ExMem_Inst <= inst_in;
 			end if;
-			MemWr_Inst <= ExMem_Inst;
-			ExMem_RS1 <= RS1_curr;
 		end if;
 	end process;
-
-	ExMem_Rd <= OP_EM(25 downto 21);		--Last cycles OPCODE
-	MemWr_Rd <= OP_MW(25 downto 21);		--2 cycles ago OPCODE
-	RS1_curr <= inst_in(20 downto 16);
-	ExMem_OP	<= ExMem_Inst(31 downto 26);
-	MemWr_OP	<= MemWr_Inst(31 downto 26);
 	
 	--Data hazard Read After Write: Mux RS1
 	process(clk) begin
 		if rising_edge(clk) then
-			if OpIsRegister(opcode) = '1' and (ExMem_Rd = RS1_curr) then		--Data Hazards
-				true <= '0';
+			if OpIsRegister(Curr_OP) = '1' and (ExMem_Rd = Curr_RS1) then		--Data Hazards
+				true <= '1';
 				stall1 <= '0';
 				InOne <= ALU_out;
-			elsif (ExMem_OP = OP_LW) and (ExMem_Rd = RS1_curr) then
+			elsif (ExMem_OP = OP_LW) and (ExMem_Rd = Curr_RS1) then
 				true <= '0';
 				stall1 <= '1';
 				InOne <= (others => '0');
@@ -88,11 +83,11 @@ begin
 				true <= '0';
 				stall1 <= '0';
 				InOne <= MemWr_data;
---			elsif(MemWr_Rd = RS1_curr) then
+--			elsif(MemWr_Rd = Curr_RS1) then
 --				stall1 <= '1';
 --				InOne <= MemWr_data;				--two cycles ago alu output
 			else
-				true <= '1';
+				true <= '0';
 				stall1 <= '0';
 				InOne <= RS1;
 			end if;
@@ -100,15 +95,15 @@ begin
 	end process;
 	
 	--MUX RS2 and Imm
-	process(clk, Imm, RS2, opcode) begin
+	process(clk, Imm, RS2, Curr_OP, ALU_out) begin
 		if rising_edge(clk) then
-			if OpIsRegister(opcode) = '1' and (ExMem_Rd = RS1_curr) then
+			if OpIsRegister(Curr_OP) = '1' and (ExMem_Rd = Curr_RS1) then
 				stall2 <= '0';
 				InTwo <= ALU_out;
 --			elsif (MemWr_OP = OP_LW) and (MemWr_Rd = ExMem_RS1) then
 --				stall2 <= '1';
 --				InTwo <= MemWr_data;
-			elsif OpIsImmediate(opcode) = '1' then
+			elsif OpIsImmediate(Curr_OP) = '1' then
 				stall2 <= '0';
 				InTwo <= Imm;
 			else
@@ -120,12 +115,12 @@ begin
 
 	--ALU process
 	process (clk, stall_out, rst_l) begin
-		if rising_edge(clk) then
+--		if rising_edge(clk) then
 			if (stall_out = '1') or (rst_l = '0') then
 				br_taken <= '0';
-				ALU_out <= (others => '0');
+--				ALU_out <= (others => '0');
 			else
-				case opcode is
+				case Curr_OP is
 					when OP_NOP | OP_LW =>
 						br_taken <= '0';
 						ALU_out <= ZEROS;
@@ -299,7 +294,7 @@ begin
 						ALU_out <= ZEROS;
 
 				end case;
-			end if;
+--			end if;
 		end if;
 	end process;
 end architecture behavioral;

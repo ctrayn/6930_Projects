@@ -1,5 +1,5 @@
 Timing Analyzer report for DLX
-Tue Mar 15 20:29:34 2022
+Tue Mar 15 23:28:57 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -88,12 +88,12 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 12          ;
 ; Maximum allowed            ; 12          ;
 ;                            ;             ;
-; Average used               ; 1.04        ;
+; Average used               ; 1.03        ;
 ; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-12        ;   0.4%      ;
+;     Processors 2-12        ;   0.3%      ;
 +----------------------------+-------------+
 
 
@@ -102,7 +102,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------+--------+--------------------------+
 ; SDC File Path ; Status ; Read at                  ;
 +---------------+--------+--------------------------+
-; DLX.SDC       ; OK     ; Tue Mar 15 20:29:32 2022 ;
+; DLX.SDC       ; OK     ; Tue Mar 15 23:28:54 2022 ;
 +---------------+--------+--------------------------+
 
 
@@ -356,7 +356,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Tue Mar 15 20:29:29 2022
+    Info: Processing started: Tue Mar 15 23:28:52 2022
 Info: Command: quartus_sta DLX -c DLX
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -411,7 +411,7 @@ Info (332101): Design is fully constrained for setup requirements
 Info (332101): Design is fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
     Info: Peak virtual memory: 4892 megabytes
-    Info: Processing ended: Tue Mar 15 20:29:34 2022
+    Info: Processing ended: Tue Mar 15 23:28:57 2022
     Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:02
 

@@ -46,6 +46,7 @@ architecture behavioral of DLX is
 			wb_data			: in std_logic_vector(31 downto 0);
 			stall 			: in std_logic;
 			br_taken			: in std_logic;
+			ALU_in				: in std_logic_vector(31 downto 0);
 			-- OUTPUT
 			Imm				: out std_logic_vector(31 downto 0);
 			pc_out			: out std_logic_vector(9  downto 0);
@@ -140,6 +141,7 @@ begin
 		wb_data => wb_data,
 		stall => stall,
 		br_taken => br_taken,
+		ALU_in => alu_em,
 		-- OUTPUT
 		Imm => imm_DE,
 		pc_out => pc_DE,

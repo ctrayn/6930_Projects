@@ -22,6 +22,7 @@ entity Decode is
 		wb_data				: in std_logic_vector(31 downto 0);			--Write data
 		stall					: in std_logic;									
 		br_taken				: in std_logic;									--If a jump happens, clear the contents of this stage
+		ALU_in				: in std_logic_vector(31 downto 0);
 		--OUTPUT
 		Imm					: out std_logic_vector(31 downto 0);		--Immediate value
 		pc_out				: out std_logic_vector(9  downto 0);		--Program counter, delayed by 1 cycle
@@ -46,6 +47,9 @@ architecture behavioral of Decode is
 	signal im_val		: std_logic_vector(15 downto 0);
 	signal pc_output	: std_logic_vector(9 downto 0);
 	signal inst_output: std_logic_vector(31 downto 0);
+	signal true 		: std_logic_vector(1 downto 0);
+	signal wb_rs1		: std_logic_vector(4 downto 0);
+	signal wb_OP		: std_logic_vector(5 downto 0);
 
 begin
 
@@ -57,6 +61,8 @@ begin
 	im_val 	<= inst_in(15 downto 0);
 	pc_out 	<= pc_output;
 	inst_out <= inst_output;
+	wb_rs1   <= wb_inst(25 downto 21);
+	wb_OP		<= wb_inst(31 downto 26);
 
 	--Signals that just get delayed and passed on
 	process(clk, stall, rst_l) begin
@@ -76,12 +82,21 @@ begin
 
 	--Write
 	process(clk, stall) begin
-		if rising_edge(clk) and br_taken = '0' then					-- Don't write anything if a stall is called for
-			if opIsWriteBack(wb_inst(31 downto 26)) = '1' and wb_inst(25 downto 21) /= B"00000" then
-				ram(to_integer(unsigned(wb_inst(25 downto 21)))) <= wb_data;
+		if rising_edge(clk) and br_taken = '0' then					-- Don't write anything if a branch is taken
+			if wb_OP = OP_LW and wb_rs1 /= B"00000" then 
+				true <= B"10";
+				ram(to_integer(unsigned(wb_rs1))) <= wb_data;
+			elsif (unsigned(wb_OP) >= unsigned(OP_ADD)) and (unsigned(wb_OP) <= unsigned(OP_SNEI)) and wb_rs1 /= B"00000" then 
+				true <= B"01";
+				ram(to_integer(unsigned(wb_rs1))) <= ALU_in;						
+--			if opIsWriteBack(wb_inst(31 downto 26)) = '1' and wb_inst(25 downto 21) /= B"00000" then
+--				true <= '1';
+--				ram(to_integer(unsigned(wb_inst(25 downto 21)))) <= wb_data;
 			elsif wb_inst(31 downto 26) = OP_JAL or wb_inst(31 downto 26) = OP_JALR then
+				true <= B"00";
 				ram(31) <= wb_data;
 			else
+				true <= B"00";
 				ram(0) <= X"00000000"; -- Register 0 must allways contain 0
 			end if;
 		end if;
@@ -103,7 +118,8 @@ begin
 
 					when OP_LW =>
 						RS1 <= (others => '0');
-						RS2 <= ram(r1);
+--						RS2 <= ram(r1);
+						RS2 <= (others => '0');
 						Imm(31 downto 16) <= (others => '0');
 						Imm(15 downto 0)  <= im_val;
 

@@ -28,36 +28,42 @@ architecture behavioral of Fetch is
 	component InstructionMemory
 		port(
 			address	: in std_logic_vector(9 downto 0);
+			clken		: in STD_LOGIC  := '1';
 			clock		: in std_logic  := '1';
 			q			: out std_logic_vector(31 downto 0)
 		);
 	end component;
 
-	signal pc_in_loc	: std_logic_vector(9 downto 0):= B"0000000000";
 	signal pc_out_loc : std_logic_vector(9 downto 0):= B"0000000000";
+	signal not_stall : std_logic;
 
 begin
+	not_stall <= not stall;
 	
 	-- Instance of our instruction memory
 	im : InstructionMemory port map (
 		address => pc_out_loc,
+		clken => not_stall,
 		clock => clk,
 		q => inst_out
 	);
-
-	-- Some assignments
-	pc_in_loc <= std_logic_vector(unsigned(pc_out_loc) + 1);
 
 	-- Main process
 	process(clk, rst_l) begin
 		if rising_edge(clk) then
 			-- PC logic
-			if rst_l = '0' or stall = '1' then
+			if rst_l = '0' then
 				pc_out_loc <= B"0000000000";
-			elsif br_taken = '1' or stall = '1' then
+				
+			elsif br_taken = '1' then
 				pc_out_loc <= br_addr;
+				
+			elsif stall = '1' then
+				pc_out_loc <= pc_out_loc;
+				
 			else
-				pc_out_loc <= pc_in_loc;
+				pc_out_loc <= std_logic_vector(unsigned(pc_out_loc) + 1);
+				
 			end if;
 			pc_out <= pc_out_loc;
 		end if;

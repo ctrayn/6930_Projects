@@ -79,7 +79,7 @@ package body common is
 	begin
 		if opcode = OP_LW then
 			return '1';
-		elsif unsigned(opcode) >= unsigned(OP_ADD) and unsigned(opcode) <= unsigned(OP_SNEI) then
+		elsif (unsigned(opcode) >= unsigned(OP_ADD)) and (unsigned(opcode) <= unsigned(OP_SNEI)) then
 			return '1';
 		else
 			return '0';
