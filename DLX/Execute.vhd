@@ -93,6 +93,8 @@ begin
 			InOne <= ALU_result;
 		elsif OpIsALU(MemWb_opcode) = '1' and OpIsTypeA(opcode) = '1' and MemWb_rd = IdEx_Rs1 then
 			InOne <= MemWb_data;
+		--elsif MemWb_opcode = OP_LW and OpIsTypeA(opcode) = '1' and MemWb_rd = IdEx_Rs1 then
+		--	InOne <= MemWb_data;
 		else
 			InOne <= RS1;
 		end if;
@@ -104,6 +106,8 @@ begin
 			InTwo <= ALU_result;
 		elsif OpIsALU(MemWb_opcode) = '1' and OpIsTypeB(opcode) = '1' and MemWb_rd = IdEx_Rs2 then
 			InTwo <= MemWb_data;
+		--elsif MemWb_opcode = OP_LW and OpIsTypeB(opcode) = '1' and MemWb_rd = IdEx_Rs2 then
+		--	InTwo <= MemWb_data;
 		elsif OpIsImmediate(opcode) = '1' or opcode = OP_SW then
 			InTwo <= Imm;
 		else
