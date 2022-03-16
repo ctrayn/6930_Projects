@@ -59,7 +59,7 @@ begin
 				pc_out_loc <= br_addr;
 				
 			elsif stall = '1' then
-				pc_out_loc <= pc_out_loc;
+				pc_out_loc <= std_logic_vector(unsigned(pc_out_loc) - 1);
 				
 			else
 				pc_out_loc <= std_logic_vector(unsigned(pc_out_loc) + 1);

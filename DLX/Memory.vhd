@@ -76,7 +76,7 @@ begin
 	end process;
 
 	-- Async process. Writeback data select
-	process(inst_in) begin
+	process(inst_wb, ALU_out, mem_out) begin
 		if inst_wb(31 downto 26) = OP_LW then
 			data_out <= mem_out;
 		else

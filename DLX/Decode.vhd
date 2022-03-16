@@ -28,7 +28,7 @@ entity Decode is
 		pc_out				: out std_logic_vector(9  downto 0);		--Program counter, delayed by 1 cycle
 		inst_out				: out std_logic_vector(31 downto 0);		--The instruction, delayed by 1 cycle
 		RS1					: out std_logic_vector(31 downto 0);		--The data from RS1
-		RS2					: out std_logic_vector(31 downto 0)			--The data from RS2
+		RS2					: out std_logic_vector(31 downto 0)			--The data from RS2_loc
 	);
 end entity Decode;
 
@@ -50,8 +50,12 @@ architecture behavioral of Decode is
 	signal true 		: std_logic_vector(1 downto 0);
 	signal wb_rs1		: std_logic_vector(4 downto 0);
 	signal wb_OP		: std_logic_vector(5 downto 0);
+	signal RS1_loc, RS2_loc, Imm_loc : std_logic_vector(31 downto 0);
 
 begin
+	RS1 <= RS1_loc;
+	RS2 <= RS2_loc;
+	Imm <= Imm_loc;
 
 	--rename some parts of the input instruction
 	opcode 	<= inst_in(31 downto 26);
@@ -81,7 +85,7 @@ begin
 	end process;
 
 	--Write
-	process(clk, stall) begin
+	process(clk, br_taken) begin
 		if rising_edge(clk) and br_taken = '0' then					-- Don't write anything if a branch is taken
 			if wb_OP = OP_LW and wb_rs1 /= B"00000" then 
 				true <= B"10";
@@ -104,125 +108,129 @@ begin
 
 	--Read
 	process(clk, rst_l, stall, br_taken) begin
-		if (stall = '1') or (rst_l = '0') or (br_taken = '1') then			--Stall and clear the stage
-				RS1 <= (others => '0');
-				RS2 <= (others => '0');
-				Imm <= (others => '0');
+		if (rst_l = '0') or (br_taken = '1') then			--Clear the stage
+				RS1_loc <= (others => '0');
+				RS2_loc <= (others => '0');
+				Imm_loc <= (others => '0');
+		elsif stall = '1' then
+			RS1_loc <= RS1_loc;
+			RS2_loc <= RS2_loc;
+			Imm_loc <= Imm_loc;
 		else
 			if rising_edge(clk) then
 				case opcode is
 					when OP_NOP =>
-						RS1 <= (others => '0');
-						RS2 <= (others => '0');
-						Imm <= (others => '0');
+						RS1_loc <= (others => '0');
+						RS2_loc <= (others => '0');
+						Imm_loc <= (others => '0');
 
 					when OP_LW =>
-						RS1 <= (others => '0');
---						RS2 <= ram(r1);
-						RS2 <= (others => '0');
-						Imm(31 downto 16) <= (others => '0');
-						Imm(15 downto 0)  <= im_val;
+						RS1_loc <= (others => '0');
+--						RS2_loc <= ram(r1);
+						RS2_loc <= (others => '0');
+						Imm_loc(31 downto 16) <= (others => '0');
+						Imm_loc(15 downto 0)  <= im_val;
 
 					when OP_SW =>
-						RS1 <= ram(r1);
-						RS2 <= ram(rd);
-						Imm(31 downto 16) <= (others => '0');
-						Imm(15 downto 0)  <= im_val;
+						RS1_loc <= ram(r1);
+						RS2_loc <= ram(rd);
+						Imm_loc(31 downto 16) <= (others => '0');
+						Imm_loc(15 downto 0)  <= im_val;
 
 					when OP_JR | OP_JALR =>
-						RS1 <= ram(r1);
-						RS2 <= (others => '0');
-						Imm <= (others => '0');
+						RS1_loc <= ram(r1);
+						RS2_loc <= (others => '0');
+						Imm_loc <= (others => '0');
 
 					when OP_J | OP_JAL =>
-						RS1 <= (others => '0');
-						RS2 <= (others => '0');
-						Imm(31 downto 26) <= (others => '0');
-						Imm(25 downto 0) <= inst_in(25 downto 0);
+						RS1_loc <= (others => '0');
+						RS2_loc <= (others => '0');
+						Imm_loc(31 downto 26) <= (others => '0');
+						Imm_loc(25 downto 0) <= inst_in(25 downto 0);
 
 					when OP_BEQZ | OP_BNEZ =>
-						RS1 <= ram(rd);
-						RS2 <= (others => '0');
-						Imm(31 downto 21) <= (others => '0');
-						Imm(20 downto 0) <= inst_in(20 downto 0);
+						RS1_loc <= ram(rd);
+						RS2_loc <= (others => '0');
+						Imm_loc(31 downto 21) <= (others => '0');
+						Imm_loc(20 downto 0) <= inst_in(20 downto 0);
 
 					when OP_ADD | OP_ADDU | OP_SUB | OP_SUBU =>
-						RS1 <= ram(r1);
-						RS2 <= ram(r2);
-						Imm <= (others => '0');
+						RS1_loc <= ram(r1);
+						RS2_loc <= ram(r2);
+						Imm_loc <= (others => '0');
 
 					when OP_ADDI | OP_SUBI =>
-						RS1 <= ram(r1);
-						RS2 <= (others => '0');
-						Imm(31 downto 16) <= (others => im_val(15));		--sign extend
-						Imm(15 downto 0) <= im_val;
+						RS1_loc <= ram(r1);
+						RS2_loc <= (others => '0');
+						Imm_loc(31 downto 16) <= (others => im_val(15));		--sign extend
+						Imm_loc(15 downto 0) <= im_val;
 
 					when OP_ADDUI | OP_SUBUI =>
-						RS1 <= ram(r1);
-						RS2 <= (others => '0');
-						Imm(31 downto 16) <= (others => '0');		--sign extend
-						Imm(15 downto 0) <= im_val;
+						RS1_loc <= ram(r1);
+						RS2_loc <= (others => '0');
+						Imm_loc(31 downto 16) <= (others => '0');		--sign extend
+						Imm_loc(15 downto 0) <= im_val;
 
 					when OP_AND | OP_OR | OP_XOR =>
-						RS1 <= ram(r1);
-						RS2 <= ram(r2);
-						Imm <= (others => '0');
+						RS1_loc <= ram(r1);
+						RS2_loc <= ram(r2);
+						Imm_loc <= (others => '0');
 
 					when OP_ANDI | OP_ORI | OP_XORI =>
-						RS1 <= ram(r1);
-						RS2 <= (others => '0');
-						Imm(31 downto 16) <= (others => '0');
-						Imm(15 downto 0) <= im_val;
+						RS1_loc <= ram(r1);
+						RS2_loc <= (others => '0');
+						Imm_loc(31 downto 16) <= (others => '0');
+						Imm_loc(15 downto 0) <= im_val;
 
 					when OP_SLL | OP_SRL | OP_SRA =>
-						RS1 <= ram(r1);
-						RS2 <= ram(r2);
-						Imm <= (others => '0');
+						RS1_loc <= ram(r1);
+						RS2_loc <= ram(r2);
+						Imm_loc <= (others => '0');
 
 					when OP_SLLI | OP_SRLI | OP_SRAI =>
-						RS1 <= ram(r1);
-						RS2 <= ram(r2);
-						Imm(31 downto 16) <= (others => '0');
-						Imm(15 downto 0) <= im_val;
+						RS1_loc <= ram(r1);
+						RS2_loc <= ram(r2);
+						Imm_loc(31 downto 16) <= (others => '0');
+						Imm_loc(15 downto 0) <= im_val;
 
 					when OP_SLT | OP_SLTU | OP_SGT | OP_SGTU =>
-						RS1 <= ram(r1);
-						RS2 <= ram(r2);
-						Imm <= (others => '0');
+						RS1_loc <= ram(r1);
+						RS2_loc <= ram(r2);
+						Imm_loc <= (others => '0');
 
 					when OP_SLTI | OP_SGTI  =>
-						RS1 <= ram(r1);
-						RS2 <= (others => '0');
-						Imm(31 downto 16) <= (others => im_val(15));		--sign extend
-						Imm(15 downto 0) <= im_val;
+						RS1_loc <= ram(r1);
+						RS2_loc <= (others => '0');
+						Imm_loc(31 downto 16) <= (others => im_val(15));		--sign extend
+						Imm_loc(15 downto 0) <= im_val;
 
 					when OP_SLTUI | OP_SGTUI =>
-						RS1 <= ram(r1);
-						RS2 <= (others => '0');
-						Imm(15 downto 0) <= im_val;
-						Imm(16 downto 0) <= (others => '0');
+						RS1_loc <= ram(r1);
+						RS2_loc <= (others => '0');
+						Imm_loc(15 downto 0) <= im_val;
+						Imm_loc(16 downto 0) <= (others => '0');
 
 					when OP_SLE | OP_SLEU | OP_SGE | OP_SGEU | OP_SEQ | OP_SNE =>
-						RS1 <= ram(r1);
-						RS2 <= ram(r2);
-						Imm <= (others => '0');
+						RS1_loc <= ram(r1);
+						RS2_loc <= ram(r2);
+						Imm_loc <= (others => '0');
 
 					when OP_SLEI | OP_SGEI | OP_SEQI | OP_SNEI =>
-						RS1 <= ram(r1);
-						RS2 <= (others => '0');
-						Imm(15 downto 0) <= im_val;
-						Imm(31 downto 16) <= (others => im_val(15));		--sign extend
+						RS1_loc <= ram(r1);
+						RS2_loc <= (others => '0');
+						Imm_loc(15 downto 0) <= im_val;
+						Imm_loc(31 downto 16) <= (others => im_val(15));		--sign extend
 
 					when OP_SLEUI | OP_SGEUI =>
-						RS1 <= ram(r1);
-						RS2 <= (others => '0');
-						Imm(15 downto 0) <= im_val;
-						Imm(16 downto 0) <= (others => '0');
+						RS1_loc <= ram(r1);
+						RS2_loc <= (others => '0');
+						Imm_loc(15 downto 0) <= im_val;
+						Imm_loc(16 downto 0) <= (others => '0');
 
 					when others =>
-						RS1 <= (others => '0');
-						RS2 <= (others => '0');
-						Imm <= (others => '0');
+						RS1_loc <= (others => '0');
+						RS2_loc <= (others => '0');
+						Imm_loc <= (others => '0');
 
 				end case;
 			end if;
