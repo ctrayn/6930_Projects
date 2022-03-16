@@ -70,6 +70,9 @@ package common is
 	-- Function 1: returns '1' if function is a store function
 	function OpIsWriteBack (opcode : std_logic_vector(5 downto 0)) return std_logic;
 	function OpIsImmediate (opcode : std_logic_vector(5 downto 0)) return std_logic;
+	function OpIsALU (opcode : std_logic_vector(5 downto 0)) return std_logic;
+	function OpIsTypeA (opcode : std_logic_vector(5 downto 0)) return std_logic;
+	function OpIsTypeB (opcode : std_logic_vector(5 downto 0)) return std_logic;
 end common;
 
 package body common is
@@ -93,4 +96,32 @@ package body common is
 			return '0';
 		end if;
 	end OpIsImmediate;
+
+	function OpIsALU (opcode : std_logic_vector(5 downto 0)) return std_logic is
+	begin
+		if (unsigned(opcode) >= unsigned(OP_ADD)) and (unsigned(opcode) <= unsigned(OP_SNEI)) then
+			return '1';
+		else
+			return '0';
+		end if;
+	end OpIsALU;
+
+	function OpIsTypeA (opcode : std_logic_vector(5 downto 0)) return std_logic is
+	begin
+		if (unsigned(opcode) >= unsigned(OP_ADD)) and (unsigned(opcode) <= unsigned(OP_BNEZ)) then
+			return '1';
+		else
+			return '0';
+		end if;
+	end OpIsTypeA;
+
+	function OpIsTypeB (opcode : std_logic_vector(5 downto 0)) return std_logic is
+		begin
+			if (unsigned(opcode) >= unsigned(OP_ADD)) and (unsigned(opcode) <= unsigned(OP_SNEI)) and (opcode(0) = '1') then
+				return '1';
+			else
+				return '0';
+			end if;
+		end OpIsTypeB;
+
 end common;

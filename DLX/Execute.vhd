@@ -84,16 +84,18 @@ begin
 
 	--MUX 1
 	process(RS1) begin
-		--if OpIsALU(ExMem_opcode) = '1' and ExMem_rd = IdEx_Rs1 then
-		--	InOne <= ALU_result;
-		--else
+		if OpIsALU(ExMem_opcode) = '1' and OpIsTypeA(opcode) = '1' and ExMem_rd = IdEx_Rs1 then
+			InOne <= ALU_result;
+		else
 			InOne <= RS1;
-		--end if;
+		end if;
 	end process;
 
 	--MUX 2
 	process(opcode, Imm, RS2) begin
-		if OpIsImmediate(opcode) = '1' or opcode = OP_SW then
+		if OpIsALU(ExMem_opcode) = '1' and OpIsTypeB(opcode) = '1' and ExMem_rd = IdEx_Rs2 then
+			InTwo <= ALU_result;
+		elsif OpIsImmediate(opcode) = '1' or opcode = OP_SW then
 			InTwo <= Imm;
 		else
 			InTwo <= RS2;
