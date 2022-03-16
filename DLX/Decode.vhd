@@ -20,6 +20,7 @@ entity Decode is
 		inst_in				: in std_logic_vector(31 downto 0);
 		wb_inst				: in std_logic_vector(31 downto 0);			--Write instruction
 		wb_data				: in std_logic_vector(31 downto 0);			--Write data
+		br_taken				: in std_logic;
 		--OUTPUT
 		Imm					: out std_logic_vector(31 downto 0);		--Immediate value
 		pc_out				: out std_logic_vector(9  downto 0);		--Program counter, delayed by 1 cycle
@@ -55,8 +56,12 @@ begin
 	--Signals that just get delayed and passed on
 	process(clk) begin
 		if rising_edge(clk) then
+			if br_taken = '0' then
+				inst_out <= inst_in;
+			else
+				inst_out <= (others => '0');
+			end if;
 			pc_out <= pc_in;
-			inst_out <= inst_in;
 		end if;
 	end process;
 

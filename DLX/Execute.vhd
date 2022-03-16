@@ -47,12 +47,11 @@ begin
 	process (clk) begin
 		if rising_edge(clk) then
 			if branch = '0' then
-				RS2_out <= RS2;
 				inst_out <= inst_in;
 			else
-				RS2_out <= (others => '0');
 				inst_out <= (others => '0');
 			end if;
+			RS2_out <= (others => '0');
 		end if;
 	end process;
 

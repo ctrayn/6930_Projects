@@ -19,7 +19,6 @@ entity Memory is
 		ALU_in 	: in std_logic_vector(31 downto 0);
 		RS2_in	: in std_logic_vector(31 downto 0);
 		inst_in	: in std_logic_vector(31 downto 0);
-		br_taken : in std_logic;
 		--OUTPUT
 		data_out	: out std_logic_vector(31 downto 0);
 		inst_out : out std_logic_vector(31 downto 0);
@@ -63,8 +62,8 @@ begin
 	);
 
 	-- Async process. Write enable controol
-	process(inst_in, br_taken) begin
-		if inst_in(31 downto 26) = OP_SW and br_taken = '0' then
+	process(inst_in) begin
+		if inst_in(31 downto 26) = OP_SW then
 			wren <= '1';
 		else
 			wren <= '0';
@@ -89,17 +88,9 @@ begin
 	end process;
 
 	-- Signals
-	process(inst_wb, data_wb, br_taken) begin
-		if br_taken = '0' then
-			inst_out <= inst_wb;
-			data_out <= data_wb;
-		elsif inst_wb(31 downto 26) = OP_JAL or inst_wb(31 downto 26) = OP_JALR then
-			inst_out <= inst_wb;
-			data_out <= data_wb;
-		else
-			inst_out <= ZEROS;
-			data_out <= ZEROS;
-		end if;
+	process(inst_wb, data_wb) begin
+		inst_out <= inst_wb;
+		data_out <= data_wb;
 	end process;
 
 end architecture behavioral;

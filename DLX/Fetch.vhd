@@ -34,6 +34,7 @@ architecture behavioral of Fetch is
 
 	signal pc_in_loc	: std_logic_vector(9 downto 0):= B"0000000000";
 	signal pc_out_loc : std_logic_vector(9 downto 0):= B"0000000000";
+	signal inst_mem	: std_logic_vector(31 downto 0);
 
 begin
 	
@@ -41,8 +42,17 @@ begin
 	im : InstructionMemory port map (
 		address => pc_out_loc,
 		clock => clk,
-		q => inst_out
+		q => inst_mem
 	);
+
+	-- Make sure to block any outputs when branch is taken
+	process(inst_mem, br_taken) begin
+		if br_taken = '0' then
+			inst_out <= inst_mem;
+		else
+			inst_out <= (others => '0');
+		end if;
+	end process;
 
 	-- Some assignments
 	pc_in_loc <= std_logic_vector(unsigned(pc_out_loc) + 1);
