@@ -20,6 +20,7 @@ entity Decode is
 		inst_in				: in std_logic_vector(31 downto 0);
 		wb_inst				: in std_logic_vector(31 downto 0);			--Write instruction
 		wb_data				: in std_logic_vector(31 downto 0);			--Write data
+		stall					: in std_logic;									
 		br_taken				: in std_logic;									--If a jump happens, clear the contents of this stage
 		--OUTPUT
 		Imm					: out std_logic_vector(31 downto 0);		--Immediate value
@@ -37,12 +38,14 @@ architecture behavioral of Decode is
 	type memory_t is array(31 downto 0) of reg_t;
 
 	-- Declare the RAM signal.
-	signal ram 		: memory_t;
-	signal opcode 	: std_logic_vector(5  downto 0);
-	signal rd		: natural;
-	signal r1		: natural;
-	signal r2		: natural;
-	signal im_val	: std_logic_vector(15 downto 0);
+	signal ram 			: memory_t;
+	signal opcode 		: std_logic_vector(5  downto 0);
+	signal rd			: natural;
+	signal r1			: natural;
+	signal r2			: natural;
+	signal im_val		: std_logic_vector(15 downto 0);
+	signal pc_output	: std_logic_vector(9 downto 0);
+	signal inst_output: std_logic_vector(31 downto 0);
 
 begin
 
@@ -52,17 +55,27 @@ begin
 	r1			<= to_integer(unsigned(inst_in(20 downto 16)));
 	r2 		<= to_integer(unsigned(inst_in(15 downto 11)));
 	im_val 	<= inst_in(15 downto 0);
+	pc_out 	<= pc_output;
+	inst_out <= inst_output;
 
 	--Signals that just get delayed and passed on
-	process(clk) begin
+	process(clk, stall, rst_l) begin
 		if rising_edge(clk) then
-			pc_out <= pc_in;
-			inst_out <= inst_in;
+			if rst_l = '0' then
+				pc_output <= (others => '0');
+				inst_output <= (others => '0');
+			elsif stall = '1' then
+				pc_output <= pc_output;
+				inst_output <= inst_output;
+			else
+				pc_output <= pc_in;
+				inst_output <= inst_in;
+			end if;
 		end if;
 	end process;
 
 	--Write
-	process(clk, br_taken) begin
+	process(clk, stall) begin
 		if rising_edge(clk) and br_taken = '0' then					-- Don't write anything if a stall is called for
 			if opIsWriteBack(wb_inst(31 downto 26)) = '1' and wb_inst(25 downto 21) /= B"00000" then
 				ram(to_integer(unsigned(wb_inst(25 downto 21)))) <= wb_data;
@@ -75,8 +88,8 @@ begin
 	end process;
 
 	--Read
-	process(clk, rst_l, br_taken) begin
-		if (br_taken = '1') or (rst_l = '0') then			--Stall and clear the stage
+	process(clk, rst_l, stall, br_taken) begin
+		if (stall = '1') or (rst_l = '0') or (br_taken = '1') then			--Stall and clear the stage
 				RS1 <= (others => '0');
 				RS2 <= (others => '0');
 				Imm <= (others => '0');

@@ -17,8 +17,9 @@ entity Fetch is
 		rst_l			: in std_logic;
 		br_taken 	: in std_logic;
 		br_addr		: in std_logic_vector(9 downto 0);
+		stall			: in std_logic;
 		--OUTPUT
-		inst_out		: out std_logic_vector(31 downto 0);								-- Instruction Register
+		inst_out		: out std_logic_vector(31 downto 0);							-- Instruction Register
 		pc_out		: out std_logic_vector(9  downto 0) := (others => '0')	-- Address of the output PC, but didn't want to call it pc
 	);
 end entity Fetch;
@@ -51,9 +52,9 @@ begin
 	process(clk, rst_l) begin
 		if rising_edge(clk) then
 			-- PC logic
-			if rst_l = '0' then
+			if rst_l = '0' or stall = '1' then
 				pc_out_loc <= B"0000000000";
-			elsif br_taken = '1' then
+			elsif br_taken = '1' or stall = '1' then
 				pc_out_loc <= br_addr;
 			else
 				pc_out_loc <= pc_in_loc;
