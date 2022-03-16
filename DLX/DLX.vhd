@@ -69,9 +69,8 @@ architecture behavioral of DLX is
 			RS1 			: in std_logic_vector(31 downto 0);
 			RS2 			: in std_logic_vector(31 downto 0);
 			Imm 			: in std_logic_vector(31 downto 0);
-			inst_WE		: in std_logic_vector(31 downto 0);
-			data1_WE		: in std_logic_vector(31 downto 0);
-			data2_WE		: in std_logic_vector(31 downto 0);
+			MemWb_inst	: in std_logic_vector(31 downto 0);
+			MemWb_data	: in std_logic_vector(31 downto 0);
 			--OUTPUT
 			ALU_out 		: out std_logic_vector(31 downto 0);
 			br_taken 	: out std_logic;
@@ -91,10 +90,7 @@ architecture behavioral of DLX is
 			inst_in		: in std_logic_vector(31 downto 0);
 			--OUTPUT
 			data_out		: out std_logic_vector(31 downto 0);
-			inst_out 	: out std_logic_vector(31 downto 0);
-			inst_WE		: out std_logic_vector(31 downto 0);
-			data1_WE		: out std_logic_vector(31 downto 0);
-			data2_WE		: out std_logic_vector(31 downto 0)
+			inst_out 	: out std_logic_vector(31 downto 0)
 		);
 	end component;
 
@@ -118,15 +114,12 @@ architecture behavioral of DLX is
 	-- Between memory and decode
 	signal wb_data			: std_logic_vector(31 downto 0);
 	signal wb_inst 		: std_logic_vector(31 downto 0);
-
 	-- Between memory and execute
 	signal inst_ME			: std_logic_vector(31 downto 0);
 	signal data_ME			: std_logic_vector(31 downto 0);
-
 	-- Between writeback and execute
 	signal inst_WE			: std_logic_vector(31 downto 0);
-	signal data1_WE		: std_logic_vector(31 downto 0);
-	signal data2_WE		: std_logic_vector(31 downto 0);
+	signal data_WE		: std_logic_vector(31 downto 0);
 
 begin
 
@@ -170,9 +163,8 @@ begin
 		RS1 => rs1_DE,
 		RS2 => rs2_DE,
 		Imm => imm_DE,	
-		inst_WE => inst_WE,	
-		data1_WE => data1_WE,	
-		data2_WE => data2_WE,
+		MemWb_inst => wb_inst,	
+		MemWb_data => wb_data,
 		--OUTPUT
 		ALU_out => alu_EM,
 		br_taken => br_taken,
@@ -191,10 +183,7 @@ begin
 		inst_in => inst_EM,
 		--OUTPUT
 		data_out	=> wb_data,
-		inst_out => wb_inst,
-		inst_WE => inst_WE,	
-		data1_WE => data1_WE,	
-		data2_WE => data2_WE	
+		inst_out => wb_inst
 	);
 
 end architecture behavioral;

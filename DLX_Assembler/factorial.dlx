@@ -21,9 +21,6 @@ main
 ; Subtract 1 from R2 and set R3 back to 0
 	SUBUI	R2, R2, 1
 	ADDI	R3, R0, 0
-	NOP
-	NOP
-	NOP
 ; If R2 is 0 or 1, store in R4
 	SLEI	R4, R2, 1
 	NOP

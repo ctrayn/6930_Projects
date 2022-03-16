@@ -14,22 +14,21 @@ use work.common.all;
 entity Execute is
 	port (
 		--INPUT
-		clk 		: in std_logic;
-		rst_l 	: in std_logic;
-		pc_in 	: in std_logic_vector(9  downto 0);
-		inst_in 	: in std_logic_vector(31 downto 0);
-		RS1 		: in std_logic_vector(31 downto 0);
-		RS2 		: in std_logic_vector(31 downto 0);
-		Imm 		: in std_logic_vector(31 downto 0);
-		inst_WE	: in std_logic_vector(31 downto 0);
-		data1_WE	: in std_logic_vector(31 downto 0);
-		data2_WE	: in std_logic_vector(31 downto 0);
+		clk 			: in std_logic;
+		rst_l 		: in std_logic;
+		pc_in 		: in std_logic_vector(9  downto 0);
+		inst_in 		: in std_logic_vector(31 downto 0);
+		RS1 			: in std_logic_vector(31 downto 0);
+		RS2 			: in std_logic_vector(31 downto 0);
+		Imm 			: in std_logic_vector(31 downto 0);
+		MemWb_inst	: in std_logic_vector(31 downto 0);
+		MemWb_data	: in std_logic_vector(31 downto 0);
 		--OUTPUT
-		ALU_out 	: out std_logic_vector(31 downto 0);
-		br_taken : out std_logic;
-		br_addr  : out std_logic_vector(9 downto 0);
-		RS2_out 	: out std_logic_vector(31 downto 0);
-		inst_out : out std_logic_vector(31 downto 0)
+		ALU_out 		: out std_logic_vector(31 downto 0);
+		br_taken 	: out std_logic;
+		br_addr  	: out std_logic_vector(9 downto 0);
+		RS2_out 		: out std_logic_vector(31 downto 0);
+		inst_out 	: out std_logic_vector(31 downto 0)
 	);
 end entity Execute;
 
@@ -48,6 +47,9 @@ architecture behavioral of Execute is
 	signal ExMem_inst 	: std_logic_vector(31 downto 0);
 	signal ExMem_opcode	: std_logic_vector(5 downto 0); 
 	signal ExMem_rd 		: std_logic_vector(4 downto 0); 
+	-- Writeback stage
+	signal MemWb_opcode	: std_logic_vector(5 downto 0); 
+	signal MemWb_rd 		: std_logic_vector(4 downto 0); 
 
 begin
 	-- Open signals
@@ -60,6 +62,9 @@ begin
 	inst_out <= ExMem_inst;
 	ExMem_opcode <= ExMem_inst(31 downto 26);
 	ExMem_rd <= ExMem_inst(25 downto 21);
+	-- Writeback stage
+	MemWb_opcode <= MemWb_inst(31 downto 26);
+	MemWb_rd <= MemWb_inst(25 downto 21);
 
 	-- We want to clear the input instruction in case of branches
 	process(inst_in, branch) begin	
@@ -83,18 +88,22 @@ begin
 	end process;
 
 	--MUX 1
-	process(ExMem_opcode, opcode, ExMem_rd, IdEx_Rs1, ALU_result, RS1) begin
+	process(ExMem_opcode, opcode, ExMem_rd, IdEx_Rs1, ALU_result, MemWb_opcode, MemWb_rd, MemWb_data, RS1) begin
 		if OpIsALU(ExMem_opcode) = '1' and OpIsTypeA(opcode) = '1' and ExMem_rd = IdEx_Rs1 then
 			InOne <= ALU_result;
+		elsif OpIsALU(MemWb_opcode) = '1' and OpIsTypeA(opcode) = '1' and MemWb_rd = IdEx_Rs1 then
+			InOne <= MemWb_data;
 		else
 			InOne <= RS1;
 		end if;
 	end process;
 
 	--MUX 2
-	process(ExMem_opcode, opcode, ExMem_rd, IdEx_Rs2, ALU_result, Imm, RS2) begin
+	process(ExMem_opcode, opcode, ExMem_rd, IdEx_Rs2, ALU_result, MemWb_opcode, MemWb_rd, MemWb_data, Imm, RS2) begin
 		if OpIsALU(ExMem_opcode) = '1' and OpIsTypeB(opcode) = '1' and ExMem_rd = IdEx_Rs2 then
 			InTwo <= ALU_result;
+		elsif OpIsALU(MemWb_opcode) = '1' and OpIsTypeB(opcode) = '1' and MemWb_rd = IdEx_Rs2 then
+			InTwo <= MemWb_data;
 		elsif OpIsImmediate(opcode) = '1' or opcode = OP_SW then
 			InTwo <= Imm;
 		else
