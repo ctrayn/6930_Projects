@@ -42,7 +42,7 @@ architecture behavioral of Execute is
 	signal ExMem_Inst, MemWr_Inst : std_logic_vector(31 downto 0);
 	signal ExMem_Op, MemWr_Op		: std_logic_vector(5 downto 0);
 	signal stall1, stall2, stall_out : std_logic := '0';
---	signal true	: std_logic;
+	signal true	: std_logic;
 
 begin
 	stall_out <= stall1 or stall2;
@@ -69,7 +69,7 @@ begin
 
 	ExMem_Rd <= OP_EM(25 downto 21);		--Last cycles OPCODE
 	MemWr_Rd <= OP_MW(25 downto 21);		--2 cycles ago OPCODE
-	RS1_curr  <= inst_in(20 downto 16);
+	RS1_curr <= inst_in(20 downto 16);
 	ExMem_OP	<= ExMem_Inst(31 downto 26);
 	MemWr_OP	<= MemWr_Inst(31 downto 26);
 	
@@ -77,18 +77,22 @@ begin
 	process(clk) begin
 		if rising_edge(clk) then
 			if OpIsRegister(opcode) = '1' and (ExMem_Rd = RS1_curr) then		--Data Hazards
+				true <= '0';
 				stall1 <= '0';
 				InOne <= ALU_out;
 			elsif (ExMem_OP = OP_LW) and (ExMem_Rd = RS1_curr) then
+				true <= '0';
 				stall1 <= '1';
 				InOne <= (others => '0');
 			elsif (MemWr_OP = OP_LW) and (unsigned(MemWr_Rd) = unsigned(ExMem_RS1)) then
+				true <= '0';
 				stall1 <= '0';
 				InOne <= MemWr_data;
 --			elsif(MemWr_Rd = RS1_curr) then
 --				stall1 <= '1';
 --				InOne <= MemWr_data;				--two cycles ago alu output
 			else
+				true <= '1';
 				stall1 <= '0';
 				InOne <= RS1;
 			end if;
