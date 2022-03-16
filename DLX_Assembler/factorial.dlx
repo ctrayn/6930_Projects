@@ -23,6 +23,9 @@ main
 	ADDI	R3, R0, 0
 ; If R2 is 0 or 1, store in R4
 	SLEI	R4, R2, 1
+	NOP
+	NOP
+	NOP
 ; Exit the program if R1 is 1
 	BNEZ	R4, exit
 ; Start multiplying
@@ -42,6 +45,9 @@ loop
 	AND	R7, R5, R2
 ; If the masked value is 0
 	SEQI	R8, R7, 0
+	NOP
+	NOP
+	NOP
 ; Then continue
 	BNEZ	R8, continue
 ; Shift R1 by the result and add to R3
@@ -53,6 +59,9 @@ continue
 	ADDI	R6, R6, 1
 ; If our mask is all 0, store in R8
 	SEQI	R8, R5, 0
+	NOP
+	NOP
+	NOP
 ; If the mask is 0, exit multiply
 	BNEZ	R8, break
 ; Otherwise do it again
