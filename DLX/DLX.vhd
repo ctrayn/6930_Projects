@@ -61,33 +61,44 @@ architecture behavioral of DLX is
 	component Execute is
 		port (
 			--INPUT
-			clk 		: in std_logic;
-			rst_l 	: in std_logic;
-			pc_in 	: in std_logic_vector(9  downto 0);
-			inst_in 	: in std_logic_vector(31 downto 0);
-			RS1 		: in std_logic_vector(31 downto 0);
-			RS2 		: in std_logic_vector(31 downto 0);
-			Imm 		: in std_logic_vector(31 downto 0);
+			clk 			: in std_logic;
+			rst_l 		: in std_logic;
+			pc_in 		: in std_logic_vector(9  downto 0);
+			inst_in 		: in std_logic_vector(31 downto 0);
+			RS1 			: in std_logic_vector(31 downto 0);
+			RS2 			: in std_logic_vector(31 downto 0);
+			Imm 			: in std_logic_vector(31 downto 0);
+			inst_ME		: in std_logic_vector(31 downto 0);
+			data_ME		: in std_logic_vector(31 downto 0);
+			inst_WE		: in std_logic_vector(31 downto 0);
+			data1_WE		: in std_logic_vector(31 downto 0);
+			data2_WE		: in std_logic_vector(31 downto 0);
 			--OUTPUT
-			ALU_out 	: out std_logic_vector(31 downto 0);
-			br_taken : out std_logic;
-			br_addr  : out std_logic_vector(9 downto 0);
-			RS2_out 	: out std_logic_vector(31 downto 0);
-			inst_out : out std_logic_vector(31 downto 0)
+			ALU_out 		: out std_logic_vector(31 downto 0);
+			br_taken 	: out std_logic;
+			br_addr  	: out std_logic_vector(9 downto 0);
+			RS2_out 		: out std_logic_vector(31 downto 0);
+			inst_out 	: out std_logic_vector(31 downto 0)
 		);
 	end component;
 
 	component Memory is
 		port (
 			--INPUT
-			clk 		: in std_logic;
-			rst_l 	: in std_logic;
-			ALU_in 	: in std_logic_vector(31 downto 0);
-			RS2_in	: in std_logic_vector(31 downto 0);
-			inst_in	: in std_logic_vector(31 downto 0);
+			clk 			: in std_logic;
+			rst_l 		: in std_logic;
+			ALU_in 		: in std_logic_vector(31 downto 0);
+			RS2_in		: in std_logic_vector(31 downto 0);
+			inst_in		: in std_logic_vector(31 downto 0);
+			br_taken 	: in std_logic;
 			--OUTPUT
-			data_out	: out std_logic_vector(31 downto 0);
-			inst_out : out std_logic_vector(31 downto 0)
+			data_out		: out std_logic_vector(31 downto 0);
+			inst_out 	: out std_logic_vector(31 downto 0);
+			inst_ME		: out std_logic_vector(31 downto 0);
+			data_ME		: out std_logic_vector(31 downto 0);
+			inst_WE		: out std_logic_vector(31 downto 0);
+			data1_WE		: out std_logic_vector(31 downto 0);
+			data2_WE		: out std_logic_vector(31 downto 0)
 		);
 	end component;
 
@@ -111,6 +122,15 @@ architecture behavioral of DLX is
 	-- Between memory and decode
 	signal wb_data			: std_logic_vector(31 downto 0);
 	signal wb_inst 		: std_logic_vector(31 downto 0);
+
+	-- Between memory and execute
+	signal inst_ME			: std_logic_vector(31 downto 0);
+	signal data_ME			: std_logic_vector(31 downto 0);
+
+	-- Between writeback and execute
+	signal inst_WE			: std_logic_vector(31 downto 0);
+	signal data1_WE		: std_logic_vector(31 downto 0);
+	signal data2_WE		: std_logic_vector(31 downto 0);
 
 begin
 
@@ -153,6 +173,11 @@ begin
 		RS1 => rs1_DE,
 		RS2 => rs2_DE,
 		Imm => imm_DE,
+		inst_ME => inst_ME,
+		data_ME => data_ME,	
+		inst_WE => inst_WE,	
+		data1_WE => data1_WE,	
+		data2_WE => data2_WE,
 		--OUTPUT
 		ALU_out => alu_EM,
 		br_taken => br_taken,
@@ -169,9 +194,15 @@ begin
 		ALU_in => alu_EM,
 		RS2_in => rs2_EM,
 		inst_in => inst_EM,
+		br_taken => br_taken,
 		--OUTPUT
 		data_out	=> wb_data,
-		inst_out => wb_inst
+		inst_out => wb_inst,
+		inst_ME => inst_ME,
+		data_ME => data_ME,	
+		inst_WE => inst_WE,	
+		data1_WE => data1_WE,	
+		data2_WE => data2_WE	
 	);
 
 end architecture behavioral;
