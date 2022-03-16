@@ -67,8 +67,8 @@ architecture behavioral of DLX is
 			RS2 			: in std_logic_vector(31 downto 0);
 			Imm 			: in std_logic_vector(31 downto 0);
 			MemWr_data	: in std_logic_vector(31 downto 0);
-			OP_EM			: in std_logic_vector(31 downto 0);
-			OP_MW			: in std_logic_vector(31 downto 0);
+--			OP_EM			: in std_logic_vector(31 downto 0);
+--			OP_MW			: in std_logic_vector(31 downto 0);
 			--OUTPUT
 			stall			: out std_logic;
 			ALU_out 		: inout std_logic_vector(31 downto 0);
@@ -161,8 +161,8 @@ begin
 		RS2 => rs2_DE,
 		Imm => imm_DE,
 		MemWr_data => wb_data,
-		OP_EM => inst_EM,
-		OP_MW	=> wb_inst,
+--		OP_EM => inst_EM,
+--		OP_MW	=> wb_inst,
 		--OUTPUT
 		stall => stall,
 		ALU_out => alu_EM,

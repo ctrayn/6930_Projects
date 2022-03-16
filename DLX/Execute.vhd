@@ -23,8 +23,8 @@ entity Execute is
 		RS2 			: in std_logic_vector(31 downto 0);
 		Imm 			: in std_logic_vector(31 downto 0);
 		MemWr_data	: in std_logic_vector(31 downto 0);		--Memory/WriteBack Loaded Word
-		OP_EM			: in std_logic_vector(31 downto 0);
-		OP_MW			: in std_logic_vector(31 downto 0);
+--		OP_EM			: in std_logic_vector(31 downto 0);
+--		OP_MW			: in std_logic_vector(31 downto 0);
 		--OUTPUT
 		stall			: out std_logic;
 		ALU_out 		: inout std_logic_vector(31 downto 0);
@@ -46,6 +46,8 @@ architecture behavioral of Execute is
 	signal stall1, stall2, stall_out : std_logic := '0';
 	signal inst_output					: std_logic_vector(31 downto 0);
 	signal true								: std_logic;
+	signal OP_EM, OP_MW					: std_logic_vector(31 downto 0);
+	signal Curr_Rd							: std_logic_vector(4 downto 0);
 
 begin
 	stall_out <= stall1 or stall2;
@@ -53,6 +55,7 @@ begin
 	inst_out <= inst_output;
 	
 	Curr_OP   <= inst_in(31 downto 26);		--This cycle
+	Curr_Rd	 <= inst_in(25 downto 21);
 	Curr_RS1	 <= inst_in(20 downto 16);
 	Curr_RS2	 <= inst_in(15 downto 11);
 	ExMem_OP	 <= OP_EM(31 downto 26);		--Last cycles Curr_OP
@@ -68,12 +71,12 @@ begin
 			if rst_l = '0' then
 				RS2_out  <= (others => '0');
 				inst_output <= (others => '0');
-			elsif stall_out = '1' then
-				inst_output <= inst_output;
 			else
 				RS2_out  <= RS2;
 				inst_output <= inst_in;
 			end if;
+			OP_EM <= inst_in;
+			OP_MW <= OP_EM;
 		end if;
 	end process;
 	
@@ -81,19 +84,23 @@ begin
 	process(clk, ALU_out, RS1, MemWr_data, ExMem_RS1) begin
 		if rising_edge(clk) then
 			if (MemWr_OP = OP_LW) and (unsigned(MemWr_Rd) = unsigned(ExMem_RS1)) then
+				true <= '0';
 				stall1 <= '0';
 				InOne <= MemWr_data;
 			elsif (ExMem_OP = OP_LW) and (ExMem_Rd = Curr_RS1) then
+				true <= '0';
 				stall1 <= '1';
 				InOne <= (others => '0');
 --			elsif OpIsRegister(Curr_OP) = '1' and (ExMem_Rd = Curr_RS1) then
 			elsif (ExMem_Rd = Curr_RS1) and (unsigned(Curr_OP) >= unsigned(OP_ADD)) and (unsigned(Curr_OP) <= unsigned(OP_SNEI)) then
+				true <= '1';
 				stall1 <= '0';
 				InOne <= ALU_out;
 --			elsif(MemWr_Rd = Curr_RS1) then
 --				stall1 <= '1';
 --				InOne <= MemWr_data;				--two cycles ago alu output
 			else
+				true <= '0';
 				stall1 <= '0';
 				InOne <= RS1;
 			end if;
@@ -104,19 +111,15 @@ begin
 	process(clk, Imm, RS2, Curr_OP, ALU_out) begin
 		if rising_edge(clk) then
 			if OpIsRegister(Curr_OP) = '1' and (ExMem_Rd = Curr_RS2) then
-				true <= '0';
 				stall2 <= '0';
 				InTwo <= ALU_out;
 			elsif (MemWr_OP = OP_LW) and (MemWr_Rd = ExMem_RS2) then
-				true <= '0';
 				stall2 <= '1';
 				InTwo <= MemWr_data;
 			elsif OpIsImmediate(Curr_OP) = '1' then
-				true <= '1';
 				stall2 <= '0';
 				InTwo <= Imm;
 			else
-				true <= '0';
 				stall2 <= '0';
 				InTwo <= RS2;
 			end if;

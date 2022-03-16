@@ -47,6 +47,7 @@ architecture behavioral of Decode is
 	signal im_val		: std_logic_vector(15 downto 0);
 	signal pc_output	: std_logic_vector(9 downto 0);
 	signal inst_output: std_logic_vector(31 downto 0);
+	signal inst_old_out: std_logic_vector(31 downto 0);
 	signal true 		: std_logic_vector(1 downto 0);
 	signal wb_rs1		: std_logic_vector(4 downto 0);
 	signal wb_OP		: std_logic_vector(5 downto 0);
