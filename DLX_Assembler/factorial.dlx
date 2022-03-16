@@ -16,9 +16,6 @@ f	1	0
 	NOP
 ; The second factor for multiplication
 	ADDI	R2, R1, 0
-	NOP
-	NOP
-	NOP
 ; Main loop
 main
 ; Subtract 1 from R2 and set R3 back to 0
