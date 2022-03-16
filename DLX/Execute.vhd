@@ -37,6 +37,7 @@ end entity Execute;
 
 architecture behavioral of Execute is
 	signal opcode 	: std_logic_vector(5 downto 0);
+	signal InOne	: std_logic_vector(31 downto 0);
 	signal InTwo	: std_logic_vector(31 downto 0);
 	signal branch	: std_logic := '0';
 
@@ -65,13 +66,18 @@ begin
 		end if;
 	end process;
 
-	--MUX RS2 and Imm
-	process(clk, Imm, RS2, opcode) begin
-		if OpIsImmediate(opcode) = '1' then
+	--MUX 1
+	process(opcode, Imm, RS2) begin
+		if OpIsImmediate(opcode) = '1' or opcode = OP_SW then
 			InTwo <= Imm;
 		else
 			InTwo <= RS2;
 		end if;
+	end process;
+
+	--MUX 2
+	process(RS1) begin
+		InOne <= RS1;
 	end process;
 
 	--ALU process
@@ -84,7 +90,7 @@ begin
 
 				when OP_SW =>
 					branch <= '0';
-					ALU_out <= std_logic_vector(unsigned(RS1) + unsigned(Imm));
+					ALU_out <= std_logic_vector(unsigned(InOne) + unsigned(InTwo));
 
 				when OP_J =>
 					branch <= '1';
@@ -99,12 +105,12 @@ begin
 
 				when OP_JR =>
 					branch <= '1';
-					br_addr <= RS1(9 downto 0);
+					br_addr <= InOne(9 downto 0);
 					ALU_out <= ZEROS;
 
 				when OP_JALR =>
 					branch <= '1';
-					br_addr <= RS1(9 downto 0);
+					br_addr <= InOne(9 downto 0);
 					ALU_out(31 downto 10) <= (others => '0');
 					ALU_out(9 downto 0) <= pc_in;
 
@@ -128,45 +134,45 @@ begin
 
 				when OP_ADD | OP_ADDI =>
 					branch <= '0';
-					ALU_out <= std_logic_vector(signed(RS1) + signed(InTwo));
+					ALU_out <= std_logic_vector(signed(InOne) + signed(InTwo));
 
 				when OP_ADDU | OP_ADDUI =>
 					branch <= '0';
-					ALU_out <= std_logic_vector(unsigned(RS1) + unsigned(InTwo));
+					ALU_out <= std_logic_vector(unsigned(InOne) + unsigned(InTwo));
 
 				when OP_SUB | OP_SUBI =>
 					branch <= '0';
-					ALU_out <= std_logic_vector(signed(RS1) - signed(InTwo));
+					ALU_out <= std_logic_vector(signed(InOne) - signed(InTwo));
 
 				when OP_SUBU | OP_SUBUI =>
 					branch <= '0';
-					ALU_out <= std_logic_vector(unsigned(RS1) - unsigned(InTwo));
+					ALU_out <= std_logic_vector(unsigned(InOne) - unsigned(InTwo));
 
 				when OP_AND | OP_ANDI =>
 					branch <= '0';
-					ALU_out <= RS1 and InTwo;
+					ALU_out <= InOne and InTwo;
 
 				when OP_OR | OP_ORI =>
 					branch <= '0';
-					ALU_out <= RS1 or InTwo;
+					ALU_out <= InOne or InTwo;
 
 				when OP_XOR | OP_XORI =>
 					branch <= '0';
-					ALU_out <= RS1 xor InTwo;
+					ALU_out <= InOne xor InTwo;
 
 				when OP_SLL | OP_SLLI =>
 					branch <= '0';
-					ALU_out <= std_logic_vector(shift_left(unsigned(RS1), to_integer(unsigned(InTwo))));
+					ALU_out <= std_logic_vector(shift_left(unsigned(InOne), to_integer(unsigned(InTwo))));
 
 				when OP_SRL | OP_SRLI =>
-					ALU_out <= std_logic_vector(shift_right(unsigned(RS1), to_integer(unsigned(InTwo))));
+					ALU_out <= std_logic_vector(shift_right(unsigned(InOne), to_integer(unsigned(InTwo))));
 
 				when OP_SRA | OP_SRAI =>
-					ALU_out <= std_logic_vector(shift_right(signed(RS1), to_integer(unsigned(InTwo))));
+					ALU_out <= std_logic_vector(shift_right(signed(InOne), to_integer(unsigned(InTwo))));
 
 				when OP_SLT | OP_SLTI =>
 					branch <= '0';
-					if (signed(RS1) < signed(InTwo)) then
+					if (signed(InOne) < signed(InTwo)) then
 						ALU_out <= X"00000001";
 					else
 						ALU_out <= X"00000000";
@@ -174,7 +180,7 @@ begin
 
 				when OP_SLTU | OP_SLTUI =>
 					branch <= '0';
-					if (unsigned(RS1) < unsigned(InTwo)) then
+					if (unsigned(InOne) < unsigned(InTwo)) then
 						ALU_out <= X"00000001";
 					else
 						ALU_out <= X"00000000";
@@ -182,7 +188,7 @@ begin
 
 				when OP_SGT | OP_SGTI =>
 					branch <= '0';
-					if (signed(RS1) > signed(InTwo)) then
+					if (signed(InOne) > signed(InTwo)) then
 						ALU_out <= X"00000001";
 					else
 						ALU_out <= X"00000000";
@@ -190,7 +196,7 @@ begin
 
 				when OP_SGTU | OP_SGTUI =>
 					branch <= '0';
-					if (unsigned(RS1) > unsigned(InTwo)) then
+					if (unsigned(InOne) > unsigned(InTwo)) then
 						ALU_out <= X"00000001";
 					else
 						ALU_out <= X"00000000";
@@ -198,7 +204,7 @@ begin
 
 				when OP_SLE | OP_SLEI =>
 					branch <= '0';
-					if (signed(RS1) <= signed(InTwo)) then
+					if (signed(InOne) <= signed(InTwo)) then
 						ALU_out <= X"00000001";
 					else
 						ALU_out <= X"00000000";
@@ -206,7 +212,7 @@ begin
 
 				when OP_SLEU | OP_SLEUI =>
 					branch <= '0';
-					if (unsigned(RS1) <= unsigned(InTwo)) then
+					if (unsigned(InOne) <= unsigned(InTwo)) then
 						ALU_out <= X"00000001";
 					else
 						ALU_out <= X"00000000";
@@ -214,7 +220,7 @@ begin
 
 				when OP_SGE | OP_SGEI =>
 					branch <= '0';
-					if (signed(RS1) >= signed(InTwo)) then
+					if (signed(InOne) >= signed(InTwo)) then
 						ALU_out <= X"00000001";
 					else
 						ALU_out <= X"00000000";
@@ -222,7 +228,7 @@ begin
 
 				when OP_SGEU | OP_SGEUI =>
 					branch <= '0';
-					if (unsigned(RS1) >= unsigned(InTwo)) then
+					if (unsigned(InOne) >= unsigned(InTwo)) then
 						ALU_out <= X"00000001";
 					else
 						ALU_out <= X"00000000";
@@ -230,7 +236,7 @@ begin
 
 				when OP_SEQ | OP_SEQI =>
 					branch <= '0';
-					if (unsigned(RS1) = unsigned(InTwo)) then
+					if (unsigned(InOne) = unsigned(InTwo)) then
 						ALU_out <= X"00000001";
 					else
 						ALU_out <= X"00000000";
@@ -238,7 +244,7 @@ begin
 
 				when OP_SNE | OP_SNEI =>
 					branch <= '0';
-					if (unsigned(RS1) = unsigned(InTwo)) then
+					if (unsigned(InOne) = unsigned(InTwo)) then
 						ALU_out <= X"00000000";
 					else
 						ALU_out <= X"00000001";
@@ -247,7 +253,6 @@ begin
 				when others =>
 					branch <= '0';
 					ALU_out <= ZEROS;
-
 			end case;
 		end if;
 	end process;
