@@ -7,6 +7,11 @@
 n	1	15
 f	1	0
 
+; Constants
+.const
+s1	16	"Your output is: "
+s2	4	"Test"
+
 ; The code
 .text
 	NOP
@@ -58,6 +63,12 @@ f	1	0
 	JR	R25
 	JAL	done
 	JALR	R26
+	PCH	R30
+	PCH	R15
+	PD	R1
+	PDU	R2
+	PD	R2
+	PDU	R3
 
 done
 	J	done
