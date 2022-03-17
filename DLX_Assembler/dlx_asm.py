@@ -38,7 +38,7 @@ def run():
     line = source_file.readline()
     i = 0
     variable = {}
-    while line.strip("\t") != ".const\n":
+    while line.strip("\t") != ".const\n" and line.strip("\t") != ".text\n":
         if (';' in line) or (line.strip("\t").strip(" ") == ".data\n") or (line.strip("\t").strip(" ") == "\n"):  # Skip lines
             pass
         else:
@@ -66,10 +66,10 @@ def run():
             line = line.strip("\n")
             data = line.strip(" ").split("\t")
             chars = data[2].strip('"')
-            data_file.write(f"{i:>03X} : {int(data[1]):>08X}; --{data[0]} len: {data[1]}\n")
+            data_file.write(f"{i:>03X} : {int(data[1]):>08X};  --{data[0]} len: {data[1]}\n")
             i += 1
             for char in chars:
-                data_file.write(f"{i:>03X} : {ord(char):>08X}; --{data[0]} {char}\n")
+                data_file.write(f"{i:>03X} : {ord(char):>08X};  --{data[0]} {char}\n")
                 i += 1
 
         line = source_file.readline()
