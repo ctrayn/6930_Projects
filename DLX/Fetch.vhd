@@ -33,8 +33,7 @@ architecture behavioral of Fetch is
 		);
 	end component;
 
-	signal pc_in_loc		: std_logic_vector(9 downto 0):= B"0000000000";
-	signal pc_out_loc 	: std_logic_vector(9 downto 0):= B"0000000000";
+	signal pc 				: std_logic_vector(9 downto 0):= B"0000000000";
 	signal inst_mem		: std_logic_vector(31 downto 0);
 	signal was_branch1	: std_logic := '0';
 	signal was_branch2	: std_logic := '0';
@@ -52,7 +51,7 @@ begin
 	
 	-- Instance of our instruction memory
 	im : InstructionMemory port map (
-		address => pc_out_loc,
+		address => pc,
 		clock => clk,
 		q => inst_mem
 	);
@@ -79,8 +78,6 @@ begin
 		end if;
 	end process;
 
-	pc_in_loc <= std_logic_vector(unsigned(pc_out_loc) + 1);
-
 	-- Make sure to block any outputs when branch is taken
 	process(inst_mem, br_taken) begin
 		if br_taken = '0' and was_branch1 = '0' and was_branch2 = '0' then
@@ -104,15 +101,13 @@ begin
 		if rising_edge(clk) then
 			-- PC logic
 			if rst_l = '0' then
-				pc_out_loc <= B"0000000000";
-				pc_out <= pc_out_loc;
+				pc <= B"0000000000";
 			elsif br_taken = '1' then
-				pc_out_loc <= br_addr;
-				pc_out <= pc_out_loc;
+				pc <= br_addr;
 			else
-				pc_out_loc <= pc_in_loc;
-				pc_out <= pc_out_loc;
+				pc <= std_logic_vector(unsigned(pc) + 1);
 			end if;
+			pc_out <= pc;
 		end if;
 	end process;
 end architecture behavioral;
