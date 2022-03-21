@@ -46,15 +46,25 @@ architecture behavioral of Fetch is
 	signal last_opcode	: std_logic_vector(5 downto 0) := (others => '0');
 	signal last_rd 		: std_logic_vector(4 downto 0) := (others => '0');
 	signal stall			: std_logic	:= '0';
+	signal mem_clk			: std_logic := '0';
+	signal mem_pc			: std_logic_vector(9 downto 0):= B"0000000000";
 
 begin
 	
 	-- Instance of our instruction memory
 	im : InstructionMemory port map (
-		address => pc,
-		clock => clk,
+		address => mem_pc,
+		clock => mem_clk,
 		q => inst_mem
 	);
+	process(clk) begin
+		if falling_edge(clk) and stall = '1' then
+			mem_clk <= '1';
+		else
+			mem_clk <= clk;
+		end if;
+		mem_pc <= pc;
+	end process;
 
 	-- Open assignments
 	this_opcode <= inst_mem(31 downto 26);
@@ -65,11 +75,7 @@ begin
 
 	-- Create a bubble
 	process(last_opcode, this_opcode, last_rd, this_Rs1, this_Rs2) begin
-		if OpIsALU(last_opcode) = '1' and OpIsTypeA(this_opcode) = '1' and last_rd = this_Rs1 then
-			stall <= '1';
-		elsif last_opcode = OP_LW and OpIsTypeA(this_opcode) = '1' and last_rd = this_Rs1 then
-			stall <= '1';
-		elsif OpIsALU(last_opcode) = '1' and OpIsTypeB(this_opcode) = '1' and last_rd = this_Rs2 then
+		if last_opcode = OP_LW and OpIsTypeA(this_opcode) = '1' and last_rd = this_Rs1 then
 			stall <= '1';
 		elsif last_opcode = OP_LW and OpIsTypeB(this_opcode) = '1' and last_rd = this_Rs2 then
 			stall <= '1';
@@ -79,8 +85,8 @@ begin
 	end process;
 
 	-- Make sure to block any outputs when branch is taken
-	process(inst_mem, br_taken) begin
-		if br_taken = '0' and was_branch1 = '0' and was_branch2 = '0' then
+	process(inst_mem, br_taken, was_branch1, was_branch2, stall) begin
+		if br_taken = '0' and was_branch1 = '0' and was_branch2 = '0' and stall = '0' then
 			inst_out <= inst_mem;
 		else
 			inst_out <= (others => '0');
@@ -102,12 +108,19 @@ begin
 			-- PC logic
 			if rst_l = '0' then
 				pc <= B"0000000000";
+				pc_out <= pc;
+			elsif stall = '1' then
+				if	br_taken = '1' then
+					pc <= br_addr;
+				else
+					pc <= pc;
+				end if;
 			elsif br_taken = '1' then
 				pc <= br_addr;
 			else
 				pc <= std_logic_vector(unsigned(pc) + 1);
+				pc_out <= pc;
 			end if;
-			pc_out <= pc;
 		end if;
 	end process;
 end architecture behavioral;
