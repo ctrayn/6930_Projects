@@ -43,6 +43,7 @@ architecture behavioral of Execute is
 	-- This stage
 	signal IdEx_Rs1		: std_logic_vector(4 downto 0);
 	signal IdEx_Rs2		: std_logic_vector(4 downto 0);
+	signal IdEx_rd 		: std_logic_vector(4 downto 0); 
 	-- Memory stage
 	signal ExMem_inst 	: std_logic_vector(31 downto 0);
 	signal ExMem_opcode	: std_logic_vector(5 downto 0); 
@@ -58,6 +59,7 @@ begin
 	-- This stage
 	IdEx_Rs1 <= inst_in(20 downto 16);
 	IdEx_Rs2 <= inst_in(15 downto 11);
+	IdEx_rd <= inst_in(25 downto 21);
 	-- Memory stage
 	inst_out <= ExMem_inst;
 	ExMem_opcode <= ExMem_inst(31 downto 26);
@@ -89,10 +91,17 @@ begin
 
 	--MUX 1
 	process(ExMem_opcode, opcode, ExMem_rd, IdEx_Rs1, ALU_result, MemWb_opcode, MemWb_rd, MemWb_data, RS1) begin
+		-- Regular ALU type stuff
 		if OpIsALU(ExMem_opcode) = '1' and OpIsTypeA(opcode) = '1' and ExMem_rd = IdEx_Rs1 then
 			InOne <= ALU_result;
 		elsif OpIsALU(MemWb_opcode) = '1' and OpIsTypeA(opcode) = '1' and MemWb_rd = IdEx_Rs1 then
 			InOne <= MemWb_data;
+		-- Branches need a special case
+		elsif OpIsALU(ExMem_opcode) = '1' and OpIsBranch(opcode) = '1' and ExMem_rd = IdEx_rd then
+			InOne <= ALU_result;
+		elsif OpIsALU(MemWb_opcode) = '1' and OpIsBranch(opcode) = '1' and MemWb_rd = IdEx_rd then
+			InOne <= MemWb_data;
+		-- Load word needs a special case
 		elsif MemWb_opcode = OP_LW and OpIsTypeA(opcode) = '1' and MemWb_rd = IdEx_Rs1 then
 			InOne <= MemWb_data;
 		else
@@ -150,7 +159,7 @@ begin
 					ALU_result(9 downto 0) <= pc_in;
 
 				when OP_BEQZ =>
-					if RS1 = ZEROS then
+					if InOne = ZEROS then
 						branch <= '1';
 					else
 						branch <= '0';
@@ -159,7 +168,7 @@ begin
 					ALU_result <= ZEROS;
 
 				when OP_BNEZ =>
-					if RS1 = ZEROS then
+					if InOne = ZEROS then
 						branch <= '0';
 					else
 						branch <= '1';
