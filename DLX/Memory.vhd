@@ -43,6 +43,7 @@ architecture behavioral of Memory is
 	signal ALU_out : std_logic_vector(31 downto 0) := (others => '0');
 	signal mem_out : std_logic_vector(31 downto 0) := (others => '0');
 	signal inst_wb	: std_logic_vector(31 downto 0);
+	signal data_wb	: std_logic_vector(31 downto 0);
 
 begin
 
@@ -55,17 +56,6 @@ begin
 		q => mem_out
 	);
 
-	-- Signals
-	inst_out <= inst_wb;
-
-	-- Sync process
-	process(clk) begin
-		if rising_edge(clk) then
-			ALU_out <= ALU_in;
-			inst_wb <= inst_in;
-		end if;
-	end process;
-
 	-- Async process. Write enable controol
 	process(inst_in) begin
 		if inst_in(31 downto 26) = OP_SW then
@@ -75,13 +65,27 @@ begin
 		end if;
 	end process;
 
-	-- Async process. Writeback data select
-	process(inst_wb, ALU_out, mem_out) begin
-		if inst_wb(31 downto 26) = OP_LW then
-			data_out <= mem_out;
-		else
-			data_out <= ALU_out;
+	-- Sync process
+	process(clk) begin
+		if rising_edge(clk) then
+				ALU_out <= ALU_in;
+				inst_wb <= inst_in;
 		end if;
+	end process;
+
+	-- Async process. Writeback data select
+	process(inst_in) begin
+		if inst_wb(31 downto 26) = OP_LW then
+			data_wb <= mem_out;
+		else
+			data_wb <= ALU_out;
+		end if;
+	end process;
+
+	-- Signals
+	process(inst_wb, data_wb) begin
+		inst_out <= inst_wb;
+		data_out <= data_wb;
 	end process;
 
 end architecture behavioral;
