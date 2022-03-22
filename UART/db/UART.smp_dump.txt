@@ -1,9 +1,23 @@
 
+State Machine - |UART|div_state
+Name div_state.DIVIDE div_state.WRITING div_state.UINT div_state.SINT div_state.CHAR div_state.READING div_state.WAITING 
+div_state.WAITING 0 0 0 0 0 0 0 
+div_state.READING 0 0 0 0 0 1 1 
+div_state.CHAR 0 0 0 0 1 0 1 
+div_state.SINT 0 0 0 1 0 0 1 
+div_state.UINT 0 0 1 0 0 0 1 
+div_state.WRITING 0 1 0 0 0 0 1 
+div_state.DIVIDE 1 0 0 0 0 0 1 
+
 State Machine - |UART|state
-Name state.DEB state.RxTx state.START 
-state.START 0 0 0 
-state.RxTx 0 1 1 
-state.DEB 1 0 1 
+Name state.DIVIDE state.WRITING state.UINT state.SINT state.CHAR state.READING state.WAITING 
+state.WAITING 0 0 0 0 0 0 0 
+state.READING 0 0 0 0 0 1 1 
+state.CHAR 0 0 0 0 1 0 1 
+state.SINT 0 0 0 1 0 0 1 
+state.UINT 0 0 1 0 0 0 1 
+state.WRITING 0 1 0 0 0 0 1 
+state.DIVIDE 1 0 0 0 0 0 1 
 
 State Machine - |UART|my_UART:dut|state_tx
 Name state_tx.DATA state_tx.START state_tx.IDLE 

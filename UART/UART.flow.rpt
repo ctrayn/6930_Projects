@@ -1,5 +1,5 @@
 Flow report for UART
-Tue Mar 15 15:24:23 2022
+Mon Mar 21 18:50:12 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -41,24 +41,24 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Tue Mar 15 15:24:23 2022       ;
+; Flow Status                        ; Successful - Mon Mar 21 18:50:04 2022       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; UART                                        ;
 ; Top-level Entity Name              ; UART                                        ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 134                                         ;
-;     Total combinational functions  ; 132                                         ;
-;     Dedicated logic registers      ; 66                                          ;
-; Total registers                    ; 66                                          ;
-; Total pins                         ; 5                                           ;
+; Total logic elements               ; 4,080 / 49,760 ( 8 % )                      ;
+;     Total combinational functions  ; 4,079 / 49,760 ( 8 % )                      ;
+;     Dedicated logic registers      ; 1,225 / 49,760 ( 2 % )                      ;
+; Total registers                    ; 1225                                        ;
+; Total pins                         ; 43 / 360 ( 12 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 0                                           ;
-; UFM blocks                         ; 0                                           ;
-; ADC blocks                         ; 0                                           ;
+; Total memory bits                  ; 25,344 / 1,677,312 ( 2 % )                  ;
+; Embedded Multiplier 9-bit elements ; 0 / 288 ( 0 % )                             ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
+; UFM blocks                         ; 0 / 1 ( 0 % )                               ;
+; ADC blocks                         ; 0 / 2 ( 0 % )                               ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/15/2022 15:24:15 ;
+; Start date & time ; 03/21/2022 18:48:51 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; UART                ;
 +-------------------+---------------------+
@@ -78,7 +78,11 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 110341701272771.164737945542950        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 123719800733538.164791013117908        ; --            ; --          ; --         ;
+; MISC_FILE                           ; UART_FIFO.cmp                          ; --            ; --          ; --         ;
+; MISC_FILE                           ; TX_FIFO.cmp                            ; --            ; --          ; --         ;
+; MISC_FILE                           ; U_DIV.cmp                              ; --            ; --          ; --         ;
+; MISC_FILE                           ; UnsignedDiv.cmp                        ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
 ; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
@@ -90,24 +94,33 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 434 MB              ; 00:00:19                           ;
-; Total                ; 00:00:08     ; --                      ; --                  ; 00:00:19                           ;
+; Analysis & Synthesis ; 00:00:30     ; 1.0                     ; 4886 MB             ; 00:00:36                           ;
+; Fitter               ; 00:00:34     ; 1.6                     ; 6280 MB             ; 00:01:21                           ;
+; Assembler            ; 00:00:04     ; 1.0                     ; 4700 MB             ; 00:00:03                           ;
+; Timing Analyzer      ; 00:00:06     ; 2.7                     ; 4949 MB             ; 00:00:11                           ;
+; Total                ; 00:01:14     ; --                      ; --                  ; 00:02:11                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+------------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                          ;
-+----------------------+------------------+---------------+---------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name       ; OS Version    ; Processor type ;
-+----------------------+------------------+---------------+---------------+----------------+
-; Analysis & Synthesis ; jonah-macbook    ; Manjaro Linux ; Manjaro Linux ; x86_64         ;
-+----------------------+------------------+---------------+---------------+----------------+
++------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                    ;
++----------------------+------------------+------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++----------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis ; PassmorePower    ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; PassmorePower    ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; PassmorePower    ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; PassmorePower    ; Windows 10 ; 10.0       ; x86_64         ;
++----------------------+------------------+------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off UART -c UART
+quartus_fit --read_settings_files=off --write_settings_files=off UART -c UART
+quartus_asm --read_settings_files=off --write_settings_files=off UART -c UART
+quartus_sta UART -c UART
 
 
 
