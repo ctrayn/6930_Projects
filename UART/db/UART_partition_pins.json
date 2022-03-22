@@ -8,15 +8,163 @@
 					"strict" : false
 				},
 				{
-					"name" : "KEY[0]",
+					"name" : "UART_empty",
 					"strict" : false
 				},
 				{
-					"name" : "ADC_CLK_10",
+					"name" : "UART_full",
 					"strict" : false
 				},
 				{
-					"name" : "RX",
+					"name" : "rst_l",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "wr_req",
+					"strict" : false
+				},
+				{
+					"name" : "d_tx[33]",
+					"strict" : false
+				},
+				{
+					"name" : "d_tx[32]",
+					"strict" : false
+				},
+				{
+					"name" : "d_tx[35]",
+					"strict" : false
+				},
+				{
+					"name" : "d_tx[5]",
+					"strict" : false
+				},
+				{
+					"name" : "d_tx[6]",
+					"strict" : false
+				},
+				{
+					"name" : "d_tx[4]",
+					"strict" : false
+				},
+				{
+					"name" : "d_tx[7]",
+					"strict" : false
+				},
+				{
+					"name" : "d_tx[2]",
+					"strict" : false
+				},
+				{
+					"name" : "d_tx[1]",
+					"strict" : false
+				},
+				{
+					"name" : "d_tx[0]",
+					"strict" : false
+				},
+				{
+					"name" : "d_tx[3]",
+					"strict" : false
+				},
+				{
+					"name" : "d_tx[31]",
+					"strict" : false
+				},
+				{
+					"name" : "d_tx[30]",
+					"strict" : false
+				},
+				{
+					"name" : "d_tx[29]",
+					"strict" : false
+				},
+				{
+					"name" : "d_tx[28]",
+					"strict" : false
+				},
+				{
+					"name" : "d_tx[27]",
+					"strict" : false
+				},
+				{
+					"name" : "d_tx[26]",
+					"strict" : false
+				},
+				{
+					"name" : "d_tx[25]",
+					"strict" : false
+				},
+				{
+					"name" : "d_tx[24]",
+					"strict" : false
+				},
+				{
+					"name" : "d_tx[23]",
+					"strict" : false
+				},
+				{
+					"name" : "d_tx[22]",
+					"strict" : false
+				},
+				{
+					"name" : "d_tx[21]",
+					"strict" : false
+				},
+				{
+					"name" : "d_tx[20]",
+					"strict" : false
+				},
+				{
+					"name" : "d_tx[19]",
+					"strict" : false
+				},
+				{
+					"name" : "d_tx[18]",
+					"strict" : false
+				},
+				{
+					"name" : "d_tx[17]",
+					"strict" : false
+				},
+				{
+					"name" : "d_tx[16]",
+					"strict" : false
+				},
+				{
+					"name" : "d_tx[15]",
+					"strict" : false
+				},
+				{
+					"name" : "d_tx[14]",
+					"strict" : false
+				},
+				{
+					"name" : "d_tx[13]",
+					"strict" : false
+				},
+				{
+					"name" : "d_tx[12]",
+					"strict" : false
+				},
+				{
+					"name" : "d_tx[11]",
+					"strict" : false
+				},
+				{
+					"name" : "d_tx[10]",
+					"strict" : false
+				},
+				{
+					"name" : "d_tx[9]",
+					"strict" : false
+				},
+				{
+					"name" : "d_tx[8]",
 					"strict" : false
 				}
 			]

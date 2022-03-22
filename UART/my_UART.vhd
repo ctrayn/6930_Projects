@@ -11,6 +11,7 @@ entity my_UART is
 		tx 		: out std_logic := '1';
 		rx 		: in  std_logic;
 		
+		rdreq		: out std_logic;
 		tx_flag 	: in  std_logic;
 		rx_flag 	: out std_logic := '0';
 		data_tx 	: in  unsigned(7 downto 0);
@@ -102,17 +103,21 @@ begin
 	process (clk, rst_l) begin
 		if rising_edge(clk) then
 			if (rst_l = '0') then
-				sync_tx <= x"0000";
+				sync_tx <= X"0000";
 				position_tx <= x"0";
 				tx <= '1';
+				rdreq <= '0';
 			elsif state_tx = IDLE and next_state_tx = START then
 				sync_tx <= x"0000";
 				position_tx <= x"0";
 				tx <= '0';
+				rdreq <= '1';
 			elsif state_tx = START and next_state_tx = START then
 				sync_tx <= sync_tx + 1;
+				rdreq <= '0';
 			elsif state_tx = START and next_state_tx = DATA then
 				sync_tx <= x"0000";
+				rdreq <= '0';
 			elsif state_tx = DATA and next_state_tx = DATA then
 				-- Sync bits with the sender
 				if sync_tx = clk_div then
@@ -123,8 +128,10 @@ begin
 					tx <= data_tx(to_integer(position_tx));
 					sync_tx <= sync_tx + 1;
 				end if;
+				rdreq <= '0';
 			elsif state_tx = DATA and next_state_tx = IDLE then
 				tx <= '1';
+				rdreq <= '0';
 			end if;
 			state_tx <= next_state_tx;
 		end if;
