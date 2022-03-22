@@ -32,10 +32,6 @@ set_location_assignment PIN_A7 -to KEY1
 #============================================================
 # RX and TX for UART
 #============================================================
-set_location_assignment PIN_AB2 -to RX
-set_location_assignment PIN_AA2 -to TX
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to RX
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TX
 
 #============================================================
 # Footer
@@ -48,6 +44,21 @@ set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 
+
+#============================================================
+# UART
+#============================================================
+set_location_assignment PIN_AB2 -to RX
+set_location_assignment PIN_AA2 -to TX
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to RX
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TX
+set_global_assignment -name VHDL_FILE UnsignedDiv.vhd
+set_global_assignment -name VHDL_FILE UART_TB.vhd
+set_global_assignment -name VHDL_FILE UART_FIFO.vhd
+set_global_assignment -name VHDL_FILE UART.vhd
+set_global_assignment -name VHDL_FILE U_DIV.vhd
+set_global_assignment -name VHDL_FILE TX_FIFO.vhd
+set_global_assignment -name VHDL_FILE my_UART.vhd
 set_global_assignment -name VHDL_FILE Memory.vhd
 set_global_assignment -name QIP_FILE DataMemory.qip
 set_global_assignment -name VHDL_FILE Execute.vhd

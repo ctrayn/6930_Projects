@@ -63,9 +63,19 @@ package common is
 	constant OP_JR		: std_logic_vector(5 downto 0) := B"101110";
 	constant OP_JAL	: std_logic_vector(5 downto 0) := B"101111";
 	constant OP_JALR	: std_logic_vector(5 downto 0) := B"110000";
+	constant OP_PCH	: std_logic_vector(5 downto 0) := B"110001";
+	constant OP_PD		: std_logic_vector(5 downto 0) := B"110010";
+	constant	OP_PDU	: std_logic_vector(5 downto 0) := B"110011";
 
 	constant ONES		: std_logic_vector(31 downto 0) := X"FFFFFFFF";
 	constant ZEROS 	: std_logic_vector(31 downto 0) := X"00000000";
+	
+	constant char_t 	: std_logic_vector(1 downto 0) := B"00";
+	constant int_t  	: std_logic_vector(1 downto 0) := B"01";
+	constant uint_t 	: std_logic_vector(1 downto 0) := B"10";
+	constant MINUS	 	: std_logic_vector(7 downto 0) := X"2D";
+	constant TEN	 	: std_logic_vector(4 downto 0) := B"01010";
+	constant ASCII  	: unsigned(7 downto 0) := X"30";
 
 	-- Function 1: returns '1' if function is a store function
 	function OpIsWriteBack (opcode : std_logic_vector(5 downto 0)) return std_logic;
