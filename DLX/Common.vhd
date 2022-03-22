@@ -82,6 +82,7 @@ package common is
 	function OpIsImmediate (opcode : std_logic_vector(5 downto 0)) return std_logic;
 	function OpIsALU (opcode : std_logic_vector(5 downto 0)) return std_logic;
 	function OpIsBranch (opcode : std_logic_vector(5 downto 0)) return std_logic;
+	function OpIsUART (opcode : std_logic_vector(5 downto 0)) return std_logic;
 	function OpIsTypeA (opcode : std_logic_vector(5 downto 0)) return std_logic;
 	function OpIsTypeB (opcode : std_logic_vector(5 downto 0)) return std_logic;
 end common;
@@ -118,13 +119,22 @@ package body common is
 	end OpIsALU;
 
 	function OpIsBranch (opcode : std_logic_vector(5 downto 0)) return std_logic is
-		begin
-			if (unsigned(opcode) = unsigned(OP_BEQZ)) or (unsigned(opcode) <= unsigned(OP_BNEZ)) then
-				return '1';
-			else
-				return '0';
-			end if;
-		end OpIsBranch;
+	begin
+		if (unsigned(opcode) = unsigned(OP_BEQZ)) or (unsigned(opcode) = unsigned(OP_BNEZ)) then
+			return '1';
+		else
+			return '0';
+		end if;
+	end OpIsBranch;
+
+	function OpIsUART (opcode : std_logic_vector(5 downto 0)) return std_logic is
+	begin
+		if (unsigned(opcode) >= unsigned(OP_PCH)) or (unsigned(opcode) <= unsigned(OP_PDU)) then
+			return '1';
+		else
+			return '0';
+		end if;
+	end OpIsUART;
 
 	function OpIsTypeA (opcode : std_logic_vector(5 downto 0)) return std_logic is
 	begin

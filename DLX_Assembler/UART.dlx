@@ -1,0 +1,14 @@
+; Program for calculating the factorial of a number.
+; By: Jonah Boe & Calvin Passmore
+; For ECE 6930 - Utah State University
+
+; The data
+.data
+n	1	1
+
+; The code
+.text
+	ADDI	R1, R0, 65
+	ADDI	R2, R0, 66
+	PCH	R1
+	PCH	R2
