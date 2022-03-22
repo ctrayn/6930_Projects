@@ -48,5 +48,8 @@ radix define States {
 6'b101110 "JR",
 6'b101111 "JAL",
 6'b110000 "JALR",
+6'b110001 "PCH",
+6'b110010 "PD",
+6'b110011 "PDU",
 -default hex
 }

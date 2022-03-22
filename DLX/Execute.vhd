@@ -53,6 +53,7 @@ architecture behavioral of Execute is
 	-- Writeback stage
 	signal MemWb_opcode	: std_logic_vector(5 downto 0); 
 	signal MemWb_rd 		: std_logic_vector(4 downto 0);
+	signal true				: std_logic;
 
 begin
 	-- Open signals
@@ -96,18 +97,24 @@ begin
 		-- Regular ALU type stuff
 		if OpIsALU(ExMem_opcode) = '1' and OpIsTypeA(opcode) = '1' and ExMem_rd = IdEx_Rs1 then
 			InOne <= ALU_result;
+			true <= '0';
 		elsif OpIsALU(MemWb_opcode) = '1' and OpIsTypeA(opcode) = '1' and MemWb_rd = IdEx_Rs1 then
 			InOne <= MemWb_data;
+			true <= '0';
 		-- Branches need a special case
 		elsif OpIsALU(ExMem_opcode) = '1' and OpIsBranch(opcode) = '1' and ExMem_rd = IdEx_rd then
 			InOne <= ALU_result;
+			true <= '0';
 		elsif OpIsALU(MemWb_opcode) = '1' and OpIsBranch(opcode) = '1' and MemWb_rd = IdEx_rd then
 			InOne <= MemWb_data;
+			true <= '0';
 		-- Load word needs a special case
 		elsif MemWb_opcode = OP_LW and OpIsTypeA(opcode) = '1' and MemWb_rd = IdEx_Rs1 then
 			InOne <= MemWb_data;
+			true <= '0';
 		else
 			InOne <= RS1;
+			true <= '1';
 		end if;
 	end process;
 

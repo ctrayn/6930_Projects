@@ -1,5 +1,5 @@
 EDA Netlist Writer report for DLX
-Tue Mar 22 11:29:41 2022
+Tue Mar 22 12:07:07 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -35,7 +35,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                                       ;
 +---------------------------+------------------------------------------------------+
-; EDA Netlist Writer Status ; No Output Files Generated - Tue Mar 22 11:29:41 2022 ;
+; EDA Netlist Writer Status ; No Output Files Generated - Tue Mar 22 12:07:07 2022 ;
 ; Revision Name             ; DLX                                                  ;
 ; Top-level Entity Name     ; DLX                                                  ;
 ; Family                    ; MAX 10                                               ;
@@ -48,14 +48,14 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Tue Mar 22 11:29:41 2022
+    Info: Processing started: Tue Mar 22 12:07:06 2022
 Info: Command: quartus_eda --read_settings_files=on --write_settings_files=off DLX -c DLX
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Warning (199027): Can't generate output files. Specify command-line options to generate output files, or update EDA tool settings using GUI or Tcl script.
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 603 megabytes
-    Info: Processing ended: Tue Mar 22 11:29:41 2022
-    Info: Elapsed time: 00:00:00
-    Info: Total CPU time (on all processors): 00:00:00
+    Info: Peak virtual memory: 4653 megabytes
+    Info: Processing ended: Tue Mar 22 12:07:10 2022
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:01
 
 

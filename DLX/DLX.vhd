@@ -17,7 +17,7 @@ entity DLX is
 		--MAX10_CLK1_50		: in  std_logic;
 		--MAX10_CLK2_50		: in  std_logic;
 		RST_L					: in  std_logic;
-		--KEY1					: in  std_logic;
+--		KEY 					: in std_logic_vector(1 downto 0);
 		RX						: in  std_logic;
 		-- OUTPUT
 		TX						: out std_logic
