@@ -38,9 +38,8 @@ def run():
     line = source_file.readline()
     i = 0
     variable = {}
-    while line.strip("\t") != ".text\n":
-        if (';' in line) or (line.strip("\t") == ".data\n") or (line == "\n") or (line == ".data\n")\
-                or (line == " \n") or (line == "\t\n"):  # Skip lines
+    while line.strip("\t") != ".const\n" and line.strip("\t") != ".text\n":
+        if (';' in line) or (line.strip("\t").strip(" ") == ".data\n") or (line.strip("\t").strip(" ") == "\n"):  # Skip lines
             pass
         else:
             line = line.strip("\n")
@@ -59,6 +58,23 @@ def run():
                 i += 1
 
         line = source_file.readline()
+
+    while line.strip("\t") != ".text\n":
+        if (';' in line) or (line.strip("\t").strip(" ") == ".const\n") or (line.strip("\t").strip(" ") == "\n"): # Skip lines
+            pass
+        else:
+            line = line.strip("\n")
+            data = line.strip(" ").split("\t")
+            chars = data[2].strip('"')
+            data_file.write(f"{i:>03X} : {int(data[1]):>08X};  --{data[0]} len: {data[1]}\n")
+            i += 1
+            for char in chars:
+                data_file.write(f"{i:>03X} : {ord(char):>08X};  --{data[0]} {char}\n")
+                i += 1
+
+        line = source_file.readline()
+
+
 
     data_file.write(" \nEND; ")
     data_file.close()
@@ -304,13 +320,32 @@ def run():
                 rs1 = bin(int(rs1))[2:]
                 word += f"{rs1:>010}"
                 word += "0" * 16
+            elif items[0] == "PCH":
+                word = "110001"
+                rs1 = items[1].replace('R', '')
+                rs1 = bin(int(rs1))[2:]
+                word += f"{rs1:>010}"
+                word += "0" * 16
+            elif items[0] == "PD":
+                word = "110010"
+                rs1 = items[1].replace('R', '')
+                rs1 = bin(int(rs1))[2:]
+                word += f"{rs1:>010}"
+                word += "0" * 16
+            elif items[0] == "PDU":
+                word = "110011"
+                rs1 = items[1].replace('R', '')
+                rs1 = bin(int(rs1))[2:]
+                word += f"{rs1:>010}"
+                word += "0" * 16
+
             else:
                 print(f"\033[31m Error: OPCODE '{items[0]}' unknown \033[0m")
 
             for label in labels:                # Replace labels with their absolute addresses
                 if label in items[1].split(", "):
                     items[1] = items[1].replace(f"{label}", f"{labels[label]:>03X}")
-            code_file.write(f"{i:>03X} : {int(word,2):>08X};  --{items[0]:<5}{items[1]} \n")
+            code_file.write(f"{i:>03X} : {int(word,2):>08X};  --{items[0]:<5} {items[1]} \n")
             i += 1
         line = source_file.readline()
 
