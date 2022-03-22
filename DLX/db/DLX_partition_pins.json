@@ -2,7 +2,20 @@
 	"partitions" : [
 		{
 			"name" : "Top",
-			"pins" : []
+			"pins" : [
+				{
+					"name" : "TX",
+					"strict" : false
+				},
+				{
+					"name" : "RST_L",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_CLK_10",
+					"strict" : false
+				}
+			]
 		}
 	]
 }

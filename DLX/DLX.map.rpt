@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DLX
-Tue Mar 22 09:09:02 2022
+Tue Mar 22 11:28:18 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -10,7 +10,40 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. State Machine - |DLX|UART:duart|div_state
+ 11. State Machine - |DLX|UART:duart|state
+ 12. State Machine - |DLX|UART:duart|my_UART:dut|state_tx
+ 13. State Machine - |DLX|UART:duart|my_UART:dut|state_rx
+ 14. Registers Removed During Synthesis
+ 15. Removed Registers Triggering Further Register Optimizations
+ 16. General Register Statistics
+ 17. Inverted Register Statistics
+ 18. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 19. Source assignments for UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|altsyncram_k2m1:FIFOram
+ 20. Source assignments for UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|altsyncram_85m1:FIFOram
+ 21. Source assignments for Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component|altsyncram_c7t3:auto_generated
+ 22. Source assignments for Memory:mem|DataMemory:dm|altsyncram:altsyncram_component|altsyncram_4is3:auto_generated
+ 23. Parameter Settings for User Entity Instance: UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component
+ 24. Parameter Settings for User Entity Instance: UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component
+ 25. Parameter Settings for User Entity Instance: UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component
+ 26. Parameter Settings for User Entity Instance: UART:duart|UnsignedDiv:udiv|lpm_divide:LPM_DIVIDE_component
+ 27. Parameter Settings for User Entity Instance: Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component
+ 28. Parameter Settings for User Entity Instance: Memory:mem|DataMemory:dm|altsyncram:altsyncram_component
+ 29. scfifo Parameter Settings by Entity Instance
+ 30. altsyncram Parameter Settings by Entity Instance
+ 31. Port Connectivity Checks: "Fetch:fet|InstructionMemory:im"
+ 32. Port Connectivity Checks: "UART:duart|UnsignedDiv:udiv"
+ 33. Port Connectivity Checks: "UART:duart|U_DIV:div"
+ 34. Port Connectivity Checks: "UART:duart|my_UART:dut"
+ 35. Port Connectivity Checks: "UART:duart"
+ 36. Post-Synthesis Netlist Statistics for Top Partition
+ 37. Elapsed Time Per Partition
+ 38. Analysis & Synthesis Messages
 
 
 
@@ -37,22 +70,22 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Tue Mar 22 09:09:02 2022           ;
+; Analysis & Synthesis Status        ; Successful - Tue Mar 22 11:28:18 2022       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; DLX                                         ;
 ; Top-level Entity Name              ; DLX                                         ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
-; UFM blocks                         ; N/A until Partition Merge                   ;
-; ADC blocks                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 8,519                                       ;
+;     Total combinational functions  ; 7,483                                       ;
+;     Dedicated logic registers      ; 2,546                                       ;
+; Total registers                    ; 2546                                        ;
+; Total pins                         ; 4                                           ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 90,880                                      ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -63,7 +96,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; 10M50DAF484C7G     ;                    ;
 ; Top-level entity name                                            ; DLX                ; DLX                ;
-; Family name                                                      ; MAX 10 FPGA        ; Cyclone V          ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
 ; Enable compact report table                                      ; Off                ; Off                ;
@@ -147,15 +180,761 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 12          ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.1%      ;
+;     Processor 4            ;   0.1%      ;
 +----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                           ;
++----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                                             ; Library ;
++----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------------------------------------------+---------+
+; UnsignedDiv.vhd                  ; yes             ; User Wizard-Generated File             ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UnsignedDiv.vhd             ;         ;
+; UART_FIFO.vhd                    ; yes             ; User Wizard-Generated File             ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART_FIFO.vhd               ;         ;
+; UART.vhd                         ; yes             ; User VHDL File                         ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART.vhd                    ;         ;
+; U_DIV.vhd                        ; yes             ; User Wizard-Generated File             ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/U_DIV.vhd                   ;         ;
+; TX_FIFO.vhd                      ; yes             ; User Wizard-Generated File             ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/TX_FIFO.vhd                 ;         ;
+; my_UART.vhd                      ; yes             ; User VHDL File                         ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/my_UART.vhd                 ;         ;
+; Memory.vhd                       ; yes             ; User VHDL File                         ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Memory.vhd                  ;         ;
+; DataMemory.vhd                   ; yes             ; User Wizard-Generated File             ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DataMemory.vhd              ;         ;
+; Execute.vhd                      ; yes             ; User VHDL File                         ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Execute.vhd                 ;         ;
+; InstructionMemory.vhd            ; yes             ; User Wizard-Generated File             ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/InstructionMemory.vhd       ;         ;
+; Fetch.vhd                        ; yes             ; User VHDL File                         ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Fetch.vhd                   ;         ;
+; Decode.vhd                       ; yes             ; User VHDL File                         ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Decode.vhd                  ;         ;
+; DLX.vhd                          ; yes             ; User VHDL File                         ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd                     ;         ;
+; Common.vhd                       ; yes             ; User VHDL File                         ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Common.vhd                  ;         ;
+; scfifo.tdf                       ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/scfifo.tdf                                               ;         ;
+; a_regfifo.inc                    ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/a_regfifo.inc                                            ;         ;
+; a_dpfifo.inc                     ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/a_dpfifo.inc                                             ;         ;
+; a_i2fifo.inc                     ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/a_i2fifo.inc                                             ;         ;
+; a_fffifo.inc                     ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/a_fffifo.inc                                             ;         ;
+; a_f2fifo.inc                     ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/a_f2fifo.inc                                             ;         ;
+; aglobal201.inc                   ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc                                           ;         ;
+; db/scfifo_4921.tdf               ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/scfifo_4921.tdf          ;         ;
+; db/a_dpfifo_bf21.tdf             ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_dpfifo_bf21.tdf        ;         ;
+; db/a_fefifo_18e.tdf              ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_fefifo_18e.tdf         ;         ;
+; db/cntr_537.tdf                  ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/cntr_537.tdf             ;         ;
+; db/altsyncram_k2m1.tdf           ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/altsyncram_k2m1.tdf      ;         ;
+; db/cntr_p2b.tdf                  ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/cntr_p2b.tdf             ;         ;
+; db/scfifo_rr11.tdf               ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/scfifo_rr11.tdf          ;         ;
+; db/a_dpfifo_2221.tdf             ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_dpfifo_2221.tdf        ;         ;
+; db/a_fefifo_sae.tdf              ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_fefifo_sae.tdf         ;         ;
+; db/cntr_f47.tdf                  ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/cntr_f47.tdf             ;         ;
+; db/altsyncram_85m1.tdf           ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/altsyncram_85m1.tdf      ;         ;
+; db/cntr_34b.tdf                  ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/cntr_34b.tdf             ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf                                           ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/abs_divider.inc                                          ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/sign_div_unsign.inc                                      ;         ;
+; db/lpm_divide_0uo.tdf            ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/lpm_divide_0uo.tdf       ;         ;
+; db/sign_div_unsign_j7h.tdf       ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/sign_div_unsign_j7h.tdf  ;         ;
+; db/alt_u_div_she.tdf             ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/alt_u_div_she.tdf        ;         ;
+; db/add_sub_t3c.tdf               ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/add_sub_t3c.tdf          ;         ;
+; db/add_sub_u3c.tdf               ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/add_sub_u3c.tdf          ;         ;
+; db/lpm_divide_6cp.tdf            ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/lpm_divide_6cp.tdf       ;         ;
+; db/sign_div_unsign_plh.tdf       ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/sign_div_unsign_plh.tdf  ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf                                           ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                    ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/lpm_mux.inc                                              ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/lpm_decode.inc                                           ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/a_rdenreg.inc                                            ;         ;
+; altrom.inc                       ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/altrom.inc                                               ;         ;
+; altram.inc                       ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/altram.inc                                               ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/altdpram.inc                                             ;         ;
+; db/altsyncram_c7t3.tdf           ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/altsyncram_c7t3.tdf      ;         ;
+; ./Programs/factorial_code.mif    ; yes             ; Auto-Found Memory Initialization File  ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Programs/factorial_code.mif ;         ;
+; db/altsyncram_4is3.tdf           ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/altsyncram_4is3.tdf      ;         ;
+; ./Programs/factorial_data.mif    ; yes             ; Auto-Found Memory Initialization File  ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Programs/factorial_data.mif ;         ;
++----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++----------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                    ;
++---------------------------------------------+------------------+
+; Resource                                    ; Usage            ;
++---------------------------------------------+------------------+
+; Estimated Total logic elements              ; 8,519            ;
+;                                             ;                  ;
+; Total combinational functions               ; 7483             ;
+; Logic element usage by number of LUT inputs ;                  ;
+;     -- 4 input functions                    ; 5598             ;
+;     -- 3 input functions                    ; 1144             ;
+;     -- <=2 input functions                  ; 741              ;
+;                                             ;                  ;
+; Logic elements by mode                      ;                  ;
+;     -- normal mode                          ; 7092             ;
+;     -- arithmetic mode                      ; 391              ;
+;                                             ;                  ;
+; Total registers                             ; 2546             ;
+;     -- Dedicated logic registers            ; 2546             ;
+;     -- I/O registers                        ; 0                ;
+;                                             ;                  ;
+; I/O pins                                    ; 4                ;
+; Total memory bits                           ; 90880            ;
+;                                             ;                  ;
+; Embedded Multiplier 9-bit elements          ; 0                ;
+;                                             ;                  ;
+; Maximum fan-out node                        ; ADC_CLK_10~input ;
+; Maximum fan-out                             ; 2622             ;
+; Total fan-out                               ; 36499            ;
+; Average fan-out                             ; 3.60             ;
++---------------------------------------------+------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                               ;
++----------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                                      ; Entity Name         ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |DLX                                         ; 7483 (1)            ; 2546 (0)                  ; 90880       ; 0          ; 0            ; 0       ; 0         ; 4    ; 0            ; 0          ; |DLX                                                                                                                                                     ; DLX                 ; work         ;
+;    |Decode:dec|                              ; 2332 (2332)         ; 1156 (1156)               ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Decode:dec                                                                                                                                          ; Decode              ; work         ;
+;    |Execute:exc|                             ; 1081 (1081)         ; 89 (89)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Execute:exc                                                                                                                                         ; Execute             ; work         ;
+;    |Fetch:fet|                               ; 59 (59)             ; 33 (33)                   ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Fetch:fet                                                                                                                                           ; Fetch               ; work         ;
+;       |InstructionMemory:im|                 ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Fetch:fet|InstructionMemory:im                                                                                                                      ; InstructionMemory   ; work         ;
+;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component                                                                                      ; altsyncram          ; work         ;
+;             |altsyncram_c7t3:auto_generated| ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component|altsyncram_c7t3:auto_generated                                                       ; altsyncram_c7t3     ; work         ;
+;    |Memory:mem|                              ; 36 (36)             ; 43 (43)                   ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Memory:mem                                                                                                                                          ; Memory              ; work         ;
+;       |DataMemory:dm|                        ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Memory:mem|DataMemory:dm                                                                                                                            ; DataMemory          ; work         ;
+;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Memory:mem|DataMemory:dm|altsyncram:altsyncram_component                                                                                            ; altsyncram          ; work         ;
+;             |altsyncram_4is3:auto_generated| ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Memory:mem|DataMemory:dm|altsyncram:altsyncram_component|altsyncram_4is3:auto_generated                                                             ; altsyncram_4is3     ; work         ;
+;    |UART:duart|                              ; 3974 (3567)         ; 1225 (1139)               ; 25344       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart                                                                                                                                          ; UART                ; work         ;
+;       |TX_FIFO:fifo_tx|                      ; 46 (0)              ; 35 (0)                    ; 16384       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|TX_FIFO:fifo_tx                                                                                                                          ; TX_FIFO             ; work         ;
+;          |scfifo:scfifo_component|           ; 46 (0)              ; 35 (0)                    ; 16384       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component                                                                                                  ; scfifo              ; work         ;
+;             |scfifo_rr11:auto_generated|     ; 46 (0)              ; 35 (0)                    ; 16384       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated                                                                       ; scfifo_rr11         ; work         ;
+;                |a_dpfifo_2221:dpfifo|        ; 46 (0)              ; 35 (0)                    ; 16384       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo                                                  ; a_dpfifo_2221       ; work         ;
+;                   |a_fefifo_sae:fifo_state|  ; 24 (13)             ; 13 (2)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|a_fefifo_sae:fifo_state                          ; a_fefifo_sae        ; work         ;
+;                      |cntr_f47:count_usedw|  ; 11 (11)             ; 11 (11)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|a_fefifo_sae:fifo_state|cntr_f47:count_usedw     ; cntr_f47            ; work         ;
+;                   |altsyncram_85m1:FIFOram|  ; 0 (0)               ; 0 (0)                     ; 16384       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|altsyncram_85m1:FIFOram                          ; altsyncram_85m1     ; work         ;
+;                   |cntr_34b:rd_ptr_count|    ; 11 (11)             ; 11 (11)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|cntr_34b:rd_ptr_count                            ; cntr_34b            ; work         ;
+;                   |cntr_34b:wr_ptr|          ; 11 (11)             ; 11 (11)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|cntr_34b:wr_ptr                                  ; cntr_34b            ; work         ;
+;       |UART_FIFO:fifo_uart|                  ; 35 (0)              ; 26 (0)                    ; 8960        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UART_FIFO:fifo_uart                                                                                                                      ; UART_FIFO           ; work         ;
+;          |scfifo:scfifo_component|           ; 35 (0)              ; 26 (0)                    ; 8960        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component                                                                                              ; scfifo              ; work         ;
+;             |scfifo_4921:auto_generated|     ; 35 (0)              ; 26 (0)                    ; 8960        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated                                                                   ; scfifo_4921         ; work         ;
+;                |a_dpfifo_bf21:dpfifo|        ; 35 (0)              ; 26 (0)                    ; 8960        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo                                              ; a_dpfifo_bf21       ; work         ;
+;                   |a_fefifo_18e:fifo_state|  ; 19 (11)             ; 10 (2)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|a_fefifo_18e:fifo_state                      ; a_fefifo_18e        ; work         ;
+;                      |cntr_537:count_usedw|  ; 8 (8)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|a_fefifo_18e:fifo_state|cntr_537:count_usedw ; cntr_537            ; work         ;
+;                   |altsyncram_k2m1:FIFOram|  ; 0 (0)               ; 0 (0)                     ; 8960        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|altsyncram_k2m1:FIFOram                      ; altsyncram_k2m1     ; work         ;
+;                   |cntr_p2b:rd_ptr_count|    ; 8 (8)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|cntr_p2b:rd_ptr_count                        ; cntr_p2b            ; work         ;
+;                   |cntr_p2b:wr_ptr|          ; 8 (8)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|cntr_p2b:wr_ptr                              ; cntr_p2b            ; work         ;
+;       |U_DIV:div|                            ; 272 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|U_DIV:div                                                                                                                                ; U_DIV               ; work         ;
+;          |lpm_divide:LPM_DIVIDE_component|   ; 272 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component                                                                                                ; lpm_divide          ; work         ;
+;             |lpm_divide_0uo:auto_generated|  ; 272 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component|lpm_divide_0uo:auto_generated                                                                  ; lpm_divide_0uo      ; work         ;
+;                |sign_div_unsign_j7h:divider| ; 272 (32)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component|lpm_divide_0uo:auto_generated|sign_div_unsign_j7h:divider                                      ; sign_div_unsign_j7h ; work         ;
+;                   |alt_u_div_she:divider|    ; 240 (240)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component|lpm_divide_0uo:auto_generated|sign_div_unsign_j7h:divider|alt_u_div_she:divider                ; alt_u_div_she       ; work         ;
+;       |my_UART:dut|                          ; 54 (54)             ; 25 (25)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|my_UART:dut                                                                                                                              ; my_UART             ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                                        ;
++-------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-------------------------------+
+; Name                                                                                                                                      ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF                           ;
++-------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-------------------------------+
+; Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component|altsyncram_c7t3:auto_generated|ALTSYNCRAM                                  ; AUTO ; ROM              ; 1024         ; 32           ; --           ; --           ; 32768 ; ./Programs/factorial_code.mif ;
+; Memory:mem|DataMemory:dm|altsyncram:altsyncram_component|altsyncram_4is3:auto_generated|ALTSYNCRAM                                        ; AUTO ; Single Port      ; 1024         ; 32           ; --           ; --           ; 32768 ; ./Programs/factorial_data.mif ;
+; UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|altsyncram_85m1:FIFOram|ALTSYNCRAM     ; AUTO ; Simple Dual Port ; 2048         ; 8            ; 2048         ; 8            ; 16384 ; None                          ;
+; UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|altsyncram_k2m1:FIFOram|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 256          ; 36           ; 256          ; 36           ; 9216  ; None                          ;
++-------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                       ;
++--------+--------------+---------+--------------+--------------+-------------------------------------+-----------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                     ; IP Include File       ;
++--------+--------------+---------+--------------+--------------+-------------------------------------+-----------------------+
+; Altera ; ROM: 1-PORT  ; 20.1    ; N/A          ; N/A          ; |DLX|Fetch:fet|InstructionMemory:im ; InstructionMemory.vhd ;
+; Altera ; RAM: 1-PORT  ; 20.1    ; N/A          ; N/A          ; |DLX|Memory:mem|DataMemory:dm       ; DataMemory.vhd        ;
++--------+--------------+---------+--------------+--------------+-------------------------------------+-----------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |DLX|UART:duart|div_state                                                                                                           ;
++-------------------+------------------+-------------------+----------------+----------------+----------------+-------------------+-------------------+
+; Name              ; div_state.DIVIDE ; div_state.WRITING ; div_state.UINT ; div_state.SINT ; div_state.CHAR ; div_state.READING ; div_state.WAITING ;
++-------------------+------------------+-------------------+----------------+----------------+----------------+-------------------+-------------------+
+; div_state.WAITING ; 0                ; 0                 ; 0              ; 0              ; 0              ; 0                 ; 0                 ;
+; div_state.READING ; 0                ; 0                 ; 0              ; 0              ; 0              ; 1                 ; 1                 ;
+; div_state.CHAR    ; 0                ; 0                 ; 0              ; 0              ; 1              ; 0                 ; 1                 ;
+; div_state.SINT    ; 0                ; 0                 ; 0              ; 1              ; 0              ; 0                 ; 1                 ;
+; div_state.UINT    ; 0                ; 0                 ; 1              ; 0              ; 0              ; 0                 ; 1                 ;
+; div_state.WRITING ; 0                ; 1                 ; 0              ; 0              ; 0              ; 0                 ; 1                 ;
+; div_state.DIVIDE  ; 1                ; 0                 ; 0              ; 0              ; 0              ; 0                 ; 1                 ;
++-------------------+------------------+-------------------+----------------+----------------+----------------+-------------------+-------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------+
+; State Machine - |DLX|UART:duart|state                                                                               ;
++---------------+--------------+---------------+------------+------------+------------+---------------+---------------+
+; Name          ; state.DIVIDE ; state.WRITING ; state.UINT ; state.SINT ; state.CHAR ; state.READING ; state.WAITING ;
++---------------+--------------+---------------+------------+------------+------------+---------------+---------------+
+; state.WAITING ; 0            ; 0             ; 0          ; 0          ; 0          ; 0             ; 0             ;
+; state.READING ; 0            ; 0             ; 0          ; 0          ; 0          ; 1             ; 1             ;
+; state.CHAR    ; 0            ; 0             ; 0          ; 0          ; 1          ; 0             ; 1             ;
+; state.SINT    ; 0            ; 0             ; 0          ; 1          ; 0          ; 0             ; 1             ;
+; state.UINT    ; 0            ; 0             ; 1          ; 0          ; 0          ; 0             ; 1             ;
+; state.WRITING ; 0            ; 1             ; 0          ; 0          ; 0          ; 0             ; 1             ;
+; state.DIVIDE  ; 1            ; 0             ; 0          ; 0          ; 0          ; 0             ; 1             ;
++---------------+--------------+---------------+------------+------------+------------+---------------+---------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------+
+; State Machine - |DLX|UART:duart|my_UART:dut|state_tx            ;
++----------------+---------------+----------------+---------------+
+; Name           ; state_tx.DATA ; state_tx.START ; state_tx.IDLE ;
++----------------+---------------+----------------+---------------+
+; state_tx.IDLE  ; 0             ; 0              ; 0             ;
+; state_tx.START ; 0             ; 1              ; 1             ;
+; state_tx.DATA  ; 1             ; 0              ; 1             ;
++----------------+---------------+----------------+---------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------+
+; State Machine - |DLX|UART:duart|my_UART:dut|state_rx            ;
++----------------+---------------+----------------+---------------+
+; Name           ; state_rx.DATA ; state_rx.START ; state_rx.IDLE ;
++----------------+---------------+----------------+---------------+
+; state_rx.IDLE  ; 0             ; 0              ; 0             ;
+; state_rx.START ; 0             ; 1              ; 1             ;
+; state_rx.DATA  ; 1             ; 0              ; 1             ;
++----------------+---------------+----------------+---------------+
+
+
++-----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                ;
++------------------------------------------+----------------------------------------+
+; Register name                            ; Reason for Removal                     ;
++------------------------------------------+----------------------------------------+
+; Execute:exc|RS2_out[1..8]                ; Stuck at GND due to stuck port data_in ;
+; Execute:exc|data_tx[34,35]               ; Stuck at GND due to stuck port data_in ;
+; Execute:exc|RS2_out[0,9..31]             ; Stuck at GND due to stuck port data_in ;
+; Decode:dec|Imm[27..31]                   ; Merged with Decode:dec|Imm[26]         ;
+; UART:duart|my_UART:dut|sync_rx[3..15]    ; Lost fanout                            ;
+; UART:duart|my_UART:dut|position_rx[3]    ; Lost fanout                            ;
+; UART:duart|my_UART:dut|sync_rx[0..2]     ; Lost fanout                            ;
+; UART:duart|my_UART:dut|position_rx[0..2] ; Lost fanout                            ;
+; UART:duart|my_UART:dut|state_rx.IDLE     ; Lost fanout                            ;
+; UART:duart|my_UART:dut|state_rx.START    ; Lost fanout                            ;
+; UART:duart|my_UART:dut|state_rx.DATA     ; Lost fanout                            ;
+; UART:duart|div_state.DIVIDE              ; Merged with UART:duart|div_state.CHAR  ;
+; UART:duart|div_state.READING             ; Merged with UART:duart|div_state.CHAR  ;
+; UART:duart|div_state.WRITING             ; Merged with UART:duart|div_state.CHAR  ;
+; UART:duart|div_state.CHAR                ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 66   ;                                        ;
++------------------------------------------+----------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                ;
++---------------------------------------+--------------------+-------------------------------------------------------------------------------+
+; Register name                         ; Reason for Removal ; Registers Removed due to This Register                                        ;
++---------------------------------------+--------------------+-------------------------------------------------------------------------------+
+; UART:duart|my_UART:dut|position_rx[3] ; Lost Fanouts       ; UART:duart|my_UART:dut|sync_rx[2], UART:duart|my_UART:dut|sync_rx[1],         ;
+;                                       ;                    ; UART:duart|my_UART:dut|position_rx[1], UART:duart|my_UART:dut|position_rx[0], ;
+;                                       ;                    ; UART:duart|my_UART:dut|position_rx[2]                                         ;
+; UART:duart|my_UART:dut|sync_rx[15]    ; Lost Fanouts       ; UART:duart|my_UART:dut|sync_rx[0], UART:duart|my_UART:dut|state_rx.IDLE,      ;
+;                                       ;                    ; UART:duart|my_UART:dut|state_rx.DATA                                          ;
++---------------------------------------+--------------------+-------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 2546  ;
+; Number of registers using Synchronous Clear  ; 62    ;
+; Number of registers using Synchronous Load   ; 24    ;
+; Number of registers using Asynchronous Clear ; 1167  ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 1206  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; UART:duart|my_UART:dut|tx              ; 2       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DLX|Decode:dec|ram[0][21]                     ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DLX|UART:duart|my_UART:dut|position_tx[3]     ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DLX|UART:duart|my_UART:dut|position_rx[3]     ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |DLX|Fetch:fet|pc[4]                           ;
+; 5:1                ; 31 bits   ; 93 LEs        ; 31 LEs               ; 62 LEs                 ; Yes        ; |DLX|UART:duart|numer[17]                      ;
+; 6:1                ; 31 bits   ; 124 LEs       ; 62 LEs               ; 62 LEs                 ; Yes        ; |DLX|UART:duart|stk_ptr[8]                     ;
+; 7:1                ; 16 bits   ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |DLX|UART:duart|my_UART:dut|sync_tx[0]         ;
+; 7:1                ; 16 bits   ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |DLX|UART:duart|my_UART:dut|sync_rx[10]        ;
+; 18:1               ; 32 bits   ; 384 LEs       ; 32 LEs               ; 352 LEs                ; Yes        ; |DLX|Execute:exc|data_tx[23]                   ;
+; 64:1               ; 14 bits   ; 588 LEs       ; 14 LEs               ; 574 LEs                ; Yes        ; |DLX|Decode:dec|Imm[2]                         ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; Yes        ; |DLX|UART:duart|d_tx_temp[31]                  ;
+; 35:1               ; 10 bits   ; 230 LEs       ; 10 LEs               ; 220 LEs                ; Yes        ; |DLX|Execute:exc|br_addr[8]                    ;
+; 9:1                ; 5 bits    ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |DLX|Decode:dec|Imm[21]                        ;
+; 9:1                ; 28 bits   ; 168 LEs       ; 56 LEs               ; 112 LEs                ; Yes        ; |DLX|UART:duart|d_tx_temp[10]                  ;
+; 12:1               ; 4 bits    ; 32 LEs        ; 12 LEs               ; 20 LEs                 ; Yes        ; |DLX|Decode:dec|Imm[17]                        ;
+; 15:1               ; 32 bits   ; 320 LEs       ; 64 LEs               ; 256 LEs                ; Yes        ; |DLX|Decode:dec|RS1[15]                        ;
+; 68:1               ; 7 bits    ; 315 LEs       ; 49 LEs               ; 266 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[18]                ;
+; 67:1               ; 5 bits    ; 220 LEs       ; 35 LEs               ; 185 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[10]                ;
+; 67:1               ; 2 bits    ; 88 LEs        ; 18 LEs               ; 70 LEs                 ; Yes        ; |DLX|Execute:exc|ALU_result[8]                 ;
+; 69:1               ; 4 bits    ; 184 LEs       ; 32 LEs               ; 152 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[25]                ;
+; 68:1               ; 4 bits    ; 180 LEs       ; 32 LEs               ; 148 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[4]                 ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 20 LEs               ; 72 LEs                 ; Yes        ; |DLX|Execute:exc|ALU_result[29]                ;
+; 69:1               ; 2 bits    ; 92 LEs        ; 20 LEs               ; 72 LEs                 ; Yes        ; |DLX|Execute:exc|ALU_result[3]                 ;
+; 42:1               ; 32 bits   ; 896 LEs       ; 736 LEs              ; 160 LEs                ; Yes        ; |DLX|Decode:dec|RS2[18]                        ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |DLX|Execute:exc|InTwo[4]                      ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |DLX|UART:duart|my_UART:dut|next_state_tx.IDLE ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |DLX|UART:duart|my_UART:dut|next_state_rx.IDLE ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; No         ; |DLX|Execute:exc|InOne[0]                      ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |DLX|Decode:dec|Mux26                          ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |DLX|Decode:dec|Mux67                          ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |DLX|UART:duart|Selector1104                   ;
+; 9:1                ; 32 bits   ; 192 LEs       ; 32 LEs               ; 160 LEs                ; No         ; |DLX|Execute:exc|Add0                          ;
+; 129:1              ; 8 bits    ; 688 LEs       ; 688 LEs              ; 0 LEs                  ; No         ; |DLX|UART:duart|d_tx_out                       ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; No         ; |DLX|Execute:exc|Add0                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|altsyncram_k2m1:FIFOram ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                      ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                       ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|altsyncram_85m1:FIFOram ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                                  ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                                   ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Source assignments for Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component|altsyncram_c7t3:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                     ;
++---------------------------------+--------------------+------+--------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                      ;
++---------------------------------+--------------------+------+--------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Source assignments for Memory:mem|DataMemory:dm|altsyncram:altsyncram_component|altsyncram_4is3:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                               ;
++---------------------------------+--------------------+------+--------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                ;
++---------------------------------+--------------------+------+--------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component ;
++-------------------------+-------------+-------------------------------------------------------------+
+; Parameter Name          ; Value       ; Type                                                        ;
++-------------------------+-------------+-------------------------------------------------------------+
+; AUTO_CARRY_CHAINS       ; ON          ; AUTO_CARRY                                                  ;
+; IGNORE_CARRY_BUFFERS    ; OFF         ; IGNORE_CARRY                                                ;
+; AUTO_CASCADE_CHAINS     ; ON          ; AUTO_CASCADE                                                ;
+; IGNORE_CASCADE_BUFFERS  ; OFF         ; IGNORE_CASCADE                                              ;
+; lpm_width               ; 36          ; Signed Integer                                              ;
+; LPM_NUMWORDS            ; 256         ; Signed Integer                                              ;
+; LPM_WIDTHU              ; 8           ; Signed Integer                                              ;
+; LPM_SHOWAHEAD           ; OFF         ; Untyped                                                     ;
+; UNDERFLOW_CHECKING      ; ON          ; Untyped                                                     ;
+; OVERFLOW_CHECKING       ; ON          ; Untyped                                                     ;
+; ALLOW_RWCYCLE_WHEN_FULL ; OFF         ; Untyped                                                     ;
+; ADD_RAM_OUTPUT_REGISTER ; OFF         ; Untyped                                                     ;
+; ALMOST_FULL_VALUE       ; 0           ; Untyped                                                     ;
+; ALMOST_EMPTY_VALUE      ; 0           ; Untyped                                                     ;
+; ENABLE_ECC              ; FALSE       ; Untyped                                                     ;
+; USE_EAB                 ; ON          ; Untyped                                                     ;
+; MAXIMIZE_SPEED          ; 5           ; Untyped                                                     ;
+; DEVICE_FAMILY           ; MAX 10      ; Untyped                                                     ;
+; OPTIMIZE_FOR_SPEED      ; 5           ; Untyped                                                     ;
+; CBXI_PARAMETER          ; scfifo_4921 ; Untyped                                                     ;
++-------------------------+-------------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component ;
++-------------------------+-------------+---------------------------------------------------------+
+; Parameter Name          ; Value       ; Type                                                    ;
++-------------------------+-------------+---------------------------------------------------------+
+; AUTO_CARRY_CHAINS       ; ON          ; AUTO_CARRY                                              ;
+; IGNORE_CARRY_BUFFERS    ; OFF         ; IGNORE_CARRY                                            ;
+; AUTO_CASCADE_CHAINS     ; ON          ; AUTO_CASCADE                                            ;
+; IGNORE_CASCADE_BUFFERS  ; OFF         ; IGNORE_CASCADE                                          ;
+; lpm_width               ; 8           ; Signed Integer                                          ;
+; LPM_NUMWORDS            ; 2048        ; Signed Integer                                          ;
+; LPM_WIDTHU              ; 11          ; Signed Integer                                          ;
+; LPM_SHOWAHEAD           ; OFF         ; Untyped                                                 ;
+; UNDERFLOW_CHECKING      ; ON          ; Untyped                                                 ;
+; OVERFLOW_CHECKING       ; ON          ; Untyped                                                 ;
+; ALLOW_RWCYCLE_WHEN_FULL ; OFF         ; Untyped                                                 ;
+; ADD_RAM_OUTPUT_REGISTER ; OFF         ; Untyped                                                 ;
+; ALMOST_FULL_VALUE       ; 0           ; Untyped                                                 ;
+; ALMOST_EMPTY_VALUE      ; 0           ; Untyped                                                 ;
+; ENABLE_ECC              ; FALSE       ; Untyped                                                 ;
+; USE_EAB                 ; ON          ; Untyped                                                 ;
+; MAXIMIZE_SPEED          ; 5           ; Untyped                                                 ;
+; DEVICE_FAMILY           ; MAX 10      ; Untyped                                                 ;
+; OPTIMIZE_FOR_SPEED      ; 5           ; Untyped                                                 ;
+; CBXI_PARAMETER          ; scfifo_rr11 ; Untyped                                                 ;
++-------------------------+-------------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component ;
++------------------------+----------------+---------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                    ;
++------------------------+----------------+---------------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Signed Integer                                          ;
+; LPM_WIDTHD             ; 5              ; Signed Integer                                          ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                                 ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                 ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                 ;
+; CBXI_PARAMETER         ; lpm_divide_0uo ; Untyped                                                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                          ;
++------------------------+----------------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: UART:duart|UnsignedDiv:udiv|lpm_divide:LPM_DIVIDE_component ;
++------------------------+----------------+----------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                           ;
++------------------------+----------------+----------------------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Signed Integer                                                 ;
+; LPM_WIDTHD             ; 5              ; Signed Integer                                                 ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                        ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                        ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                        ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                        ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                        ;
+; CBXI_PARAMETER         ; lpm_divide_6cp ; Untyped                                                        ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                        ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                        ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                   ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                 ;
++------------------------+----------------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component ;
++------------------------------------+-------------------------------+----------------------------------------+
+; Parameter Name                     ; Value                         ; Type                                   ;
++------------------------------------+-------------------------------+----------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                             ; Untyped                                ;
+; AUTO_CARRY_CHAINS                  ; ON                            ; AUTO_CARRY                             ;
+; IGNORE_CARRY_BUFFERS               ; OFF                           ; IGNORE_CARRY                           ;
+; AUTO_CASCADE_CHAINS                ; ON                            ; AUTO_CASCADE                           ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                           ; IGNORE_CASCADE                         ;
+; WIDTH_BYTEENA                      ; 1                             ; Untyped                                ;
+; OPERATION_MODE                     ; ROM                           ; Untyped                                ;
+; WIDTH_A                            ; 32                            ; Signed Integer                         ;
+; WIDTHAD_A                          ; 10                            ; Signed Integer                         ;
+; NUMWORDS_A                         ; 1024                          ; Signed Integer                         ;
+; OUTDATA_REG_A                      ; CLOCK0                        ; Untyped                                ;
+; ADDRESS_ACLR_A                     ; NONE                          ; Untyped                                ;
+; OUTDATA_ACLR_A                     ; NONE                          ; Untyped                                ;
+; WRCONTROL_ACLR_A                   ; NONE                          ; Untyped                                ;
+; INDATA_ACLR_A                      ; NONE                          ; Untyped                                ;
+; BYTEENA_ACLR_A                     ; NONE                          ; Untyped                                ;
+; WIDTH_B                            ; 1                             ; Signed Integer                         ;
+; WIDTHAD_B                          ; 1                             ; Signed Integer                         ;
+; NUMWORDS_B                         ; 0                             ; Signed Integer                         ;
+; INDATA_REG_B                       ; CLOCK1                        ; Untyped                                ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                        ; Untyped                                ;
+; RDCONTROL_REG_B                    ; CLOCK1                        ; Untyped                                ;
+; ADDRESS_REG_B                      ; CLOCK1                        ; Untyped                                ;
+; OUTDATA_REG_B                      ; UNREGISTERED                  ; Untyped                                ;
+; BYTEENA_REG_B                      ; CLOCK1                        ; Untyped                                ;
+; INDATA_ACLR_B                      ; NONE                          ; Untyped                                ;
+; WRCONTROL_ACLR_B                   ; NONE                          ; Untyped                                ;
+; ADDRESS_ACLR_B                     ; NONE                          ; Untyped                                ;
+; OUTDATA_ACLR_B                     ; NONE                          ; Untyped                                ;
+; RDCONTROL_ACLR_B                   ; NONE                          ; Untyped                                ;
+; BYTEENA_ACLR_B                     ; NONE                          ; Untyped                                ;
+; WIDTH_BYTEENA_A                    ; 1                             ; Signed Integer                         ;
+; WIDTH_BYTEENA_B                    ; 1                             ; Signed Integer                         ;
+; RAM_BLOCK_TYPE                     ; AUTO                          ; Untyped                                ;
+; BYTE_SIZE                          ; 8                             ; Signed Integer                         ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                     ; Untyped                                ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ          ; Untyped                                ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ          ; Untyped                                ;
+; INIT_FILE                          ; ./Programs/factorial_code.mif ; Untyped                                ;
+; INIT_FILE_LAYOUT                   ; PORT_A                        ; Untyped                                ;
+; MAXIMUM_DEPTH                      ; 0                             ; Signed Integer                         ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                        ; Untyped                                ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                        ; Untyped                                ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                        ; Untyped                                ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                        ; Untyped                                ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN               ; Untyped                                ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN               ; Untyped                                ;
+; ENABLE_ECC                         ; FALSE                         ; Untyped                                ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                         ; Untyped                                ;
+; WIDTH_ECCSTATUS                    ; 3                             ; Signed Integer                         ;
+; DEVICE_FAMILY                      ; MAX 10                        ; Untyped                                ;
+; CBXI_PARAMETER                     ; altsyncram_c7t3               ; Untyped                                ;
++------------------------------------+-------------------------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Memory:mem|DataMemory:dm|altsyncram:altsyncram_component ;
++------------------------------------+-------------------------------+----------------------------------+
+; Parameter Name                     ; Value                         ; Type                             ;
++------------------------------------+-------------------------------+----------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                             ; Untyped                          ;
+; AUTO_CARRY_CHAINS                  ; ON                            ; AUTO_CARRY                       ;
+; IGNORE_CARRY_BUFFERS               ; OFF                           ; IGNORE_CARRY                     ;
+; AUTO_CASCADE_CHAINS                ; ON                            ; AUTO_CASCADE                     ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                           ; IGNORE_CASCADE                   ;
+; WIDTH_BYTEENA                      ; 1                             ; Untyped                          ;
+; OPERATION_MODE                     ; SINGLE_PORT                   ; Untyped                          ;
+; WIDTH_A                            ; 32                            ; Signed Integer                   ;
+; WIDTHAD_A                          ; 10                            ; Signed Integer                   ;
+; NUMWORDS_A                         ; 1024                          ; Signed Integer                   ;
+; OUTDATA_REG_A                      ; CLOCK0                        ; Untyped                          ;
+; ADDRESS_ACLR_A                     ; NONE                          ; Untyped                          ;
+; OUTDATA_ACLR_A                     ; NONE                          ; Untyped                          ;
+; WRCONTROL_ACLR_A                   ; NONE                          ; Untyped                          ;
+; INDATA_ACLR_A                      ; NONE                          ; Untyped                          ;
+; BYTEENA_ACLR_A                     ; NONE                          ; Untyped                          ;
+; WIDTH_B                            ; 1                             ; Signed Integer                   ;
+; WIDTHAD_B                          ; 1                             ; Signed Integer                   ;
+; NUMWORDS_B                         ; 0                             ; Signed Integer                   ;
+; INDATA_REG_B                       ; CLOCK1                        ; Untyped                          ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                        ; Untyped                          ;
+; RDCONTROL_REG_B                    ; CLOCK1                        ; Untyped                          ;
+; ADDRESS_REG_B                      ; CLOCK1                        ; Untyped                          ;
+; OUTDATA_REG_B                      ; UNREGISTERED                  ; Untyped                          ;
+; BYTEENA_REG_B                      ; CLOCK1                        ; Untyped                          ;
+; INDATA_ACLR_B                      ; NONE                          ; Untyped                          ;
+; WRCONTROL_ACLR_B                   ; NONE                          ; Untyped                          ;
+; ADDRESS_ACLR_B                     ; NONE                          ; Untyped                          ;
+; OUTDATA_ACLR_B                     ; NONE                          ; Untyped                          ;
+; RDCONTROL_ACLR_B                   ; NONE                          ; Untyped                          ;
+; BYTEENA_ACLR_B                     ; NONE                          ; Untyped                          ;
+; WIDTH_BYTEENA_A                    ; 1                             ; Signed Integer                   ;
+; WIDTH_BYTEENA_B                    ; 1                             ; Signed Integer                   ;
+; RAM_BLOCK_TYPE                     ; AUTO                          ; Untyped                          ;
+; BYTE_SIZE                          ; 8                             ; Signed Integer                   ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                     ; Untyped                          ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ          ; Untyped                          ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ          ; Untyped                          ;
+; INIT_FILE                          ; ./Programs/factorial_data.mif ; Untyped                          ;
+; INIT_FILE_LAYOUT                   ; PORT_A                        ; Untyped                          ;
+; MAXIMUM_DEPTH                      ; 0                             ; Signed Integer                   ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS                        ; Untyped                          ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                        ; Untyped                          ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS                        ; Untyped                          ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                        ; Untyped                          ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN               ; Untyped                          ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN               ; Untyped                          ;
+; ENABLE_ECC                         ; FALSE                         ; Untyped                          ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                         ; Untyped                          ;
+; WIDTH_ECCSTATUS                    ; 3                             ; Signed Integer                   ;
+; DEVICE_FAMILY                      ; MAX 10                        ; Untyped                          ;
+; CBXI_PARAMETER                     ; altsyncram_4is3               ; Untyped                          ;
++------------------------------------+-------------------------------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; scfifo Parameter Settings by Entity Instance                                        ;
++----------------------------+--------------------------------------------------------+
+; Name                       ; Value                                                  ;
++----------------------------+--------------------------------------------------------+
+; Number of entity instances ; 2                                                      ;
+; Entity Instance            ; UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component ;
+;     -- FIFO Type           ; Single Clock                                           ;
+;     -- lpm_width           ; 36                                                     ;
+;     -- LPM_NUMWORDS        ; 256                                                    ;
+;     -- LPM_SHOWAHEAD       ; OFF                                                    ;
+;     -- USE_EAB             ; ON                                                     ;
+; Entity Instance            ; UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component     ;
+;     -- FIFO Type           ; Single Clock                                           ;
+;     -- lpm_width           ; 8                                                      ;
+;     -- LPM_NUMWORDS        ; 2048                                                   ;
+;     -- LPM_SHOWAHEAD       ; OFF                                                    ;
+;     -- USE_EAB             ; ON                                                     ;
++----------------------------+--------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                           ;
++-------------------------------------------+----------------------------------------------------------------+
+; Name                                      ; Value                                                          ;
++-------------------------------------------+----------------------------------------------------------------+
+; Number of entity instances                ; 2                                                              ;
+; Entity Instance                           ; Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; ROM                                                            ;
+;     -- WIDTH_A                            ; 32                                                             ;
+;     -- NUMWORDS_A                         ; 1024                                                           ;
+;     -- OUTDATA_REG_A                      ; CLOCK0                                                         ;
+;     -- WIDTH_B                            ; 1                                                              ;
+;     -- NUMWORDS_B                         ; 0                                                              ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                         ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                   ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                           ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                      ;
+; Entity Instance                           ; Memory:mem|DataMemory:dm|altsyncram:altsyncram_component       ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                                    ;
+;     -- WIDTH_A                            ; 32                                                             ;
+;     -- NUMWORDS_A                         ; 1024                                                           ;
+;     -- OUTDATA_REG_A                      ; CLOCK0                                                         ;
+;     -- WIDTH_B                            ; 1                                                              ;
+;     -- NUMWORDS_B                         ; 0                                                              ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                         ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                   ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                           ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                      ;
++-------------------------------------------+----------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Fetch:fet|InstructionMemory:im"                                                                                                              ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; clken ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "UART:duart|UnsignedDiv:udiv"                                                            ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; denom[4] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; denom[3] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; denom[2] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; denom[1] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; denom[0] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; numer    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; remain   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "UART:duart|U_DIV:div" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; denom[4] ; Input ; Info     ; Stuck at GND       ;
+; denom[3] ; Input ; Info     ; Stuck at VCC       ;
+; denom[2] ; Input ; Info     ; Stuck at GND       ;
+; denom[1] ; Input ; Info     ; Stuck at VCC       ;
+; denom[0] ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "UART:duart|my_UART:dut"                                                                        ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                             ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; clk_div[15..10] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; clk_div[8..4]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; clk_div[2..0]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; clk_div[9]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; clk_div[3]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; rx_flag         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; data_rx         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "UART:duart"                                                                               ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; uart_empty ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; uart_full  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 4                           ;
+; cycloneiii_ff         ; 2546                        ;
+;     CLR               ; 1048                        ;
+;     ENA               ; 1051                        ;
+;     ENA CLR           ; 88                          ;
+;     ENA CLR SCLR      ; 31                          ;
+;     ENA SCLR          ; 16                          ;
+;     ENA SCLR SLD      ; 10                          ;
+;     ENA SLD           ; 10                          ;
+;     SCLR              ; 1                           ;
+;     SCLR SLD          ; 4                           ;
+;     plain             ; 287                         ;
+; cycloneiii_lcell_comb ; 7484                        ;
+;     arith             ; 391                         ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 137                         ;
+;         3 data inputs ; 253                         ;
+;     normal            ; 7093                        ;
+;         0 data inputs ; 27                          ;
+;         1 data inputs ; 9                           ;
+;         2 data inputs ; 568                         ;
+;         3 data inputs ; 891                         ;
+;         4 data inputs ; 5598                        ;
+; cycloneiii_ram_block  ; 107                         ;
+;                       ;                             ;
+; Max LUT depth         ; 65.90                       ;
+; Average LUT depth     ; 16.43                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:21     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -164,67 +943,67 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Tue Mar 22 09:08:43 2022
+    Info: Processing started: Tue Mar 22 11:27:47 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DLX -c DLX
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file unsigneddiv.vhd
-    Info (12022): Found design unit 1: unsigneddiv-SYN File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UnsignedDiv.vhd Line: 54
-    Info (12023): Found entity 1: UnsignedDiv File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UnsignedDiv.vhd Line: 43
-Info (12021): Found 2 design units, including 1 entities, in source file uart_tb.vhd
-    Info (12022): Found design unit 1: UART_TB-behavioral File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART_TB.vhd Line: 8
-    Info (12023): Found entity 1: UART_TB File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART_TB.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file uart_fifo.vhd
-    Info (12022): Found design unit 1: uart_fifo-SYN File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART_FIFO.vhd Line: 58
-    Info (12023): Found entity 1: UART_FIFO File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART_FIFO.vhd Line: 43
-Info (12021): Found 2 design units, including 1 entities, in source file uart.vhd
-    Info (12022): Found design unit 1: UART-behavioral File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd Line: 23
-    Info (12023): Found entity 1: UART File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file u_div.vhd
-    Info (12022): Found design unit 1: u_div-SYN File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/U_DIV.vhd Line: 54
-    Info (12023): Found entity 1: U_DIV File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/U_DIV.vhd Line: 43
-Info (12021): Found 2 design units, including 1 entities, in source file tx_fifo.vhd
-    Info (12022): Found design unit 1: tx_fifo-SYN File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/TX_FIFO.vhd Line: 57
-    Info (12023): Found entity 1: TX_FIFO File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/TX_FIFO.vhd Line: 43
-Info (12021): Found 2 design units, including 1 entities, in source file my_uart.vhd
-    Info (12022): Found design unit 1: my_UART-behavioral File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/my_UART.vhd Line: 22
-    Info (12023): Found entity 1: my_UART File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/my_UART.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file memory.vhd
-    Info (12022): Found design unit 1: Memory-behavioral File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Memory.vhd Line: 28
-    Info (12023): Found entity 1: Memory File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Memory.vhd Line: 14
-Info (12021): Found 2 design units, including 1 entities, in source file datamemory.vhd
-    Info (12022): Found design unit 1: datamemory-SYN File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DataMemory.vhd Line: 55
-    Info (12023): Found entity 1: DataMemory File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DataMemory.vhd Line: 43
-Info (12021): Found 2 design units, including 1 entities, in source file execute.vhd
-    Info (12022): Found design unit 1: Execute-behavioral File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Execute.vhd Line: 37
-    Info (12023): Found entity 1: Execute File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Execute.vhd Line: 14
-Info (12021): Found 2 design units, including 1 entities, in source file instructionmemory.vhd
-    Info (12022): Found design unit 1: instructionmemory-SYN File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/InstructionMemory.vhd Line: 54
-    Info (12023): Found entity 1: InstructionMemory File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/InstructionMemory.vhd Line: 43
-Info (12021): Found 2 design units, including 1 entities, in source file fetch.vhd
-    Info (12022): Found design unit 1: Fetch-behavioral File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Fetch.vhd Line: 27
-    Info (12023): Found entity 1: Fetch File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Fetch.vhd Line: 14
-Info (12021): Found 2 design units, including 1 entities, in source file decode.vhd
-    Info (12022): Found design unit 1: Decode-behavioral File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Decode.vhd Line: 33
-    Info (12023): Found entity 1: Decode File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Decode.vhd Line: 14
-Info (12021): Found 2 design units, including 1 entities, in source file dlx.vhd
-    Info (12022): Found design unit 1: DLX-behavioral File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.vhd Line: 27
-    Info (12023): Found entity 1: DLX File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.vhd Line: 13
-Info (12021): Found 2 design units, including 0 entities, in source file common.vhd
-    Info (12022): Found design unit 1: common File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Common.vhd Line: 15
-    Info (12022): Found design unit 2: common-body File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Common.vhd Line: 89
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file UnsignedDiv.vhd
+    Info (12022): Found design unit 1: unsigneddiv-SYN File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UnsignedDiv.vhd Line: 54
+    Info (12023): Found entity 1: UnsignedDiv File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UnsignedDiv.vhd Line: 43
+Info (12021): Found 2 design units, including 1 entities, in source file UART_TB.vhd
+    Info (12022): Found design unit 1: UART_TB-behavioral File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART_TB.vhd Line: 8
+    Info (12023): Found entity 1: UART_TB File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART_TB.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file UART_FIFO.vhd
+    Info (12022): Found design unit 1: uart_fifo-SYN File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART_FIFO.vhd Line: 58
+    Info (12023): Found entity 1: UART_FIFO File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART_FIFO.vhd Line: 43
+Info (12021): Found 2 design units, including 1 entities, in source file UART.vhd
+    Info (12022): Found design unit 1: UART-behavioral File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART.vhd Line: 23
+    Info (12023): Found entity 1: UART File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file U_DIV.vhd
+    Info (12022): Found design unit 1: u_div-SYN File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/U_DIV.vhd Line: 54
+    Info (12023): Found entity 1: U_DIV File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/U_DIV.vhd Line: 43
+Info (12021): Found 2 design units, including 1 entities, in source file TX_FIFO.vhd
+    Info (12022): Found design unit 1: tx_fifo-SYN File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/TX_FIFO.vhd Line: 57
+    Info (12023): Found entity 1: TX_FIFO File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/TX_FIFO.vhd Line: 43
+Info (12021): Found 2 design units, including 1 entities, in source file my_UART.vhd
+    Info (12022): Found design unit 1: my_UART-behavioral File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/my_UART.vhd Line: 22
+    Info (12023): Found entity 1: my_UART File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/my_UART.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file Memory.vhd
+    Info (12022): Found design unit 1: Memory-behavioral File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Memory.vhd Line: 28
+    Info (12023): Found entity 1: Memory File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Memory.vhd Line: 14
+Info (12021): Found 2 design units, including 1 entities, in source file DataMemory.vhd
+    Info (12022): Found design unit 1: datamemory-SYN File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DataMemory.vhd Line: 55
+    Info (12023): Found entity 1: DataMemory File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DataMemory.vhd Line: 43
+Info (12021): Found 2 design units, including 1 entities, in source file Execute.vhd
+    Info (12022): Found design unit 1: Execute-behavioral File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Execute.vhd Line: 37
+    Info (12023): Found entity 1: Execute File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Execute.vhd Line: 14
+Info (12021): Found 2 design units, including 1 entities, in source file InstructionMemory.vhd
+    Info (12022): Found design unit 1: instructionmemory-SYN File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/InstructionMemory.vhd Line: 54
+    Info (12023): Found entity 1: InstructionMemory File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/InstructionMemory.vhd Line: 43
+Info (12021): Found 2 design units, including 1 entities, in source file Fetch.vhd
+    Info (12022): Found design unit 1: Fetch-behavioral File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Fetch.vhd Line: 27
+    Info (12023): Found entity 1: Fetch File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Fetch.vhd Line: 14
+Info (12021): Found 2 design units, including 1 entities, in source file Decode.vhd
+    Info (12022): Found design unit 1: Decode-behavioral File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Decode.vhd Line: 33
+    Info (12023): Found entity 1: Decode File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Decode.vhd Line: 14
+Info (12021): Found 2 design units, including 1 entities, in source file DLX.vhd
+    Info (12022): Found design unit 1: DLX-behavioral File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 27
+    Info (12023): Found entity 1: DLX File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 13
+Info (12021): Found 2 design units, including 0 entities, in source file Common.vhd
+    Info (12022): Found design unit 1: common File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Common.vhd Line: 15
+    Info (12022): Found design unit 2: common-body File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Common.vhd Line: 89
 Info (12127): Elaborating entity "DLX" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at DLX.vhd(142): object "empty" assigned a value but never read File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.vhd Line: 142
-Warning (10036): Verilog HDL or VHDL warning at DLX.vhd(142): object "full" assigned a value but never read File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.vhd Line: 142
-Info (12128): Elaborating entity "UART" for hierarchy "UART:duart" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.vhd Line: 148
-Warning (10036): Verilog HDL or VHDL warning at UART.vhd(28): object "RX_flag" assigned a value but never read File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd Line: 28
-Warning (10036): Verilog HDL or VHDL warning at UART.vhd(30): object "data_rx" assigned a value but never read File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd Line: 30
-Warning (10036): Verilog HDL or VHDL warning at UART.vhd(41): object "u_remain" assigned a value but never read File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd Line: 41
-Warning (10873): Using initial value X (don't care) for net "u_numer" at UART.vhd(43) File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd Line: 43
-Info (12128): Elaborating entity "UART_FIFO" for hierarchy "UART:duart|UART_FIFO:fifo_uart" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd Line: 121
-Info (12128): Elaborating entity "scfifo" for hierarchy "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART_FIFO.vhd Line: 96
-Info (12130): Elaborated megafunction instantiation "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART_FIFO.vhd Line: 96
-Info (12133): Instantiated megafunction "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component" with the following parameter: File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART_FIFO.vhd Line: 96
+Warning (10036): Verilog HDL or VHDL warning at DLX.vhd(142): object "empty" assigned a value but never read File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 142
+Warning (10036): Verilog HDL or VHDL warning at DLX.vhd(142): object "full" assigned a value but never read File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 142
+Info (12128): Elaborating entity "UART" for hierarchy "UART:duart" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 148
+Warning (10036): Verilog HDL or VHDL warning at UART.vhd(28): object "RX_flag" assigned a value but never read File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART.vhd Line: 28
+Warning (10036): Verilog HDL or VHDL warning at UART.vhd(30): object "data_rx" assigned a value but never read File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART.vhd Line: 30
+Warning (10036): Verilog HDL or VHDL warning at UART.vhd(41): object "u_remain" assigned a value but never read File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART.vhd Line: 41
+Warning (10873): Using initial value X (don't care) for net "u_numer" at UART.vhd(43) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART.vhd Line: 43
+Info (12128): Elaborating entity "UART_FIFO" for hierarchy "UART:duart|UART_FIFO:fifo_uart" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART.vhd Line: 121
+Info (12128): Elaborating entity "scfifo" for hierarchy "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART_FIFO.vhd Line: 96
+Info (12130): Elaborated megafunction instantiation "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART_FIFO.vhd Line: 96
+Info (12133): Instantiated megafunction "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component" with the following parameter: File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART_FIFO.vhd Line: 96
     Info (12134): Parameter "add_ram_output_register" = "OFF"
     Info (12134): Parameter "intended_device_family" = "MAX 10"
     Info (12134): Parameter "lpm_numwords" = "256"
@@ -236,27 +1015,27 @@ Info (12133): Instantiated megafunction "UART:duart|UART_FIFO:fifo_uart|scfifo:s
     Info (12134): Parameter "underflow_checking" = "ON"
     Info (12134): Parameter "use_eab" = "ON"
 Info (12021): Found 1 design units, including 1 entities, in source file db/scfifo_4921.tdf
-    Info (12023): Found entity 1: scfifo_4921 File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/scfifo_4921.tdf Line: 25
-Info (12128): Elaborating entity "scfifo_4921" for hierarchy "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/scfifo.tdf Line: 300
+    Info (12023): Found entity 1: scfifo_4921 File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/scfifo_4921.tdf Line: 25
+Info (12128): Elaborating entity "scfifo_4921" for hierarchy "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated" File: /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/scfifo.tdf Line: 300
 Info (12021): Found 1 design units, including 1 entities, in source file db/a_dpfifo_bf21.tdf
-    Info (12023): Found entity 1: a_dpfifo_bf21 File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_dpfifo_bf21.tdf Line: 29
-Info (12128): Elaborating entity "a_dpfifo_bf21" for hierarchy "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/scfifo_4921.tdf Line: 37
+    Info (12023): Found entity 1: a_dpfifo_bf21 File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_dpfifo_bf21.tdf Line: 29
+Info (12128): Elaborating entity "a_dpfifo_bf21" for hierarchy "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/scfifo_4921.tdf Line: 37
 Info (12021): Found 1 design units, including 1 entities, in source file db/a_fefifo_18e.tdf
-    Info (12023): Found entity 1: a_fefifo_18e File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_fefifo_18e.tdf Line: 25
-Info (12128): Elaborating entity "a_fefifo_18e" for hierarchy "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|a_fefifo_18e:fifo_state" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_dpfifo_bf21.tdf Line: 42
+    Info (12023): Found entity 1: a_fefifo_18e File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_fefifo_18e.tdf Line: 25
+Info (12128): Elaborating entity "a_fefifo_18e" for hierarchy "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|a_fefifo_18e:fifo_state" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_dpfifo_bf21.tdf Line: 42
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_537.tdf
-    Info (12023): Found entity 1: cntr_537 File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/cntr_537.tdf Line: 26
-Info (12128): Elaborating entity "cntr_537" for hierarchy "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|a_fefifo_18e:fifo_state|cntr_537:count_usedw" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_fefifo_18e.tdf Line: 38
+    Info (12023): Found entity 1: cntr_537 File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/cntr_537.tdf Line: 26
+Info (12128): Elaborating entity "cntr_537" for hierarchy "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|a_fefifo_18e:fifo_state|cntr_537:count_usedw" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_fefifo_18e.tdf Line: 38
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_k2m1.tdf
-    Info (12023): Found entity 1: altsyncram_k2m1 File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/altsyncram_k2m1.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_k2m1" for hierarchy "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|altsyncram_k2m1:FIFOram" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_dpfifo_bf21.tdf Line: 43
+    Info (12023): Found entity 1: altsyncram_k2m1 File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/altsyncram_k2m1.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_k2m1" for hierarchy "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|altsyncram_k2m1:FIFOram" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_dpfifo_bf21.tdf Line: 43
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_p2b.tdf
-    Info (12023): Found entity 1: cntr_p2b File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/cntr_p2b.tdf Line: 26
-Info (12128): Elaborating entity "cntr_p2b" for hierarchy "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|cntr_p2b:rd_ptr_count" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_dpfifo_bf21.tdf Line: 44
-Info (12128): Elaborating entity "TX_FIFO" for hierarchy "UART:duart|TX_FIFO:fifo_tx" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd Line: 134
-Info (12128): Elaborating entity "scfifo" for hierarchy "UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/TX_FIFO.vhd Line: 92
-Info (12130): Elaborated megafunction instantiation "UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/TX_FIFO.vhd Line: 92
-Info (12133): Instantiated megafunction "UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component" with the following parameter: File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/TX_FIFO.vhd Line: 92
+    Info (12023): Found entity 1: cntr_p2b File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/cntr_p2b.tdf Line: 26
+Info (12128): Elaborating entity "cntr_p2b" for hierarchy "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|cntr_p2b:rd_ptr_count" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_dpfifo_bf21.tdf Line: 44
+Info (12128): Elaborating entity "TX_FIFO" for hierarchy "UART:duart|TX_FIFO:fifo_tx" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART.vhd Line: 134
+Info (12128): Elaborating entity "scfifo" for hierarchy "UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/TX_FIFO.vhd Line: 92
+Info (12130): Elaborated megafunction instantiation "UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/TX_FIFO.vhd Line: 92
+Info (12133): Instantiated megafunction "UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component" with the following parameter: File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/TX_FIFO.vhd Line: 92
     Info (12134): Parameter "add_ram_output_register" = "OFF"
     Info (12134): Parameter "intended_device_family" = "MAX 10"
     Info (12134): Parameter "lpm_numwords" = "2048"
@@ -268,29 +1047,29 @@ Info (12133): Instantiated megafunction "UART:duart|TX_FIFO:fifo_tx|scfifo:scfif
     Info (12134): Parameter "underflow_checking" = "ON"
     Info (12134): Parameter "use_eab" = "ON"
 Info (12021): Found 1 design units, including 1 entities, in source file db/scfifo_rr11.tdf
-    Info (12023): Found entity 1: scfifo_rr11 File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/scfifo_rr11.tdf Line: 25
-Info (12128): Elaborating entity "scfifo_rr11" for hierarchy "UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/scfifo.tdf Line: 300
+    Info (12023): Found entity 1: scfifo_rr11 File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/scfifo_rr11.tdf Line: 25
+Info (12128): Elaborating entity "scfifo_rr11" for hierarchy "UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated" File: /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/scfifo.tdf Line: 300
 Info (12021): Found 1 design units, including 1 entities, in source file db/a_dpfifo_2221.tdf
-    Info (12023): Found entity 1: a_dpfifo_2221 File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_dpfifo_2221.tdf Line: 29
-Info (12128): Elaborating entity "a_dpfifo_2221" for hierarchy "UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/scfifo_rr11.tdf Line: 36
+    Info (12023): Found entity 1: a_dpfifo_2221 File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_dpfifo_2221.tdf Line: 29
+Info (12128): Elaborating entity "a_dpfifo_2221" for hierarchy "UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/scfifo_rr11.tdf Line: 36
 Info (12021): Found 1 design units, including 1 entities, in source file db/a_fefifo_sae.tdf
-    Info (12023): Found entity 1: a_fefifo_sae File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_fefifo_sae.tdf Line: 25
-Info (12128): Elaborating entity "a_fefifo_sae" for hierarchy "UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|a_fefifo_sae:fifo_state" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_dpfifo_2221.tdf Line: 41
+    Info (12023): Found entity 1: a_fefifo_sae File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_fefifo_sae.tdf Line: 25
+Info (12128): Elaborating entity "a_fefifo_sae" for hierarchy "UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|a_fefifo_sae:fifo_state" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_dpfifo_2221.tdf Line: 41
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_f47.tdf
-    Info (12023): Found entity 1: cntr_f47 File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/cntr_f47.tdf Line: 26
-Info (12128): Elaborating entity "cntr_f47" for hierarchy "UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|a_fefifo_sae:fifo_state|cntr_f47:count_usedw" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_fefifo_sae.tdf Line: 38
+    Info (12023): Found entity 1: cntr_f47 File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/cntr_f47.tdf Line: 26
+Info (12128): Elaborating entity "cntr_f47" for hierarchy "UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|a_fefifo_sae:fifo_state|cntr_f47:count_usedw" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_fefifo_sae.tdf Line: 38
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_85m1.tdf
-    Info (12023): Found entity 1: altsyncram_85m1 File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/altsyncram_85m1.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_85m1" for hierarchy "UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|altsyncram_85m1:FIFOram" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_dpfifo_2221.tdf Line: 42
+    Info (12023): Found entity 1: altsyncram_85m1 File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/altsyncram_85m1.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_85m1" for hierarchy "UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|altsyncram_85m1:FIFOram" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_dpfifo_2221.tdf Line: 42
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_34b.tdf
-    Info (12023): Found entity 1: cntr_34b File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/cntr_34b.tdf Line: 26
-Info (12128): Elaborating entity "cntr_34b" for hierarchy "UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|cntr_34b:rd_ptr_count" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_dpfifo_2221.tdf Line: 43
-Info (12128): Elaborating entity "my_UART" for hierarchy "UART:duart|my_UART:dut" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd Line: 146
-Warning (10036): Verilog HDL or VHDL warning at my_UART.vhd(38): object "sample_rx" assigned a value but never read File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/my_UART.vhd Line: 38
-Info (12128): Elaborating entity "U_DIV" for hierarchy "UART:duart|U_DIV:div" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd Line: 161
-Info (12128): Elaborating entity "lpm_divide" for hierarchy "UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/U_DIV.vhd Line: 82
-Info (12130): Elaborated megafunction instantiation "UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/U_DIV.vhd Line: 82
-Info (12133): Instantiated megafunction "UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component" with the following parameter: File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/U_DIV.vhd Line: 82
+    Info (12023): Found entity 1: cntr_34b File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/cntr_34b.tdf Line: 26
+Info (12128): Elaborating entity "cntr_34b" for hierarchy "UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|cntr_34b:rd_ptr_count" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_dpfifo_2221.tdf Line: 43
+Info (12128): Elaborating entity "my_UART" for hierarchy "UART:duart|my_UART:dut" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART.vhd Line: 146
+Warning (10036): Verilog HDL or VHDL warning at my_UART.vhd(38): object "sample_rx" assigned a value but never read File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/my_UART.vhd Line: 38
+Info (12128): Elaborating entity "U_DIV" for hierarchy "UART:duart|U_DIV:div" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART.vhd Line: 161
+Info (12128): Elaborating entity "lpm_divide" for hierarchy "UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/U_DIV.vhd Line: 82
+Info (12130): Elaborated megafunction instantiation "UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/U_DIV.vhd Line: 82
+Info (12133): Instantiated megafunction "UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component" with the following parameter: File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/U_DIV.vhd Line: 82
     Info (12134): Parameter "lpm_drepresentation" = "SIGNED"
     Info (12134): Parameter "lpm_hint" = "LPM_REMAINDERPOSITIVE=TRUE"
     Info (12134): Parameter "lpm_nrepresentation" = "SIGNED"
@@ -298,24 +1077,24 @@ Info (12133): Instantiated megafunction "UART:duart|U_DIV:div|lpm_divide:LPM_DIV
     Info (12134): Parameter "lpm_widthd" = "5"
     Info (12134): Parameter "lpm_widthn" = "32"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_0uo.tdf
-    Info (12023): Found entity 1: lpm_divide_0uo File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/lpm_divide_0uo.tdf Line: 25
-Info (12128): Elaborating entity "lpm_divide_0uo" for hierarchy "UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component|lpm_divide_0uo:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf Line: 148
+    Info (12023): Found entity 1: lpm_divide_0uo File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/lpm_divide_0uo.tdf Line: 25
+Info (12128): Elaborating entity "lpm_divide_0uo" for hierarchy "UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component|lpm_divide_0uo:auto_generated" File: /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf Line: 148
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_j7h.tdf
-    Info (12023): Found entity 1: sign_div_unsign_j7h File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/sign_div_unsign_j7h.tdf Line: 25
-Info (12128): Elaborating entity "sign_div_unsign_j7h" for hierarchy "UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component|lpm_divide_0uo:auto_generated|sign_div_unsign_j7h:divider" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/lpm_divide_0uo.tdf Line: 33
+    Info (12023): Found entity 1: sign_div_unsign_j7h File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/sign_div_unsign_j7h.tdf Line: 25
+Info (12128): Elaborating entity "sign_div_unsign_j7h" for hierarchy "UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component|lpm_divide_0uo:auto_generated|sign_div_unsign_j7h:divider" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/lpm_divide_0uo.tdf Line: 33
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_she.tdf
-    Info (12023): Found entity 1: alt_u_div_she File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/alt_u_div_she.tdf Line: 27
-Info (12128): Elaborating entity "alt_u_div_she" for hierarchy "UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component|lpm_divide_0uo:auto_generated|sign_div_unsign_j7h:divider|alt_u_div_she:divider" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/sign_div_unsign_j7h.tdf Line: 33
+    Info (12023): Found entity 1: alt_u_div_she File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/alt_u_div_she.tdf Line: 27
+Info (12128): Elaborating entity "alt_u_div_she" for hierarchy "UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component|lpm_divide_0uo:auto_generated|sign_div_unsign_j7h:divider|alt_u_div_she:divider" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/sign_div_unsign_j7h.tdf Line: 33
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_t3c.tdf
-    Info (12023): Found entity 1: add_sub_t3c File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/add_sub_t3c.tdf Line: 23
-Info (12128): Elaborating entity "add_sub_t3c" for hierarchy "UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component|lpm_divide_0uo:auto_generated|sign_div_unsign_j7h:divider|alt_u_div_she:divider|add_sub_t3c:add_sub_0" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/alt_u_div_she.tdf Line: 35
+    Info (12023): Found entity 1: add_sub_t3c File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/add_sub_t3c.tdf Line: 23
+Info (12128): Elaborating entity "add_sub_t3c" for hierarchy "UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component|lpm_divide_0uo:auto_generated|sign_div_unsign_j7h:divider|alt_u_div_she:divider|add_sub_t3c:add_sub_0" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/alt_u_div_she.tdf Line: 35
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_u3c.tdf
-    Info (12023): Found entity 1: add_sub_u3c File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/add_sub_u3c.tdf Line: 23
-Info (12128): Elaborating entity "add_sub_u3c" for hierarchy "UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component|lpm_divide_0uo:auto_generated|sign_div_unsign_j7h:divider|alt_u_div_she:divider|add_sub_u3c:add_sub_1" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/alt_u_div_she.tdf Line: 36
-Info (12128): Elaborating entity "UnsignedDiv" for hierarchy "UART:duart|UnsignedDiv:udiv" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd Line: 170
-Info (12128): Elaborating entity "lpm_divide" for hierarchy "UART:duart|UnsignedDiv:udiv|lpm_divide:LPM_DIVIDE_component" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UnsignedDiv.vhd Line: 82
-Info (12130): Elaborated megafunction instantiation "UART:duart|UnsignedDiv:udiv|lpm_divide:LPM_DIVIDE_component" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UnsignedDiv.vhd Line: 82
-Info (12133): Instantiated megafunction "UART:duart|UnsignedDiv:udiv|lpm_divide:LPM_DIVIDE_component" with the following parameter: File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UnsignedDiv.vhd Line: 82
+    Info (12023): Found entity 1: add_sub_u3c File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/add_sub_u3c.tdf Line: 23
+Info (12128): Elaborating entity "add_sub_u3c" for hierarchy "UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component|lpm_divide_0uo:auto_generated|sign_div_unsign_j7h:divider|alt_u_div_she:divider|add_sub_u3c:add_sub_1" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/alt_u_div_she.tdf Line: 36
+Info (12128): Elaborating entity "UnsignedDiv" for hierarchy "UART:duart|UnsignedDiv:udiv" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART.vhd Line: 170
+Info (12128): Elaborating entity "lpm_divide" for hierarchy "UART:duart|UnsignedDiv:udiv|lpm_divide:LPM_DIVIDE_component" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UnsignedDiv.vhd Line: 82
+Info (12130): Elaborated megafunction instantiation "UART:duart|UnsignedDiv:udiv|lpm_divide:LPM_DIVIDE_component" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UnsignedDiv.vhd Line: 82
+Info (12133): Instantiated megafunction "UART:duart|UnsignedDiv:udiv|lpm_divide:LPM_DIVIDE_component" with the following parameter: File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UnsignedDiv.vhd Line: 82
     Info (12134): Parameter "lpm_drepresentation" = "UNSIGNED"
     Info (12134): Parameter "lpm_hint" = "LPM_REMAINDERPOSITIVE=TRUE"
     Info (12134): Parameter "lpm_nrepresentation" = "UNSIGNED"
@@ -323,21 +1102,164 @@ Info (12133): Instantiated megafunction "UART:duart|UnsignedDiv:udiv|lpm_divide:
     Info (12134): Parameter "lpm_widthd" = "5"
     Info (12134): Parameter "lpm_widthn" = "32"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_6cp.tdf
-    Info (12023): Found entity 1: lpm_divide_6cp File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/lpm_divide_6cp.tdf Line: 25
-Info (12128): Elaborating entity "lpm_divide_6cp" for hierarchy "UART:duart|UnsignedDiv:udiv|lpm_divide:LPM_DIVIDE_component|lpm_divide_6cp:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf Line: 148
+    Info (12023): Found entity 1: lpm_divide_6cp File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/lpm_divide_6cp.tdf Line: 25
+Info (12128): Elaborating entity "lpm_divide_6cp" for hierarchy "UART:duart|UnsignedDiv:udiv|lpm_divide:LPM_DIVIDE_component|lpm_divide_6cp:auto_generated" File: /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf Line: 148
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_plh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_plh File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/sign_div_unsign_plh.tdf Line: 25
-Info (12128): Elaborating entity "sign_div_unsign_plh" for hierarchy "UART:duart|UnsignedDiv:udiv|lpm_divide:LPM_DIVIDE_component|lpm_divide_6cp:auto_generated|sign_div_unsign_plh:divider" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/lpm_divide_6cp.tdf Line: 33
-Info (12128): Elaborating entity "Fetch" for hierarchy "Fetch:fet" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.vhd Line: 162
-Warning (10492): VHDL Process Statement warning at Fetch.vhd(61): signal "stall" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Fetch.vhd Line: 61
-Warning (10492): VHDL Process Statement warning at Fetch.vhd(66): signal "pc" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Fetch.vhd Line: 66
-Error (10818): Can't infer register for "mem_clk" at Fetch.vhd(61) because it does not hold its value outside the clock edge File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Fetch.vhd Line: 61
-Error (10822): HDL error at Fetch.vhd(61): couldn't implement registers for assignments on this clock edge File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Fetch.vhd Line: 61
-Error (12152): Can't elaborate user hierarchy "Fetch:fet" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.vhd Line: 162
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 3 errors, 10 warnings
-    Error: Peak virtual memory: 4817 megabytes
-    Error: Processing ended: Tue Mar 22 09:09:02 2022
-    Error: Elapsed time: 00:00:19
-    Error: Total CPU time (on all processors): 00:00:22
+    Info (12023): Found entity 1: sign_div_unsign_plh File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/sign_div_unsign_plh.tdf Line: 25
+Info (12128): Elaborating entity "sign_div_unsign_plh" for hierarchy "UART:duart|UnsignedDiv:udiv|lpm_divide:LPM_DIVIDE_component|lpm_divide_6cp:auto_generated|sign_div_unsign_plh:divider" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/lpm_divide_6cp.tdf Line: 33
+Info (12128): Elaborating entity "Fetch" for hierarchy "Fetch:fet" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 162
+Warning (10492): VHDL Process Statement warning at Fetch.vhd(61): signal "stall" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Fetch.vhd Line: 61
+Warning (10492): VHDL Process Statement warning at Fetch.vhd(66): signal "pc" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Fetch.vhd Line: 66
+Info (12128): Elaborating entity "InstructionMemory" for hierarchy "Fetch:fet|InstructionMemory:im" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Fetch.vhd Line: 55
+Info (12128): Elaborating entity "altsyncram" for hierarchy "Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/InstructionMemory.vhd Line: 61
+Info (12130): Elaborated megafunction instantiation "Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/InstructionMemory.vhd Line: 61
+Info (12133): Instantiated megafunction "Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component" with the following parameter: File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/InstructionMemory.vhd Line: 61
+    Info (12134): Parameter "address_aclr_a" = "NONE"
+    Info (12134): Parameter "address_aclr_b" = "NONE"
+    Info (12134): Parameter "address_reg_b" = "CLOCK1"
+    Info (12134): Parameter "byte_size" = "8"
+    Info (12134): Parameter "byteena_aclr_a" = "UNUSED"
+    Info (12134): Parameter "byteena_aclr_b" = "NONE"
+    Info (12134): Parameter "byteena_reg_b" = "CLOCK1"
+    Info (12134): Parameter "clock_enable_core_a" = "USE_INPUT_CLKEN"
+    Info (12134): Parameter "clock_enable_core_b" = "USE_INPUT_CLKEN"
+    Info (12134): Parameter "clock_enable_input_a" = "NORMAL"
+    Info (12134): Parameter "clock_enable_input_b" = "NORMAL"
+    Info (12134): Parameter "clock_enable_output_a" = "NORMAL"
+    Info (12134): Parameter "clock_enable_output_b" = "NORMAL"
+    Info (12134): Parameter "intended_device_family" = "MAX 10"
+    Info (12134): Parameter "ecc_pipeline_stage_enabled" = "FALSE"
+    Info (12134): Parameter "enable_ecc" = "FALSE"
+    Info (12134): Parameter "implement_in_les" = "OFF"
+    Info (12134): Parameter "indata_aclr_a" = "UNUSED"
+    Info (12134): Parameter "indata_aclr_b" = "NONE"
+    Info (12134): Parameter "indata_reg_b" = "CLOCK1"
+    Info (12134): Parameter "init_file" = "./Programs/factorial_code.mif"
+    Info (12134): Parameter "init_file_layout" = "PORT_A"
+    Info (12134): Parameter "maximum_depth" = "0"
+    Info (12134): Parameter "numwords_a" = "1024"
+    Info (12134): Parameter "numwords_b" = "0"
+    Info (12134): Parameter "operation_mode" = "ROM"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_aclr_b" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "CLOCK0"
+    Info (12134): Parameter "outdata_reg_b" = "UNREGISTERED"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "ram_block_type" = "AUTO"
+    Info (12134): Parameter "rdcontrol_aclr_b" = "NONE"
+    Info (12134): Parameter "rdcontrol_reg_b" = "CLOCK1"
+    Info (12134): Parameter "read_during_write_mode_mixed_ports" = "DONT_CARE"
+    Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "read_during_write_mode_port_b" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "stratixiv_m144k_allow_dual_clocks" = "ON"
+    Info (12134): Parameter "width_a" = "32"
+    Info (12134): Parameter "width_b" = "1"
+    Info (12134): Parameter "width_byteena_a" = "1"
+    Info (12134): Parameter "width_byteena_b" = "1"
+    Info (12134): Parameter "width_eccstatus" = "3"
+    Info (12134): Parameter "widthad_a" = "10"
+    Info (12134): Parameter "widthad_b" = "1"
+    Info (12134): Parameter "wrcontrol_aclr_a" = "UNUSED"
+    Info (12134): Parameter "wrcontrol_aclr_b" = "NONE"
+    Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_c7t3.tdf
+    Info (12023): Found entity 1: altsyncram_c7t3 File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/altsyncram_c7t3.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_c7t3" for hierarchy "Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component|altsyncram_c7t3:auto_generated" File: /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Warning (113028): 1000 out of 1024 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Programs/factorial_code.mif Line: 1
+    Warning (113027): Addresses ranging from 24 to 1023 are not initialized File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Programs/factorial_code.mif Line: 1
+Info (12128): Elaborating entity "Decode" for hierarchy "Decode:dec" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 174
+Info (12128): Elaborating entity "Execute" for hierarchy "Execute:exc" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 192
+Warning (10492): VHDL Process Statement warning at Execute.vhd(102): signal "IdEx_rd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Execute.vhd Line: 102
+Warning (10492): VHDL Process Statement warning at Execute.vhd(104): signal "IdEx_rd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Execute.vhd Line: 104
+Info (12128): Elaborating entity "Memory" for hierarchy "Memory:mem" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 214
+Warning (10492): VHDL Process Statement warning at Memory.vhd(78): signal "inst_wb" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Memory.vhd Line: 78
+Warning (10492): VHDL Process Statement warning at Memory.vhd(79): signal "mem_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Memory.vhd Line: 79
+Warning (10492): VHDL Process Statement warning at Memory.vhd(81): signal "ALU_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Memory.vhd Line: 81
+Info (12128): Elaborating entity "DataMemory" for hierarchy "Memory:mem|DataMemory:dm" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Memory.vhd Line: 51
+Info (12128): Elaborating entity "altsyncram" for hierarchy "Memory:mem|DataMemory:dm|altsyncram:altsyncram_component" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DataMemory.vhd Line: 62
+Info (12130): Elaborated megafunction instantiation "Memory:mem|DataMemory:dm|altsyncram:altsyncram_component" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DataMemory.vhd Line: 62
+Info (12133): Instantiated megafunction "Memory:mem|DataMemory:dm|altsyncram:altsyncram_component" with the following parameter: File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DataMemory.vhd Line: 62
+    Info (12134): Parameter "address_aclr_a" = "UNUSED"
+    Info (12134): Parameter "address_aclr_b" = "NONE"
+    Info (12134): Parameter "address_reg_b" = "CLOCK1"
+    Info (12134): Parameter "byte_size" = "8"
+    Info (12134): Parameter "byteena_aclr_a" = "UNUSED"
+    Info (12134): Parameter "byteena_aclr_b" = "NONE"
+    Info (12134): Parameter "byteena_reg_b" = "CLOCK1"
+    Info (12134): Parameter "clock_enable_core_a" = "USE_INPUT_CLKEN"
+    Info (12134): Parameter "clock_enable_core_b" = "USE_INPUT_CLKEN"
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_input_b" = "NORMAL"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_b" = "NORMAL"
+    Info (12134): Parameter "intended_device_family" = "MAX 10"
+    Info (12134): Parameter "ecc_pipeline_stage_enabled" = "FALSE"
+    Info (12134): Parameter "enable_ecc" = "FALSE"
+    Info (12134): Parameter "implement_in_les" = "OFF"
+    Info (12134): Parameter "indata_aclr_a" = "UNUSED"
+    Info (12134): Parameter "indata_aclr_b" = "NONE"
+    Info (12134): Parameter "indata_reg_b" = "CLOCK1"
+    Info (12134): Parameter "init_file" = "./Programs/factorial_data.mif"
+    Info (12134): Parameter "init_file_layout" = "PORT_A"
+    Info (12134): Parameter "maximum_depth" = "0"
+    Info (12134): Parameter "numwords_a" = "1024"
+    Info (12134): Parameter "numwords_b" = "0"
+    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_aclr_b" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "CLOCK0"
+    Info (12134): Parameter "outdata_reg_b" = "UNREGISTERED"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "ram_block_type" = "AUTO"
+    Info (12134): Parameter "rdcontrol_aclr_b" = "NONE"
+    Info (12134): Parameter "rdcontrol_reg_b" = "CLOCK1"
+    Info (12134): Parameter "read_during_write_mode_mixed_ports" = "DONT_CARE"
+    Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "read_during_write_mode_port_b" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "stratixiv_m144k_allow_dual_clocks" = "ON"
+    Info (12134): Parameter "width_a" = "32"
+    Info (12134): Parameter "width_b" = "1"
+    Info (12134): Parameter "width_byteena_a" = "1"
+    Info (12134): Parameter "width_byteena_b" = "1"
+    Info (12134): Parameter "width_eccstatus" = "3"
+    Info (12134): Parameter "widthad_a" = "10"
+    Info (12134): Parameter "widthad_b" = "1"
+    Info (12134): Parameter "wrcontrol_aclr_a" = "UNUSED"
+    Info (12134): Parameter "wrcontrol_aclr_b" = "NONE"
+    Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_4is3.tdf
+    Info (12023): Found entity 1: altsyncram_4is3 File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/altsyncram_4is3.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_4is3" for hierarchy "Memory:mem|DataMemory:dm|altsyncram:altsyncram_component|altsyncram_4is3:auto_generated" File: /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Warning (113028): 1022 out of 1024 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Programs/factorial_data.mif Line: 1
+    Warning (113027): Addresses ranging from 2 to 1023 are not initialized File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Programs/factorial_data.mif Line: 1
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|altsyncram_k2m1:FIFOram|q_b[34]" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/altsyncram_k2m1.tdf Line: 1060
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|altsyncram_k2m1:FIFOram|q_b[34]" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/altsyncram_k2m1.tdf Line: 1060
+Warning (19016): Clock multiplexers are found and protected
+    Warning (19017): Found clock multiplexer Fetch:fet|OpIsTypeB~0
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 23 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "RX" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 21
+Info (21057): Implemented 8701 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 1 output pins
+    Info (21061): Implemented 8590 logic cells
+    Info (21064): Implemented 107 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 30 warnings
+    Info: Peak virtual memory: 472 megabytes
+    Info: Processing ended: Tue Mar 22 11:28:18 2022
+    Info: Elapsed time: 00:00:31
+    Info: Total CPU time (on all processors): 00:00:42
 
 
