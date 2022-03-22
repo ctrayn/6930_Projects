@@ -28,7 +28,9 @@ entity Execute is
 		br_taken 	: out std_logic;
 		br_addr  	: out std_logic_vector(9 downto 0);
 		RS2_out 		: out std_logic_vector(31 downto 0);
-		inst_out 	: out std_logic_vector(31 downto 0)
+		inst_out 	: out std_logic_vector(31 downto 0);
+		data_tx		: out std_logic_vector(35 downto 0);
+		tx_write		: out std_logic
 	);
 end entity Execute;
 
@@ -131,32 +133,44 @@ begin
 				when OP_NOP | OP_LW =>
 					branch <= '0';
 					ALU_result <= ZEROS;
+					tx_write <= '0';
+					data_tx <= (others => '0');
 
 				when OP_SW =>
 					branch <= '0';
 					ALU_result <= std_logic_vector(unsigned(InOne) + unsigned(InTwo));
+					tx_write <= '0';
+					data_tx <= (others => '0');
 
 				when OP_J =>
 					branch <= '1';
 					br_addr <= inst_in(9 downto 0);
 					ALU_result <= ZEROS;
+					tx_write <= '0';
+					data_tx <= (others => '0');
 
 				when OP_JAL =>
 					branch <= '1';
 					br_addr <= inst_in(9 downto 0);
 					ALU_result(31 downto 10) <= (others => '0');
 					ALU_result(9 downto 0) <= pc_in;
+					tx_write <= '0';
+					data_tx <= (others => '0');
 
 				when OP_JR =>
 					branch <= '1';
 					br_addr <= InOne(9 downto 0);
 					ALU_result <= ZEROS;
+					tx_write <= '0';
+					data_tx <= (others => '0');
 
 				when OP_JALR =>
 					branch <= '1';
 					br_addr <= InOne(9 downto 0);
 					ALU_result(31 downto 10) <= (others => '0');
 					ALU_result(9 downto 0) <= pc_in;
+					tx_write <= '0';
+					data_tx <= (others => '0');
 
 				when OP_BEQZ =>
 					if InOne = ZEROS then
@@ -166,6 +180,8 @@ begin
 					end if;
 					br_addr <= inst_in(9 downto 0);
 					ALU_result <= ZEROS;
+					tx_write <= '0';
+					data_tx <= (others => '0');
 
 				when OP_BNEZ =>
 					if InOne = ZEROS then
@@ -175,44 +191,66 @@ begin
 					end if;
 					br_addr <= inst_in(9 downto 0);
 					ALU_result <= ZEROS;
+					tx_write <= '0';
+					data_tx <= (others => '0');
 
 				when OP_ADD | OP_ADDI =>
 					branch <= '0';
 					ALU_result <= std_logic_vector(signed(InOne) + signed(InTwo));
+					tx_write <= '0';
+					data_tx <= (others => '0');
 
 				when OP_ADDU | OP_ADDUI =>
 					branch <= '0';
 					ALU_result <= std_logic_vector(unsigned(InOne) + unsigned(InTwo));
+					tx_write <= '0';
+					data_tx <= (others => '0');
 
 				when OP_SUB | OP_SUBI =>
 					branch <= '0';
 					ALU_result <= std_logic_vector(signed(InOne) - signed(InTwo));
+					tx_write <= '0';
+					data_tx <= (others => '0');
 
 				when OP_SUBU | OP_SUBUI =>
 					branch <= '0';
 					ALU_result <= std_logic_vector(unsigned(InOne) - unsigned(InTwo));
+					tx_write <= '0';
+					data_tx <= (others => '0');
 
 				when OP_AND | OP_ANDI =>
 					branch <= '0';
 					ALU_result <= InOne and InTwo;
+					tx_write <= '0';
+					data_tx <= (others => '0');
 
 				when OP_OR | OP_ORI =>
 					branch <= '0';
 					ALU_result <= InOne or InTwo;
+					tx_write <= '0';
+					data_tx <= (others => '0');
 
 				when OP_XOR | OP_XORI =>
 					branch <= '0';
 					ALU_result <= InOne xor InTwo;
+					tx_write <= '0';
+					data_tx <= (others => '0');
 
 				when OP_SLL | OP_SLLI =>
 					branch <= '0';
 					ALU_result <= std_logic_vector(shift_left(unsigned(InOne), to_integer(unsigned(InTwo))));
+					tx_write <= '0';
+					data_tx <= (others => '0');
 
 				when OP_SRL | OP_SRLI =>
 					ALU_result <= std_logic_vector(shift_right(unsigned(InOne), to_integer(unsigned(InTwo))));
+					tx_write <= '0';
+					data_tx <= (others => '0');
 
 				when OP_SRA | OP_SRAI =>
 					ALU_result <= std_logic_vector(shift_right(signed(InOne), to_integer(unsigned(InTwo))));
+					tx_write <= '0';
+					data_tx <= (others => '0');
 
 				when OP_SLT | OP_SLTI =>
 					branch <= '0';
@@ -221,6 +259,8 @@ begin
 					else
 						ALU_result <= X"00000000";
 					end if;
+					tx_write <= '0';
+					data_tx <= (others => '0');
 
 				when OP_SLTU | OP_SLTUI =>
 					branch <= '0';
@@ -229,6 +269,8 @@ begin
 					else
 						ALU_result <= X"00000000";
 					end if;
+					tx_write <= '0';
+					data_tx <= (others => '0');
 
 				when OP_SGT | OP_SGTI =>
 					branch <= '0';
@@ -237,6 +279,8 @@ begin
 					else
 						ALU_result <= X"00000000";
 					end if;
+					tx_write <= '0';
+					data_tx <= (others => '0');
 
 				when OP_SGTU | OP_SGTUI =>
 					branch <= '0';
@@ -245,6 +289,8 @@ begin
 					else
 						ALU_result <= X"00000000";
 					end if;
+					tx_write <= '0';
+					data_tx <= (others => '0');
 
 				when OP_SLE | OP_SLEI =>
 					branch <= '0';
@@ -253,6 +299,8 @@ begin
 					else
 						ALU_result <= X"00000000";
 					end if;
+					tx_write <= '0';
+					data_tx <= (others => '0');
 
 				when OP_SLEU | OP_SLEUI =>
 					branch <= '0';
@@ -261,6 +309,8 @@ begin
 					else
 						ALU_result <= X"00000000";
 					end if;
+					tx_write <= '0';
+					data_tx <= (others => '0');
 
 				when OP_SGE | OP_SGEI =>
 					branch <= '0';
@@ -269,6 +319,8 @@ begin
 					else
 						ALU_result <= X"00000000";
 					end if;
+					tx_write <= '0';
+					data_tx <= (others => '0');
 
 				when OP_SGEU | OP_SGEUI =>
 					branch <= '0';
@@ -277,6 +329,8 @@ begin
 					else
 						ALU_result <= X"00000000";
 					end if;
+					tx_write <= '0';
+					data_tx <= (others => '0');
 
 				when OP_SEQ | OP_SEQI =>
 					branch <= '0';
@@ -285,6 +339,8 @@ begin
 					else
 						ALU_result <= X"00000000";
 					end if;
+					tx_write <= '0';
+					data_tx <= (others => '0');
 
 				when OP_SNE | OP_SNEI =>
 					branch <= '0';
@@ -293,10 +349,36 @@ begin
 					else
 						ALU_result <= X"00000001";
 					end if;
-
+					tx_write <= '0';
+					data_tx <= (others => '0');
+					
+				when OP_PCH =>
+					branch <= '0';
+					ALU_result <= ZEROS;
+					data_tx(31 downto 0)  <= InOne;
+					data_tx(35 downto 32) <= X"0";
+					tx_write <= '1';
+					
+				when OP_PD =>
+					branch <= '0';
+					ALU_result <= ZEROS;
+					data_tx(31 downto 0)  <= InOne;
+					data_tx(35 downto 32) <= X"1";
+					tx_write <= '1';
+					
+				when OP_PDU =>
+					branch <= '0';
+					ALU_result <= ZEROS;
+					ALU_result <= ZEROS;
+					data_tx(31 downto 0)  <= InOne;
+					data_tx(35 downto 32) <= X"2";
+					tx_write <= '1';
+					
 				when others =>
 					branch <= '0';
 					ALU_result <= ZEROS;
+					tx_write <= '0';
+					data_tx <= (others => '0');
 			end case;
 		end if;
 	end process;

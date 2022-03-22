@@ -188,6 +188,11 @@ begin
 					RS2 <= (others => '0');
 					Imm(15 downto 0) <= im_val;
 					Imm(16 downto 0) <= (others => '0');
+					
+				when OP_PCH | OP_PD | OP_PDU =>
+					RS1 <= ram(rd);
+					RS2 <= (others => '0');
+					Imm <= (others => '0');
 
 				when others =>
 					RS1 <= (others => '0');

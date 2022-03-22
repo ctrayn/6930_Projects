@@ -16,11 +16,11 @@ entity DLX is
 		ADC_CLK_10 			: in 	std_logic;
 		--MAX10_CLK1_50		: in  std_logic;
 		--MAX10_CLK2_50		: in  std_logic;
-		RST_L					: in  std_logic
+		RST_L					: in  std_logic;
 		--KEY1					: in  std_logic;
-		--RX						: in  std_logic;
+		RX						: in  std_logic;
 		-- OUTPUT
-		--TX						: out std_logic
+		TX						: out std_logic
 	);
 end entity DLX;
 
@@ -76,7 +76,9 @@ architecture behavioral of DLX is
 			br_taken 	: out std_logic;
 			br_addr  	: out std_logic_vector(9 downto 0);
 			RS2_out 		: out std_logic_vector(31 downto 0);
-			inst_out 	: out std_logic_vector(31 downto 0)
+			inst_out 	: out std_logic_vector(31 downto 0);
+			data_tx		: out std_logic_vector(35 downto 0);
+			tx_write		: out std_logic
 		);
 	end component;
 
@@ -91,6 +93,22 @@ architecture behavioral of DLX is
 			--OUTPUT
 			data_out		: out std_logic_vector(31 downto 0);
 			inst_out 	: out std_logic_vector(31 downto 0)
+		);
+	end component;
+	
+	component UART is
+		port (
+			--INPUT
+			clk			: in std_logic;
+			rst_l			: in std_logic;
+			RX 			: in std_logic;			--Connected to pin 40 on J1 (white wire)
+			wr_req		: in std_logic;
+			d_tx			: in std_logic_vector(35 downto 0); 		-- The data should only be 32 bits; [33:32] : 00 is char, 01 is signed 10 is unsigned; [35:34] are unused but I couldn't only make the FIFO 36 bits
+			
+			--OUTPUT
+			TX 			: out std_logic; 			--Connected to pin 39 on J1 (green wire)
+			UART_empty	: out std_logic;
+			UART_full	: out std_logic
 		);
 	end component;
 
@@ -119,9 +137,26 @@ architecture behavioral of DLX is
 	signal data_ME			: std_logic_vector(31 downto 0);
 	-- Between writeback and execute
 	signal inst_WE			: std_logic_vector(31 downto 0);
-	signal data_WE		: std_logic_vector(31 downto 0);
+	signal data_WE			: std_logic_vector(31 downto 0);
+	-- UART signals
+	signal empty, full	: std_logic;
+	signal UART_write		: std_logic;
+	signal data_tx			: std_logic_vector(35 downto 0);
 
 begin
+
+	duart : UART port map (
+		-- INPUT
+		clk 			=> ADC_CLK_10,
+		rst_l 		=> RST_L,
+		RX 			=> RX,
+		wr_req 		=> UART_write,	
+		d_tx 			=> data_tx,
+		--OUTPUT
+		TX 			=> TX,		
+		UART_empty 	=> empty,
+		UART_full 	=> full
+	);
 
 	-- Instance of fetch
 	fet : Fetch port map(
@@ -170,7 +205,9 @@ begin
 		br_taken => br_taken,
 		br_addr => br_addr,
 		RS2_out => rs2_EM,
-		inst_out => inst_EM
+		inst_out => inst_EM,
+		data_tx => data_tx,
+		tx_write => UART_write
 	);
 
 	-- Instance of memory
