@@ -57,7 +57,7 @@ continue
 break
 	JR		R31
 exit
-; Store the solution in f
-	SW		f(R0), R1
+; Send the solution over UART
+	PDU	R1
 done
 	J		done
