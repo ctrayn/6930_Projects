@@ -87,7 +87,7 @@ begin
 			else
 				ExMem_inst <= (others => '0');
 			end if;
-			RS2_out <= (others => '0');
+			RS2_out <= RS2;
 		end if;
 	end process;
 
