@@ -58,7 +58,7 @@ begin
 		q => inst_mem
 	);
 	process(clk) begin
-		if falling_edge(clk) and stall = '1' then
+		if stall = '1' then
 			mem_clk <= '1';
 		else
 			mem_clk <= clk;
