@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DLX
-Tue Mar 22 13:00:33 2022
+Tue Mar 22 17:18:33 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -70,13 +70,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Mar 22 13:00:32 2022       ;
+; Analysis & Synthesis Status        ; Successful - Tue Mar 22 17:18:33 2022       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; DLX                                         ;
 ; Top-level Entity Name              ; DLX                                         ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 8,519                                       ;
-;     Total combinational functions  ; 7,483                                       ;
+; Total logic elements               ; 8,470                                       ;
+;     Total combinational functions  ; 7,434                                       ;
 ;     Dedicated logic registers      ; 2,546                                       ;
 ; Total registers                    ; 2546                                        ;
 ; Total pins                         ; 4                                           ;
@@ -188,7 +188,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.1%      ;
+;     Processor 2            ;   0.2%      ;
 ;     Processor 3            ;   0.1%      ;
 ;     Processor 4            ;   0.1%      ;
 ;     Processor 5            ;   0.1%      ;
@@ -256,7 +256,7 @@ https://fpgasoftware.intel.com/eula.
 ; altram.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altram.inc                                     ;         ;
 ; altdpram.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altdpram.inc                                   ;         ;
 ; db/altsyncram_jns3.tdf           ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/altsyncram_jns3.tdf     ;         ;
-; programs/uart_code.mif           ; yes             ; Auto-Found Memory Initialization File  ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/programs/uart_code.mif     ;         ;
+; ./Programs/UART_code.mif         ; yes             ; Auto-Found Memory Initialization File  ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Programs/UART_code.mif     ;         ;
 ; db/altsyncram_b2s3.tdf           ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/altsyncram_b2s3.tdf     ;         ;
 ; programs/uart_data.mif           ; yes             ; Auto-Found Memory Initialization File  ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/programs/uart_data.mif     ;         ;
 +----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------------------------------------+---------+
@@ -267,16 +267,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+------------------+
 ; Resource                                    ; Usage            ;
 +---------------------------------------------+------------------+
-; Estimated Total logic elements              ; 8,519            ;
+; Estimated Total logic elements              ; 8,470            ;
 ;                                             ;                  ;
-; Total combinational functions               ; 7483             ;
+; Total combinational functions               ; 7434             ;
 ; Logic element usage by number of LUT inputs ;                  ;
-;     -- 4 input functions                    ; 5598             ;
-;     -- 3 input functions                    ; 1142             ;
-;     -- <=2 input functions                  ; 743              ;
+;     -- 4 input functions                    ; 5531             ;
+;     -- 3 input functions                    ; 1174             ;
+;     -- <=2 input functions                  ; 729              ;
 ;                                             ;                  ;
 ; Logic elements by mode                      ;                  ;
-;     -- normal mode                          ; 7092             ;
+;     -- normal mode                          ; 7043             ;
 ;     -- arithmetic mode                      ; 391              ;
 ;                                             ;                  ;
 ; Total registers                             ; 2546             ;
@@ -290,7 +290,7 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                  ;
 ; Maximum fan-out node                        ; ADC_CLK_10~input ;
 ; Maximum fan-out                             ; 2622             ;
-; Total fan-out                               ; 36497            ;
+; Total fan-out                               ; 36297            ;
 ; Average fan-out                             ; 3.60             ;
 +---------------------------------------------+------------------+
 
@@ -300,9 +300,9 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                                      ; Entity Name         ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |DLX                                         ; 7483 (1)            ; 2546 (0)                  ; 90880       ; 0          ; 0            ; 0       ; 0         ; 4    ; 0            ; 0          ; |DLX                                                                                                                                                     ; DLX                 ; work         ;
-;    |Decode:dec|                              ; 2332 (2332)         ; 1156 (1156)               ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Decode:dec                                                                                                                                          ; Decode              ; work         ;
-;    |Execute:exc|                             ; 1081 (1081)         ; 89 (89)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Execute:exc                                                                                                                                         ; Execute             ; work         ;
+; |DLX                                         ; 7434 (1)            ; 2546 (0)                  ; 90880       ; 0          ; 0            ; 0       ; 0         ; 4    ; 0            ; 0          ; |DLX                                                                                                                                                     ; DLX                 ; work         ;
+;    |Decode:dec|                              ; 2294 (2294)         ; 1156 (1156)               ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Decode:dec                                                                                                                                          ; Decode              ; work         ;
+;    |Execute:exc|                             ; 1070 (1070)         ; 89 (89)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Execute:exc                                                                                                                                         ; Execute             ; work         ;
 ;    |Fetch:fet|                               ; 59 (59)             ; 33 (33)                   ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Fetch:fet                                                                                                                                           ; Fetch               ; work         ;
 ;       |InstructionMemory:im|                 ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Fetch:fet|InstructionMemory:im                                                                                                                      ; InstructionMemory   ; work         ;
 ;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component                                                                                      ; altsyncram          ; work         ;
@@ -423,9 +423,9 @@ Encoding Type:  One-Hot
 +------------------------------------------+----------------------------------------+
 ; Register name                            ; Reason for Removal                     ;
 +------------------------------------------+----------------------------------------+
-; Execute:exc|RS2_out[1..8]                ; Stuck at GND due to stuck port data_in ;
+; Execute:exc|RS2_out[1..24]               ; Stuck at GND due to stuck port data_in ;
 ; Execute:exc|data_tx[34,35]               ; Stuck at GND due to stuck port data_in ;
-; Execute:exc|RS2_out[0,9..31]             ; Stuck at GND due to stuck port data_in ;
+; Execute:exc|RS2_out[0,25..31]            ; Stuck at GND due to stuck port data_in ;
 ; Decode:dec|Imm[27..31]                   ; Merged with Decode:dec|Imm[26]         ;
 ; UART:duart|my_UART:dut|sync_rx[3..15]    ; Lost fanout                            ;
 ; UART:duart|my_UART:dut|position_rx[3]    ; Lost fanout                            ;
@@ -485,38 +485,38 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DLX|Decode:dec|ram[0][16]                      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DLX|Decode:dec|ram[0][31]                      ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DLX|UART:duart|my_UART:dut|position_tx[3]      ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DLX|UART:duart|my_UART:dut|position_rx[3]      ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |DLX|Fetch:fet|pc[1]                            ;
-; 5:1                ; 31 bits   ; 93 LEs        ; 31 LEs               ; 62 LEs                 ; Yes        ; |DLX|UART:duart|numer[0]                        ;
-; 6:1                ; 31 bits   ; 124 LEs       ; 62 LEs               ; 62 LEs                 ; Yes        ; |DLX|UART:duart|stk_ptr[30]                     ;
-; 7:1                ; 16 bits   ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |DLX|UART:duart|my_UART:dut|sync_tx[4]          ;
-; 7:1                ; 16 bits   ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |DLX|UART:duart|my_UART:dut|sync_rx[6]          ;
-; 18:1               ; 32 bits   ; 384 LEs       ; 32 LEs               ; 352 LEs                ; Yes        ; |DLX|Execute:exc|data_tx[14]                    ;
-; 64:1               ; 14 bits   ; 588 LEs       ; 14 LEs               ; 574 LEs                ; Yes        ; |DLX|Decode:dec|Imm[13]                         ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; Yes        ; |DLX|UART:duart|d_tx_temp[31]                   ;
-; 35:1               ; 10 bits   ; 230 LEs       ; 10 LEs               ; 220 LEs                ; Yes        ; |DLX|Execute:exc|br_addr[4]                     ;
-; 9:1                ; 5 bits    ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |DLX|Decode:dec|Imm[21]                         ;
-; 9:1                ; 28 bits   ; 168 LEs       ; 56 LEs               ; 112 LEs                ; Yes        ; |DLX|UART:duart|d_tx_temp[5]                    ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |DLX|Fetch:fet|pc[0]                            ;
+; 5:1                ; 31 bits   ; 93 LEs        ; 31 LEs               ; 62 LEs                 ; Yes        ; |DLX|UART:duart|numer[12]                       ;
+; 6:1                ; 31 bits   ; 124 LEs       ; 62 LEs               ; 62 LEs                 ; Yes        ; |DLX|UART:duart|stk_ptr[0]                      ;
+; 7:1                ; 16 bits   ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |DLX|UART:duart|my_UART:dut|sync_tx[10]         ;
+; 7:1                ; 16 bits   ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |DLX|UART:duart|my_UART:dut|sync_rx[0]          ;
+; 18:1               ; 32 bits   ; 384 LEs       ; 32 LEs               ; 352 LEs                ; Yes        ; |DLX|Execute:exc|data_tx[31]                    ;
+; 64:1               ; 14 bits   ; 588 LEs       ; 14 LEs               ; 574 LEs                ; Yes        ; |DLX|Decode:dec|Imm[5]                          ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; Yes        ; |DLX|UART:duart|d_tx_temp[28]                   ;
+; 35:1               ; 10 bits   ; 230 LEs       ; 10 LEs               ; 220 LEs                ; Yes        ; |DLX|Execute:exc|br_addr[0]                     ;
+; 9:1                ; 5 bits    ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |DLX|Decode:dec|Imm[22]                         ;
+; 35:1               ; 32 bits   ; 736 LEs       ; 64 LEs               ; 672 LEs                ; Yes        ; |DLX|Decode:dec|RS1[19]                         ;
+; 9:1                ; 28 bits   ; 168 LEs       ; 56 LEs               ; 112 LEs                ; Yes        ; |DLX|UART:duart|d_tx_temp[14]                   ;
 ; 12:1               ; 4 bits    ; 32 LEs        ; 12 LEs               ; 20 LEs                 ; Yes        ; |DLX|Decode:dec|Imm[17]                         ;
-; 15:1               ; 32 bits   ; 320 LEs       ; 64 LEs               ; 256 LEs                ; Yes        ; |DLX|Decode:dec|RS1[4]                          ;
-; 68:1               ; 7 bits    ; 315 LEs       ; 49 LEs               ; 266 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[17]                 ;
-; 67:1               ; 5 bits    ; 220 LEs       ; 35 LEs               ; 185 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[10]                 ;
-; 67:1               ; 2 bits    ; 88 LEs        ; 18 LEs               ; 70 LEs                 ; Yes        ; |DLX|Execute:exc|ALU_result[9]                  ;
-; 69:1               ; 4 bits    ; 184 LEs       ; 32 LEs               ; 152 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[24]                 ;
-; 68:1               ; 4 bits    ; 180 LEs       ; 32 LEs               ; 148 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[4]                  ;
+; 47:1               ; 32 bits   ; 992 LEs       ; 736 LEs              ; 256 LEs                ; Yes        ; |DLX|Decode:dec|RS2[14]                         ;
+; 68:1               ; 7 bits    ; 315 LEs       ; 49 LEs               ; 266 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[22]                 ;
+; 67:1               ; 5 bits    ; 220 LEs       ; 35 LEs               ; 185 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[14]                 ;
+; 67:1               ; 2 bits    ; 88 LEs        ; 18 LEs               ; 70 LEs                 ; Yes        ; |DLX|Execute:exc|ALU_result[8]                  ;
+; 69:1               ; 4 bits    ; 184 LEs       ; 32 LEs               ; 152 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[27]                 ;
+; 68:1               ; 4 bits    ; 180 LEs       ; 32 LEs               ; 148 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[7]                  ;
 ; 70:1               ; 2 bits    ; 92 LEs        ; 20 LEs               ; 72 LEs                 ; Yes        ; |DLX|Execute:exc|ALU_result[28]                 ;
-; 69:1               ; 2 bits    ; 92 LEs        ; 20 LEs               ; 72 LEs                 ; Yes        ; |DLX|Execute:exc|ALU_result[3]                  ;
-; 42:1               ; 32 bits   ; 896 LEs       ; 736 LEs              ; 160 LEs                ; Yes        ; |DLX|Decode:dec|RS2[1]                          ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |DLX|Execute:exc|InTwo[25]                      ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |DLX|UART:duart|my_UART:dut|next_state_tx.DATA  ;
+; 69:1               ; 2 bits    ; 92 LEs        ; 20 LEs               ; 72 LEs                 ; Yes        ; |DLX|Execute:exc|ALU_result[2]                  ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |DLX|Execute:exc|InTwo[27]                      ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |DLX|UART:duart|my_UART:dut|next_state_tx.IDLE  ;
 ; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |DLX|UART:duart|my_UART:dut|next_state_rx.START ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; No         ; |DLX|Execute:exc|InOne[29]                      ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |DLX|Decode:dec|Mux6                            ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |DLX|Decode:dec|Mux72                           ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |DLX|UART:duart|Selector1105                    ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |DLX|Decode:dec|Mux0                            ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |DLX|Decode:dec|Mux95                           ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; No         ; |DLX|UART:duart|Selector1107                    ;
 ; 9:1                ; 32 bits   ; 192 LEs       ; 32 LEs               ; 160 LEs                ; No         ; |DLX|Execute:exc|Add0                           ;
+; 7:1                ; 32 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; No         ; |DLX|Execute:exc|InOne[12]                      ;
 ; 129:1              ; 8 bits    ; 688 LEs       ; 688 LEs              ; 0 LEs                  ; No         ; |DLX|UART:duart|d_tx_out                        ;
 ; 4:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; No         ; |DLX|Execute:exc|Add0                           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
@@ -915,21 +915,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     SCLR              ; 1                           ;
 ;     SCLR SLD          ; 4                           ;
 ;     plain             ; 287                         ;
-; cycloneiii_lcell_comb ; 7484                        ;
+; cycloneiii_lcell_comb ; 7435                        ;
 ;     arith             ; 391                         ;
 ;         1 data inputs ; 1                           ;
 ;         2 data inputs ; 137                         ;
 ;         3 data inputs ; 253                         ;
-;     normal            ; 7093                        ;
+;     normal            ; 7044                        ;
 ;         0 data inputs ; 27                          ;
 ;         1 data inputs ; 9                           ;
-;         2 data inputs ; 570                         ;
-;         3 data inputs ; 889                         ;
-;         4 data inputs ; 5598                        ;
+;         2 data inputs ; 556                         ;
+;         3 data inputs ; 921                         ;
+;         4 data inputs ; 5531                        ;
 ; cycloneiii_ram_block  ; 107                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 65.90                       ;
-; Average LUT depth     ; 16.43                       ;
+; Average LUT depth     ; 16.71                       ;
 +-----------------------+-----------------------------+
 
 
@@ -938,7 +938,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:25     ;
+; Top            ; 00:00:28     ;
 +----------------+--------------+
 
 
@@ -948,7 +948,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Tue Mar 22 12:59:49 2022
+    Info: Processing started: Tue Mar 22 17:17:46 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DLX -c DLX
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -996,7 +996,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file dlx.vhd
     Info (12023): Found entity 1: DLX File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.vhd Line: 13
 Info (12021): Found 2 design units, including 0 entities, in source file common.vhd
     Info (12022): Found design unit 1: common File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Common.vhd Line: 15
-    Info (12022): Found design unit 2: common-body File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Common.vhd Line: 89
+    Info (12022): Found design unit 2: common-body File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Common.vhd Line: 90
 Info (12127): Elaborating entity "DLX" for the top level hierarchy
 Warning (10036): Verilog HDL or VHDL warning at DLX.vhd(142): object "empty" assigned a value but never read File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.vhd Line: 142
 Warning (10036): Verilog HDL or VHDL warning at DLX.vhd(142): object "full" assigned a value but never read File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.vhd Line: 142
@@ -1172,10 +1172,12 @@ Info (12133): Instantiated megafunction "Fetch:fet|InstructionMemory:im|altsyncr
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_jns3.tdf
     Info (12023): Found entity 1: altsyncram_jns3 File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/altsyncram_jns3.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_jns3" for hierarchy "Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component|altsyncram_jns3:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Warning (113028): 1019 out of 1024 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Programs/UART_code.mif Line: 1
+    Warning (113027): Addresses ranging from 5 to 1023 are not initialized File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Programs/UART_code.mif Line: 1
 Info (12128): Elaborating entity "Decode" for hierarchy "Decode:dec" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.vhd Line: 174
 Info (12128): Elaborating entity "Execute" for hierarchy "Execute:exc" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.vhd Line: 192
-Warning (10492): VHDL Process Statement warning at Execute.vhd(102): signal "IdEx_rd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Execute.vhd Line: 102
-Warning (10492): VHDL Process Statement warning at Execute.vhd(104): signal "IdEx_rd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Execute.vhd Line: 104
+Warning (10492): VHDL Process Statement warning at Execute.vhd(107): signal "IdEx_rd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Execute.vhd Line: 107
+Warning (10492): VHDL Process Statement warning at Execute.vhd(109): signal "IdEx_rd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Execute.vhd Line: 109
 Info (12128): Elaborating entity "Memory" for hierarchy "Memory:mem" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.vhd Line: 214
 Warning (10492): VHDL Process Statement warning at Memory.vhd(78): signal "inst_wb" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Memory.vhd Line: 78
 Warning (10492): VHDL Process Statement warning at Memory.vhd(79): signal "mem_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Memory.vhd Line: 79
@@ -1252,15 +1254,15 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "RX" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.vhd Line: 21
-Info (21057): Implemented 8701 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 8651 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 8590 logic cells
+    Info (21061): Implemented 8540 logic cells
     Info (21064): Implemented 107 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 26 warnings
-    Info: Peak virtual memory: 4929 megabytes
-    Info: Processing ended: Tue Mar 22 13:00:33 2022
-    Info: Elapsed time: 00:00:44
-    Info: Total CPU time (on all processors): 00:00:48
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 28 warnings
+    Info: Peak virtual memory: 4923 megabytes
+    Info: Processing ended: Tue Mar 22 17:18:33 2022
+    Info: Elapsed time: 00:00:47
+    Info: Total CPU time (on all processors): 00:00:51
 
 
