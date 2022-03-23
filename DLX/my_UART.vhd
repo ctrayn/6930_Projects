@@ -107,6 +107,11 @@ begin
 				position_tx <= x"0";
 				tx <= '1';
 				rdreq <= '0';
+			elsif state_tx = IDLE and next_state_tx = IDLE then
+				sync_tx <= sync_tx + 1;
+				position_tx <= x"0";
+				tx <= '1';
+				rdreq <= '0';				
 			elsif state_tx = IDLE and next_state_tx = START then
 				sync_tx <= x"0000";
 				position_tx <= x"0";
@@ -141,7 +146,7 @@ begin
 	process (tx_flag, position_tx, rst_l, sync_tx, state_tx, clk_div) begin
 		if rst_l = '0' then
 			next_state_tx <= IDLE;
-		elsif state_tx = IDLE and tx_flag = '1' then
+		elsif state_tx = IDLE and tx_flag = '1' and sync_tx >= clk_div then
 			next_state_tx <= START;
 		elsif state_tx = START and sync_tx >= clk_div then
 			next_state_tx <= DATA;
