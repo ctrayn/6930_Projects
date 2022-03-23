@@ -11,12 +11,15 @@ entity UART is
 		rst_l			: in std_logic;
 		RX 			: in std_logic;			--Connected to pin 40 on J1 (white wire)
 		wr_req		: in std_logic;
+		rd_req		: in std_logic;
 		d_tx			: in std_logic_vector(35 downto 0); 		-- The data should only be 32 bits; [33:32] : 00 is char, 01 is signed 10 is unsigned; [35:34] are unused but I couldn't only make the FIFO 36 bits
 		
 		--OUTPUT
 		TX 			: out std_logic; 			--Connected to pin 39 on J1 (green wire)
-		UART_empty	: out std_logic;
-		UART_full	: out std_logic
+		TX_empty		: out std_logic;
+		TX_full		: out std_logic;
+		d_rx			: out std_logic_vector(31 downto 0);
+		RX_empty		: out std_logic
 	);										--Ground is pin 30 on J1 (black wire); Leave power disconnected (red wire)
 end entity UART;
 
@@ -24,6 +27,8 @@ architecture behavioral of UART is
 
 	type STATE_TYPE is (WAITING, READING, CHAR, SINT, UINT, WRITING, DIVIDE);
 	signal state, div_state : STATE_TYPE := WAITING;
+	type RX_STATE_TYPE is (WAITING, READING, STORE, WRITING);
+	signal rx_state : RX_STATE_TYPE := WAITING;
 	
 	signal TX_flag, RX_flag 	: std_logic;
 	signal data_tx				 	: std_logic_Vector(7 downto 0);
@@ -41,6 +46,10 @@ architecture behavioral of UART is
 	signal remainder, u_remain	: std_logic_vector(4 downto 0);
 	signal d_tx_temp				: std_logic_vector(31 downto 0);
 	signal u_numer, u_quotient	: std_logic_vector(31 downto 0);
+	signal resend_data			: std_logic_vector(7 downto 0);
+	signal resend_flag			: std_logic;
+	signal number					: std_logic_vector(31 downto 0);
+	signal negative				: std_logic;
 	
 	type stack_type is array (0 to 127) of std_logic_vector(7 downto 0);
 --	type stack_type is array (natural range <>) of std_logic_vector;
@@ -48,6 +57,10 @@ architecture behavioral of UART is
 	signal stk_ptr	: natural := 0;	--points to next open space
 	
 	constant clk_div : unsigned(15 downto 0) := x"0208"; -- This is based on our clk being 10Mhz 10M/19200
+	constant ASCII_ZERO	: unsigned(7 downto 0) 	:= X"30";
+	constant ASCII_NINE	: unsigned(7 downto 0) 	:= X"39";
+	constant ASCII_NEG	: unsigned(7 downto 0) 	:= X"2E";
+	constant ASCII_CR		: unsigned(7 downto 0)	:= X"0D";
 	
 	component my_UART
 		port
@@ -112,11 +125,36 @@ architecture behavioral of UART is
 		);
 	end component;
 	
+	signal mult_result 	: std_logic_vector(35 downto 0); 
+	signal mult_data 		: std_logic_vector(31 downto 0);
+	component MULT IS
+	PORT
+	(
+		dataa		: IN STD_LOGIC_VECTOR (31 DOWNTO 0);
+		result	: OUT STD_LOGIC_VECTOR (35 DOWNTO 0)
+	);
+	end component;
+	
+	signal d_rx_out 	: std_logic_vector(31 downto 0) := (others => '0');
+	signal d_rx_wr		: std_logic := '0';
+	component RX_FIFO IS
+	PORT
+	(
+		aclr		: IN STD_LOGIC ;
+		clock		: IN STD_LOGIC ;
+		data		: IN STD_LOGIC_VECTOR (31 DOWNTO 0);
+		rdreq		: IN STD_LOGIC ;
+		wrreq		: IN STD_LOGIC ;
+		empty		: OUT STD_LOGIC ;
+		q			: OUT STD_LOGIC_VECTOR (31 DOWNTO 0)
+	);
+	end component;
+	
 begin
 	rst_h <= not rst_l;
 	TX_flag <= not in_empty;
 	d_tx_type <= d_tx_in(33 downto 32);
-	UART_empty <= d_tx_empty;
+	TX_empty <= d_tx_empty;
 		
 	fifo_uart: UART_FIFO
 		port map
@@ -127,7 +165,7 @@ begin
 			rdreq => rdreq,
 			wrreq => wr_req,
 			empty => d_tx_empty,
-			full	=> UART_full,
+			full	=> TX_full,
 			q		=>	d_tx_in
 		);
 	
@@ -176,7 +214,120 @@ begin
 			remain	=> u_remain
 		);
 		
+	umult: MULT
+		port map
+		(
+			dataa		=> mult_data,
+			result	=> mult_result
+		);
+		
+	fifo_rx : RX_FIFO
+		port map
+		(
+			aclr		=> rst_h,
+			clock		=> clk,
+			data		=> d_rx_out,
+			rdreq		=> rd_req,
+			wrreq		=> d_rx_wr,
+			empty		=> RX_empty,
+			q			=> d_rx
+		);
+		
+	--RX
+	--Process to take RX data and accumulate it until an <enter> is pressed by the user
+	process(clk, rst_l) begin
+		if rst_l = '0' then
+			resend_data <= (others => '0');
+			resend_flag <= '0';
+			rx_state <= WAITING;
+			number <= (others => '0');
+			mult_data <= (others => '0');
+			negative <= '0';
+			d_rx_wr <= '0';
+			d_rx_out <= (others => '0');
+		else
+			if rising_edge(clk) then
+			
+				case rx_state is
+					when WAITING =>
+						if RX_FLAG = '1' then
+							rx_state <= READING;
+						else
+							rx_state <= WAITING;
+						end if;
+						resend_data <= (others => '0');
+						resend_flag <= '0';
+						number <= number;
+						negative <= negative;
+						d_rx_wr <= '0';
+						d_rx_out <= (others => '0');
+					
+					when READING =>
+						if data_rx >= ASCII_ZERO and data_rx <= ASCII_NINE then
+							mult_data <= number;
+							rx_state <= STORE;
+							negative <= negative;
+						elsif data_rx = ASCII_NEG then
+							mult_data <= (others => '0');
+							rx_state <= WAITING;
+							negative <= '1';
+						elsif data_rx = ASCII_CR then
+							rx_state <= WRITING;
+							negative <= negative;
+							mult_data <= (others => '0');
+						else
+							mult_data <= (others => '0');
+							rx_state <= WAITING;
+							negative <= negative;
+						end if;
+						resend_data <= std_logic_vector(data_rx);
+						resend_flag <= '1';
+						number <= number;
+						d_rx_wr <= '0';
+						d_rx_out <= (others => '0');
+						
+					when STORE =>
+						number <= std_logic_vector(unsigned(mult_result(31 downto 0)) + unsigned(data_rx) - ASCII_ZERO);	--convert to hex and store
+						rx_state <= WAITING;
+						negative <= negative;
+						mult_data <= (others => '0');
+						resend_data <= (others => '0');
+						resend_flag <= '0';
+						d_rx_wr <= '0';
+						d_rx_out <= (others => '0');
+						
+					when WRITING =>
+						if negative = '1' then
+							d_rx_out <= std_logic_vector(unsigned(not number) + 1);
+						else
+							d_rx_out <= number;
+						end if;
+						d_rx_wr <= '1';
+						rx_state <= WAITING;
+						number <= (others => '0');
+						negative <= '0';
+						mult_data <= (others => '0');
+						resend_data <= (others => '0');
+						resend_flag <= '0';
+						
+				
+					when others =>
+					resend_data <= (others => '0');
+					resend_flag <= '0';
+					rx_state <= WAITING;
+					number <= (others => '0');
+					mult_data <= (others => '0');
+					negative <= '0';
+					d_rx_wr <= '0';
+					d_rx_out <= (others => '0');
+				
+				end case;	
+			end if;
+		end if;
+	end process;
+		
 	
+	--TX
 	-- Process to take the data from the 32 bit register into the 8 bit register based on type
 	process (clk, d_tx_empty, rst_l) begin
 		if (rst_l = '0') then
@@ -329,6 +480,15 @@ begin
 						div_state	<= WAITING;
 				
 				end case;
+				
+				--Send the character from RX back out so it's visible
+				if resend_flag = '1' and state = WAITING then
+					d_tx_out <= resend_data;
+					out_wr_req <= '1';
+				else
+					d_tx_out <= d_tx_out;
+					out_wr_req <= out_wr_req;
+				end if;
 			end if;
 		end if;
 	end process;

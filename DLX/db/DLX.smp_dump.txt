@@ -19,6 +19,13 @@ state.UINT 0 0 1 0 0 0 1
 state.WRITING 0 1 0 0 0 0 1 
 state.DIVIDE 1 0 0 0 0 0 1 
 
+State Machine - |DLX|UART:duart|rx_state
+Name rx_state.WRITING rx_state.STORE rx_state.READING rx_state.WAITING 
+rx_state.WAITING 0 0 0 0 
+rx_state.READING 0 0 1 1 
+rx_state.STORE 0 1 0 1 
+rx_state.WRITING 1 0 0 1 
+
 State Machine - |DLX|UART:duart|my_UART:dut|state_tx
 Name state_tx.DATA state_tx.START state_tx.IDLE 
 state_tx.IDLE 0 0 0 

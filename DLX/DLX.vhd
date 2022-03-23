@@ -107,8 +107,8 @@ architecture behavioral of DLX is
 			
 			--OUTPUT
 			TX 			: out std_logic; 			--Connected to pin 39 on J1 (green wire)
-			UART_empty	: out std_logic;
-			UART_full	: out std_logic
+			TX_empty	: out std_logic;
+			TX_full	: out std_logic
 		);
 	end component;
 
@@ -154,8 +154,8 @@ begin
 		d_tx 			=> data_tx,
 		--OUTPUT
 		TX 			=> TX,		
-		UART_empty 	=> empty,
-		UART_full 	=> full
+		TX_empty 	=> empty,
+		TX_full 	=> full
 	);
 
 	-- Instance of fetch
