@@ -88,8 +88,8 @@ begin
 					Imm <= (others => '0');
 
 				when OP_LW =>
-					RS1 <= (others => '0');
-					RS2 <= ram(r1);
+					RS1 <= ram(r1);
+					RS2 <= ram(rd);
 					Imm(31 downto 16) <= (others => '0');
 					Imm(15 downto 0)  <= im_val;
 
