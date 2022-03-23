@@ -31,8 +31,8 @@ architecture behavioral of Memory is
 	component DataMemory is
 		port (
 			address	: IN STD_LOGIC_VECTOR (9 DOWNTO 0);
-			clock		: IN STD_LOGIC  := '1';
 			data		: IN STD_LOGIC_VECTOR (31 DOWNTO 0);
+			clock		: IN STD_LOGIC  := '0';
 			wren		: IN STD_LOGIC;
 			q			: OUT STD_LOGIC_VECTOR (31 DOWNTO 0)
 		);
@@ -46,12 +46,11 @@ architecture behavioral of Memory is
 	signal data_wb	: std_logic_vector(31 downto 0);
 
 begin
-
 	-- Instance of our data memory
 	dm : DataMemory port map (
 		address => ALU_in(9 downto 0),
-		clock => clk,
 		data => RS2_in,
+		clock => clk,
 		wren => wren,
 		q => mem_out
 	);
@@ -74,7 +73,7 @@ begin
 	end process;
 
 	-- Async process. Writeback data select
-	process(inst_in) begin
+	process(inst_wb, mem_out) begin
 		if inst_wb(31 downto 26) = OP_LW then
 			data_wb <= mem_out;
 		else
