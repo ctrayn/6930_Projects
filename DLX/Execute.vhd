@@ -137,7 +137,7 @@ begin
 			case opcode is
 				when OP_NOP =>
 					branch <= '0';
-					ALU_result <= ZEROS;
+					ALU_result <= std_logic_vector(unsigned(InOne) + unsigned(InTwo));
 					tx_write <= '0';
 					data_tx <= (others => '0');
 
