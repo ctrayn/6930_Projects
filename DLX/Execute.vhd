@@ -135,13 +135,13 @@ begin
 	process (clk) begin
 		if rising_edge(clk) then
 			case opcode is
-				when OP_NOP | OP_LW =>
+				when OP_NOP =>
 					branch <= '0';
 					ALU_result <= std_logic_vector(unsigned(InOne) + unsigned(InTwo));
 					tx_write <= '0';
 					data_tx <= (others => '0');
 
-				when OP_SW =>
+				when OP_SW | OP_LW =>
 					branch <= '0';
 					ALU_result <= std_logic_vector(unsigned(InOne) + unsigned(InTwo));
 					tx_write <= '0';

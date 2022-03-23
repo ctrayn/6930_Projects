@@ -274,14 +274,14 @@ begin
 					when UINT =>
 						if signed(d_tx_temp) = 0 then
 							state 		<= WRITING;
+							div_state	<= WAITING;
 							numer 		<= (others => '0');
-							d_tx_temp	<= (others => '0');
 						else
 							state 		<= DIVIDE;
 							div_state	<= UINT;
-							numer 		<= d_tx_temp;
-							d_tx_temp	<= quotient;
+							u_numer 		<= d_tx_temp;
 						end if;
+						d_tx_temp	<= d_tx_temp;
 						d_tx_out 	<= d_tx_out;
 						out_wr_req 	<= '0';
 						rdreq 		<= '0';
@@ -310,11 +310,11 @@ begin
 							stack(stk_ptr) <= std_logic_vector(unsigned(remainder) + unsigned(ASCII));
 						else
 							d_tx_temp <= u_quotient;
-							stack(stk_ptr) <= std_logic_vector(unsigned(remainder) + unsigned(ASCII));
+							stack(stk_ptr) <= std_logic_vector(unsigned(u_remain) + unsigned(ASCII));
 						end if;
 						numer <= numer;
 						rdreq <= '0';
-						stk_ptr <= stk_ptr;
+						stk_ptr <= stk_ptr + 1;
 						out_wr_req <= '0';
 					
 					when others =>
