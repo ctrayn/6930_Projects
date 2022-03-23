@@ -1,0 +1,96 @@
+; Program for calculating the factorial of a number.
+; By: Jonah Boe & Calvin Passmore
+; For ECE 6930 - Utah State University
+
+; The data
+.data
+n	1	12
+f	1	0
+
+; Then constants
+.const
+s1	37	"Welcome to the DLX factorial program!"
+s2	4	"! = "
+
+; The code
+.text
+; Print the Welcome
+	LW	R10, s1(R0)
+	ADDI	R11, R0, 1
+print1
+	SLEU	R12, R11, R10
+	BEQZ	R12, endprint1
+	LW		R13, s1(R11)
+	PCH	R13
+	ADDI	R11, R11, 1
+	J	print1
+endprint1
+	ADDI	R4, R0, 10
+	PCH	R4
+
+; The initial n
+	LW	R1, n(R0)
+
+; Print ! = ...
+	PDU	R1
+	LW		R10, s2(R0)
+	ADDI	R11, R0, 1
+print2
+	SLEU	R12, R11, R10
+	BEQZ	R12, endprint2
+	LW		R13, s2(R11)
+	PCH	R13
+	ADDI	R11, R11, 1
+	J	print2
+endprint2
+
+; The second factor for multiplication
+	ADDI	R2, R1, 0
+; Main loop
+main
+; Subtract 1 from R2 and set R3 back to 0
+	SUBUI	R2, R2, 1
+	ADDI	R3, R0, 0
+; If R2 is 0 or 1, store in R4
+	SLEI	R4, R2, 1
+; Exit the program if R1 is 1
+	BNEZ	R4, exit
+; Start multiplying
+	JAL	multiply
+; Move the current solution to R1
+	ADDI	R1, R3, 0
+; Repeat
+	J	main
+
+; Multiplies R1 by R2 and stores solution in R3
+multiply
+; Initialize R5 with a mask of 1 and R6 with 0
+	ADDI	R5, R0, 1
+	ADDI	R6, R0, 0
+loop
+; Cover R2 with the mask and store in R7
+	AND	R7, R5, R2
+; If the masked value is 0
+	SEQI	R8, R7, 0
+; Then continue
+	BNEZ	R8, continue
+; Shift R1 by the result and add to R3
+	SLL	R9, R1, R6
+	ADD	R3, R3, R9
+continue
+	; Shift the mask and add 1 to R6
+	SLLI	R5, R5, 1
+	ADDI	R6, R6, 1
+; If our mask is all 0, store in R8
+	SEQI	R8, R5, 0
+; If the mask is 0, exit multiply
+	BNEZ	R8, break
+; Otherwise do it again
+	J		loop
+break
+	JR		R31
+exit
+; Send the solution over UART
+	PDU	R1
+done
+	J		done

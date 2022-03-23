@@ -38,8 +38,9 @@ def run():
     line = source_file.readline()
     i = 0
     variable = {}
-    while line.strip("\t") != ".const\n" and line.strip("\t") != ".text\n":
-        if (';' in line) or (line.strip("\t").strip(" ") == ".data\n") or (line.strip("\t").strip(" ") == "\n"):  # Skip lines
+    while line.strip("\t") != ".text\n" and (line.strip("\t").strip(" ") != ".const\n"):
+        if (';' in line) or (line.strip("\t").strip(" ") == ".data\n")\
+                or (line.strip("\t").strip(" ") == "\n"):  # Skip lines
             pass
         else:
             line = line.strip("\n")
@@ -60,19 +61,41 @@ def run():
         line = source_file.readline()
 
     while line.strip("\t") != ".text\n":
-        if (';' in line) or (line.strip("\t").strip(" ") == ".const\n") or (line.strip("\t").strip(" ") == "\n"): # Skip lines
+        if (';' in line) or (line.strip("\t").strip(" ") == ".const\n")\
+                or (line.strip("\t").strip(" ") == ".data\n") or (line.strip("\t").strip(" ") == "\n"):  # Skip lines
             pass
         else:
             line = line.strip("\n")
-            data = line.strip(" ").split("\t")
-            chars = data[2].strip('"')
-            data_file.write(f"{i:>03X} : {int(data[1]):>08X};  --{data[0]} len: {data[1]}\n")
-            i += 1
-            for char in chars:
-                data_file.write(f"{i:>03X} : {ord(char):>08X};  --{data[0]} {char}\n")
+            data = line.split("\t")
+            while '' in data:                   # Remove blank entries
+                data.remove('')
+
+            values = data[2].replace('"', "")
+            # print(f"{data} -- {values}")
+            if len(values) != int(data[1]):
+                print(f"Error: {data[1]} != {len(values)}")
+                sys.exit(1)
+            variable[data[0]] = i   # Save the addresses for reference in the code
+            for index in range(len(values)):
+                data_file.write(f"{i:>03X} : {ord(values[index]):>08};  --{data[0]}[{index}] {values[index]}\n")
                 i += 1
 
         line = source_file.readline()
+
+    # while line.strip("\t") != ".text\n":
+    #     if (';' in line) or (line.strip("\t").strip(" ") == ".const\n") or (line.strip("\t").strip(" ") == "\n"): # Skip lines
+    #         pass
+    #     else:
+    #         line = line.strip("\n")
+    #         data = line.strip(" ").split("\t")
+    #         chars = data[2].strip('"')
+    #         data_file.write(f"{i:>03X} : {int(data[1]):>08X};  --{data[0]} len: {data[1]}\n")
+    #         i += 1
+    #         for char in chars:
+    #             data_file.write(f"{i:>03X} : {ord(char):>08X};  --{data[0]} {char}\n")
+    #             i += 1
+    #
+    #     line = source_file.readline()
 
 
 
