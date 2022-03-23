@@ -111,6 +111,9 @@ begin
 		-- Load word needs a special case
 		elsif MemWb_opcode = OP_LW and OpIsTypeA(opcode) = '1' and MemWb_rd = IdEx_Rs1 then
 			InOne <= MemWb_data;
+		-- UART
+		elsif MemWb_opcode = OP_LW and OpIsUART(opcode) = '1' and MemWb_rd = IdEx_Rs1 then
+			InOne <= MemWb_data;
 		else
 			InOne <= RS1;
 		end if;
