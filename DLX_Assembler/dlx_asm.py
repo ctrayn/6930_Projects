@@ -346,7 +346,18 @@ def run():
                 rs1 = bin(int(rs1))[2:]
                 word += f"{rs1:>010}"
                 word += "0" * 16
-
+            elif items[0] == "GD":
+                word = "110100"
+                rs1 = items[1].replace('R', '')
+                rs1 = bin(int(rs1))[2:]
+                word += f"{rs1:>010}"
+                word += "0" * 16
+            elif items[0] == "GDU":
+                word = "110101"
+                rs1 = items[1].replace('R', '')
+                rs1 = bin(int(rs1))[2:]
+                word += f"{rs1:>010}"
+                word += "0" * 16
             else:
                 print(f"\033[31m Error: OPCODE '{items[0]}' unknown \033[0m")
 

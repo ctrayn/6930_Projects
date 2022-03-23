@@ -103,5 +103,7 @@ exit
 ; Send the solution over UART and store it
 	PDU	R1
 	SW		f(R0), R1
+	GD	R9
+	GDU	R10
 done
 	J		done
