@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DLX
-Tue Mar 22 18:57:53 2022
+Tue Mar 22 19:33:18 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -26,8 +26,8 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
  18. Multiplexer Restructuring Statistics (Restructuring Performed)
  19. Source assignments for UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|altsyncram_k2m1:FIFOram
  20. Source assignments for UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|altsyncram_85m1:FIFOram
- 21. Source assignments for Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component|altsyncram_jns3:auto_generated
- 22. Source assignments for Memory:mem|DataMemory:dm|altsyncram:altsyncram_component|altsyncram_b2s3:auto_generated
+ 21. Source assignments for Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component|altsyncram_c7t3:auto_generated
+ 22. Source assignments for Memory:mem|DataMemory:dm|altsyncram:altsyncram_component|altsyncram_4is3:auto_generated
  23. Parameter Settings for User Entity Instance: UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component
  24. Parameter Settings for User Entity Instance: UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component
  25. Parameter Settings for User Entity Instance: UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component
@@ -70,7 +70,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Mar 22 18:57:52 2022       ;
+; Analysis & Synthesis Status        ; Successful - Tue Mar 22 19:33:18 2022       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; DLX                                         ;
 ; Top-level Entity Name              ; DLX                                         ;
@@ -199,67 +199,67 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                        ;
-+----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                          ; Library ;
-+----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------------------------------------+---------+
-; UnsignedDiv.vhd                  ; yes             ; User Wizard-Generated File             ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UnsignedDiv.vhd            ;         ;
-; UART_FIFO.vhd                    ; yes             ; User Wizard-Generated File             ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART_FIFO.vhd              ;         ;
-; UART.vhd                         ; yes             ; User VHDL File                         ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd                   ;         ;
-; U_DIV.vhd                        ; yes             ; User Wizard-Generated File             ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/U_DIV.vhd                  ;         ;
-; TX_FIFO.vhd                      ; yes             ; User Wizard-Generated File             ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/TX_FIFO.vhd                ;         ;
-; my_UART.vhd                      ; yes             ; User VHDL File                         ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/my_UART.vhd                ;         ;
-; Memory.vhd                       ; yes             ; User VHDL File                         ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Memory.vhd                 ;         ;
-; DataMemory.vhd                   ; yes             ; User Wizard-Generated File             ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DataMemory.vhd             ;         ;
-; Execute.vhd                      ; yes             ; User VHDL File                         ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Execute.vhd                ;         ;
-; InstructionMemory.vhd            ; yes             ; User Wizard-Generated File             ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/InstructionMemory.vhd      ;         ;
-; Fetch.vhd                        ; yes             ; User VHDL File                         ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Fetch.vhd                  ;         ;
-; Decode.vhd                       ; yes             ; User VHDL File                         ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Decode.vhd                 ;         ;
-; DLX.vhd                          ; yes             ; User VHDL File                         ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.vhd                    ;         ;
-; Common.vhd                       ; yes             ; User VHDL File                         ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Common.vhd                 ;         ;
-; scfifo.tdf                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/scfifo.tdf                                     ;         ;
-; a_regfifo.inc                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_regfifo.inc                                  ;         ;
-; a_dpfifo.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_dpfifo.inc                                   ;         ;
-; a_i2fifo.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_i2fifo.inc                                   ;         ;
-; a_fffifo.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_fffifo.inc                                   ;         ;
-; a_f2fifo.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_f2fifo.inc                                   ;         ;
-; aglobal201.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc                                 ;         ;
-; db/scfifo_4921.tdf               ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/scfifo_4921.tdf         ;         ;
-; db/a_dpfifo_bf21.tdf             ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_dpfifo_bf21.tdf       ;         ;
-; db/a_fefifo_18e.tdf              ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_fefifo_18e.tdf        ;         ;
-; db/cntr_537.tdf                  ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/cntr_537.tdf            ;         ;
-; db/altsyncram_k2m1.tdf           ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/altsyncram_k2m1.tdf     ;         ;
-; db/cntr_p2b.tdf                  ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/cntr_p2b.tdf            ;         ;
-; db/scfifo_rr11.tdf               ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/scfifo_rr11.tdf         ;         ;
-; db/a_dpfifo_2221.tdf             ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_dpfifo_2221.tdf       ;         ;
-; db/a_fefifo_sae.tdf              ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_fefifo_sae.tdf        ;         ;
-; db/cntr_f47.tdf                  ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/cntr_f47.tdf            ;         ;
-; db/altsyncram_85m1.tdf           ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/altsyncram_85m1.tdf     ;         ;
-; db/cntr_34b.tdf                  ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/cntr_34b.tdf            ;         ;
-; lpm_divide.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf                                 ;         ;
-; abs_divider.inc                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/abs_divider.inc                                ;         ;
-; sign_div_unsign.inc              ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sign_div_unsign.inc                            ;         ;
-; db/lpm_divide_0uo.tdf            ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/lpm_divide_0uo.tdf      ;         ;
-; db/sign_div_unsign_j7h.tdf       ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/sign_div_unsign_j7h.tdf ;         ;
-; db/alt_u_div_she.tdf             ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/alt_u_div_she.tdf       ;         ;
-; db/add_sub_t3c.tdf               ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/add_sub_t3c.tdf         ;         ;
-; db/add_sub_u3c.tdf               ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/add_sub_u3c.tdf         ;         ;
-; db/lpm_divide_6cp.tdf            ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/lpm_divide_6cp.tdf      ;         ;
-; db/sign_div_unsign_plh.tdf       ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/sign_div_unsign_plh.tdf ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf                                 ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_ram_block.inc                          ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mux.inc                                    ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_decode.inc                                 ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_rdenreg.inc                                  ;         ;
-; altrom.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altrom.inc                                     ;         ;
-; altram.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altram.inc                                     ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altdpram.inc                                   ;         ;
-; db/altsyncram_jns3.tdf           ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/altsyncram_jns3.tdf     ;         ;
-; programs/uart_code.mif           ; yes             ; Auto-Found Memory Initialization File  ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/programs/uart_code.mif     ;         ;
-; db/altsyncram_b2s3.tdf           ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/altsyncram_b2s3.tdf     ;         ;
-; programs/uart_data.mif           ; yes             ; Auto-Found Memory Initialization File  ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/programs/uart_data.mif     ;         ;
-+----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                         ;
++----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                           ; Library ;
++----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------------------------+---------+
+; UnsignedDiv.vhd                  ; yes             ; User Wizard-Generated File             ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UnsignedDiv.vhd             ;         ;
+; UART_FIFO.vhd                    ; yes             ; User Wizard-Generated File             ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART_FIFO.vhd               ;         ;
+; UART.vhd                         ; yes             ; User VHDL File                         ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd                    ;         ;
+; U_DIV.vhd                        ; yes             ; User Wizard-Generated File             ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/U_DIV.vhd                   ;         ;
+; TX_FIFO.vhd                      ; yes             ; User Wizard-Generated File             ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/TX_FIFO.vhd                 ;         ;
+; my_UART.vhd                      ; yes             ; User VHDL File                         ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/my_UART.vhd                 ;         ;
+; Memory.vhd                       ; yes             ; User VHDL File                         ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Memory.vhd                  ;         ;
+; DataMemory.vhd                   ; yes             ; User Wizard-Generated File             ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DataMemory.vhd              ;         ;
+; Execute.vhd                      ; yes             ; User VHDL File                         ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Execute.vhd                 ;         ;
+; InstructionMemory.vhd            ; yes             ; User Wizard-Generated File             ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/InstructionMemory.vhd       ;         ;
+; Fetch.vhd                        ; yes             ; User VHDL File                         ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Fetch.vhd                   ;         ;
+; Decode.vhd                       ; yes             ; User VHDL File                         ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Decode.vhd                  ;         ;
+; DLX.vhd                          ; yes             ; User VHDL File                         ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.vhd                     ;         ;
+; Common.vhd                       ; yes             ; User VHDL File                         ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Common.vhd                  ;         ;
+; scfifo.tdf                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/scfifo.tdf                                      ;         ;
+; a_regfifo.inc                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_regfifo.inc                                   ;         ;
+; a_dpfifo.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_dpfifo.inc                                    ;         ;
+; a_i2fifo.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_i2fifo.inc                                    ;         ;
+; a_fffifo.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_fffifo.inc                                    ;         ;
+; a_f2fifo.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_f2fifo.inc                                    ;         ;
+; aglobal201.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc                                  ;         ;
+; db/scfifo_4921.tdf               ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/scfifo_4921.tdf          ;         ;
+; db/a_dpfifo_bf21.tdf             ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_dpfifo_bf21.tdf        ;         ;
+; db/a_fefifo_18e.tdf              ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_fefifo_18e.tdf         ;         ;
+; db/cntr_537.tdf                  ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/cntr_537.tdf             ;         ;
+; db/altsyncram_k2m1.tdf           ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/altsyncram_k2m1.tdf      ;         ;
+; db/cntr_p2b.tdf                  ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/cntr_p2b.tdf             ;         ;
+; db/scfifo_rr11.tdf               ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/scfifo_rr11.tdf          ;         ;
+; db/a_dpfifo_2221.tdf             ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_dpfifo_2221.tdf        ;         ;
+; db/a_fefifo_sae.tdf              ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_fefifo_sae.tdf         ;         ;
+; db/cntr_f47.tdf                  ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/cntr_f47.tdf             ;         ;
+; db/altsyncram_85m1.tdf           ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/altsyncram_85m1.tdf      ;         ;
+; db/cntr_34b.tdf                  ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/cntr_34b.tdf             ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf                                  ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/abs_divider.inc                                 ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sign_div_unsign.inc                             ;         ;
+; db/lpm_divide_0uo.tdf            ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/lpm_divide_0uo.tdf       ;         ;
+; db/sign_div_unsign_j7h.tdf       ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/sign_div_unsign_j7h.tdf  ;         ;
+; db/alt_u_div_she.tdf             ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/alt_u_div_she.tdf        ;         ;
+; db/add_sub_t3c.tdf               ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/add_sub_t3c.tdf          ;         ;
+; db/add_sub_u3c.tdf               ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/add_sub_u3c.tdf          ;         ;
+; db/lpm_divide_6cp.tdf            ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/lpm_divide_6cp.tdf       ;         ;
+; db/sign_div_unsign_plh.tdf       ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/sign_div_unsign_plh.tdf  ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf                                  ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_ram_block.inc                           ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mux.inc                                     ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_decode.inc                                  ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_rdenreg.inc                                   ;         ;
+; altrom.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altrom.inc                                      ;         ;
+; altram.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altram.inc                                      ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altdpram.inc                                    ;         ;
+; db/altsyncram_c7t3.tdf           ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/altsyncram_c7t3.tdf      ;         ;
+; programs/factorial_code.mif      ; yes             ; Auto-Found Memory Initialization File  ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/programs/factorial_code.mif ;         ;
+; db/altsyncram_4is3.tdf           ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/altsyncram_4is3.tdf      ;         ;
+; programs/factorial_data.mif      ; yes             ; Auto-Found Memory Initialization File  ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/programs/factorial_data.mif ;         ;
++----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------------------------+---------+
 
 
 +----------------------------------------------------------------+
@@ -306,11 +306,11 @@ https://fpgasoftware.intel.com/eula.
 ;    |Fetch:fet|                               ; 57 (57)             ; 33 (33)                   ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Fetch:fet                                                                                                                                           ; Fetch               ; work         ;
 ;       |InstructionMemory:im|                 ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Fetch:fet|InstructionMemory:im                                                                                                                      ; InstructionMemory   ; work         ;
 ;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component                                                                                      ; altsyncram          ; work         ;
-;             |altsyncram_jns3:auto_generated| ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component|altsyncram_jns3:auto_generated                                                       ; altsyncram_jns3     ; work         ;
+;             |altsyncram_c7t3:auto_generated| ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component|altsyncram_c7t3:auto_generated                                                       ; altsyncram_c7t3     ; work         ;
 ;    |Memory:mem|                              ; 36 (36)             ; 43 (43)                   ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Memory:mem                                                                                                                                          ; Memory              ; work         ;
 ;       |DataMemory:dm|                        ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Memory:mem|DataMemory:dm                                                                                                                            ; DataMemory          ; work         ;
 ;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Memory:mem|DataMemory:dm|altsyncram:altsyncram_component                                                                                            ; altsyncram          ; work         ;
-;             |altsyncram_b2s3:auto_generated| ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Memory:mem|DataMemory:dm|altsyncram:altsyncram_component|altsyncram_b2s3:auto_generated                                                             ; altsyncram_b2s3     ; work         ;
+;             |altsyncram_4is3:auto_generated| ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Memory:mem|DataMemory:dm|altsyncram:altsyncram_component|altsyncram_4is3:auto_generated                                                             ; altsyncram_4is3     ; work         ;
 ;    |UART:duart|                              ; 3974 (3567)         ; 1225 (1139)               ; 25344       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart                                                                                                                                          ; UART                ; work         ;
 ;       |TX_FIFO:fifo_tx|                      ; 46 (0)              ; 35 (0)                    ; 16384       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|TX_FIFO:fifo_tx                                                                                                                          ; TX_FIFO             ; work         ;
 ;          |scfifo:scfifo_component|           ; 46 (0)              ; 35 (0)                    ; 16384       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component                                                                                                  ; scfifo              ; work         ;
@@ -340,16 +340,16 @@ https://fpgasoftware.intel.com/eula.
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                                   ;
-+-------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+--------------------------+
-; Name                                                                                                                                      ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF                      ;
-+-------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+--------------------------+
-; Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component|altsyncram_jns3:auto_generated|ALTSYNCRAM                                  ; AUTO ; ROM              ; 1024         ; 32           ; --           ; --           ; 32768 ; ./Programs/UART_code.mif ;
-; Memory:mem|DataMemory:dm|altsyncram:altsyncram_component|altsyncram_b2s3:auto_generated|ALTSYNCRAM                                        ; AUTO ; Single Port      ; 1024         ; 32           ; --           ; --           ; 32768 ; ./Programs/UART_data.mif ;
-; UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|altsyncram_85m1:FIFOram|ALTSYNCRAM     ; AUTO ; Simple Dual Port ; 2048         ; 8            ; 2048         ; 8            ; 16384 ; None                     ;
-; UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|altsyncram_k2m1:FIFOram|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 256          ; 36           ; 256          ; 36           ; 9216  ; None                     ;
-+-------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+--------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                                        ;
++-------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-------------------------------+
+; Name                                                                                                                                      ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF                           ;
++-------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-------------------------------+
+; Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component|altsyncram_c7t3:auto_generated|ALTSYNCRAM                                  ; AUTO ; ROM              ; 1024         ; 32           ; --           ; --           ; 32768 ; ./Programs/factorial_code.mif ;
+; Memory:mem|DataMemory:dm|altsyncram:altsyncram_component|altsyncram_4is3:auto_generated|ALTSYNCRAM                                        ; AUTO ; Single Port      ; 1024         ; 32           ; --           ; --           ; 32768 ; ./Programs/factorial_data.mif ;
+; UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|altsyncram_85m1:FIFOram|ALTSYNCRAM     ; AUTO ; Simple Dual Port ; 2048         ; 8            ; 2048         ; 8            ; 16384 ; None                          ;
+; UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|altsyncram_k2m1:FIFOram|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 256          ; 36           ; 256          ; 36           ; 9216  ; None                          ;
++-------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------+
@@ -539,7 +539,7 @@ Encoding Type:  One-Hot
 
 
 +----------------------------------------------------------------------------------------------------------------------+
-; Source assignments for Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component|altsyncram_jns3:auto_generated ;
+; Source assignments for Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component|altsyncram_c7t3:auto_generated ;
 +---------------------------------+--------------------+------+--------------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                                     ;
 +---------------------------------+--------------------+------+--------------------------------------------------------+
@@ -548,7 +548,7 @@ Encoding Type:  One-Hot
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Source assignments for Memory:mem|DataMemory:dm|altsyncram:altsyncram_component|altsyncram_b2s3:auto_generated ;
+; Source assignments for Memory:mem|DataMemory:dm|altsyncram:altsyncram_component|altsyncram_4is3:auto_generated ;
 +---------------------------------+--------------------+------+--------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                               ;
 +---------------------------------+--------------------+------+--------------------------------------------------+
@@ -662,123 +662,123 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +-------------------------------------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component ;
-+------------------------------------+--------------------------+---------------------------------------------+
-; Parameter Name                     ; Value                    ; Type                                        ;
-+------------------------------------+--------------------------+---------------------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                        ; Untyped                                     ;
-; AUTO_CARRY_CHAINS                  ; ON                       ; AUTO_CARRY                                  ;
-; IGNORE_CARRY_BUFFERS               ; OFF                      ; IGNORE_CARRY                                ;
-; AUTO_CASCADE_CHAINS                ; ON                       ; AUTO_CASCADE                                ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                      ; IGNORE_CASCADE                              ;
-; WIDTH_BYTEENA                      ; 1                        ; Untyped                                     ;
-; OPERATION_MODE                     ; ROM                      ; Untyped                                     ;
-; WIDTH_A                            ; 32                       ; Signed Integer                              ;
-; WIDTHAD_A                          ; 10                       ; Signed Integer                              ;
-; NUMWORDS_A                         ; 1024                     ; Signed Integer                              ;
-; OUTDATA_REG_A                      ; CLOCK0                   ; Untyped                                     ;
-; ADDRESS_ACLR_A                     ; NONE                     ; Untyped                                     ;
-; OUTDATA_ACLR_A                     ; NONE                     ; Untyped                                     ;
-; WRCONTROL_ACLR_A                   ; NONE                     ; Untyped                                     ;
-; INDATA_ACLR_A                      ; NONE                     ; Untyped                                     ;
-; BYTEENA_ACLR_A                     ; NONE                     ; Untyped                                     ;
-; WIDTH_B                            ; 1                        ; Signed Integer                              ;
-; WIDTHAD_B                          ; 1                        ; Signed Integer                              ;
-; NUMWORDS_B                         ; 0                        ; Signed Integer                              ;
-; INDATA_REG_B                       ; CLOCK1                   ; Untyped                                     ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                   ; Untyped                                     ;
-; RDCONTROL_REG_B                    ; CLOCK1                   ; Untyped                                     ;
-; ADDRESS_REG_B                      ; CLOCK1                   ; Untyped                                     ;
-; OUTDATA_REG_B                      ; UNREGISTERED             ; Untyped                                     ;
-; BYTEENA_REG_B                      ; CLOCK1                   ; Untyped                                     ;
-; INDATA_ACLR_B                      ; NONE                     ; Untyped                                     ;
-; WRCONTROL_ACLR_B                   ; NONE                     ; Untyped                                     ;
-; ADDRESS_ACLR_B                     ; NONE                     ; Untyped                                     ;
-; OUTDATA_ACLR_B                     ; NONE                     ; Untyped                                     ;
-; RDCONTROL_ACLR_B                   ; NONE                     ; Untyped                                     ;
-; BYTEENA_ACLR_B                     ; NONE                     ; Untyped                                     ;
-; WIDTH_BYTEENA_A                    ; 1                        ; Signed Integer                              ;
-; WIDTH_BYTEENA_B                    ; 1                        ; Signed Integer                              ;
-; RAM_BLOCK_TYPE                     ; AUTO                     ; Untyped                                     ;
-; BYTE_SIZE                          ; 8                        ; Signed Integer                              ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                ; Untyped                                     ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ     ; Untyped                                     ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ     ; Untyped                                     ;
-; INIT_FILE                          ; ./Programs/UART_code.mif ; Untyped                                     ;
-; INIT_FILE_LAYOUT                   ; PORT_A                   ; Untyped                                     ;
-; MAXIMUM_DEPTH                      ; 0                        ; Signed Integer                              ;
-; CLOCK_ENABLE_INPUT_A               ; NORMAL                   ; Untyped                                     ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL                   ; Untyped                                     ;
-; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                   ; Untyped                                     ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                   ; Untyped                                     ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN          ; Untyped                                     ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN          ; Untyped                                     ;
-; ENABLE_ECC                         ; FALSE                    ; Untyped                                     ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                    ; Untyped                                     ;
-; WIDTH_ECCSTATUS                    ; 3                        ; Signed Integer                              ;
-; DEVICE_FAMILY                      ; MAX 10                   ; Untyped                                     ;
-; CBXI_PARAMETER                     ; altsyncram_jns3          ; Untyped                                     ;
-+------------------------------------+--------------------------+---------------------------------------------+
++------------------------------------+-------------------------------+----------------------------------------+
+; Parameter Name                     ; Value                         ; Type                                   ;
++------------------------------------+-------------------------------+----------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                             ; Untyped                                ;
+; AUTO_CARRY_CHAINS                  ; ON                            ; AUTO_CARRY                             ;
+; IGNORE_CARRY_BUFFERS               ; OFF                           ; IGNORE_CARRY                           ;
+; AUTO_CASCADE_CHAINS                ; ON                            ; AUTO_CASCADE                           ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                           ; IGNORE_CASCADE                         ;
+; WIDTH_BYTEENA                      ; 1                             ; Untyped                                ;
+; OPERATION_MODE                     ; ROM                           ; Untyped                                ;
+; WIDTH_A                            ; 32                            ; Signed Integer                         ;
+; WIDTHAD_A                          ; 10                            ; Signed Integer                         ;
+; NUMWORDS_A                         ; 1024                          ; Signed Integer                         ;
+; OUTDATA_REG_A                      ; CLOCK0                        ; Untyped                                ;
+; ADDRESS_ACLR_A                     ; NONE                          ; Untyped                                ;
+; OUTDATA_ACLR_A                     ; NONE                          ; Untyped                                ;
+; WRCONTROL_ACLR_A                   ; NONE                          ; Untyped                                ;
+; INDATA_ACLR_A                      ; NONE                          ; Untyped                                ;
+; BYTEENA_ACLR_A                     ; NONE                          ; Untyped                                ;
+; WIDTH_B                            ; 1                             ; Signed Integer                         ;
+; WIDTHAD_B                          ; 1                             ; Signed Integer                         ;
+; NUMWORDS_B                         ; 0                             ; Signed Integer                         ;
+; INDATA_REG_B                       ; CLOCK1                        ; Untyped                                ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                        ; Untyped                                ;
+; RDCONTROL_REG_B                    ; CLOCK1                        ; Untyped                                ;
+; ADDRESS_REG_B                      ; CLOCK1                        ; Untyped                                ;
+; OUTDATA_REG_B                      ; UNREGISTERED                  ; Untyped                                ;
+; BYTEENA_REG_B                      ; CLOCK1                        ; Untyped                                ;
+; INDATA_ACLR_B                      ; NONE                          ; Untyped                                ;
+; WRCONTROL_ACLR_B                   ; NONE                          ; Untyped                                ;
+; ADDRESS_ACLR_B                     ; NONE                          ; Untyped                                ;
+; OUTDATA_ACLR_B                     ; NONE                          ; Untyped                                ;
+; RDCONTROL_ACLR_B                   ; NONE                          ; Untyped                                ;
+; BYTEENA_ACLR_B                     ; NONE                          ; Untyped                                ;
+; WIDTH_BYTEENA_A                    ; 1                             ; Signed Integer                         ;
+; WIDTH_BYTEENA_B                    ; 1                             ; Signed Integer                         ;
+; RAM_BLOCK_TYPE                     ; AUTO                          ; Untyped                                ;
+; BYTE_SIZE                          ; 8                             ; Signed Integer                         ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                     ; Untyped                                ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ          ; Untyped                                ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ          ; Untyped                                ;
+; INIT_FILE                          ; ./Programs/factorial_code.mif ; Untyped                                ;
+; INIT_FILE_LAYOUT                   ; PORT_A                        ; Untyped                                ;
+; MAXIMUM_DEPTH                      ; 0                             ; Signed Integer                         ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                        ; Untyped                                ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                        ; Untyped                                ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                        ; Untyped                                ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                        ; Untyped                                ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN               ; Untyped                                ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN               ; Untyped                                ;
+; ENABLE_ECC                         ; FALSE                         ; Untyped                                ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                         ; Untyped                                ;
+; WIDTH_ECCSTATUS                    ; 3                             ; Signed Integer                         ;
+; DEVICE_FAMILY                      ; MAX 10                        ; Untyped                                ;
+; CBXI_PARAMETER                     ; altsyncram_c7t3               ; Untyped                                ;
++------------------------------------+-------------------------------+----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-------------------------------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: Memory:mem|DataMemory:dm|altsyncram:altsyncram_component ;
-+------------------------------------+--------------------------+---------------------------------------+
-; Parameter Name                     ; Value                    ; Type                                  ;
-+------------------------------------+--------------------------+---------------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                        ; Untyped                               ;
-; AUTO_CARRY_CHAINS                  ; ON                       ; AUTO_CARRY                            ;
-; IGNORE_CARRY_BUFFERS               ; OFF                      ; IGNORE_CARRY                          ;
-; AUTO_CASCADE_CHAINS                ; ON                       ; AUTO_CASCADE                          ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                      ; IGNORE_CASCADE                        ;
-; WIDTH_BYTEENA                      ; 1                        ; Untyped                               ;
-; OPERATION_MODE                     ; SINGLE_PORT              ; Untyped                               ;
-; WIDTH_A                            ; 32                       ; Signed Integer                        ;
-; WIDTHAD_A                          ; 10                       ; Signed Integer                        ;
-; NUMWORDS_A                         ; 1024                     ; Signed Integer                        ;
-; OUTDATA_REG_A                      ; CLOCK0                   ; Untyped                               ;
-; ADDRESS_ACLR_A                     ; NONE                     ; Untyped                               ;
-; OUTDATA_ACLR_A                     ; NONE                     ; Untyped                               ;
-; WRCONTROL_ACLR_A                   ; NONE                     ; Untyped                               ;
-; INDATA_ACLR_A                      ; NONE                     ; Untyped                               ;
-; BYTEENA_ACLR_A                     ; NONE                     ; Untyped                               ;
-; WIDTH_B                            ; 1                        ; Signed Integer                        ;
-; WIDTHAD_B                          ; 1                        ; Signed Integer                        ;
-; NUMWORDS_B                         ; 0                        ; Signed Integer                        ;
-; INDATA_REG_B                       ; CLOCK1                   ; Untyped                               ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                   ; Untyped                               ;
-; RDCONTROL_REG_B                    ; CLOCK1                   ; Untyped                               ;
-; ADDRESS_REG_B                      ; CLOCK1                   ; Untyped                               ;
-; OUTDATA_REG_B                      ; UNREGISTERED             ; Untyped                               ;
-; BYTEENA_REG_B                      ; CLOCK1                   ; Untyped                               ;
-; INDATA_ACLR_B                      ; NONE                     ; Untyped                               ;
-; WRCONTROL_ACLR_B                   ; NONE                     ; Untyped                               ;
-; ADDRESS_ACLR_B                     ; NONE                     ; Untyped                               ;
-; OUTDATA_ACLR_B                     ; NONE                     ; Untyped                               ;
-; RDCONTROL_ACLR_B                   ; NONE                     ; Untyped                               ;
-; BYTEENA_ACLR_B                     ; NONE                     ; Untyped                               ;
-; WIDTH_BYTEENA_A                    ; 1                        ; Signed Integer                        ;
-; WIDTH_BYTEENA_B                    ; 1                        ; Signed Integer                        ;
-; RAM_BLOCK_TYPE                     ; AUTO                     ; Untyped                               ;
-; BYTE_SIZE                          ; 8                        ; Signed Integer                        ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                ; Untyped                               ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ     ; Untyped                               ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ     ; Untyped                               ;
-; INIT_FILE                          ; ./Programs/UART_data.mif ; Untyped                               ;
-; INIT_FILE_LAYOUT                   ; PORT_A                   ; Untyped                               ;
-; MAXIMUM_DEPTH                      ; 0                        ; Signed Integer                        ;
-; CLOCK_ENABLE_INPUT_A               ; BYPASS                   ; Untyped                               ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL                   ; Untyped                               ;
-; CLOCK_ENABLE_OUTPUT_A              ; BYPASS                   ; Untyped                               ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                   ; Untyped                               ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN          ; Untyped                               ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN          ; Untyped                               ;
-; ENABLE_ECC                         ; FALSE                    ; Untyped                               ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                    ; Untyped                               ;
-; WIDTH_ECCSTATUS                    ; 3                        ; Signed Integer                        ;
-; DEVICE_FAMILY                      ; MAX 10                   ; Untyped                               ;
-; CBXI_PARAMETER                     ; altsyncram_b2s3          ; Untyped                               ;
-+------------------------------------+--------------------------+---------------------------------------+
++------------------------------------+-------------------------------+----------------------------------+
+; Parameter Name                     ; Value                         ; Type                             ;
++------------------------------------+-------------------------------+----------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                             ; Untyped                          ;
+; AUTO_CARRY_CHAINS                  ; ON                            ; AUTO_CARRY                       ;
+; IGNORE_CARRY_BUFFERS               ; OFF                           ; IGNORE_CARRY                     ;
+; AUTO_CASCADE_CHAINS                ; ON                            ; AUTO_CASCADE                     ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                           ; IGNORE_CASCADE                   ;
+; WIDTH_BYTEENA                      ; 1                             ; Untyped                          ;
+; OPERATION_MODE                     ; SINGLE_PORT                   ; Untyped                          ;
+; WIDTH_A                            ; 32                            ; Signed Integer                   ;
+; WIDTHAD_A                          ; 10                            ; Signed Integer                   ;
+; NUMWORDS_A                         ; 1024                          ; Signed Integer                   ;
+; OUTDATA_REG_A                      ; CLOCK0                        ; Untyped                          ;
+; ADDRESS_ACLR_A                     ; NONE                          ; Untyped                          ;
+; OUTDATA_ACLR_A                     ; NONE                          ; Untyped                          ;
+; WRCONTROL_ACLR_A                   ; NONE                          ; Untyped                          ;
+; INDATA_ACLR_A                      ; NONE                          ; Untyped                          ;
+; BYTEENA_ACLR_A                     ; NONE                          ; Untyped                          ;
+; WIDTH_B                            ; 1                             ; Signed Integer                   ;
+; WIDTHAD_B                          ; 1                             ; Signed Integer                   ;
+; NUMWORDS_B                         ; 0                             ; Signed Integer                   ;
+; INDATA_REG_B                       ; CLOCK1                        ; Untyped                          ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                        ; Untyped                          ;
+; RDCONTROL_REG_B                    ; CLOCK1                        ; Untyped                          ;
+; ADDRESS_REG_B                      ; CLOCK1                        ; Untyped                          ;
+; OUTDATA_REG_B                      ; UNREGISTERED                  ; Untyped                          ;
+; BYTEENA_REG_B                      ; CLOCK1                        ; Untyped                          ;
+; INDATA_ACLR_B                      ; NONE                          ; Untyped                          ;
+; WRCONTROL_ACLR_B                   ; NONE                          ; Untyped                          ;
+; ADDRESS_ACLR_B                     ; NONE                          ; Untyped                          ;
+; OUTDATA_ACLR_B                     ; NONE                          ; Untyped                          ;
+; RDCONTROL_ACLR_B                   ; NONE                          ; Untyped                          ;
+; BYTEENA_ACLR_B                     ; NONE                          ; Untyped                          ;
+; WIDTH_BYTEENA_A                    ; 1                             ; Signed Integer                   ;
+; WIDTH_BYTEENA_B                    ; 1                             ; Signed Integer                   ;
+; RAM_BLOCK_TYPE                     ; AUTO                          ; Untyped                          ;
+; BYTE_SIZE                          ; 8                             ; Signed Integer                   ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                     ; Untyped                          ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ          ; Untyped                          ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ          ; Untyped                          ;
+; INIT_FILE                          ; ./Programs/factorial_data.mif ; Untyped                          ;
+; INIT_FILE_LAYOUT                   ; PORT_A                        ; Untyped                          ;
+; MAXIMUM_DEPTH                      ; 0                             ; Signed Integer                   ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS                        ; Untyped                          ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                        ; Untyped                          ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS                        ; Untyped                          ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                        ; Untyped                          ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN               ; Untyped                          ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN               ; Untyped                          ;
+; ENABLE_ECC                         ; FALSE                         ; Untyped                          ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                         ; Untyped                          ;
+; WIDTH_ECCSTATUS                    ; 3                             ; Signed Integer                   ;
+; DEVICE_FAMILY                      ; MAX 10                        ; Untyped                          ;
+; CBXI_PARAMETER                     ; altsyncram_4is3               ; Untyped                          ;
++------------------------------------+-------------------------------+----------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -936,7 +936,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:28     ;
+; Top            ; 00:00:26     ;
 +----------------+--------------+
 
 
@@ -946,7 +946,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Tue Mar 22 18:57:03 2022
+    Info: Processing started: Tue Mar 22 19:32:33 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DLX -c DLX
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -1137,7 +1137,7 @@ Info (12133): Instantiated megafunction "Fetch:fet|InstructionMemory:im|altsyncr
     Info (12134): Parameter "indata_aclr_a" = "UNUSED"
     Info (12134): Parameter "indata_aclr_b" = "NONE"
     Info (12134): Parameter "indata_reg_b" = "CLOCK1"
-    Info (12134): Parameter "init_file" = "./Programs/UART_code.mif"
+    Info (12134): Parameter "init_file" = "./Programs/factorial_code.mif"
     Info (12134): Parameter "init_file_layout" = "PORT_A"
     Info (12134): Parameter "maximum_depth" = "0"
     Info (12134): Parameter "numwords_a" = "1024"
@@ -1167,9 +1167,9 @@ Info (12133): Instantiated megafunction "Fetch:fet|InstructionMemory:im|altsyncr
     Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_jns3.tdf
-    Info (12023): Found entity 1: altsyncram_jns3 File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/altsyncram_jns3.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_jns3" for hierarchy "Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component|altsyncram_jns3:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_c7t3.tdf
+    Info (12023): Found entity 1: altsyncram_c7t3 File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/altsyncram_c7t3.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_c7t3" for hierarchy "Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component|altsyncram_c7t3:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Info (12128): Elaborating entity "Decode" for hierarchy "Decode:dec" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.vhd Line: 174
 Info (12128): Elaborating entity "Execute" for hierarchy "Execute:exc" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.vhd Line: 192
 Warning (10492): VHDL Process Statement warning at Execute.vhd(107): signal "IdEx_rd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Execute.vhd Line: 107
@@ -1202,7 +1202,7 @@ Info (12133): Instantiated megafunction "Memory:mem|DataMemory:dm|altsyncram:alt
     Info (12134): Parameter "indata_aclr_a" = "UNUSED"
     Info (12134): Parameter "indata_aclr_b" = "NONE"
     Info (12134): Parameter "indata_reg_b" = "CLOCK1"
-    Info (12134): Parameter "init_file" = "./Programs/UART_data.mif"
+    Info (12134): Parameter "init_file" = "./Programs/factorial_data.mif"
     Info (12134): Parameter "init_file_layout" = "PORT_A"
     Info (12134): Parameter "maximum_depth" = "0"
     Info (12134): Parameter "numwords_a" = "1024"
@@ -1232,9 +1232,9 @@ Info (12133): Instantiated megafunction "Memory:mem|DataMemory:dm|altsyncram:alt
     Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_b2s3.tdf
-    Info (12023): Found entity 1: altsyncram_b2s3 File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/altsyncram_b2s3.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_b2s3" for hierarchy "Memory:mem|DataMemory:dm|altsyncram:altsyncram_component|altsyncram_b2s3:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_4is3.tdf
+    Info (12023): Found entity 1: altsyncram_4is3 File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/altsyncram_4is3.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_4is3" for hierarchy "Memory:mem|DataMemory:dm|altsyncram:altsyncram_component|altsyncram_4is3:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
         Warning (14320): Synthesized away node "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|altsyncram_k2m1:FIFOram|q_b[34]" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/altsyncram_k2m1.tdf Line: 1060
@@ -1256,9 +1256,9 @@ Info (21057): Implemented 8683 device resources after synthesis - the final reso
     Info (21061): Implemented 8572 logic cells
     Info (21064): Implemented 107 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 26 warnings
-    Info: Peak virtual memory: 4926 megabytes
-    Info: Processing ended: Tue Mar 22 18:57:53 2022
-    Info: Elapsed time: 00:00:50
-    Info: Total CPU time (on all processors): 00:00:55
+    Info: Peak virtual memory: 4924 megabytes
+    Info: Processing ended: Tue Mar 22 19:33:18 2022
+    Info: Elapsed time: 00:00:45
+    Info: Total CPU time (on all processors): 00:00:49
 
 

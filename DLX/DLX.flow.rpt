@@ -1,5 +1,5 @@
 Flow report for DLX
-Tue Mar 22 18:57:53 2022
+Tue Mar 22 19:34:08 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -41,24 +41,24 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Tue Mar 22 18:57:52 2022       ;
+; Flow Status                        ; Successful - Tue Mar 22 19:33:57 2022       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; DLX                                         ;
 ; Top-level Entity Name              ; DLX                                         ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 8,502                                       ;
-;     Total combinational functions  ; 7,434                                       ;
-;     Dedicated logic registers      ; 2,578                                       ;
+; Total logic elements               ; 7,808 / 49,760 ( 16 % )                     ;
+;     Total combinational functions  ; 7,434 / 49,760 ( 15 % )                     ;
+;     Dedicated logic registers      ; 2,578 / 49,760 ( 5 % )                      ;
 ; Total registers                    ; 2578                                        ;
-; Total pins                         ; 4                                           ;
+; Total pins                         ; 4 / 360 ( 1 % )                             ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 90,880                                      ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 0                                           ;
-; UFM blocks                         ; 0                                           ;
-; ADC blocks                         ; 0                                           ;
+; Total memory bits                  ; 90,880 / 1,677,312 ( 5 % )                  ;
+; Embedded Multiplier 9-bit elements ; 0 / 288 ( 0 % )                             ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
+; UFM blocks                         ; 0 / 1 ( 0 % )                               ;
+; ADC blocks                         ; 0 / 2 ( 0 % )                               ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/22/2022 18:57:05 ;
+; Start date & time ; 03/22/2022 19:32:34 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DLX                 ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 123719800733538.164799702515072        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 123719800733538.164799915404276        ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; MISC_FILE                           ; DataMemory.cmp                         ; --            ; --          ; --         ;
@@ -100,8 +100,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:48     ; 1.0                     ; 4926 MB             ; 00:00:54                           ;
-; Total                ; 00:00:48     ; --                      ; --                  ; 00:00:54                           ;
+; Analysis & Synthesis ; 00:00:44     ; 1.0                     ; 4924 MB             ; 00:00:48                           ;
+; Fitter               ; 00:00:30     ; 2.4                     ; 6321 MB             ; 00:01:16                           ;
+; Assembler            ; 00:00:04     ; 1.0                     ; 4711 MB             ; 00:00:04                           ;
+; Timing Analyzer      ; 00:00:08     ; 3.8                     ; 4988 MB             ; 00:00:22                           ;
+; Total                ; 00:01:26     ; --                      ; --                  ; 00:02:30                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -111,6 +114,9 @@ https://fpgasoftware.intel.com/eula.
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
 ; Analysis & Synthesis ; PassmorePower    ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; PassmorePower    ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; PassmorePower    ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; PassmorePower    ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -118,6 +124,9 @@ https://fpgasoftware.intel.com/eula.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off DLX -c DLX
+quartus_fit --read_settings_files=off --write_settings_files=off DLX -c DLX
+quartus_asm --read_settings_files=off --write_settings_files=off DLX -c DLX
+quartus_sta DLX -c DLX
 
 
 
