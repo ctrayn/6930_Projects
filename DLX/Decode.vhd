@@ -68,139 +68,143 @@ begin
 	--Write
 	process(clk) begin
 		if rising_edge(clk) then
-			if opIsWriteBack(wb_inst(31 downto 26)) = '1' and wb_inst(25 downto 21) /= B"00000" then
-				ram(to_integer(unsigned(wb_inst(25 downto 21)))) <= wb_data;
-			elsif wb_inst(31 downto 26) = OP_JAL or wb_inst(31 downto 26) = OP_JALR then
-				ram(31) <= wb_data;
+			if rst_l = '0' then
+				ram <= (others => (others => '0'));
 			else
-				ram(0) <= X"00000000"; -- Register 0 must allways contain 0
+				if opIsWriteBack(wb_inst(31 downto 26)) = '1' and wb_inst(25 downto 21) /= B"00000" then
+					ram(to_integer(unsigned(wb_inst(25 downto 21)))) <= wb_data;
+				elsif wb_inst(31 downto 26) = OP_JAL or wb_inst(31 downto 26) = OP_JALR then
+					ram(31) <= wb_data;
+				else
+					ram(0) <= X"00000000"; -- Register 0 must allways contain 0
+				end if;
 			end if;
 		end if;
 	end process;
 
 	--Read
 	process(clk) begin
-		if rising_edge(clk) then
-			case opcode is
-				when OP_NOP =>
-					RS1 <= (others => '0');
-					RS2 <= (others => '0');
-					Imm <= (others => '0');
+			if rising_edge(clk) then
+				case opcode is
+					when OP_NOP =>
+						RS1 <= (others => '0');
+						RS2 <= (others => '0');
+						Imm <= (others => '0');
 
-				when OP_LW =>
-					RS1 <= ram(r1);
-					RS2(31 downto 16) <= (others => '0');
-					RS2(15 downto 0)  <= im_val;
-					Imm <= (others => '0');
+					when OP_LW =>
+						RS1 <= ram(r1);
+						RS2(31 downto 16) <= (others => '0');
+						RS2(15 downto 0)  <= im_val;
+						Imm <= (others => '0');
 
-				when OP_SW =>
-					RS1 <= ram(r1);
-					RS2 <= ram(rd);
-					Imm(31 downto 16) <= (others => '0');
-					Imm(15 downto 0)  <= im_val;
+					when OP_SW =>
+						RS1 <= ram(r1);
+						RS2 <= ram(rd);
+						Imm(31 downto 16) <= (others => '0');
+						Imm(15 downto 0)  <= im_val;
 
-				when OP_JR | OP_JALR =>
-					RS1 <= ram(r1);
-					RS2 <= (others => '0');
-					Imm <= (others => '0');
+					when OP_JR | OP_JALR =>
+						RS1 <= ram(r1);
+						RS2 <= (others => '0');
+						Imm <= (others => '0');
 
-				when OP_J | OP_JAL =>
-					RS1 <= (others => '0');
-					RS2 <= (others => '0');
-					Imm(31 downto 26) <= (others => '0');
-					Imm(25 downto 0) <= inst_in(25 downto 0);
+					when OP_J | OP_JAL =>
+						RS1 <= (others => '0');
+						RS2 <= (others => '0');
+						Imm(31 downto 26) <= (others => '0');
+						Imm(25 downto 0) <= inst_in(25 downto 0);
 
-				when OP_BEQZ | OP_BNEZ =>
-					RS1 <= ram(rd);
-					RS2 <= (others => '0');
-					Imm(31 downto 21) <= (others => '0');
-					Imm(20 downto 0) <= inst_in(20 downto 0);
+					when OP_BEQZ | OP_BNEZ =>
+						RS1 <= ram(rd);
+						RS2 <= (others => '0');
+						Imm(31 downto 21) <= (others => '0');
+						Imm(20 downto 0) <= inst_in(20 downto 0);
 
-				when OP_ADD | OP_ADDU | OP_SUB | OP_SUBU =>
-					RS1 <= ram(r1);
-					RS2 <= ram(r2);
-					Imm <= (others => '0');
+					when OP_ADD | OP_ADDU | OP_SUB | OP_SUBU =>
+						RS1 <= ram(r1);
+						RS2 <= ram(r2);
+						Imm <= (others => '0');
 
-				when OP_ADDI | OP_SUBI =>
-					RS1 <= ram(r1);
-					RS2 <= (others => '0');
-					Imm(31 downto 16) <= (others => im_val(15));		--sign extend
-					Imm(15 downto 0) <= im_val;
+					when OP_ADDI | OP_SUBI =>
+						RS1 <= ram(r1);
+						RS2 <= (others => '0');
+						Imm(31 downto 16) <= (others => im_val(15));		--sign extend
+						Imm(15 downto 0) <= im_val;
 
-				when OP_ADDUI | OP_SUBUI =>
-					RS1 <= ram(r1);
-					RS2 <= (others => '0');
-					Imm(31 downto 16) <= (others => '0');		--sign extend
-					Imm(15 downto 0) <= im_val;
+					when OP_ADDUI | OP_SUBUI =>
+						RS1 <= ram(r1);
+						RS2 <= (others => '0');
+						Imm(31 downto 16) <= (others => '0');		--sign extend
+						Imm(15 downto 0) <= im_val;
 
-				when OP_AND | OP_OR | OP_XOR =>
-					RS1 <= ram(r1);
-					RS2 <= ram(r2);
-					Imm <= (others => '0');
+					when OP_AND | OP_OR | OP_XOR =>
+						RS1 <= ram(r1);
+						RS2 <= ram(r2);
+						Imm <= (others => '0');
 
-				when OP_ANDI | OP_ORI | OP_XORI =>
-					RS1 <= ram(r1);
-					RS2 <= (others => '0');
-					Imm(31 downto 16) <= (others => '0');
-					Imm(15 downto 0) <= im_val;
+					when OP_ANDI | OP_ORI | OP_XORI =>
+						RS1 <= ram(r1);
+						RS2 <= (others => '0');
+						Imm(31 downto 16) <= (others => '0');
+						Imm(15 downto 0) <= im_val;
 
-				when OP_SLL | OP_SRL | OP_SRA =>
-					RS1 <= ram(r1);
-					RS2 <= ram(r2);
-					Imm <= (others => '0');
+					when OP_SLL | OP_SRL | OP_SRA =>
+						RS1 <= ram(r1);
+						RS2 <= ram(r2);
+						Imm <= (others => '0');
 
-				when OP_SLLI | OP_SRLI | OP_SRAI =>
-					RS1 <= ram(r1);
-					RS2 <= ram(r2);
-					Imm(31 downto 16) <= (others => '0');
-					Imm(15 downto 0) <= im_val;
+					when OP_SLLI | OP_SRLI | OP_SRAI =>
+						RS1 <= ram(r1);
+						RS2 <= ram(r2);
+						Imm(31 downto 16) <= (others => '0');
+						Imm(15 downto 0) <= im_val;
 
-				when OP_SLT | OP_SLTU | OP_SGT | OP_SGTU =>
-					RS1 <= ram(r1);
-					RS2 <= ram(r2);
-					Imm <= (others => '0');
+					when OP_SLT | OP_SLTU | OP_SGT | OP_SGTU =>
+						RS1 <= ram(r1);
+						RS2 <= ram(r2);
+						Imm <= (others => '0');
 
-				when OP_SLTI | OP_SGTI  =>
-					RS1 <= ram(r1);
-					RS2 <= (others => '0');
-					Imm(31 downto 16) <= (others => im_val(15));		--sign extend
-					Imm(15 downto 0) <= im_val;
+					when OP_SLTI | OP_SGTI  =>
+						RS1 <= ram(r1);
+						RS2 <= (others => '0');
+						Imm(31 downto 16) <= (others => im_val(15));		--sign extend
+						Imm(15 downto 0) <= im_val;
 
-				when OP_SLTUI | OP_SGTUI =>
-					RS1 <= ram(r1);
-					RS2 <= (others => '0');
-					Imm(15 downto 0) <= im_val;
-					Imm(16 downto 0) <= (others => '0');
+					when OP_SLTUI | OP_SGTUI =>
+						RS1 <= ram(r1);
+						RS2 <= (others => '0');
+						Imm(15 downto 0) <= im_val;
+						Imm(16 downto 0) <= (others => '0');
 
-				when OP_SLE | OP_SLEU | OP_SGE | OP_SGEU | OP_SEQ | OP_SNE =>
-					RS1 <= ram(r1);
-					RS2 <= ram(r2);
-					Imm <= (others => '0');
+					when OP_SLE | OP_SLEU | OP_SGE | OP_SGEU | OP_SEQ | OP_SNE =>
+						RS1 <= ram(r1);
+						RS2 <= ram(r2);
+						Imm <= (others => '0');
 
-				when OP_SLEI | OP_SGEI | OP_SEQI | OP_SNEI =>
-					RS1 <= ram(r1);
-					RS2 <= (others => '0');
-					Imm(15 downto 0) <= im_val;
-					Imm(31 downto 16) <= (others => im_val(15));		--sign extend
+					when OP_SLEI | OP_SGEI | OP_SEQI | OP_SNEI =>
+						RS1 <= ram(r1);
+						RS2 <= (others => '0');
+						Imm(15 downto 0) <= im_val;
+						Imm(31 downto 16) <= (others => im_val(15));		--sign extend
 
-				when OP_SLEUI | OP_SGEUI =>
-					RS1 <= ram(r1);
-					RS2 <= (others => '0');
-					Imm(15 downto 0) <= im_val;
-					Imm(16 downto 0) <= (others => '0');
-					
-				when OP_PCH | OP_PD | OP_PDU =>
-					RS1 <= ram(r1);
-					RS2 <= (others => '0');
-					Imm <= (others => '0');
+					when OP_SLEUI | OP_SGEUI =>
+						RS1 <= ram(r1);
+						RS2 <= (others => '0');
+						Imm(15 downto 0) <= im_val;
+						Imm(16 downto 0) <= (others => '0');
+						
+					when OP_PCH | OP_PD | OP_PDU =>
+						RS1 <= ram(r1);
+						RS2 <= (others => '0');
+						Imm <= (others => '0');
 
-				when others =>
-					RS1 <= (others => '0');
-					RS2 <= (others => '0');
-					Imm <= (others => '0');
+					when others =>
+						RS1 <= (others => '0');
+						RS2 <= (others => '0');
+						Imm <= (others => '0');
 
-			end case;
-		end if;
+				end case;
+			end if;
 	end process;
 
 end architecture behavioral;
