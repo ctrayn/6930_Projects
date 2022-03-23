@@ -17,6 +17,9 @@ s2	4	"! = "
 ; Print the Welcome
 	LW	R10, s1(R0)
 	ADDI	R11, R0, 1
+	NOP
+	NOP
+	NOP
 print1
 	SLEU	R12, R11, R10
 	BEQZ	R12, endprint1
@@ -39,6 +42,9 @@ endprint1
 	PDU	R1
 	LW		R10, s2(R0)
 	ADDI	R11, R0, 1
+	NOP
+	NOP
+	NOP
 print2
 	SLEU	R12, R11, R10
 	BEQZ	R12, endprint2
