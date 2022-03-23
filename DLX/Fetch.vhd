@@ -79,6 +79,8 @@ begin
 			stall <= '1';
 		elsif last_opcode = OP_LW and OpIsTypeB(this_opcode) = '1' and last_rd = this_Rs2 then
 			stall <= '1';
+		elsif last_opcode = OP_LW and OpIsUART(this_opcode) = '1' and last_rd = this_Rs1 then
+			stall <= '1';
 		else
 			stall <= '0';
 		end if;
