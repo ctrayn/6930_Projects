@@ -10,7 +10,7 @@ architecture behavioral of UART_TB is
 signal clk	 			: std_logic;
 signal rst_l			: std_logic;
 signal RX, TX			: std_logic;
-signal wr_req			: std_logic;
+--signal wr_req			: std_logic;
 
 signal d_tx				: std_logic_vector(35 downto 0);
 signal empty, full	: std_logic;
@@ -22,34 +22,29 @@ constant DATACHAR		: std_logic_vector(35 downto 0) := X"000000048";
 constant DATAINT		: std_logic_vector(35 downto 0) := X"1F5353535";
 constant DATAUINT		: std_logic_vector(35 downto 0) := X"235353535";
 
-component UART is
-	port(		--INPUT
-		clk			: in std_logic;
-		rst_l			: in std_logic;
-		RX 			: in std_logic;			--Connected to pin 40 on J1 (white wire)
-		wr_req		: in std_logic;
-		d_tx			: in std_logic_vector(35 downto 0); 		-- The data should only be 32 bits; [33:32] : 00 is char, 01 is signed 10 is unsigned; [35:34] are unused but I couldn't only make the FIFO 36 bits
-		
-		--OUTPUT
-		TX 			: out std_logic; 			--Connected to pin 39 on J1 (green wire)
-		UART_empty	: out std_logic;
-		UART_full	: out std_logic
+component DLX is
+	port(
+		-- INPUT
+		ADC_CLK_10 			: in 	std_logic;
+		RST_L					: in  std_logic;
+--		KEY 					: in std_logic_vector(1 downto 0);
+		RX						: in  std_logic;
+		-- OUTPUT
+		TX						: out std_logic
 	);
-end component UART;
+end component DLX;
 
 begin
 
 	-- Unit under test
-	dut : UART 
-	port map(
-		clk 			=> clk,
-		rst_l 		=> rst_l,
-		TX 			=> TX,
+	dut : DLX port map (
+		-- INPUT
+		ADC_CLK_10 	=> clk,
+		RST_L			=> rst_l,
 		RX				=> RX,
-		wr_req 		=> wr_req,
-		d_tx 			=> d_tx,
-		UART_empty 	=> empty,
-		UART_full 	=> full
+		-- OUTPUT
+		TX				=> TX
+		
 	);
 
 	-- Process for the clock
@@ -62,26 +57,56 @@ begin
 	
 	-- Main process
 	test_process : process begin
-		d_tx <= DATACHAR;
 		rst_l <= '1';
 		
-		wr_req <= '0';
-		wait for clk_period * 2;
-		wr_req <= '1';
-		wait for clk_period;
+		--Start bits
+		RX <= '1';
+		wait for baud_delay;
+		RX <= '0';
+		wait for baud_delay;
 		
-		d_tx <= DATAINT;
-		wr_req <= '0';
-		wait for clk_period * 2;
-		wr_req <= '1';
-		wait for clk_period;
-		wr_req <= '0';
-		
-		d_tx <= DATAUINT;
-		wait for clk_period * 2;
-		wr_req <= '1';
-		wait for clk_period;
-		wr_req <= '0';
+		--0011_1001
+		RX <= '1';
+		wait for baud_delay;
+		RX <= '0';
+		wait for baud_delay;
+		RX <= '0';
+		wait for baud_delay;
+		RX <= '1';
+		wait for baud_delay;
+		RX <= '1';
+		wait for baud_delay;
+		RX <= '1';
+		wait for baud_delay;
+		RX <= '0';
+		wait for baud_delay;
+		RX <= '0';
+		wait for baud_delay;
+		--Stop bits
+		RX <= '1';
+		wait for baud_delay;
+		wait for baud_delay;
+		wait for baud_delay;
+		--Start bits
+		RX <= '0';
+		wait for baud_delay;
+		--0000_1101
+		RX <= '1';
+		wait for baud_delay;
+		RX <= '0';
+		wait for baud_delay;
+		RX <= '1';
+		wait for baud_delay;
+		RX <= '1';
+		wait for baud_delay;
+		RX <= '0';
+		wait for baud_delay;
+		RX <= '0';
+		wait for baud_delay;
+		RX <= '0';
+		wait for baud_delay;
+		RX <= '0';
+		wait for baud_delay;
 				
 		wait;	
 	end process;

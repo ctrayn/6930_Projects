@@ -48,8 +48,11 @@ architecture behavioral of UART is
 	signal u_numer, u_quotient	: std_logic_vector(31 downto 0);
 	signal resend_data			: std_logic_vector(7 downto 0);
 	signal resend_flag			: std_logic;
-	signal number					: std_logic_vector(31 downto 0);
+	signal number					: std_logic_vector(31 downto 0) := (others => '0');
 	signal negative				: std_logic;
+	signal d_tx_write				: std_logic_vector(7 downto 0) := (others => '0');
+	signal d_tx_wr_flag			: std_logic := '0';
+	signal true						: std_logic;
 	
 	type stack_type is array (0 to 127) of std_logic_vector(7 downto 0);
 --	type stack_type is array (natural range <>) of std_logic_vector;
@@ -155,6 +158,8 @@ begin
 	TX_flag <= not in_empty;
 	d_tx_type <= d_tx_in(33 downto 32);
 	TX_empty <= d_tx_empty;
+	d_tx_write <= d_tx_out or resend_data;
+	d_tx_wr_flag <= resend_flag or out_wr_req;
 		
 	fifo_uart: UART_FIFO
 		port map
@@ -174,9 +179,9 @@ begin
 		(
 			aclr	=> rst_h,
 			clock	=> clk,
-			data	=> d_tx_out,
+			data	=> d_tx_write,
 			rdreq => in_rd_req,
-			wrreq	=> out_wr_req,
+			wrreq	=> d_tx_wr_flag,
 			empty	=> in_empty,
 			q		=> d_tx_8b
 		);
@@ -235,7 +240,7 @@ begin
 		
 	--RX
 	--Process to take RX data and accumulate it until an <enter> is pressed by the user
-	process(clk, rst_l) begin
+	process(clk, rst_l, RX_FLAG) begin
 		if rst_l = '0' then
 			resend_data <= (others => '0');
 			resend_flag <= '0';
@@ -264,18 +269,22 @@ begin
 					
 					when READING =>
 						if data_rx >= ASCII_ZERO and data_rx <= ASCII_NINE then
+							true <= '0';
 							mult_data <= number;
 							rx_state <= STORE;
 							negative <= negative;
 						elsif data_rx = ASCII_NEG then
+							true <= '0';
 							mult_data <= (others => '0');
 							rx_state <= WAITING;
 							negative <= '1';
 						elsif data_rx = ASCII_CR then
+							true <= '1';
 							rx_state <= WRITING;
 							negative <= negative;
 							mult_data <= (others => '0');
 						else
+							true <= '0';
 							mult_data <= (others => '0');
 							rx_state <= WAITING;
 							negative <= negative;
@@ -480,17 +489,8 @@ begin
 						div_state	<= WAITING;
 				
 				end case;
-				
-				--Send the character from RX back out so it's visible
-				if resend_flag = '1' and state = WAITING then
-					d_tx_out <= resend_data;
-					out_wr_req <= '1';
-				else
-					d_tx_out <= d_tx_out;
-					out_wr_req <= out_wr_req;
-				end if;
-			end if;
-		end if;
+			end if; 	-- rising_edge(clk)
+		end if;		--rst_l
 	end process;
 	
 end architecture behavioral;

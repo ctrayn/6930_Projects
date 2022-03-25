@@ -51,10 +51,13 @@ begin
 				position_rx <= x"0";
 				data_out <= x"00";
 				rx_flag <= '0';
+			elsif state_rx = IDLE and next_state_rx = IDLE then
+				rx_flag <= '0';
 			elsif state_rx = IDLE and next_state_rx = START then
 				sync_rx <= x"0000";
 				position_rx <= x"0";
-				data_out <= x"00";
+				data_out <= data_out;
+				rx_flag <= '0';
 			elsif state_rx = START and next_state_rx = START then
 				sync_rx <= sync_rx + 1;
 			elsif state_rx = START and next_state_rx = DATA then

@@ -1,5 +1,5 @@
 Fitter report for DLX
-Wed Mar 23 15:47:59 2022
+Fri Mar 25 13:42:24 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -72,7 +72,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Wed Mar 23 15:47:59 2022       ;
+; Fitter Status                      ; Successful - Fri Mar 25 13:42:24 2022       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; DLX                                         ;
 ; Top-level Entity Name              ; DLX                                         ;
@@ -158,19 +158,19 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 12          ;
 ; Maximum allowed            ; 12          ;
 ;                            ;             ;
-; Average used               ; 2.16        ;
+; Average used               ; 2.13        ;
 ; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  12.8%      ;
-;     Processor 3            ;  11.4%      ;
-;     Processor 4            ;  10.6%      ;
-;     Processor 5            ;  10.5%      ;
-;     Processor 6            ;  10.4%      ;
-;     Processor 7            ;  10.4%      ;
-;     Processor 8            ;  10.3%      ;
-;     Processors 9-12        ;  10.0%      ;
+;     Processor 2            ;  12.6%      ;
+;     Processor 3            ;  11.1%      ;
+;     Processor 4            ;  10.3%      ;
+;     Processor 5            ;  10.2%      ;
+;     Processor 6            ;  10.1%      ;
+;     Processor 7            ;  10.1%      ;
+;     Processor 8            ;  10.0%      ;
+;     Processors 9-12        ;   9.7%      ;
 +----------------------------+-------------+
 
 
@@ -2082,12 +2082,12 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:06
-Info (11888): Total time spent on timing analysis during the Fitter is 2.00 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 1.98 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:04
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:05
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169177): 3 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2.5-V interfaces. For more information, refer to AN 447: Interfacing MAX 10 Devices with 3.3/3.0/2.5-V LVTTL/LVCMOS I/O Systems.
     Info (169178): Pin RST_L uses I/O standard 3.3 V Schmitt Trigger at B8 File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.vhd Line: 19
@@ -2095,8 +2095,8 @@ Warning (169177): 3 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2
     Info (169178): Pin RX uses I/O standard 3.3-V LVTTL at AB2 File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.vhd Line: 21
 Info (144001): Generated suppressed messages file G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 13 warnings
-    Info: Peak virtual memory: 6294 megabytes
-    Info: Processing ended: Wed Mar 23 15:48:01 2022
+    Info: Peak virtual memory: 6291 megabytes
+    Info: Processing ended: Fri Mar 25 13:42:25 2022
     Info: Elapsed time: 00:00:27
     Info: Total CPU time (on all processors): 00:00:56
 

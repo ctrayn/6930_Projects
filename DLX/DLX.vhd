@@ -103,6 +103,7 @@ architecture behavioral of DLX is
 			rst_l			: in std_logic;
 			RX 			: in std_logic;			--Connected to pin 40 on J1 (white wire)
 			wr_req		: in std_logic;
+			rd_req		: in std_logic;
 			d_tx			: in std_logic_vector(35 downto 0); 		-- The data should only be 32 bits; [33:32] : 00 is char, 01 is signed 10 is unsigned; [35:34] are unused but I couldn't only make the FIFO 36 bits
 			
 			--OUTPUT
@@ -142,6 +143,7 @@ architecture behavioral of DLX is
 	signal empty, full	: std_logic;
 	signal UART_write		: std_logic;
 	signal data_tx			: std_logic_vector(35 downto 0);
+	signal rx_rd_req		: std_logic;
 
 begin
 
@@ -151,6 +153,7 @@ begin
 		rst_l 		=> RST_L,
 		RX 			=> RX,
 		wr_req 		=> UART_write,	
+		rd_req 		=> rx_rd_req,
 		d_tx 			=> data_tx,
 		--OUTPUT
 		TX 			=> TX,		
