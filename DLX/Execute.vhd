@@ -99,9 +99,9 @@ begin
 		elsif OpIsALU(MemWb_opcode) = '1' and OpIsTypeA(opcode) = '1' and MemWb_rd = IdEx_Rs1 then
 			InOne <= MemWb_data;
 		-- UART
-		elsif OpIsALU(ExMem_opcode) = '1' and OpIsUART(opcode) = '1' and ExMem_rd = IdEx_Rs1 then
+		elsif OpIsALU(ExMem_opcode) = '1' and OpIsUARTtx(opcode) = '1' and ExMem_rd = IdEx_Rs1 then
 			InOne <= ALU_result;
-		elsif OpIsALU(MemWb_opcode) = '1' and OpIsUART(opcode) = '1' and MemWb_rd = IdEx_Rs1 then
+		elsif OpIsALU(MemWb_opcode) = '1' and OpIsUARTtx(opcode) = '1' and MemWb_rd = IdEx_Rs1 then
 			InOne <= MemWb_data;
 		-- Branches need a special case
 		elsif OpIsALU(ExMem_opcode) = '1' and OpIsBranch(opcode) = '1' and ExMem_rd = IdEx_rd then
@@ -112,7 +112,7 @@ begin
 		elsif MemWb_opcode = OP_LW and OpIsTypeA(opcode) = '1' and MemWb_rd = IdEx_Rs1 then
 			InOne <= MemWb_data;
 		-- UART
-		elsif MemWb_opcode = OP_LW and OpIsUART(opcode) = '1' and MemWb_rd = IdEx_Rs1 then
+		elsif MemWb_opcode = OP_LW and OpIsUARTtx(opcode) = '1' and MemWb_rd = IdEx_Rs1 then
 			InOne <= MemWb_data;
 		else
 			InOne <= RS1;

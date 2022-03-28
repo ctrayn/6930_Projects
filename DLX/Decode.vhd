@@ -72,8 +72,27 @@ begin
 				ram(to_integer(unsigned(wb_inst(25 downto 21)))) <= wb_data;
 			elsif wb_inst(31 downto 26) = OP_JAL or wb_inst(31 downto 26) = OP_JALR then
 				ram(31) <= wb_data;
+			elsif opIsUARTrx(wb_inst(31 downto 26)) then
+				-- If there is data ready, store in rd
+				if rx_data_empty = '0' then
+					ram(to_integer(unsigned((wb_inst(25 downto 21))))) <= rx_data;
+				-- If there isn't data ready
+				else
+					ram(to_integer(unsigned((wb_inst(25 downto 21))))) <= ZEROS;
+				end if;
 			else
 				ram(0) <= X"00000000"; -- Register 0 must allways contain 0
+			end if;
+		end if;
+	end process;
+
+	-- UART
+	process(clk) begin
+		if rising_edge(clk) then
+			if opIsUARTrx(wb_inst(31 downto 26)) then
+				rx_ack <= '1';
+			else
+				rx_ack <= '0';
 			end if;
 		end if;
 	end process;
