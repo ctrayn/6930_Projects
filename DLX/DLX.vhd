@@ -108,8 +108,10 @@ architecture behavioral of DLX is
 			
 			--OUTPUT
 			TX 			: out std_logic; 			--Connected to pin 39 on J1 (green wire)
-			TX_empty	: out std_logic;
-			TX_full	: out std_logic
+			TX_empty		: out std_logic;
+			TX_full		: out std_logic;
+			d_rx			: out std_logic_vector(31 downto 0);
+			RX_empty		: out std_logic
 		);
 	end component;
 
@@ -140,10 +142,13 @@ architecture behavioral of DLX is
 	signal inst_WE			: std_logic_vector(31 downto 0);
 	signal data_WE			: std_logic_vector(31 downto 0);
 	-- UART signals
-	signal empty, full	: std_logic;
-	signal UART_write		: std_logic;
-	signal data_tx			: std_logic_vector(35 downto 0);
-	signal rx_rd_req		: std_logic;
+	signal tx_empty		: std_logic;
+	signal tx_full			: std_logic;
+	signal tx_write		: std_logic;
+	signal tx_data 		: std_logic_vector(35 downto 0);
+	signal rx_data			: std_logic_vector(31 downto 0);
+	signal rx_ack			: std_logic;
+	signal rx_empty		: std_logic;
 
 begin
 
@@ -152,13 +157,15 @@ begin
 		clk 			=> ADC_CLK_10,
 		rst_l 		=> RST_L,
 		RX 			=> RX,
-		wr_req 		=> UART_write,	
-		rd_req 		=> rx_rd_req,
-		d_tx 			=> data_tx,
+		wr_req 		=> tx_write,	
+		rd_req 		=> rx_ack,
+		d_tx 			=> tx_data,
 		--OUTPUT
 		TX 			=> TX,		
 		TX_empty 	=> empty,
-		TX_full 	=> full
+		TX_full 		=> full,
+		d_rx			=> rx_data,
+		RX_empty		=> rx_empty
 	);
 
 	-- Instance of fetch
