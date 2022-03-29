@@ -55,7 +55,12 @@ architecture behavioral of DLX is
 			pc_out			: out std_logic_vector(9  downto 0);
 			inst_out			: out std_logic_vector(31 downto 0);
 			RS1				: out std_logic_vector(31 downto 0);
-			RS2				: out std_logic_vector(31 downto 0)
+			RS2				: out std_logic_vector(31 downto 0);
+
+			--UART
+			rx_data_empty	: in std_logic;
+			rx_data			: in std_logic_vector(31 downto 0);
+			rx_ack			: out std_logic := '0'
 		);
 	end component;
 
@@ -162,8 +167,8 @@ begin
 		d_tx 			=> tx_data,
 		--OUTPUT
 		TX 			=> TX,		
-		TX_empty 	=> empty,
-		TX_full 		=> full,
+		TX_empty 	=> tx_empty,
+		TX_full 		=> tx_full,
 		d_rx			=> rx_data,
 		RX_empty		=> rx_empty
 	);
@@ -195,7 +200,11 @@ begin
 		pc_out => pc_DE,
 		inst_out => inst_DE,
 		RS1 => rs1_DE,
-		RS2 => rs2_DE
+		RS2 => rs2_DE,
+		--UART
+		rx_data_empty => rx_empty,
+		rx_data => rx_data,
+		rx_ack => rx_ack
 	);
 
 	-- Instance of execute
@@ -216,8 +225,8 @@ begin
 		br_addr => br_addr,
 		RS2_out => rs2_EM,
 		inst_out => inst_EM,
-		data_tx => data_tx,
-		tx_write => UART_write
+		data_tx => tx_data,
+		tx_write => tx_write
 	);
 
 	-- Instance of memory

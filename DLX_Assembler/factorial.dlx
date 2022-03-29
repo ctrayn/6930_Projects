@@ -4,13 +4,13 @@
 
 ; The data
 .data
-n	1	12
 f	1	0
 
 ; Then constants
 .const
 s1	37	"Welcome to the DLX factorial program!"
-s2	4	"! = "
+s2	16	"Enter a number: "
+s3	4	"! = "
 
 ; The code
 .text
@@ -35,12 +35,8 @@ endprint1
 	ADDI	R4, R0, 13
 	PCH	R4
 
-; The initial n
-	LW	R1, n(R0)
-
-; Print ! = ...
-	PDU	R1
-	LW		R10, s2(R0)
+; Print the prompt
+	LW	R10, s2(R0)
 	ADDI	R11, R0, 1
 	NOP
 	NOP
@@ -53,6 +49,42 @@ print2
 	ADDI	R11, R11, 1
 	J	print2
 endprint2
+
+; The initial n in R1
+ADDI	R1, R0, 0
+cin
+	GDU	R2
+	NOP
+	NOP
+	BEQZ	R2, cin
+; if the enter key was pressed
+	SEQI	R3, R2, 10
+	BNEZ	R3, endcin
+; shift the current input (*10)
+	SLLI	R4, R1, 3
+	SLLI	R1, R1, 1
+	ADD	R1, R4, R1
+; add the new digit
+	SUBUI	R2, R2, 48
+	ADD	R1, R1, R2
+	J	cin
+endcin
+
+; Print ! = ...
+	PDU	R1
+	LW		R10, s3(R0)
+	ADDI	R11, R0, 1
+	NOP
+	NOP
+	NOP
+print3
+	SLEU	R12, R11, R10
+	BEQZ	R12, endprint3
+	LW		R13, s3(R11)
+	PCH	R13
+	ADDI	R11, R11, 1
+	J	print3
+endprint3
 
 ; The second factor for multiplication
 	ADDI	R2, R1, 0

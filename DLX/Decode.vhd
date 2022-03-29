@@ -26,7 +26,12 @@ entity Decode is
 		pc_out				: out std_logic_vector(9  downto 0);		--Program counter, delayed by 1 cycle
 		inst_out				: out std_logic_vector(31 downto 0);		--The instruction, delayed by 1 cycle
 		RS1					: out std_logic_vector(31 downto 0);		--The data from RS1
-		RS2					: out std_logic_vector(31 downto 0)			--The data from RS2
+		RS2					: out std_logic_vector(31 downto 0);			--The data from RS2
+
+		--UART
+		rx_data_empty		: in std_logic;
+		rx_data				: in std_logic_vector(31 downto 0);
+		rx_ack				: out std_logic := '0'
 	);
 end entity Decode;
 
@@ -72,13 +77,13 @@ begin
 				ram(to_integer(unsigned(wb_inst(25 downto 21)))) <= wb_data;
 			elsif wb_inst(31 downto 26) = OP_JAL or wb_inst(31 downto 26) = OP_JALR then
 				ram(31) <= wb_data;
-			elsif opIsUARTrx(wb_inst(31 downto 26)) then
+			elsif opIsUARTrx(wb_inst(31 downto 26)) = '1' then
 				-- If there is data ready, store in rd
 				if rx_data_empty = '0' then
-					ram(to_integer(unsigned((wb_inst(25 downto 21))))) <= rx_data;
+					ram(to_integer(unsigned((wb_inst(20 downto 16))))) <= rx_data;
 				-- If there isn't data ready
 				else
-					ram(to_integer(unsigned((wb_inst(25 downto 21))))) <= ZEROS;
+					ram(to_integer(unsigned((wb_inst(20 downto 16))))) <= ZEROS;
 				end if;
 			else
 				ram(0) <= X"00000000"; -- Register 0 must allways contain 0
@@ -89,7 +94,7 @@ begin
 	-- UART
 	process(clk) begin
 		if rising_edge(clk) then
-			if opIsUARTrx(wb_inst(31 downto 26)) then
+			if opIsUARTrx(wb_inst(31 downto 26)) = '1' then
 				rx_ack <= '1';
 			else
 				rx_ack <= '0';
