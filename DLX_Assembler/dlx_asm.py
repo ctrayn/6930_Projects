@@ -358,6 +358,27 @@ def run():
                 rs1 = bin(int(rs1))[2:]
                 word += f"{rs1:>010}"
                 word += "0" * 16
+            elif items[0] == "TR":
+                word = "110110"
+                word += "0" * 26
+                code_file.write(f"{i:>03X} : {int(word, 2):>08X};  --TR \n")
+                i += 1
+                line = source_file.readline()
+                continue
+            elif items[0] == "TGO":
+                word = "110111"
+                word += "0" * 26
+                code_file.write(f"{i:>03X} : {int(word, 2):>08X};  --TGO \n")
+                i += 1
+                line = source_file.readline()
+                continue
+            elif items[0] == "TSP":
+                word = "111000"
+                word += "0" * 26
+                code_file.write(f"{i:>03X} : {int(word, 2):>08X};  --TSP \n")
+                i += 1
+                line = source_file.readline()
+                continue
             else:
                 print(f"\033[31m Error: OPCODE '{items[0]}' unknown \033[0m")
 
