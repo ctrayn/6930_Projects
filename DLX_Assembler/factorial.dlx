@@ -58,7 +58,7 @@ cin
 	NOP
 	BEQZ	R2, cin
 ; if the enter key was pressed
-	SEQI	R3, R2, 10
+	SEQI	R3, R2, 13
 	BNEZ	R3, endcin
 ; shift the current input (*10)
 	SLLI	R4, R1, 3
