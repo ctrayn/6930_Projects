@@ -273,24 +273,30 @@ begin
 							mult_data <= number;
 							rx_state <= STORE;
 							negative <= negative;
+							resend_data <= std_logic_vector(data_rx);
+							resend_flag <= '1';
 						elsif data_rx = ASCII_NEG then
 							true <= '0';
 							mult_data <= (others => '0');
 							rx_state <= WAITING;
 							negative <= '1';
+							resend_data <= std_logic_vector(data_rx);
+							resend_flag <= '1';
 						elsif data_rx = ASCII_CR then
 							true <= '1';
 							rx_state <= WRITING;
 							negative <= negative;
 							mult_data <= (others => '0');
+							resend_data <= X"45";
+							resend_flag <= '1';
 						else
 							true <= '0';
 							mult_data <= (others => '0');
 							rx_state <= WAITING;
 							negative <= negative;
+							resend_data <= (others => '0');
+							resend_flag <= '0';
 						end if;
-						resend_data <= std_logic_vector(data_rx);
-						resend_flag <= '1';
 						number <= number;
 						d_rx_wr <= '0';
 						d_rx_out <= (others => '0');
