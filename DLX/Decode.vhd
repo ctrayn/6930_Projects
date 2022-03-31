@@ -16,6 +16,7 @@ entity Decode is
 		--INPUT
 		clk					: in std_logic;
 		rst_l					: in std_logic;
+		SW						: in std_logic_vector(9  downto 0);
 		pc_in					: in std_logic_vector(9  downto 0);
 		inst_in				: in std_logic_vector(31 downto 0);
 		wb_inst				: in std_logic_vector(31 downto 0);			--Write instruction
@@ -27,6 +28,7 @@ entity Decode is
 		inst_out				: out std_logic_vector(31 downto 0);		--The instruction, delayed by 1 cycle
 		RS1					: out std_logic_vector(31 downto 0);		--The data from RS1
 		RS2					: out std_logic_vector(31 downto 0);			--The data from RS2
+		tap_ram				: out std_logic_vector(31 downto 0);
 
 		--UART
 		rx_data_empty		: in std_logic;
@@ -57,6 +59,11 @@ begin
 	r1			<= to_integer(unsigned(inst_in(20 downto 16)));
 	r2 		<= to_integer(unsigned(inst_in(15 downto 11)));
 	im_val 	<= inst_in(15 downto 0);
+	
+	--Non-delayed signals
+	process(SW) begin
+		tap_ram <= ram(to_integer(unsigned(SW(4 downto 0))));
+	end process;
 
 	--Signals that just get delayed and passed on
 	process(clk) begin

@@ -14,13 +14,23 @@ entity DLX is
 	port(
 		-- INPUT
 		ADC_CLK_10 			: in 	std_logic;
+		RST_L					: in  std_logic;
+		RX						: in  std_logic;
+		SW						: in std_logic_vector(9 downto 0);
+		
+		--OUTPUT
+		HEX0 					: out std_logic_vector(7 downto 0);
+		HEX1 					: out std_logic_vector(7 downto 0);
+		HEX2 					: out std_logic_vector(7 downto 0);
+		HEX3 					: out std_logic_vector(7 downto 0);
+		HEX4 					: out std_logic_vector(7 downto 0);
+		HEX5 					: out std_logic_vector(7 downto 0);
+		LEDR					: out std_logic_vector(9 downto 0);
+		TX						: out std_logic
+		-- UNUSED
 		--MAX10_CLK1_50		: in  std_logic;
 		--MAX10_CLK2_50		: in  std_logic;
-		RST_L					: in  std_logic;
---		KEY 					: in std_logic_vector(1 downto 0);
-		RX						: in  std_logic;
-		-- OUTPUT
-		TX						: out std_logic
+		--KEY 					: in std_logic_vector(1 downto 0);
 	);
 end entity DLX;
 
@@ -45,6 +55,7 @@ architecture behavioral of DLX is
 			-- INPUT
 			clk				: in std_logic;
 			rst_l				: in std_logic;
+			SW					: in std_logic_vector(9  downto 0);
 			pc_in				: in std_logic_vector(9  downto 0);
 			inst_in			: in std_logic_vector(31 downto 0);
 			wb_inst			: in std_logic_vector(31 downto 0);
@@ -56,6 +67,7 @@ architecture behavioral of DLX is
 			inst_out			: out std_logic_vector(31 downto 0);
 			RS1				: out std_logic_vector(31 downto 0);
 			RS2				: out std_logic_vector(31 downto 0);
+			tap_ram			: out std_logic_vector(31 downto 0);
 
 			--UART
 			rx_data_empty	: in std_logic;
@@ -119,6 +131,27 @@ architecture behavioral of DLX is
 			RX_empty		: out std_logic
 		);
 	end component;
+	
+	component Timer is
+		port (
+			--INPUT
+			clk		: in std_logic;
+			rst_l		: in std_logic;
+			GO			: in std_logic;
+			STOP		: in std_logic;
+			Restart	: in std_logic;
+			SW			: in std_logic_vector(9 downto 0);
+			tap_ram	: in std_logic_vector(31 downto 0);
+			
+			--OUTPUT
+			HEX0 		: out std_logic_vector(7 downto 0);
+			HEX1 		: out std_logic_vector(7 downto 0);
+			HEX2 		: out std_logic_vector(7 downto 0);
+			HEX3 		: out std_logic_vector(7 downto 0);
+			HEX4 		: out std_logic_vector(7 downto 0);
+			HEX5 		: out std_logic_vector(7 downto 0)
+		);
+	end component;
 
 	-- Singnals
 	-- Between fetch and decode
@@ -154,8 +187,15 @@ architecture behavioral of DLX is
 	signal rx_data			: std_logic_vector(31 downto 0);
 	signal rx_ack			: std_logic;
 	signal rx_empty		: std_logic;
+	-- Timer signals
+	signal tmr_go			: std_logic := '0';
+	signal tmr_stop		: std_logic := '0';
+	signal tmr_rst			: std_logic := '0';
+	-- Tap signals
+	signal tap_ram			: std_logic_vector(31 downto 0);
 
 begin
+	LEDR <= SW;
 
 	duart : UART port map (
 		-- INPUT
@@ -190,6 +230,7 @@ begin
 		-- INPUT
 		clk => ADC_CLK_10,
 		rst_l	=> RST_L,
+		SW => SW,
 		pc_in	=> pc_FD,
 		inst_in => inst_FD,
 		wb_inst => wb_inst,
@@ -201,6 +242,7 @@ begin
 		inst_out => inst_DE,
 		RS1 => rs1_DE,
 		RS2 => rs2_DE,
+		tap_ram => tap_ram,
 		--UART
 		rx_data_empty => rx_empty,
 		rx_data => rx_data,
@@ -240,6 +282,24 @@ begin
 		--OUTPUT
 		data_out	=> wb_data,
 		inst_out => wb_inst
+	);
+	
+	tmr : Timer port map(
+		--INPUT
+		clk => ADC_CLK_10,
+		rst_l => rst_l,
+		GO => tmr_go,
+		STOP => tmr_stop,
+		Restart => tmr_rst,
+		SW => SW,
+		tap_ram => tap_ram,
+		--OUTPUT
+		HEX0 => HEX0,
+		HEX1 => HEX1,
+		HEX2 => HEX2,
+		HEX3 => HEX3,
+		HEX4 => HEX4,
+		HEX5 => HEX5
 	);
 
 end architecture behavioral;

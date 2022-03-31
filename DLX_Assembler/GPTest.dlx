@@ -1,0 +1,18 @@
+.data
+	f	1	0
+
+.text
+	ADDI	R1, R0, 0
+main
+	GDU	R1
+	NOP
+	NOP
+	BEQZ	R1, main
+	NOP
+	NOP
+
+print
+	PDU	R1
+
+end
+	J	end
