@@ -3,55 +3,31 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'ADC_CLK_10'
-<<<<<<< HEAD
-Slack : 29.814
+Slack : 30.156
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'ADC_CLK_10'
-Slack : 0.213
-=======
-Slack : 30.619
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'ADC_CLK_10'
-Slack : 0.228
->>>>>>> parent of f824bfd (Fixed ack assertion)
+Slack : 0.340
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ADC_CLK_10'
-Slack : 49.534
+Slack : 49.432
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'ADC_CLK_10'
-<<<<<<< HEAD
-Slack : 35.973
+Slack : 36.453
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'ADC_CLK_10'
-Slack : -0.045
-TNS   : -0.045
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ADC_CLK_10'
-Slack : 49.547
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Setup 'ADC_CLK_10'
-Slack : 71.582
-=======
-Slack : 36.880
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'ADC_CLK_10'
-Slack : 0.075
+Slack : 0.304
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ADC_CLK_10'
-Slack : 49.456
+Slack : 49.448
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'ADC_CLK_10'
-Slack : 71.962
->>>>>>> parent of f824bfd (Fixed ack assertion)
+Slack : 71.735
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'ADC_CLK_10'
@@ -59,11 +35,7 @@ Slack : 0.147
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ADC_CLK_10'
-<<<<<<< HEAD
-Slack : 49.042
-=======
-Slack : 49.137
->>>>>>> parent of f824bfd (Fixed ack assertion)
+Slack : 49.006
 TNS   : 0.000
 
 ------------------------------------------------------------

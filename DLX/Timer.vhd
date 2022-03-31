@@ -4,8 +4,8 @@ use IEEE.NUMERIC_STD.all;
 use work.common.all;
 
 entity Timer is
-	Generic (
-		DELAY : integer := 10_000;
+	generic (
+		DELAY : integer := 10_000
 	);
 	port (
 		--INPUT
@@ -145,4 +145,4 @@ begin
 		end if;
 	end process;
 
-end architecture
+end architecture behavioral;

@@ -1,9 +1,5 @@
 Assembler report for DLX
-<<<<<<< HEAD
-Wed Mar 30 16:35:21 2022
-=======
-Tue Mar 29 20:54:39 2022
->>>>>>> parent of f824bfd (Fixed ack assertion)
+Wed Mar 30 20:49:37 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -42,11 +38,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-<<<<<<< HEAD
-; Assembler Status      ; Successful - Wed Mar 30 16:35:21 2022 ;
-=======
-; Assembler Status      ; Successful - Tue Mar 29 20:54:39 2022 ;
->>>>>>> parent of f824bfd (Fixed ack assertion)
+; Assembler Status      ; Successful - Wed Mar 30 20:49:37 2022 ;
 ; Revision Name         ; DLX                                   ;
 ; Top-level Entity Name ; DLX                                   ;
 ; Family                ; MAX 10                                ;
@@ -75,13 +67,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------+---------------------------------------------------------------------------------------------+
 ; Option         ; Setting                                                                                     ;
 +----------------+---------------------------------------------------------------------------------------------+
-<<<<<<< HEAD
-; JTAG usercode  ; 0x007E58FA                                                                                  ;
-; Checksum       ; 0x007E58FA                                                                                  ;
-=======
-; JTAG usercode  ; 0x007F65B6                                                                                  ;
-; Checksum       ; 0x007F65B6                                                                                  ;
->>>>>>> parent of f824bfd (Fixed ack assertion)
+; JTAG usercode  ; 0x007F13F0                                                                                  ;
+; Checksum       ; 0x007F13F0                                                                                  ;
 +----------------+---------------------------------------------------------------------------------------------+
 
 
@@ -91,24 +78,15 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-<<<<<<< HEAD
-    Info: Processing started: Wed Mar 30 16:35:16 2022
-=======
-    Info: Processing started: Tue Mar 29 20:54:35 2022
->>>>>>> parent of f824bfd (Fixed ack assertion)
+    Info: Processing started: Wed Mar 30 20:49:32 2022
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off DLX -c DLX
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-<<<<<<< HEAD
-    Info: Peak virtual memory: 4716 megabytes
-    Info: Processing ended: Wed Mar 30 16:35:21 2022
-=======
     Info: Peak virtual memory: 4713 megabytes
-    Info: Processing ended: Tue Mar 29 20:54:40 2022
->>>>>>> parent of f824bfd (Fixed ack assertion)
-    Info: Elapsed time: 00:00:05
+    Info: Processing ended: Wed Mar 30 20:49:38 2022
+    Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:04
 
 
