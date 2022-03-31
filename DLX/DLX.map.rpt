@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DLX
-Wed Mar 30 12:36:36 2022
+Wed Mar 30 16:34:37 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -14,14 +14,14 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
-  9. Analysis & Synthesis DSP Block Usage Summary
- 10. Analysis & Synthesis IP Cores Summary
- 11. State Machine - |DLX|UART:duart|div_state
- 12. State Machine - |DLX|UART:duart|state
- 13. State Machine - |DLX|UART:duart|rx_state
- 14. State Machine - |DLX|UART:duart|my_UART:dut|state_tx
- 15. State Machine - |DLX|UART:duart|my_UART:dut|state_rx
- 16. Registers Removed During Synthesis
+  9. Analysis & Synthesis IP Cores Summary
+ 10. State Machine - |DLX|UART:duart|div_state
+ 11. State Machine - |DLX|UART:duart|state
+ 12. State Machine - |DLX|UART:duart|rx_state
+ 13. State Machine - |DLX|UART:duart|my_UART:dut|state_tx
+ 14. State Machine - |DLX|UART:duart|my_UART:dut|state_rx
+ 15. Registers Removed During Synthesis
+ 16. Removed Registers Triggering Further Register Optimizations
  17. General Register Statistics
  18. Inverted Register Statistics
  19. Multiplexer Restructuring Statistics (Restructuring Performed)
@@ -76,19 +76,19 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Mar 30 12:36:36 2022       ;
+; Analysis & Synthesis Status        ; Successful - Wed Mar 30 16:34:37 2022       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; DLX                                         ;
 ; Top-level Entity Name              ; DLX                                         ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 8,930                                       ;
-;     Total combinational functions  ; 7,823                                       ;
-;     Dedicated logic registers      ; 2,779                                       ;
-; Total registers                    ; 2779                                        ;
+; Total logic elements               ; 8,720                                       ;
+;     Total combinational functions  ; 7,613                                       ;
+;     Dedicated logic registers      ; 2,675                                       ;
+; Total registers                    ; 2675                                        ;
 ; Total pins                         ; 4                                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 91,136                                      ;
-; Embedded Multiplier 9-bit elements ; 4                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
 ; Total PLLs                         ; 0                                           ;
 ; UFM blocks                         ; 0                                           ;
 ; ADC blocks                         ; 0                                           ;
@@ -201,7 +201,7 @@ https://fpgasoftware.intel.com/eula.
 ;     Processor 6            ;   0.1%      ;
 ;     Processor 7            ;   0.1%      ;
 ;     Processor 8            ;   0.1%      ;
-;     Processors 9-12        ;   0.0%      ;
+;     Processors 9-12        ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -288,92 +288,89 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+------------------+
 ; Resource                                    ; Usage            ;
 +---------------------------------------------+------------------+
-; Estimated Total logic elements              ; 8,930            ;
+; Estimated Total logic elements              ; 8,720            ;
 ;                                             ;                  ;
-; Total combinational functions               ; 7823             ;
+; Total combinational functions               ; 7613             ;
 ; Logic element usage by number of LUT inputs ;                  ;
-;     -- 4 input functions                    ; 5925             ;
-;     -- 3 input functions                    ; 1246             ;
-;     -- <=2 input functions                  ; 652              ;
+;     -- 4 input functions                    ; 5790             ;
+;     -- 3 input functions                    ; 1239             ;
+;     -- <=2 input functions                  ; 584              ;
 ;                                             ;                  ;
 ; Logic elements by mode                      ;                  ;
-;     -- normal mode                          ; 7175             ;
-;     -- arithmetic mode                      ; 648              ;
+;     -- normal mode                          ; 7069             ;
+;     -- arithmetic mode                      ; 544              ;
 ;                                             ;                  ;
-; Total registers                             ; 2779             ;
-;     -- Dedicated logic registers            ; 2779             ;
+; Total registers                             ; 2675             ;
+;     -- Dedicated logic registers            ; 2675             ;
 ;     -- I/O registers                        ; 0                ;
 ;                                             ;                  ;
 ; I/O pins                                    ; 4                ;
 ; Total memory bits                           ; 91136            ;
 ;                                             ;                  ;
-; Embedded Multiplier 9-bit elements          ; 4                ;
+; Embedded Multiplier 9-bit elements          ; 0                ;
 ;                                             ;                  ;
 ; Maximum fan-out node                        ; ADC_CLK_10~input ;
-; Maximum fan-out                             ; 2887             ;
-; Total fan-out                               ; 39143            ;
+; Maximum fan-out                             ; 2783             ;
+; Total fan-out                               ; 37942            ;
 ; Average fan-out                             ; 3.64             ;
 +---------------------------------------------+------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                               ;
-+----------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                                      ; Entity Name         ; Library Name ;
-+----------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |DLX                                         ; 7823 (1)            ; 2779 (0)                  ; 91136       ; 0          ; 4            ; 0       ; 2         ; 4    ; 0            ; 0          ; |DLX                                                                                                                                                     ; DLX                 ; work         ;
-;    |Decode:dec|                              ; 2333 (2333)         ; 1157 (1157)               ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Decode:dec                                                                                                                                          ; Decode              ; work         ;
-;    |Execute:exc|                             ; 1069 (1069)         ; 126 (126)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Execute:exc                                                                                                                                         ; Execute             ; work         ;
-;    |Fetch:fet|                               ; 59 (59)             ; 33 (33)                   ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Fetch:fet                                                                                                                                           ; Fetch               ; work         ;
-;       |InstructionMemory:im|                 ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Fetch:fet|InstructionMemory:im                                                                                                                      ; InstructionMemory   ; work         ;
-;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component                                                                                      ; altsyncram          ; work         ;
-;             |altsyncram_c7t3:auto_generated| ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component|altsyncram_c7t3:auto_generated                                                       ; altsyncram_c7t3     ; work         ;
-;    |Memory:mem|                              ; 4 (4)               ; 48 (48)                   ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Memory:mem                                                                                                                                          ; Memory              ; work         ;
-;       |DataMemory:dm|                        ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Memory:mem|DataMemory:dm                                                                                                                            ; DataMemory          ; work         ;
-;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Memory:mem|DataMemory:dm|altsyncram:altsyncram_component                                                                                            ; altsyncram          ; work         ;
-;             |altsyncram_p8t3:auto_generated| ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Memory:mem|DataMemory:dm|altsyncram:altsyncram_component|altsyncram_p8t3:auto_generated                                                             ; altsyncram_p8t3     ; work         ;
-;    |UART:duart|                              ; 4357 (3604)         ; 1415 (1280)               ; 25600       ; 0          ; 4            ; 0       ; 2         ; 0    ; 0            ; 0          ; |DLX|UART:duart                                                                                                                                          ; UART                ; work         ;
-;       |MULT:umult|                           ; 14 (0)              ; 0 (0)                     ; 0           ; 0          ; 4            ; 0       ; 2         ; 0    ; 0            ; 0          ; |DLX|UART:duart|MULT:umult                                                                                                                               ; MULT                ; work         ;
-;          |lpm_mult:lpm_mult_component|       ; 14 (0)              ; 0 (0)                     ; 0           ; 0          ; 4            ; 0       ; 2         ; 0    ; 0            ; 0          ; |DLX|UART:duart|MULT:umult|lpm_mult:lpm_mult_component                                                                                                   ; lpm_mult            ; work         ;
-;             |mult_88p:auto_generated|        ; 14 (14)             ; 0 (0)                     ; 0           ; 0          ; 4            ; 0       ; 2         ; 0    ; 0            ; 0          ; |DLX|UART:duart|MULT:umult|lpm_mult:lpm_mult_component|mult_88p:auto_generated                                                                           ; mult_88p            ; work         ;
-;       |RX_FIFO:fifo_rx|                      ; 25 (0)              ; 17 (0)                    ; 256         ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|RX_FIFO:fifo_rx                                                                                                                          ; RX_FIFO             ; work         ;
-;          |scfifo:scfifo_component|           ; 25 (0)              ; 17 (0)                    ; 256         ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component                                                                                                  ; scfifo              ; work         ;
-;             |scfifo_5k11:auto_generated|     ; 25 (0)              ; 17 (0)                    ; 256         ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component|scfifo_5k11:auto_generated                                                                       ; scfifo_5k11         ; work         ;
-;                |a_dpfifo_cq11:dpfifo|        ; 25 (17)             ; 17 (9)                    ; 256         ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component|scfifo_5k11:auto_generated|a_dpfifo_cq11:dpfifo                                                  ; a_dpfifo_cq11       ; work         ;
-;                   |altsyncram_f1b1:FIFOram|  ; 0 (0)               ; 0 (0)                     ; 256         ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component|scfifo_5k11:auto_generated|a_dpfifo_cq11:dpfifo|altsyncram_f1b1:FIFOram                          ; altsyncram_f1b1     ; work         ;
-;                   |cntr_037:usedw_counter|   ; 3 (3)               ; 3 (3)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component|scfifo_5k11:auto_generated|a_dpfifo_cq11:dpfifo|cntr_037:usedw_counter                           ; cntr_037            ; work         ;
-;                   |cntr_j2b:rd_ptr_msb|      ; 2 (2)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component|scfifo_5k11:auto_generated|a_dpfifo_cq11:dpfifo|cntr_j2b:rd_ptr_msb                              ; cntr_j2b            ; work         ;
-;                   |cntr_k2b:wr_ptr|          ; 3 (3)               ; 3 (3)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component|scfifo_5k11:auto_generated|a_dpfifo_cq11:dpfifo|cntr_k2b:wr_ptr                                  ; cntr_k2b            ; work         ;
-;       |TX_FIFO:fifo_tx|                      ; 47 (0)              ; 35 (0)                    ; 16384       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|TX_FIFO:fifo_tx                                                                                                                          ; TX_FIFO             ; work         ;
-;          |scfifo:scfifo_component|           ; 47 (0)              ; 35 (0)                    ; 16384       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component                                                                                                  ; scfifo              ; work         ;
-;             |scfifo_rr11:auto_generated|     ; 47 (0)              ; 35 (0)                    ; 16384       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated                                                                       ; scfifo_rr11         ; work         ;
-;                |a_dpfifo_2221:dpfifo|        ; 47 (1)              ; 35 (0)                    ; 16384       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo                                                  ; a_dpfifo_2221       ; work         ;
-;                   |a_fefifo_sae:fifo_state|  ; 24 (13)             ; 13 (2)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|a_fefifo_sae:fifo_state                          ; a_fefifo_sae        ; work         ;
-;                      |cntr_f47:count_usedw|  ; 11 (11)             ; 11 (11)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|a_fefifo_sae:fifo_state|cntr_f47:count_usedw     ; cntr_f47            ; work         ;
-;                   |altsyncram_85m1:FIFOram|  ; 0 (0)               ; 0 (0)                     ; 16384       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|altsyncram_85m1:FIFOram                          ; altsyncram_85m1     ; work         ;
-;                   |cntr_34b:rd_ptr_count|    ; 11 (11)             ; 11 (11)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|cntr_34b:rd_ptr_count                            ; cntr_34b            ; work         ;
-;                   |cntr_34b:wr_ptr|          ; 11 (11)             ; 11 (11)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|cntr_34b:wr_ptr                                  ; cntr_34b            ; work         ;
-;       |UART_FIFO:fifo_uart|                  ; 35 (0)              ; 26 (0)                    ; 8960        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UART_FIFO:fifo_uart                                                                                                                      ; UART_FIFO           ; work         ;
-;          |scfifo:scfifo_component|           ; 35 (0)              ; 26 (0)                    ; 8960        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component                                                                                              ; scfifo              ; work         ;
-;             |scfifo_4921:auto_generated|     ; 35 (0)              ; 26 (0)                    ; 8960        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated                                                                   ; scfifo_4921         ; work         ;
-;                |a_dpfifo_bf21:dpfifo|        ; 35 (2)              ; 26 (0)                    ; 8960        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo                                              ; a_dpfifo_bf21       ; work         ;
-;                   |a_fefifo_18e:fifo_state|  ; 17 (9)              ; 10 (2)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|a_fefifo_18e:fifo_state                      ; a_fefifo_18e        ; work         ;
-;                      |cntr_537:count_usedw|  ; 8 (8)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|a_fefifo_18e:fifo_state|cntr_537:count_usedw ; cntr_537            ; work         ;
-;                   |altsyncram_k2m1:FIFOram|  ; 0 (0)               ; 0 (0)                     ; 8960        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|altsyncram_k2m1:FIFOram                      ; altsyncram_k2m1     ; work         ;
-;                   |cntr_p2b:rd_ptr_count|    ; 8 (8)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|cntr_p2b:rd_ptr_count                        ; cntr_p2b            ; work         ;
-;                   |cntr_p2b:wr_ptr|          ; 8 (8)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|cntr_p2b:wr_ptr                              ; cntr_p2b            ; work         ;
-;       |U_DIV:div|                            ; 270 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|U_DIV:div                                                                                                                                ; U_DIV               ; work         ;
-;          |lpm_divide:LPM_DIVIDE_component|   ; 270 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component                                                                                                ; lpm_divide          ; work         ;
-;             |lpm_divide_0uo:auto_generated|  ; 270 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component|lpm_divide_0uo:auto_generated                                                                  ; lpm_divide_0uo      ; work         ;
-;                |sign_div_unsign_j7h:divider| ; 270 (29)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component|lpm_divide_0uo:auto_generated|sign_div_unsign_j7h:divider                                      ; sign_div_unsign_j7h ; work         ;
-;                   |alt_u_div_she:divider|    ; 241 (241)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component|lpm_divide_0uo:auto_generated|sign_div_unsign_j7h:divider|alt_u_div_she:divider                ; alt_u_div_she       ; work         ;
-;       |UnsignedDiv:udiv|                     ; 244 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UnsignedDiv:udiv                                                                                                                         ; UnsignedDiv         ; work         ;
-;          |lpm_divide:LPM_DIVIDE_component|   ; 244 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UnsignedDiv:udiv|lpm_divide:LPM_DIVIDE_component                                                                                         ; lpm_divide          ; work         ;
-;             |lpm_divide_6cp:auto_generated|  ; 244 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UnsignedDiv:udiv|lpm_divide:LPM_DIVIDE_component|lpm_divide_6cp:auto_generated                                                           ; lpm_divide_6cp      ; work         ;
-;                |sign_div_unsign_plh:divider| ; 244 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UnsignedDiv:udiv|lpm_divide:LPM_DIVIDE_component|lpm_divide_6cp:auto_generated|sign_div_unsign_plh:divider                               ; sign_div_unsign_plh ; work         ;
-;                   |alt_u_div_she:divider|    ; 244 (244)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UnsignedDiv:udiv|lpm_divide:LPM_DIVIDE_component|lpm_divide_6cp:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider         ; alt_u_div_she       ; work         ;
-;       |my_UART:dut|                          ; 118 (118)           ; 57 (57)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|my_UART:dut                                                                                                                              ; my_UART             ; work         ;
-+----------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                ;
++-----------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                    ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                                      ; Entity Name         ; Library Name ;
++-----------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |DLX                                          ; 7613 (1)            ; 2675 (0)                  ; 91136       ; 0          ; 0            ; 0       ; 0         ; 4    ; 0            ; 0          ; |DLX                                                                                                                                                     ; DLX                 ; work         ;
+;    |Decode:dec|                               ; 2335 (2335)         ; 1157 (1157)               ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Decode:dec                                                                                                                                          ; Decode              ; work         ;
+;    |Execute:exc|                              ; 1069 (1069)         ; 126 (126)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Execute:exc                                                                                                                                         ; Execute             ; work         ;
+;    |Fetch:fet|                                ; 59 (59)             ; 33 (33)                   ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Fetch:fet                                                                                                                                           ; Fetch               ; work         ;
+;       |InstructionMemory:im|                  ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Fetch:fet|InstructionMemory:im                                                                                                                      ; InstructionMemory   ; work         ;
+;          |altsyncram:altsyncram_component|    ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component                                                                                      ; altsyncram          ; work         ;
+;             |altsyncram_c7t3:auto_generated|  ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component|altsyncram_c7t3:auto_generated                                                       ; altsyncram_c7t3     ; work         ;
+;    |Memory:mem|                               ; 4 (4)               ; 48 (48)                   ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Memory:mem                                                                                                                                          ; Memory              ; work         ;
+;       |DataMemory:dm|                         ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Memory:mem|DataMemory:dm                                                                                                                            ; DataMemory          ; work         ;
+;          |altsyncram:altsyncram_component|    ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Memory:mem|DataMemory:dm|altsyncram:altsyncram_component                                                                                            ; altsyncram          ; work         ;
+;             |altsyncram_p8t3:auto_generated|  ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Memory:mem|DataMemory:dm|altsyncram:altsyncram_component|altsyncram_p8t3:auto_generated                                                             ; altsyncram_p8t3     ; work         ;
+;    |UART:duart|                               ; 4145 (3418)         ; 1311 (1181)               ; 25600       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart                                                                                                                                          ; UART                ; work         ;
+;       |RX_FIFO:fifo_rx|                       ; 13 (0)              ; 12 (0)                    ; 256         ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|RX_FIFO:fifo_rx                                                                                                                          ; RX_FIFO             ; work         ;
+;          |scfifo:scfifo_component|            ; 13 (0)              ; 12 (0)                    ; 256         ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component                                                                                                  ; scfifo              ; work         ;
+;             |scfifo_5k11:auto_generated|      ; 13 (0)              ; 12 (0)                    ; 256         ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component|scfifo_5k11:auto_generated                                                                       ; scfifo_5k11         ; work         ;
+;                |a_dpfifo_cq11:dpfifo|         ; 13 (7)              ; 12 (7)                    ; 256         ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component|scfifo_5k11:auto_generated|a_dpfifo_cq11:dpfifo                                                  ; a_dpfifo_cq11       ; work         ;
+;                   |altsyncram_f1b1:FIFOram|   ; 0 (0)               ; 0 (0)                     ; 256         ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component|scfifo_5k11:auto_generated|a_dpfifo_cq11:dpfifo|altsyncram_f1b1:FIFOram                          ; altsyncram_f1b1     ; work         ;
+;                   |cmpr_678:three_comparison| ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component|scfifo_5k11:auto_generated|a_dpfifo_cq11:dpfifo|cmpr_678:three_comparison                        ; cmpr_678            ; work         ;
+;                   |cntr_037:usedw_counter|    ; 3 (3)               ; 3 (3)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component|scfifo_5k11:auto_generated|a_dpfifo_cq11:dpfifo|cntr_037:usedw_counter                           ; cntr_037            ; work         ;
+;                   |cntr_j2b:rd_ptr_msb|       ; 2 (2)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component|scfifo_5k11:auto_generated|a_dpfifo_cq11:dpfifo|cntr_j2b:rd_ptr_msb                              ; cntr_j2b            ; work         ;
+;       |TX_FIFO:fifo_tx|                       ; 47 (0)              ; 35 (0)                    ; 16384       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|TX_FIFO:fifo_tx                                                                                                                          ; TX_FIFO             ; work         ;
+;          |scfifo:scfifo_component|            ; 47 (0)              ; 35 (0)                    ; 16384       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component                                                                                                  ; scfifo              ; work         ;
+;             |scfifo_rr11:auto_generated|      ; 47 (0)              ; 35 (0)                    ; 16384       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated                                                                       ; scfifo_rr11         ; work         ;
+;                |a_dpfifo_2221:dpfifo|         ; 47 (0)              ; 35 (0)                    ; 16384       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo                                                  ; a_dpfifo_2221       ; work         ;
+;                   |a_fefifo_sae:fifo_state|   ; 25 (14)             ; 13 (2)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|a_fefifo_sae:fifo_state                          ; a_fefifo_sae        ; work         ;
+;                      |cntr_f47:count_usedw|   ; 11 (11)             ; 11 (11)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|a_fefifo_sae:fifo_state|cntr_f47:count_usedw     ; cntr_f47            ; work         ;
+;                   |altsyncram_85m1:FIFOram|   ; 0 (0)               ; 0 (0)                     ; 16384       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|altsyncram_85m1:FIFOram                          ; altsyncram_85m1     ; work         ;
+;                   |cntr_34b:rd_ptr_count|     ; 11 (11)             ; 11 (11)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|cntr_34b:rd_ptr_count                            ; cntr_34b            ; work         ;
+;                   |cntr_34b:wr_ptr|           ; 11 (11)             ; 11 (11)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|cntr_34b:wr_ptr                                  ; cntr_34b            ; work         ;
+;       |UART_FIFO:fifo_uart|                   ; 35 (0)              ; 26 (0)                    ; 8960        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UART_FIFO:fifo_uart                                                                                                                      ; UART_FIFO           ; work         ;
+;          |scfifo:scfifo_component|            ; 35 (0)              ; 26 (0)                    ; 8960        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component                                                                                              ; scfifo              ; work         ;
+;             |scfifo_4921:auto_generated|      ; 35 (0)              ; 26 (0)                    ; 8960        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated                                                                   ; scfifo_4921         ; work         ;
+;                |a_dpfifo_bf21:dpfifo|         ; 35 (1)              ; 26 (0)                    ; 8960        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo                                              ; a_dpfifo_bf21       ; work         ;
+;                   |a_fefifo_18e:fifo_state|   ; 18 (10)             ; 10 (2)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|a_fefifo_18e:fifo_state                      ; a_fefifo_18e        ; work         ;
+;                      |cntr_537:count_usedw|   ; 8 (8)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|a_fefifo_18e:fifo_state|cntr_537:count_usedw ; cntr_537            ; work         ;
+;                   |altsyncram_k2m1:FIFOram|   ; 0 (0)               ; 0 (0)                     ; 8960        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|altsyncram_k2m1:FIFOram                      ; altsyncram_k2m1     ; work         ;
+;                   |cntr_p2b:rd_ptr_count|     ; 8 (8)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|cntr_p2b:rd_ptr_count                        ; cntr_p2b            ; work         ;
+;                   |cntr_p2b:wr_ptr|           ; 8 (8)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|cntr_p2b:wr_ptr                              ; cntr_p2b            ; work         ;
+;       |U_DIV:div|                             ; 270 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|U_DIV:div                                                                                                                                ; U_DIV               ; work         ;
+;          |lpm_divide:LPM_DIVIDE_component|    ; 270 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component                                                                                                ; lpm_divide          ; work         ;
+;             |lpm_divide_0uo:auto_generated|   ; 270 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component|lpm_divide_0uo:auto_generated                                                                  ; lpm_divide_0uo      ; work         ;
+;                |sign_div_unsign_j7h:divider|  ; 270 (29)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component|lpm_divide_0uo:auto_generated|sign_div_unsign_j7h:divider                                      ; sign_div_unsign_j7h ; work         ;
+;                   |alt_u_div_she:divider|     ; 241 (241)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component|lpm_divide_0uo:auto_generated|sign_div_unsign_j7h:divider|alt_u_div_she:divider                ; alt_u_div_she       ; work         ;
+;       |UnsignedDiv:udiv|                      ; 244 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UnsignedDiv:udiv                                                                                                                         ; UnsignedDiv         ; work         ;
+;          |lpm_divide:LPM_DIVIDE_component|    ; 244 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UnsignedDiv:udiv|lpm_divide:LPM_DIVIDE_component                                                                                         ; lpm_divide          ; work         ;
+;             |lpm_divide_6cp:auto_generated|   ; 244 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UnsignedDiv:udiv|lpm_divide:LPM_DIVIDE_component|lpm_divide_6cp:auto_generated                                                           ; lpm_divide_6cp      ; work         ;
+;                |sign_div_unsign_plh:divider|  ; 244 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UnsignedDiv:udiv|lpm_divide:LPM_DIVIDE_component|lpm_divide_6cp:auto_generated|sign_div_unsign_plh:divider                               ; sign_div_unsign_plh ; work         ;
+;                   |alt_u_div_she:divider|     ; 244 (244)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UnsignedDiv:udiv|lpm_divide:LPM_DIVIDE_component|lpm_divide_6cp:auto_generated|sign_div_unsign_plh:divider|alt_u_div_she:divider         ; alt_u_div_she       ; work         ;
+;       |my_UART:dut|                           ; 118 (118)           ; 57 (57)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|my_UART:dut                                                                                                                              ; my_UART             ; work         ;
++-----------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -388,24 +385,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|altsyncram_85m1:FIFOram|ALTSYNCRAM     ; AUTO ; Simple Dual Port ; 2048         ; 8            ; 2048         ; 8            ; 16384 ; None                          ;
 ; UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|altsyncram_k2m1:FIFOram|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 256          ; 36           ; 256          ; 36           ; 9216  ; None                          ;
 +-------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-------------------------------+
-
-
-+-----------------------------------------------------+
-; Analysis & Synthesis DSP Block Usage Summary        ;
-+---------------------------------------+-------------+
-; Statistic                             ; Number Used ;
-+---------------------------------------+-------------+
-; Simple Multipliers (9-bit)            ; 0           ;
-; Simple Multipliers (18-bit)           ; 2           ;
-; Embedded Multiplier Blocks            ; --          ;
-; Embedded Multiplier 9-bit elements    ; 4           ;
-; Signed Embedded Multipliers           ; 0           ;
-; Unsigned Embedded Multipliers         ; 2           ;
-; Mixed Sign Embedded Multipliers       ; 0           ;
-; Variable Sign Embedded Multipliers    ; 0           ;
-; Dedicated Input Shift Register Chains ; 0           ;
-+---------------------------------------+-------------+
-Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
 
 
 +-----------------------------------------------------------------------------------------------------------------------------+
@@ -489,20 +468,40 @@ Encoding Type:  One-Hot
 +----------------+---------------+----------------+---------------+
 
 
-+---------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                              ;
-+----------------------------------------+----------------------------------------+
-; Register name                          ; Reason for Removal                     ;
-+----------------------------------------+----------------------------------------+
-; Execute:exc|data_tx[34,35]             ; Stuck at GND due to stuck port data_in ;
-; Decode:dec|Imm[27..31]                 ; Merged with Decode:dec|Imm[26]         ;
-; UART:duart|resend_data[6,7]            ; Stuck at GND due to stuck port data_in ;
-; UART:duart|div_state.DIVIDE            ; Merged with UART:duart|div_state.CHAR  ;
-; UART:duart|div_state.READING           ; Merged with UART:duart|div_state.CHAR  ;
-; UART:duart|div_state.WRITING           ; Merged with UART:duart|div_state.CHAR  ;
-; UART:duart|div_state.CHAR              ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 13 ;                                        ;
-+----------------------------------------+----------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                                                                                  ;
++------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+; Register name                                                                                                                            ; Reason for Removal                                                                                                       ;
++------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+; Execute:exc|data_tx[34,35]                                                                                                               ; Stuck at GND due to stuck port data_in                                                                                   ;
+; Decode:dec|Imm[27..31]                                                                                                                   ; Merged with Decode:dec|Imm[26]                                                                                           ;
+; UART:duart|d_rx_wr                                                                                                                       ; Stuck at GND due to stuck port data_in                                                                                   ;
+; UART:duart|d_rx_out[0..31]                                                                                                               ; Stuck at GND due to stuck port data_in                                                                                   ;
+; UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component|scfifo_5k11:auto_generated|a_dpfifo_cq11:dpfifo|cntr_k2b:wr_ptr|counter_reg_bit[0..2] ; Stuck at GND due to stuck port clock_enable                                                                              ;
+; UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component|scfifo_5k11:auto_generated|a_dpfifo_cq11:dpfifo|full_dff                              ; Stuck at GND due to stuck port data_in                                                                                   ;
+; UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component|scfifo_5k11:auto_generated|a_dpfifo_cq11:dpfifo|usedw_is_0_dff                        ; Merged with UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component|scfifo_5k11:auto_generated|a_dpfifo_cq11:dpfifo|empty_dff ;
+; UART:duart|number[0..31]                                                                                                                 ; Lost fanout                                                                                                              ;
+; UART:duart|mult_data[0..31]                                                                                                              ; Lost fanout                                                                                                              ;
+; UART:duart|negative                                                                                                                      ; Lost fanout                                                                                                              ;
+; UART:duart|resend_data[7]                                                                                                                ; Stuck at GND due to stuck port data_in                                                                                   ;
+; UART:duart|rx_state.WRITING                                                                                                              ; Lost fanout                                                                                                              ;
+; UART:duart|div_state.DIVIDE                                                                                                              ; Merged with UART:duart|div_state.CHAR                                                                                    ;
+; UART:duart|div_state.READING                                                                                                             ; Merged with UART:duart|div_state.CHAR                                                                                    ;
+; UART:duart|div_state.WRITING                                                                                                             ; Merged with UART:duart|div_state.CHAR                                                                                    ;
+; UART:duart|rx_state.STORE                                                                                                                ; Lost fanout                                                                                                              ;
+; UART:duart|div_state.CHAR                                                                                                                ; Stuck at GND due to stuck port data_in                                                                                   ;
+; Total Number of Removed Registers = 117                                                                                                  ;                                                                                                                          ;
++------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                  ;
++--------------------+---------------------------+-------------------------------------------------------------------------------------------------------------+
+; Register name      ; Reason for Removal        ; Registers Removed due to This Register                                                                      ;
++--------------------+---------------------------+-------------------------------------------------------------------------------------------------------------+
+; UART:duart|d_rx_wr ; Stuck at GND              ; UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component|scfifo_5k11:auto_generated|a_dpfifo_cq11:dpfifo|full_dff ;
+;                    ; due to stuck port data_in ;                                                                                                             ;
++--------------------+---------------------------+-------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -510,12 +509,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 2779  ;
-; Number of registers using Synchronous Clear  ; 168   ;
+; Total registers                              ; 2675  ;
+; Number of registers using Synchronous Clear  ; 135   ;
 ; Number of registers using Synchronous Load   ; 104   ;
-; Number of registers using Asynchronous Clear ; 1293  ;
+; Number of registers using Asynchronous Clear ; 1189  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1298  ;
+; Number of registers using Clock Enable       ; 1297  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -530,50 +529,50 @@ Encoding Type:  One-Hot
 +----------------------------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DLX|UART:duart|resend_data[6]                 ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |DLX|UART:duart|d_rx_out[6]                    ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |DLX|Fetch:fet|pc[5]                           ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DLX|Decode:dec|ram[31][6]                     ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |DLX|UART:duart|my_UART:dut|position_tx[0]     ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |DLX|UART:duart|my_UART:dut|position_rx[0]     ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; Yes        ; |DLX|Decode:dec|ram[0][12]                     ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |DLX|UART:duart|numer[7]                       ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |DLX|UART:duart|d_tx_temp[30]                  ;
-; 18:1               ; 32 bits   ; 384 LEs       ; 32 LEs               ; 352 LEs                ; Yes        ; |DLX|Execute:exc|data_tx[18]                   ;
-; 7:1                ; 29 bits   ; 116 LEs       ; 58 LEs               ; 58 LEs                 ; Yes        ; |DLX|UART:duart|d_tx_temp[13]                  ;
-; 7:1                ; 31 bits   ; 124 LEs       ; 62 LEs               ; 62 LEs                 ; Yes        ; |DLX|UART:duart|stk_ptr[21]                    ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 16 LEs               ; 64 LEs                 ; Yes        ; |DLX|UART:duart|my_UART:dut|sync_tx[13]        ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 16 LEs               ; 64 LEs                 ; Yes        ; |DLX|UART:duart|my_UART:dut|sync_rx[15]        ;
-; 35:1               ; 10 bits   ; 230 LEs       ; 10 LEs               ; 220 LEs                ; Yes        ; |DLX|Execute:exc|br_addr[3]                    ;
-; 9:1                ; 5 bits    ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |DLX|Decode:dec|Imm[24]                        ;
-; 11:1               ; 15 bits   ; 105 LEs       ; 30 LEs               ; 75 LEs                 ; Yes        ; |DLX|Decode:dec|Imm[0]                         ;
-; 12:1               ; 4 bits    ; 32 LEs        ; 12 LEs               ; 20 LEs                 ; Yes        ; |DLX|Decode:dec|Imm[20]                        ;
-; 46:1               ; 16 bits   ; 480 LEs       ; 352 LEs              ; 128 LEs                ; Yes        ; |DLX|Decode:dec|RS2[16]                        ;
-; 68:1               ; 7 bits    ; 315 LEs       ; 49 LEs               ; 266 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[23]                ;
-; 67:1               ; 5 bits    ; 220 LEs       ; 35 LEs               ; 185 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[13]                ;
-; 67:1               ; 2 bits    ; 88 LEs        ; 16 LEs               ; 72 LEs                 ; Yes        ; |DLX|Execute:exc|ALU_result[9]                 ;
-; 43:1               ; 32 bits   ; 896 LEs       ; 704 LEs              ; 192 LEs                ; Yes        ; |DLX|Decode:dec|RS1[26]                        ;
-; 69:1               ; 4 bits    ; 184 LEs       ; 32 LEs               ; 152 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[27]                ;
-; 68:1               ; 4 bits    ; 180 LEs       ; 32 LEs               ; 148 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[7]                 ;
-; 41:1               ; 16 bits   ; 432 LEs       ; 368 LEs              ; 64 LEs                 ; Yes        ; |DLX|Decode:dec|RS2[5]                         ;
-; 70:1               ; 2 bits    ; 92 LEs        ; 18 LEs               ; 74 LEs                 ; Yes        ; |DLX|Execute:exc|ALU_result[28]                ;
-; 69:1               ; 2 bits    ; 92 LEs        ; 18 LEs               ; 74 LEs                 ; Yes        ; |DLX|Execute:exc|ALU_result[3]                 ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DLX|UART:duart|stack                          ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |DLX|Execute:exc|InTwo[6]                      ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |DLX|UART:duart|my_UART:dut|next_state_tx.DATA ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |DLX|UART:duart|my_UART:dut|next_state_rx.IDLE ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |DLX|UART:duart|Selector1172                   ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |DLX|Decode:dec|Mux28                          ;
-; 11:1               ; 32 bits   ; 224 LEs       ; 32 LEs               ; 192 LEs                ; No         ; |DLX|Execute:exc|Add0                          ;
-; 7:1                ; 32 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; No         ; |DLX|Execute:exc|InOne[10]                     ;
-; 129:1              ; 8 bits    ; 688 LEs       ; 688 LEs              ; 0 LEs                  ; No         ; |DLX|UART:duart|d_tx_out                       ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; No         ; |DLX|Execute:exc|Add0                          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DLX|UART:duart|resend_data[3]                  ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |DLX|UART:duart|resend_data[6]                  ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |DLX|Fetch:fet|pc[5]                            ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DLX|Decode:dec|ram[31][17]                     ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |DLX|UART:duart|my_UART:dut|position_tx[0]      ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |DLX|UART:duart|my_UART:dut|position_rx[2]      ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; Yes        ; |DLX|Decode:dec|ram[0][3]                       ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |DLX|UART:duart|numer[2]                        ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |DLX|UART:duart|d_tx_temp[31]                   ;
+; 18:1               ; 32 bits   ; 384 LEs       ; 32 LEs               ; 352 LEs                ; Yes        ; |DLX|Execute:exc|data_tx[25]                    ;
+; 7:1                ; 29 bits   ; 116 LEs       ; 58 LEs               ; 58 LEs                 ; Yes        ; |DLX|UART:duart|d_tx_temp[27]                   ;
+; 7:1                ; 31 bits   ; 124 LEs       ; 62 LEs               ; 62 LEs                 ; Yes        ; |DLX|UART:duart|stk_ptr[16]                     ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 16 LEs               ; 64 LEs                 ; Yes        ; |DLX|UART:duart|my_UART:dut|sync_tx[0]          ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 16 LEs               ; 64 LEs                 ; Yes        ; |DLX|UART:duart|my_UART:dut|sync_rx[0]          ;
+; 35:1               ; 10 bits   ; 230 LEs       ; 10 LEs               ; 220 LEs                ; Yes        ; |DLX|Execute:exc|br_addr[9]                     ;
+; 9:1                ; 5 bits    ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |DLX|Decode:dec|Imm[22]                         ;
+; 11:1               ; 15 bits   ; 105 LEs       ; 30 LEs               ; 75 LEs                 ; Yes        ; |DLX|Decode:dec|Imm[13]                         ;
+; 12:1               ; 4 bits    ; 32 LEs        ; 12 LEs               ; 20 LEs                 ; Yes        ; |DLX|Decode:dec|Imm[17]                         ;
+; 46:1               ; 16 bits   ; 480 LEs       ; 352 LEs              ; 128 LEs                ; Yes        ; |DLX|Decode:dec|RS2[25]                         ;
+; 68:1               ; 7 bits    ; 315 LEs       ; 49 LEs               ; 266 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[23]                 ;
+; 67:1               ; 5 bits    ; 220 LEs       ; 35 LEs               ; 185 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[11]                 ;
+; 67:1               ; 2 bits    ; 88 LEs        ; 16 LEs               ; 72 LEs                 ; Yes        ; |DLX|Execute:exc|ALU_result[8]                  ;
+; 43:1               ; 32 bits   ; 896 LEs       ; 704 LEs              ; 192 LEs                ; Yes        ; |DLX|Decode:dec|RS1[19]                         ;
+; 69:1               ; 4 bits    ; 184 LEs       ; 32 LEs               ; 152 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[24]                 ;
+; 68:1               ; 4 bits    ; 180 LEs       ; 32 LEs               ; 148 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[7]                  ;
+; 41:1               ; 16 bits   ; 432 LEs       ; 368 LEs              ; 64 LEs                 ; Yes        ; |DLX|Decode:dec|RS2[11]                         ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 18 LEs               ; 74 LEs                 ; Yes        ; |DLX|Execute:exc|ALU_result[29]                 ;
+; 69:1               ; 2 bits    ; 92 LEs        ; 18 LEs               ; 74 LEs                 ; Yes        ; |DLX|Execute:exc|ALU_result[2]                  ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DLX|UART:duart|stack                           ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |DLX|Execute:exc|InTwo[25]                      ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |DLX|UART:duart|my_UART:dut|next_state_tx.START ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |DLX|UART:duart|my_UART:dut|next_state_rx.IDLE  ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |DLX|UART:duart|Selector1172                    ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |DLX|Decode:dec|Mux22                           ;
+; 11:1               ; 32 bits   ; 224 LEs       ; 32 LEs               ; 192 LEs                ; No         ; |DLX|Execute:exc|Add0                           ;
+; 7:1                ; 32 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; No         ; |DLX|Execute:exc|InOne[11]                      ;
+; 129:1              ; 8 bits    ; 688 LEs       ; 688 LEs              ; 0 LEs                  ; No         ; |DLX|UART:duart|d_tx_out                        ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; No         ; |DLX|Execute:exc|Add0                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1062,11 +1061,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 4                           ;
-; cycloneiii_ff         ; 2779                        ;
-;     CLR               ; 1129                        ;
-;     CLR SCLR          ; 33                          ;
+; cycloneiii_ff         ; 2675                        ;
+;     CLR               ; 1059                        ;
 ;     ENA               ; 1083                        ;
-;     ENA CLR           ; 100                         ;
+;     ENA CLR           ; 99                          ;
 ;     ENA CLR SCLR      ; 31                          ;
 ;     ENA SCLR          ; 32                          ;
 ;     ENA SCLR SLD      ; 10                          ;
@@ -1074,23 +1072,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     SCLR              ; 10                          ;
 ;     SCLR SLD          ; 52                          ;
 ;     plain             ; 257                         ;
-; cycloneiii_lcell_comb ; 7824                        ;
-;     arith             ; 648                         ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 321                         ;
-;         3 data inputs ; 325                         ;
-;     normal            ; 7176                        ;
+; cycloneiii_lcell_comb ; 7614                        ;
+;     arith             ; 544                         ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 261                         ;
+;         3 data inputs ; 280                         ;
+;     normal            ; 7070                        ;
 ;         0 data inputs ; 54                          ;
-;         1 data inputs ; 17                          ;
-;         2 data inputs ; 259                         ;
-;         3 data inputs ; 921                         ;
-;         4 data inputs ; 5925                        ;
-; cycloneiii_mac_mult   ; 2                           ;
-; cycloneiii_mac_out    ; 2                           ;
+;         1 data inputs ; 13                          ;
+;         2 data inputs ; 254                         ;
+;         3 data inputs ; 959                         ;
+;         4 data inputs ; 5790                        ;
 ; cycloneiii_ram_block  ; 139                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 67.20                       ;
-; Average LUT depth     ; 17.17                       ;
+; Average LUT depth     ; 17.60                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1099,7 +1095,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:27     ;
+; Top            ; 00:00:28     ;
 +----------------+--------------+
 
 
@@ -1109,7 +1105,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Wed Mar 30 12:35:45 2022
+    Info: Processing started: Wed Mar 30 16:33:44 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DLX -c DLX
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -1454,24 +1450,30 @@ Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
         Warning (14320): Synthesized away node "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|altsyncram_k2m1:FIFOram|q_b[34]" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/altsyncram_k2m1.tdf Line: 1060
 Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following DSP element node(s):
+        Warning (14320): Synthesized away node "UART:duart|MULT:umult|lpm_mult:lpm_mult_component|mult_88p:auto_generated|mac_mult1" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/mult_88p.tdf Line: 39
+        Warning (14320): Synthesized away node "UART:duart|MULT:umult|lpm_mult:lpm_mult_component|mult_88p:auto_generated|mac_mult3" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/mult_88p.tdf Line: 48
+        Warning (14320): Synthesized away node "UART:duart|MULT:umult|lpm_mult:lpm_mult_component|mult_88p:auto_generated|w169w[0]" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/mult_88p.tdf Line: 57
+        Warning (14320): Synthesized away node "UART:duart|MULT:umult|lpm_mult:lpm_mult_component|mult_88p:auto_generated|mac_out4" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/mult_88p.tdf Line: 62
+Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
         Warning (14320): Synthesized away node "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|altsyncram_k2m1:FIFOram|q_b[34]" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/altsyncram_k2m1.tdf Line: 1060
 Warning (19016): Clock multiplexers are found and protected
     Warning (19017): Found clock multiplexer Fetch:fet|OpIsTypeB~0
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 67 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 9198 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 8981 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 9051 logic cells
+    Info (21061): Implemented 8838 logic cells
     Info (21064): Implemented 139 RAM segments
-    Info (21062): Implemented 4 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 19 warnings
-    Info: Peak virtual memory: 4948 megabytes
-    Info: Processing ended: Wed Mar 30 12:36:36 2022
-    Info: Elapsed time: 00:00:51
-    Info: Total CPU time (on all processors): 00:00:52
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 25 warnings
+    Info: Peak virtual memory: 4949 megabytes
+    Info: Processing ended: Wed Mar 30 16:34:37 2022
+    Info: Elapsed time: 00:00:53
+    Info: Total CPU time (on all processors): 00:00:53
 
 
