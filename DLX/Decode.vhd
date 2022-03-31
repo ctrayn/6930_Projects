@@ -101,7 +101,7 @@ begin
 	-- UART
 	process(clk) begin
 		if rising_edge(clk) then
-			if opIsUARTrx(wb_inst(31 downto 26)) = '1' then
+			if opIsUARTrx(wb_inst(31 downto 26)) = '1' and rx_data_empty = '0' then
 				rx_ack <= '1';
 			else
 				rx_ack <= '0';
