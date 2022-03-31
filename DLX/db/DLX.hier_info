@@ -10,7 +10,7 @@ RST_L => Decode:dec.rst_l
 RST_L => Execute:exc.rst_l
 RST_L => Memory:mem.rst_l
 RX => UART:duart.RX
-TX << UART:duart.TX
+TX <= UART:duart.TX
 
 
 |DLX|UART:duart
@@ -12985,6 +12985,7 @@ rx_data_empty => ram.OUTPUTSELECT
 rx_data_empty => ram.OUTPUTSELECT
 rx_data_empty => ram.OUTPUTSELECT
 rx_data_empty => ram.OUTPUTSELECT
+rx_data_empty => process_2.IN1
 rx_data[0] => ram.DATAB
 rx_data[0] => ram.DATAB
 rx_data[0] => ram.DATAB

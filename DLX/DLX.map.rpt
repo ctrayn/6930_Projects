@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DLX
-Tue Mar 29 20:53:57 2022
+Wed Mar 30 18:06:33 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Mar 29 20:53:56 2022       ;
+; Analysis & Synthesis Status        ; Successful - Wed Mar 30 18:06:33 2022       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; DLX                                         ;
 ; Top-level Entity Name              ; DLX                                         ;
@@ -186,101 +186,96 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 12          ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.01        ;
-; Maximum used               ; 12          ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.1%      ;
 ;     Processor 3            ;   0.1%      ;
 ;     Processor 4            ;   0.1%      ;
-;     Processor 5            ;   0.1%      ;
-;     Processor 6            ;   0.1%      ;
-;     Processor 7            ;   0.1%      ;
-;     Processor 8            ;   0.1%      ;
-;     Processors 9-12        ;   0.1%      ;
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                         ;
-+----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                           ; Library ;
-+----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------------------------+---------+
-; UnsignedDiv.vhd                  ; yes             ; User Wizard-Generated File             ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UnsignedDiv.vhd             ;         ;
-; UART_FIFO.vhd                    ; yes             ; User Wizard-Generated File             ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART_FIFO.vhd               ;         ;
-; UART.vhd                         ; yes             ; User VHDL File                         ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd                    ;         ;
-; U_DIV.vhd                        ; yes             ; User Wizard-Generated File             ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/U_DIV.vhd                   ;         ;
-; TX_FIFO.vhd                      ; yes             ; User Wizard-Generated File             ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/TX_FIFO.vhd                 ;         ;
-; my_UART.vhd                      ; yes             ; User VHDL File                         ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/my_UART.vhd                 ;         ;
-; Memory.vhd                       ; yes             ; User VHDL File                         ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Memory.vhd                  ;         ;
-; DataMemory.vhd                   ; yes             ; User Wizard-Generated File             ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DataMemory.vhd              ;         ;
-; Execute.vhd                      ; yes             ; User VHDL File                         ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Execute.vhd                 ;         ;
-; InstructionMemory.vhd            ; yes             ; User Wizard-Generated File             ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/InstructionMemory.vhd       ;         ;
-; Fetch.vhd                        ; yes             ; User VHDL File                         ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Fetch.vhd                   ;         ;
-; Decode.vhd                       ; yes             ; User VHDL File                         ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Decode.vhd                  ;         ;
-; DLX.vhd                          ; yes             ; User VHDL File                         ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.vhd                     ;         ;
-; Common.vhd                       ; yes             ; User VHDL File                         ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Common.vhd                  ;         ;
-; MULT.vhd                         ; yes             ; User Wizard-Generated File             ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/MULT.vhd                    ;         ;
-; RX_FIFO.vhd                      ; yes             ; User Wizard-Generated File             ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/RX_FIFO.vhd                 ;         ;
-; scfifo.tdf                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/scfifo.tdf                                      ;         ;
-; a_regfifo.inc                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_regfifo.inc                                   ;         ;
-; a_dpfifo.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_dpfifo.inc                                    ;         ;
-; a_i2fifo.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_i2fifo.inc                                    ;         ;
-; a_fffifo.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_fffifo.inc                                    ;         ;
-; a_f2fifo.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_f2fifo.inc                                    ;         ;
-; aglobal201.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc                                  ;         ;
-; db/scfifo_4921.tdf               ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/scfifo_4921.tdf          ;         ;
-; db/a_dpfifo_bf21.tdf             ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_dpfifo_bf21.tdf        ;         ;
-; db/a_fefifo_18e.tdf              ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_fefifo_18e.tdf         ;         ;
-; db/cntr_537.tdf                  ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/cntr_537.tdf             ;         ;
-; db/altsyncram_k2m1.tdf           ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/altsyncram_k2m1.tdf      ;         ;
-; db/cntr_p2b.tdf                  ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/cntr_p2b.tdf             ;         ;
-; db/scfifo_rr11.tdf               ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/scfifo_rr11.tdf          ;         ;
-; db/a_dpfifo_2221.tdf             ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_dpfifo_2221.tdf        ;         ;
-; db/a_fefifo_sae.tdf              ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_fefifo_sae.tdf         ;         ;
-; db/cntr_f47.tdf                  ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/cntr_f47.tdf             ;         ;
-; db/altsyncram_85m1.tdf           ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/altsyncram_85m1.tdf      ;         ;
-; db/cntr_34b.tdf                  ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/cntr_34b.tdf             ;         ;
-; lpm_divide.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf                                  ;         ;
-; abs_divider.inc                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/abs_divider.inc                                 ;         ;
-; sign_div_unsign.inc              ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sign_div_unsign.inc                             ;         ;
-; db/lpm_divide_0uo.tdf            ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/lpm_divide_0uo.tdf       ;         ;
-; db/sign_div_unsign_j7h.tdf       ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/sign_div_unsign_j7h.tdf  ;         ;
-; db/alt_u_div_she.tdf             ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/alt_u_div_she.tdf        ;         ;
-; db/add_sub_t3c.tdf               ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/add_sub_t3c.tdf          ;         ;
-; db/add_sub_u3c.tdf               ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/add_sub_u3c.tdf          ;         ;
-; db/lpm_divide_6cp.tdf            ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/lpm_divide_6cp.tdf       ;         ;
-; db/sign_div_unsign_plh.tdf       ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/sign_div_unsign_plh.tdf  ;         ;
-; lpm_mult.tdf                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mult.tdf                                    ;         ;
-; lpm_add_sub.inc                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_add_sub.inc                                 ;         ;
-; multcore.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/multcore.inc                                    ;         ;
-; bypassff.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/bypassff.inc                                    ;         ;
-; altshift.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altshift.inc                                    ;         ;
-; db/mult_88p.tdf                  ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/mult_88p.tdf             ;         ;
-; db/scfifo_5k11.tdf               ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/scfifo_5k11.tdf          ;         ;
-; db/a_dpfifo_cq11.tdf             ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_dpfifo_cq11.tdf        ;         ;
-; db/altsyncram_f1b1.tdf           ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/altsyncram_f1b1.tdf      ;         ;
-; db/cmpr_678.tdf                  ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/cmpr_678.tdf             ;         ;
-; db/cntr_j2b.tdf                  ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/cntr_j2b.tdf             ;         ;
-; db/cntr_037.tdf                  ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/cntr_037.tdf             ;         ;
-; db/cntr_k2b.tdf                  ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/cntr_k2b.tdf             ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf                                  ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_ram_block.inc                           ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mux.inc                                     ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_decode.inc                                  ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_rdenreg.inc                                   ;         ;
-; altrom.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altrom.inc                                      ;         ;
-; altram.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altram.inc                                      ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altdpram.inc                                    ;         ;
-; db/altsyncram_c7t3.tdf           ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/altsyncram_c7t3.tdf      ;         ;
-; programs/factorial_code.mif      ; yes             ; Auto-Found Memory Initialization File  ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/programs/factorial_code.mif ;         ;
-; db/altsyncram_p8t3.tdf           ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/altsyncram_p8t3.tdf      ;         ;
-; programs/factorial_data.mif      ; yes             ; Auto-Found Memory Initialization File  ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/programs/factorial_data.mif ;         ;
-+----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                           ;
++----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                                             ; Library ;
++----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------------------------------------------+---------+
+; UnsignedDiv.vhd                  ; yes             ; User Wizard-Generated File             ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UnsignedDiv.vhd             ;         ;
+; UART_FIFO.vhd                    ; yes             ; User Wizard-Generated File             ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART_FIFO.vhd               ;         ;
+; UART.vhd                         ; yes             ; User VHDL File                         ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART.vhd                    ;         ;
+; U_DIV.vhd                        ; yes             ; User Wizard-Generated File             ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/U_DIV.vhd                   ;         ;
+; TX_FIFO.vhd                      ; yes             ; User Wizard-Generated File             ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/TX_FIFO.vhd                 ;         ;
+; my_UART.vhd                      ; yes             ; User VHDL File                         ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/my_UART.vhd                 ;         ;
+; Memory.vhd                       ; yes             ; User VHDL File                         ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Memory.vhd                  ;         ;
+; DataMemory.vhd                   ; yes             ; User Wizard-Generated File             ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DataMemory.vhd              ;         ;
+; Execute.vhd                      ; yes             ; User VHDL File                         ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Execute.vhd                 ;         ;
+; InstructionMemory.vhd            ; yes             ; User Wizard-Generated File             ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/InstructionMemory.vhd       ;         ;
+; Fetch.vhd                        ; yes             ; User VHDL File                         ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Fetch.vhd                   ;         ;
+; Decode.vhd                       ; yes             ; User VHDL File                         ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Decode.vhd                  ;         ;
+; DLX.vhd                          ; yes             ; User VHDL File                         ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd                     ;         ;
+; Common.vhd                       ; yes             ; User VHDL File                         ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Common.vhd                  ;         ;
+; MULT.vhd                         ; yes             ; User Wizard-Generated File             ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/MULT.vhd                    ;         ;
+; RX_FIFO.vhd                      ; yes             ; User Wizard-Generated File             ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/RX_FIFO.vhd                 ;         ;
+; scfifo.tdf                       ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/scfifo.tdf                                               ;         ;
+; a_regfifo.inc                    ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/a_regfifo.inc                                            ;         ;
+; a_dpfifo.inc                     ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/a_dpfifo.inc                                             ;         ;
+; a_i2fifo.inc                     ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/a_i2fifo.inc                                             ;         ;
+; a_fffifo.inc                     ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/a_fffifo.inc                                             ;         ;
+; a_f2fifo.inc                     ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/a_f2fifo.inc                                             ;         ;
+; aglobal201.inc                   ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc                                           ;         ;
+; db/scfifo_4921.tdf               ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/scfifo_4921.tdf          ;         ;
+; db/a_dpfifo_bf21.tdf             ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_dpfifo_bf21.tdf        ;         ;
+; db/a_fefifo_18e.tdf              ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_fefifo_18e.tdf         ;         ;
+; db/cntr_537.tdf                  ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/cntr_537.tdf             ;         ;
+; db/altsyncram_k2m1.tdf           ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/altsyncram_k2m1.tdf      ;         ;
+; db/cntr_p2b.tdf                  ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/cntr_p2b.tdf             ;         ;
+; db/scfifo_rr11.tdf               ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/scfifo_rr11.tdf          ;         ;
+; db/a_dpfifo_2221.tdf             ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_dpfifo_2221.tdf        ;         ;
+; db/a_fefifo_sae.tdf              ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_fefifo_sae.tdf         ;         ;
+; db/cntr_f47.tdf                  ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/cntr_f47.tdf             ;         ;
+; db/altsyncram_85m1.tdf           ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/altsyncram_85m1.tdf      ;         ;
+; db/cntr_34b.tdf                  ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/cntr_34b.tdf             ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf                                           ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/abs_divider.inc                                          ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/sign_div_unsign.inc                                      ;         ;
+; db/lpm_divide_0uo.tdf            ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/lpm_divide_0uo.tdf       ;         ;
+; db/sign_div_unsign_j7h.tdf       ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/sign_div_unsign_j7h.tdf  ;         ;
+; db/alt_u_div_she.tdf             ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/alt_u_div_she.tdf        ;         ;
+; db/add_sub_t3c.tdf               ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/add_sub_t3c.tdf          ;         ;
+; db/add_sub_u3c.tdf               ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/add_sub_u3c.tdf          ;         ;
+; db/lpm_divide_6cp.tdf            ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/lpm_divide_6cp.tdf       ;         ;
+; db/sign_div_unsign_plh.tdf       ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/sign_div_unsign_plh.tdf  ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/lpm_mult.tdf                                             ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/lpm_add_sub.inc                                          ;         ;
+; multcore.inc                     ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/multcore.inc                                             ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/bypassff.inc                                             ;         ;
+; altshift.inc                     ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/altshift.inc                                             ;         ;
+; db/mult_88p.tdf                  ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/mult_88p.tdf             ;         ;
+; db/scfifo_5k11.tdf               ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/scfifo_5k11.tdf          ;         ;
+; db/a_dpfifo_cq11.tdf             ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_dpfifo_cq11.tdf        ;         ;
+; db/altsyncram_f1b1.tdf           ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/altsyncram_f1b1.tdf      ;         ;
+; db/cmpr_678.tdf                  ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/cmpr_678.tdf             ;         ;
+; db/cntr_j2b.tdf                  ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/cntr_j2b.tdf             ;         ;
+; db/cntr_037.tdf                  ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/cntr_037.tdf             ;         ;
+; db/cntr_k2b.tdf                  ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/cntr_k2b.tdf             ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf                                           ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                    ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/lpm_mux.inc                                              ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/lpm_decode.inc                                           ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/a_rdenreg.inc                                            ;         ;
+; altrom.inc                       ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/altrom.inc                                               ;         ;
+; altram.inc                       ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/altram.inc                                               ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/altdpram.inc                                             ;         ;
+; db/altsyncram_c7t3.tdf           ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/altsyncram_c7t3.tdf      ;         ;
+; ./Programs/factorial_code.mif    ; yes             ; Auto-Found Memory Initialization File  ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Programs/factorial_code.mif ;         ;
+; db/altsyncram_p8t3.tdf           ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/altsyncram_p8t3.tdf      ;         ;
+; ./Programs/factorial_data.mif    ; yes             ; Auto-Found Memory Initialization File  ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Programs/factorial_data.mif ;         ;
++----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +----------------------------------------------------------------+
@@ -311,7 +306,7 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                  ;
 ; Maximum fan-out node                        ; ADC_CLK_10~input ;
 ; Maximum fan-out                             ; 2888             ;
-; Total fan-out                               ; 39069            ;
+; Total fan-out                               ; 39070            ;
 ; Average fan-out                             ; 3.64             ;
 +---------------------------------------------+------------------+
 
@@ -356,8 +351,8 @@ https://fpgasoftware.intel.com/eula.
 ;       |UART_FIFO:fifo_uart|                  ; 35 (0)              ; 26 (0)                    ; 8960        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UART_FIFO:fifo_uart                                                                                                                      ; UART_FIFO           ; work         ;
 ;          |scfifo:scfifo_component|           ; 35 (0)              ; 26 (0)                    ; 8960        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component                                                                                              ; scfifo              ; work         ;
 ;             |scfifo_4921:auto_generated|     ; 35 (0)              ; 26 (0)                    ; 8960        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated                                                                   ; scfifo_4921         ; work         ;
-;                |a_dpfifo_bf21:dpfifo|        ; 35 (2)              ; 26 (0)                    ; 8960        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo                                              ; a_dpfifo_bf21       ; work         ;
-;                   |a_fefifo_18e:fifo_state|  ; 17 (9)              ; 10 (2)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|a_fefifo_18e:fifo_state                      ; a_fefifo_18e        ; work         ;
+;                |a_dpfifo_bf21:dpfifo|        ; 35 (1)              ; 26 (0)                    ; 8960        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo                                              ; a_dpfifo_bf21       ; work         ;
+;                   |a_fefifo_18e:fifo_state|  ; 18 (10)             ; 10 (2)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|a_fefifo_18e:fifo_state                      ; a_fefifo_18e        ; work         ;
 ;                      |cntr_537:count_usedw|  ; 8 (8)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|a_fefifo_18e:fifo_state|cntr_537:count_usedw ; cntr_537            ; work         ;
 ;                   |altsyncram_k2m1:FIFOram|  ; 0 (0)               ; 0 (0)                     ; 8960        ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|altsyncram_k2m1:FIFOram                      ; altsyncram_k2m1     ; work         ;
 ;                   |cntr_p2b:rd_ptr_count|    ; 8 (8)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|cntr_p2b:rd_ptr_count                        ; cntr_p2b            ; work         ;
@@ -535,43 +530,43 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DLX|UART:duart|resend_data[7]                 ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DLX|UART:duart|resend_data[4]                 ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |DLX|UART:duart|resend_data[6]                 ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |DLX|UART:duart|d_rx_out[6]                    ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |DLX|Fetch:fet|pc[5]                           ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DLX|Decode:dec|ram[31][6]                     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |DLX|UART:duart|d_rx_out[4]                    ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |DLX|Fetch:fet|pc[2]                           ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DLX|Decode:dec|ram[31][7]                     ;
 ; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |DLX|UART:duart|my_UART:dut|position_tx[0]     ;
 ; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |DLX|UART:duart|my_UART:dut|position_rx[0]     ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; Yes        ; |DLX|Decode:dec|ram[0][12]                     ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |DLX|UART:duart|numer[7]                       ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; Yes        ; |DLX|Decode:dec|ram[0][31]                     ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |DLX|UART:duart|numer[24]                      ;
 ; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |DLX|UART:duart|d_tx_temp[30]                  ;
-; 18:1               ; 32 bits   ; 384 LEs       ; 32 LEs               ; 352 LEs                ; Yes        ; |DLX|Execute:exc|data_tx[18]                   ;
-; 7:1                ; 29 bits   ; 116 LEs       ; 58 LEs               ; 58 LEs                 ; Yes        ; |DLX|UART:duart|d_tx_temp[13]                  ;
-; 7:1                ; 31 bits   ; 124 LEs       ; 62 LEs               ; 62 LEs                 ; Yes        ; |DLX|UART:duart|stk_ptr[21]                    ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 16 LEs               ; 64 LEs                 ; Yes        ; |DLX|UART:duart|my_UART:dut|sync_tx[13]        ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 16 LEs               ; 64 LEs                 ; Yes        ; |DLX|UART:duart|my_UART:dut|sync_rx[15]        ;
+; 18:1               ; 32 bits   ; 384 LEs       ; 32 LEs               ; 352 LEs                ; Yes        ; |DLX|Execute:exc|data_tx[28]                   ;
+; 7:1                ; 29 bits   ; 116 LEs       ; 58 LEs               ; 58 LEs                 ; Yes        ; |DLX|UART:duart|d_tx_temp[15]                  ;
+; 7:1                ; 31 bits   ; 124 LEs       ; 62 LEs               ; 62 LEs                 ; Yes        ; |DLX|UART:duart|stk_ptr[0]                     ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 16 LEs               ; 64 LEs                 ; Yes        ; |DLX|UART:duart|my_UART:dut|sync_tx[8]         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 16 LEs               ; 64 LEs                 ; Yes        ; |DLX|UART:duart|my_UART:dut|sync_rx[1]         ;
 ; 35:1               ; 10 bits   ; 230 LEs       ; 10 LEs               ; 220 LEs                ; Yes        ; |DLX|Execute:exc|br_addr[3]                    ;
-; 9:1                ; 5 bits    ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |DLX|Decode:dec|Imm[24]                        ;
-; 11:1               ; 15 bits   ; 105 LEs       ; 30 LEs               ; 75 LEs                 ; Yes        ; |DLX|Decode:dec|Imm[0]                         ;
+; 9:1                ; 5 bits    ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |DLX|Decode:dec|Imm[25]                        ;
+; 11:1               ; 15 bits   ; 105 LEs       ; 30 LEs               ; 75 LEs                 ; Yes        ; |DLX|Decode:dec|Imm[2]                         ;
 ; 12:1               ; 4 bits    ; 32 LEs        ; 12 LEs               ; 20 LEs                 ; Yes        ; |DLX|Decode:dec|Imm[20]                        ;
-; 46:1               ; 16 bits   ; 480 LEs       ; 352 LEs              ; 128 LEs                ; Yes        ; |DLX|Decode:dec|RS2[16]                        ;
-; 68:1               ; 7 bits    ; 315 LEs       ; 49 LEs               ; 266 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[23]                ;
-; 67:1               ; 5 bits    ; 220 LEs       ; 35 LEs               ; 185 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[13]                ;
+; 46:1               ; 16 bits   ; 480 LEs       ; 352 LEs              ; 128 LEs                ; Yes        ; |DLX|Decode:dec|RS2[22]                        ;
+; 68:1               ; 7 bits    ; 315 LEs       ; 49 LEs               ; 266 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[20]                ;
+; 67:1               ; 5 bits    ; 220 LEs       ; 35 LEs               ; 185 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[14]                ;
 ; 67:1               ; 2 bits    ; 88 LEs        ; 16 LEs               ; 72 LEs                 ; Yes        ; |DLX|Execute:exc|ALU_result[9]                 ;
-; 43:1               ; 32 bits   ; 896 LEs       ; 704 LEs              ; 192 LEs                ; Yes        ; |DLX|Decode:dec|RS1[26]                        ;
+; 43:1               ; 32 bits   ; 896 LEs       ; 704 LEs              ; 192 LEs                ; Yes        ; |DLX|Decode:dec|RS1[29]                        ;
 ; 69:1               ; 4 bits    ; 184 LEs       ; 32 LEs               ; 152 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[27]                ;
-; 68:1               ; 4 bits    ; 180 LEs       ; 32 LEs               ; 148 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[7]                 ;
-; 41:1               ; 16 bits   ; 432 LEs       ; 368 LEs              ; 64 LEs                 ; Yes        ; |DLX|Decode:dec|RS2[5]                         ;
+; 68:1               ; 4 bits    ; 180 LEs       ; 32 LEs               ; 148 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[6]                 ;
+; 41:1               ; 16 bits   ; 432 LEs       ; 368 LEs              ; 64 LEs                 ; Yes        ; |DLX|Decode:dec|RS2[15]                        ;
 ; 70:1               ; 2 bits    ; 92 LEs        ; 18 LEs               ; 74 LEs                 ; Yes        ; |DLX|Execute:exc|ALU_result[28]                ;
 ; 69:1               ; 2 bits    ; 92 LEs        ; 18 LEs               ; 74 LEs                 ; Yes        ; |DLX|Execute:exc|ALU_result[3]                 ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DLX|UART:duart|stack                          ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |DLX|Execute:exc|InTwo[6]                      ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |DLX|UART:duart|my_UART:dut|next_state_tx.DATA ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |DLX|Execute:exc|InTwo[15]                     ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |DLX|UART:duart|my_UART:dut|next_state_tx.IDLE ;
 ; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |DLX|UART:duart|my_UART:dut|next_state_rx.IDLE ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |DLX|UART:duart|Selector1172                   ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |DLX|Decode:dec|Mux28                          ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |DLX|Decode:dec|Mux17                          ;
 ; 11:1               ; 32 bits   ; 224 LEs       ; 32 LEs               ; 192 LEs                ; No         ; |DLX|Execute:exc|Add0                          ;
-; 7:1                ; 32 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; No         ; |DLX|Execute:exc|InOne[10]                     ;
+; 7:1                ; 32 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; No         ; |DLX|Execute:exc|InOne[3]                      ;
 ; 129:1              ; 8 bits    ; 688 LEs       ; 688 LEs              ; 0 LEs                  ; No         ; |DLX|UART:duart|d_tx_out                       ;
 ; 4:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; No         ; |DLX|Execute:exc|Add0                          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
@@ -1100,7 +1095,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:27     ;
+; Top            ; 00:00:23     ;
 +----------------+--------------+
 
 
@@ -1110,70 +1105,70 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Tue Mar 29 20:53:05 2022
+    Info: Processing started: Wed Mar 30 18:05:57 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DLX -c DLX
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file unsigneddiv.vhd
-    Info (12022): Found design unit 1: unsigneddiv-SYN File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UnsignedDiv.vhd Line: 54
-    Info (12023): Found entity 1: UnsignedDiv File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UnsignedDiv.vhd Line: 43
-Info (12021): Found 2 design units, including 1 entities, in source file uart_tb.vhd
-    Info (12022): Found design unit 1: UART_TB-behavioral File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART_TB.vhd Line: 8
-    Info (12023): Found entity 1: UART_TB File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART_TB.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file uart_fifo.vhd
-    Info (12022): Found design unit 1: uart_fifo-SYN File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART_FIFO.vhd Line: 58
-    Info (12023): Found entity 1: UART_FIFO File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART_FIFO.vhd Line: 43
-Info (12021): Found 2 design units, including 1 entities, in source file uart.vhd
-    Info (12022): Found design unit 1: UART-behavioral File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd Line: 26
-    Info (12023): Found entity 1: UART File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file u_div.vhd
-    Info (12022): Found design unit 1: u_div-SYN File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/U_DIV.vhd Line: 54
-    Info (12023): Found entity 1: U_DIV File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/U_DIV.vhd Line: 43
-Info (12021): Found 2 design units, including 1 entities, in source file tx_fifo.vhd
-    Info (12022): Found design unit 1: tx_fifo-SYN File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/TX_FIFO.vhd Line: 57
-    Info (12023): Found entity 1: TX_FIFO File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/TX_FIFO.vhd Line: 43
-Info (12021): Found 2 design units, including 1 entities, in source file my_uart.vhd
-    Info (12022): Found design unit 1: my_UART-behavioral File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/my_UART.vhd Line: 22
-    Info (12023): Found entity 1: my_UART File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/my_UART.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file memory.vhd
-    Info (12022): Found design unit 1: Memory-behavioral File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Memory.vhd Line: 28
-    Info (12023): Found entity 1: Memory File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Memory.vhd Line: 14
-Info (12021): Found 2 design units, including 1 entities, in source file datamemory.vhd
-    Info (12022): Found design unit 1: datamemory-SYN File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DataMemory.vhd Line: 55
-    Info (12023): Found entity 1: DataMemory File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DataMemory.vhd Line: 43
-Info (12021): Found 2 design units, including 1 entities, in source file execute.vhd
-    Info (12022): Found design unit 1: Execute-behavioral File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Execute.vhd Line: 37
-    Info (12023): Found entity 1: Execute File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Execute.vhd Line: 14
-Info (12021): Found 2 design units, including 1 entities, in source file instructionmemory.vhd
-    Info (12022): Found design unit 1: instructionmemory-SYN File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/InstructionMemory.vhd Line: 54
-    Info (12023): Found entity 1: InstructionMemory File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/InstructionMemory.vhd Line: 43
-Info (12021): Found 2 design units, including 1 entities, in source file fetch.vhd
-    Info (12022): Found design unit 1: Fetch-behavioral File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Fetch.vhd Line: 27
-    Info (12023): Found entity 1: Fetch File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Fetch.vhd Line: 14
-Info (12021): Found 2 design units, including 1 entities, in source file decode.vhd
-    Info (12022): Found design unit 1: Decode-behavioral File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Decode.vhd Line: 38
-    Info (12023): Found entity 1: Decode File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Decode.vhd Line: 14
-Info (12021): Found 2 design units, including 1 entities, in source file dlx.vhd
-    Info (12022): Found design unit 1: DLX-behavioral File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.vhd Line: 27
-    Info (12023): Found entity 1: DLX File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.vhd Line: 13
-Info (12021): Found 2 design units, including 0 entities, in source file common.vhd
-    Info (12022): Found design unit 1: common File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Common.vhd Line: 15
-    Info (12022): Found design unit 2: common-body File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Common.vhd Line: 93
-Info (12021): Found 2 design units, including 1 entities, in source file mult.vhd
-    Info (12022): Found design unit 1: mult-SYN File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/MULT.vhd Line: 52
-    Info (12023): Found entity 1: MULT File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/MULT.vhd Line: 43
-Info (12021): Found 2 design units, including 1 entities, in source file rx_fifo.vhd
-    Info (12022): Found design unit 1: rx_fifo-SYN File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/RX_FIFO.vhd Line: 57
-    Info (12023): Found entity 1: RX_FIFO File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/RX_FIFO.vhd Line: 43
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file UnsignedDiv.vhd
+    Info (12022): Found design unit 1: unsigneddiv-SYN File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UnsignedDiv.vhd Line: 54
+    Info (12023): Found entity 1: UnsignedDiv File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UnsignedDiv.vhd Line: 43
+Info (12021): Found 2 design units, including 1 entities, in source file UART_TB.vhd
+    Info (12022): Found design unit 1: UART_TB-behavioral File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART_TB.vhd Line: 8
+    Info (12023): Found entity 1: UART_TB File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART_TB.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file UART_FIFO.vhd
+    Info (12022): Found design unit 1: uart_fifo-SYN File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART_FIFO.vhd Line: 58
+    Info (12023): Found entity 1: UART_FIFO File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART_FIFO.vhd Line: 43
+Info (12021): Found 2 design units, including 1 entities, in source file UART.vhd
+    Info (12022): Found design unit 1: UART-behavioral File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART.vhd Line: 26
+    Info (12023): Found entity 1: UART File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file U_DIV.vhd
+    Info (12022): Found design unit 1: u_div-SYN File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/U_DIV.vhd Line: 54
+    Info (12023): Found entity 1: U_DIV File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/U_DIV.vhd Line: 43
+Info (12021): Found 2 design units, including 1 entities, in source file TX_FIFO.vhd
+    Info (12022): Found design unit 1: tx_fifo-SYN File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/TX_FIFO.vhd Line: 57
+    Info (12023): Found entity 1: TX_FIFO File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/TX_FIFO.vhd Line: 43
+Info (12021): Found 2 design units, including 1 entities, in source file my_UART.vhd
+    Info (12022): Found design unit 1: my_UART-behavioral File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/my_UART.vhd Line: 22
+    Info (12023): Found entity 1: my_UART File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/my_UART.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file Memory.vhd
+    Info (12022): Found design unit 1: Memory-behavioral File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Memory.vhd Line: 28
+    Info (12023): Found entity 1: Memory File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Memory.vhd Line: 14
+Info (12021): Found 2 design units, including 1 entities, in source file DataMemory.vhd
+    Info (12022): Found design unit 1: datamemory-SYN File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DataMemory.vhd Line: 55
+    Info (12023): Found entity 1: DataMemory File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DataMemory.vhd Line: 43
+Info (12021): Found 2 design units, including 1 entities, in source file Execute.vhd
+    Info (12022): Found design unit 1: Execute-behavioral File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Execute.vhd Line: 37
+    Info (12023): Found entity 1: Execute File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Execute.vhd Line: 14
+Info (12021): Found 2 design units, including 1 entities, in source file InstructionMemory.vhd
+    Info (12022): Found design unit 1: instructionmemory-SYN File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/InstructionMemory.vhd Line: 54
+    Info (12023): Found entity 1: InstructionMemory File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/InstructionMemory.vhd Line: 43
+Info (12021): Found 2 design units, including 1 entities, in source file Fetch.vhd
+    Info (12022): Found design unit 1: Fetch-behavioral File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Fetch.vhd Line: 27
+    Info (12023): Found entity 1: Fetch File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Fetch.vhd Line: 14
+Info (12021): Found 2 design units, including 1 entities, in source file Decode.vhd
+    Info (12022): Found design unit 1: Decode-behavioral File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Decode.vhd Line: 38
+    Info (12023): Found entity 1: Decode File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Decode.vhd Line: 14
+Info (12021): Found 2 design units, including 1 entities, in source file DLX.vhd
+    Info (12022): Found design unit 1: DLX-behavioral File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 27
+    Info (12023): Found entity 1: DLX File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 13
+Info (12021): Found 2 design units, including 0 entities, in source file Common.vhd
+    Info (12022): Found design unit 1: common File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Common.vhd Line: 15
+    Info (12022): Found design unit 2: common-body File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Common.vhd Line: 93
+Info (12021): Found 2 design units, including 1 entities, in source file MULT.vhd
+    Info (12022): Found design unit 1: mult-SYN File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/MULT.vhd Line: 52
+    Info (12023): Found entity 1: MULT File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/MULT.vhd Line: 43
+Info (12021): Found 2 design units, including 1 entities, in source file RX_FIFO.vhd
+    Info (12022): Found design unit 1: rx_fifo-SYN File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/RX_FIFO.vhd Line: 57
+    Info (12023): Found entity 1: RX_FIFO File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/RX_FIFO.vhd Line: 43
 Info (12127): Elaborating entity "DLX" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at DLX.vhd(150): object "tx_empty" assigned a value but never read File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.vhd Line: 150
-Warning (10036): Verilog HDL or VHDL warning at DLX.vhd(151): object "tx_full" assigned a value but never read File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.vhd Line: 151
-Info (12128): Elaborating entity "UART" for hierarchy "UART:duart" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.vhd Line: 160
-Warning (10036): Verilog HDL or VHDL warning at UART.vhd(55): object "true" assigned a value but never read File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd Line: 55
-Info (12128): Elaborating entity "UART_FIFO" for hierarchy "UART:duart|UART_FIFO:fifo_uart" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd Line: 164
-Info (12128): Elaborating entity "scfifo" for hierarchy "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART_FIFO.vhd Line: 96
-Info (12130): Elaborated megafunction instantiation "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART_FIFO.vhd Line: 96
-Info (12133): Instantiated megafunction "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component" with the following parameter: File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART_FIFO.vhd Line: 96
+Warning (10036): Verilog HDL or VHDL warning at DLX.vhd(150): object "tx_empty" assigned a value but never read File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 150
+Warning (10036): Verilog HDL or VHDL warning at DLX.vhd(151): object "tx_full" assigned a value but never read File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 151
+Info (12128): Elaborating entity "UART" for hierarchy "UART:duart" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 160
+Warning (10036): Verilog HDL or VHDL warning at UART.vhd(55): object "true" assigned a value but never read File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART.vhd Line: 55
+Info (12128): Elaborating entity "UART_FIFO" for hierarchy "UART:duart|UART_FIFO:fifo_uart" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART.vhd Line: 164
+Info (12128): Elaborating entity "scfifo" for hierarchy "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART_FIFO.vhd Line: 96
+Info (12130): Elaborated megafunction instantiation "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART_FIFO.vhd Line: 96
+Info (12133): Instantiated megafunction "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component" with the following parameter: File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART_FIFO.vhd Line: 96
     Info (12134): Parameter "add_ram_output_register" = "OFF"
     Info (12134): Parameter "intended_device_family" = "MAX 10"
     Info (12134): Parameter "lpm_numwords" = "256"
@@ -1185,27 +1180,27 @@ Info (12133): Instantiated megafunction "UART:duart|UART_FIFO:fifo_uart|scfifo:s
     Info (12134): Parameter "underflow_checking" = "ON"
     Info (12134): Parameter "use_eab" = "ON"
 Info (12021): Found 1 design units, including 1 entities, in source file db/scfifo_4921.tdf
-    Info (12023): Found entity 1: scfifo_4921 File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/scfifo_4921.tdf Line: 25
-Info (12128): Elaborating entity "scfifo_4921" for hierarchy "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/scfifo.tdf Line: 300
+    Info (12023): Found entity 1: scfifo_4921 File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/scfifo_4921.tdf Line: 25
+Info (12128): Elaborating entity "scfifo_4921" for hierarchy "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated" File: /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/scfifo.tdf Line: 300
 Info (12021): Found 1 design units, including 1 entities, in source file db/a_dpfifo_bf21.tdf
-    Info (12023): Found entity 1: a_dpfifo_bf21 File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_dpfifo_bf21.tdf Line: 29
-Info (12128): Elaborating entity "a_dpfifo_bf21" for hierarchy "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/scfifo_4921.tdf Line: 37
+    Info (12023): Found entity 1: a_dpfifo_bf21 File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_dpfifo_bf21.tdf Line: 29
+Info (12128): Elaborating entity "a_dpfifo_bf21" for hierarchy "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/scfifo_4921.tdf Line: 37
 Info (12021): Found 1 design units, including 1 entities, in source file db/a_fefifo_18e.tdf
-    Info (12023): Found entity 1: a_fefifo_18e File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_fefifo_18e.tdf Line: 25
-Info (12128): Elaborating entity "a_fefifo_18e" for hierarchy "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|a_fefifo_18e:fifo_state" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_dpfifo_bf21.tdf Line: 42
+    Info (12023): Found entity 1: a_fefifo_18e File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_fefifo_18e.tdf Line: 25
+Info (12128): Elaborating entity "a_fefifo_18e" for hierarchy "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|a_fefifo_18e:fifo_state" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_dpfifo_bf21.tdf Line: 42
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_537.tdf
-    Info (12023): Found entity 1: cntr_537 File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/cntr_537.tdf Line: 26
-Info (12128): Elaborating entity "cntr_537" for hierarchy "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|a_fefifo_18e:fifo_state|cntr_537:count_usedw" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_fefifo_18e.tdf Line: 38
+    Info (12023): Found entity 1: cntr_537 File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/cntr_537.tdf Line: 26
+Info (12128): Elaborating entity "cntr_537" for hierarchy "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|a_fefifo_18e:fifo_state|cntr_537:count_usedw" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_fefifo_18e.tdf Line: 38
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_k2m1.tdf
-    Info (12023): Found entity 1: altsyncram_k2m1 File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/altsyncram_k2m1.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_k2m1" for hierarchy "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|altsyncram_k2m1:FIFOram" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_dpfifo_bf21.tdf Line: 43
+    Info (12023): Found entity 1: altsyncram_k2m1 File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/altsyncram_k2m1.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_k2m1" for hierarchy "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|altsyncram_k2m1:FIFOram" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_dpfifo_bf21.tdf Line: 43
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_p2b.tdf
-    Info (12023): Found entity 1: cntr_p2b File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/cntr_p2b.tdf Line: 26
-Info (12128): Elaborating entity "cntr_p2b" for hierarchy "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|cntr_p2b:rd_ptr_count" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_dpfifo_bf21.tdf Line: 44
-Info (12128): Elaborating entity "TX_FIFO" for hierarchy "UART:duart|TX_FIFO:fifo_tx" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd Line: 177
-Info (12128): Elaborating entity "scfifo" for hierarchy "UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/TX_FIFO.vhd Line: 92
-Info (12130): Elaborated megafunction instantiation "UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/TX_FIFO.vhd Line: 92
-Info (12133): Instantiated megafunction "UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component" with the following parameter: File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/TX_FIFO.vhd Line: 92
+    Info (12023): Found entity 1: cntr_p2b File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/cntr_p2b.tdf Line: 26
+Info (12128): Elaborating entity "cntr_p2b" for hierarchy "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|cntr_p2b:rd_ptr_count" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_dpfifo_bf21.tdf Line: 44
+Info (12128): Elaborating entity "TX_FIFO" for hierarchy "UART:duart|TX_FIFO:fifo_tx" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART.vhd Line: 177
+Info (12128): Elaborating entity "scfifo" for hierarchy "UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/TX_FIFO.vhd Line: 92
+Info (12130): Elaborated megafunction instantiation "UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/TX_FIFO.vhd Line: 92
+Info (12133): Instantiated megafunction "UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component" with the following parameter: File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/TX_FIFO.vhd Line: 92
     Info (12134): Parameter "add_ram_output_register" = "OFF"
     Info (12134): Parameter "intended_device_family" = "MAX 10"
     Info (12134): Parameter "lpm_numwords" = "2048"
@@ -1217,29 +1212,29 @@ Info (12133): Instantiated megafunction "UART:duart|TX_FIFO:fifo_tx|scfifo:scfif
     Info (12134): Parameter "underflow_checking" = "ON"
     Info (12134): Parameter "use_eab" = "ON"
 Info (12021): Found 1 design units, including 1 entities, in source file db/scfifo_rr11.tdf
-    Info (12023): Found entity 1: scfifo_rr11 File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/scfifo_rr11.tdf Line: 25
-Info (12128): Elaborating entity "scfifo_rr11" for hierarchy "UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/scfifo.tdf Line: 300
+    Info (12023): Found entity 1: scfifo_rr11 File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/scfifo_rr11.tdf Line: 25
+Info (12128): Elaborating entity "scfifo_rr11" for hierarchy "UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated" File: /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/scfifo.tdf Line: 300
 Info (12021): Found 1 design units, including 1 entities, in source file db/a_dpfifo_2221.tdf
-    Info (12023): Found entity 1: a_dpfifo_2221 File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_dpfifo_2221.tdf Line: 29
-Info (12128): Elaborating entity "a_dpfifo_2221" for hierarchy "UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/scfifo_rr11.tdf Line: 36
+    Info (12023): Found entity 1: a_dpfifo_2221 File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_dpfifo_2221.tdf Line: 29
+Info (12128): Elaborating entity "a_dpfifo_2221" for hierarchy "UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/scfifo_rr11.tdf Line: 36
 Info (12021): Found 1 design units, including 1 entities, in source file db/a_fefifo_sae.tdf
-    Info (12023): Found entity 1: a_fefifo_sae File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_fefifo_sae.tdf Line: 25
-Info (12128): Elaborating entity "a_fefifo_sae" for hierarchy "UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|a_fefifo_sae:fifo_state" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_dpfifo_2221.tdf Line: 41
+    Info (12023): Found entity 1: a_fefifo_sae File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_fefifo_sae.tdf Line: 25
+Info (12128): Elaborating entity "a_fefifo_sae" for hierarchy "UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|a_fefifo_sae:fifo_state" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_dpfifo_2221.tdf Line: 41
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_f47.tdf
-    Info (12023): Found entity 1: cntr_f47 File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/cntr_f47.tdf Line: 26
-Info (12128): Elaborating entity "cntr_f47" for hierarchy "UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|a_fefifo_sae:fifo_state|cntr_f47:count_usedw" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_fefifo_sae.tdf Line: 38
+    Info (12023): Found entity 1: cntr_f47 File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/cntr_f47.tdf Line: 26
+Info (12128): Elaborating entity "cntr_f47" for hierarchy "UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|a_fefifo_sae:fifo_state|cntr_f47:count_usedw" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_fefifo_sae.tdf Line: 38
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_85m1.tdf
-    Info (12023): Found entity 1: altsyncram_85m1 File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/altsyncram_85m1.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_85m1" for hierarchy "UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|altsyncram_85m1:FIFOram" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_dpfifo_2221.tdf Line: 42
+    Info (12023): Found entity 1: altsyncram_85m1 File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/altsyncram_85m1.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_85m1" for hierarchy "UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|altsyncram_85m1:FIFOram" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_dpfifo_2221.tdf Line: 42
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_34b.tdf
-    Info (12023): Found entity 1: cntr_34b File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/cntr_34b.tdf Line: 26
-Info (12128): Elaborating entity "cntr_34b" for hierarchy "UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|cntr_34b:rd_ptr_count" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_dpfifo_2221.tdf Line: 43
-Info (12128): Elaborating entity "my_UART" for hierarchy "UART:duart|my_UART:dut" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd Line: 189
-Warning (10036): Verilog HDL or VHDL warning at my_UART.vhd(38): object "sample_rx" assigned a value but never read File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/my_UART.vhd Line: 38
-Info (12128): Elaborating entity "U_DIV" for hierarchy "UART:duart|U_DIV:div" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd Line: 204
-Info (12128): Elaborating entity "lpm_divide" for hierarchy "UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/U_DIV.vhd Line: 82
-Info (12130): Elaborated megafunction instantiation "UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/U_DIV.vhd Line: 82
-Info (12133): Instantiated megafunction "UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component" with the following parameter: File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/U_DIV.vhd Line: 82
+    Info (12023): Found entity 1: cntr_34b File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/cntr_34b.tdf Line: 26
+Info (12128): Elaborating entity "cntr_34b" for hierarchy "UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|cntr_34b:rd_ptr_count" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_dpfifo_2221.tdf Line: 43
+Info (12128): Elaborating entity "my_UART" for hierarchy "UART:duart|my_UART:dut" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART.vhd Line: 189
+Warning (10036): Verilog HDL or VHDL warning at my_UART.vhd(38): object "sample_rx" assigned a value but never read File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/my_UART.vhd Line: 38
+Info (12128): Elaborating entity "U_DIV" for hierarchy "UART:duart|U_DIV:div" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART.vhd Line: 204
+Info (12128): Elaborating entity "lpm_divide" for hierarchy "UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/U_DIV.vhd Line: 82
+Info (12130): Elaborated megafunction instantiation "UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/U_DIV.vhd Line: 82
+Info (12133): Instantiated megafunction "UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component" with the following parameter: File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/U_DIV.vhd Line: 82
     Info (12134): Parameter "lpm_drepresentation" = "SIGNED"
     Info (12134): Parameter "lpm_hint" = "LPM_REMAINDERPOSITIVE=TRUE"
     Info (12134): Parameter "lpm_nrepresentation" = "SIGNED"
@@ -1247,24 +1242,24 @@ Info (12133): Instantiated megafunction "UART:duart|U_DIV:div|lpm_divide:LPM_DIV
     Info (12134): Parameter "lpm_widthd" = "5"
     Info (12134): Parameter "lpm_widthn" = "32"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_0uo.tdf
-    Info (12023): Found entity 1: lpm_divide_0uo File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/lpm_divide_0uo.tdf Line: 25
-Info (12128): Elaborating entity "lpm_divide_0uo" for hierarchy "UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component|lpm_divide_0uo:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf Line: 148
+    Info (12023): Found entity 1: lpm_divide_0uo File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/lpm_divide_0uo.tdf Line: 25
+Info (12128): Elaborating entity "lpm_divide_0uo" for hierarchy "UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component|lpm_divide_0uo:auto_generated" File: /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf Line: 148
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_j7h.tdf
-    Info (12023): Found entity 1: sign_div_unsign_j7h File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/sign_div_unsign_j7h.tdf Line: 25
-Info (12128): Elaborating entity "sign_div_unsign_j7h" for hierarchy "UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component|lpm_divide_0uo:auto_generated|sign_div_unsign_j7h:divider" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/lpm_divide_0uo.tdf Line: 33
+    Info (12023): Found entity 1: sign_div_unsign_j7h File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/sign_div_unsign_j7h.tdf Line: 25
+Info (12128): Elaborating entity "sign_div_unsign_j7h" for hierarchy "UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component|lpm_divide_0uo:auto_generated|sign_div_unsign_j7h:divider" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/lpm_divide_0uo.tdf Line: 33
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_she.tdf
-    Info (12023): Found entity 1: alt_u_div_she File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/alt_u_div_she.tdf Line: 27
-Info (12128): Elaborating entity "alt_u_div_she" for hierarchy "UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component|lpm_divide_0uo:auto_generated|sign_div_unsign_j7h:divider|alt_u_div_she:divider" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/sign_div_unsign_j7h.tdf Line: 33
+    Info (12023): Found entity 1: alt_u_div_she File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/alt_u_div_she.tdf Line: 27
+Info (12128): Elaborating entity "alt_u_div_she" for hierarchy "UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component|lpm_divide_0uo:auto_generated|sign_div_unsign_j7h:divider|alt_u_div_she:divider" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/sign_div_unsign_j7h.tdf Line: 33
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_t3c.tdf
-    Info (12023): Found entity 1: add_sub_t3c File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/add_sub_t3c.tdf Line: 23
-Info (12128): Elaborating entity "add_sub_t3c" for hierarchy "UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component|lpm_divide_0uo:auto_generated|sign_div_unsign_j7h:divider|alt_u_div_she:divider|add_sub_t3c:add_sub_0" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/alt_u_div_she.tdf Line: 35
+    Info (12023): Found entity 1: add_sub_t3c File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/add_sub_t3c.tdf Line: 23
+Info (12128): Elaborating entity "add_sub_t3c" for hierarchy "UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component|lpm_divide_0uo:auto_generated|sign_div_unsign_j7h:divider|alt_u_div_she:divider|add_sub_t3c:add_sub_0" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/alt_u_div_she.tdf Line: 35
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_u3c.tdf
-    Info (12023): Found entity 1: add_sub_u3c File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/add_sub_u3c.tdf Line: 23
-Info (12128): Elaborating entity "add_sub_u3c" for hierarchy "UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component|lpm_divide_0uo:auto_generated|sign_div_unsign_j7h:divider|alt_u_div_she:divider|add_sub_u3c:add_sub_1" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/alt_u_div_she.tdf Line: 36
-Info (12128): Elaborating entity "UnsignedDiv" for hierarchy "UART:duart|UnsignedDiv:udiv" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd Line: 213
-Info (12128): Elaborating entity "lpm_divide" for hierarchy "UART:duart|UnsignedDiv:udiv|lpm_divide:LPM_DIVIDE_component" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UnsignedDiv.vhd Line: 82
-Info (12130): Elaborated megafunction instantiation "UART:duart|UnsignedDiv:udiv|lpm_divide:LPM_DIVIDE_component" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UnsignedDiv.vhd Line: 82
-Info (12133): Instantiated megafunction "UART:duart|UnsignedDiv:udiv|lpm_divide:LPM_DIVIDE_component" with the following parameter: File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UnsignedDiv.vhd Line: 82
+    Info (12023): Found entity 1: add_sub_u3c File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/add_sub_u3c.tdf Line: 23
+Info (12128): Elaborating entity "add_sub_u3c" for hierarchy "UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component|lpm_divide_0uo:auto_generated|sign_div_unsign_j7h:divider|alt_u_div_she:divider|add_sub_u3c:add_sub_1" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/alt_u_div_she.tdf Line: 36
+Info (12128): Elaborating entity "UnsignedDiv" for hierarchy "UART:duart|UnsignedDiv:udiv" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART.vhd Line: 213
+Info (12128): Elaborating entity "lpm_divide" for hierarchy "UART:duart|UnsignedDiv:udiv|lpm_divide:LPM_DIVIDE_component" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UnsignedDiv.vhd Line: 82
+Info (12130): Elaborated megafunction instantiation "UART:duart|UnsignedDiv:udiv|lpm_divide:LPM_DIVIDE_component" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UnsignedDiv.vhd Line: 82
+Info (12133): Instantiated megafunction "UART:duart|UnsignedDiv:udiv|lpm_divide:LPM_DIVIDE_component" with the following parameter: File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UnsignedDiv.vhd Line: 82
     Info (12134): Parameter "lpm_drepresentation" = "UNSIGNED"
     Info (12134): Parameter "lpm_hint" = "LPM_REMAINDERPOSITIVE=TRUE"
     Info (12134): Parameter "lpm_nrepresentation" = "UNSIGNED"
@@ -1272,15 +1267,15 @@ Info (12133): Instantiated megafunction "UART:duart|UnsignedDiv:udiv|lpm_divide:
     Info (12134): Parameter "lpm_widthd" = "5"
     Info (12134): Parameter "lpm_widthn" = "32"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_6cp.tdf
-    Info (12023): Found entity 1: lpm_divide_6cp File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/lpm_divide_6cp.tdf Line: 25
-Info (12128): Elaborating entity "lpm_divide_6cp" for hierarchy "UART:duart|UnsignedDiv:udiv|lpm_divide:LPM_DIVIDE_component|lpm_divide_6cp:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf Line: 148
+    Info (12023): Found entity 1: lpm_divide_6cp File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/lpm_divide_6cp.tdf Line: 25
+Info (12128): Elaborating entity "lpm_divide_6cp" for hierarchy "UART:duart|UnsignedDiv:udiv|lpm_divide:LPM_DIVIDE_component|lpm_divide_6cp:auto_generated" File: /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf Line: 148
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_plh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_plh File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/sign_div_unsign_plh.tdf Line: 25
-Info (12128): Elaborating entity "sign_div_unsign_plh" for hierarchy "UART:duart|UnsignedDiv:udiv|lpm_divide:LPM_DIVIDE_component|lpm_divide_6cp:auto_generated|sign_div_unsign_plh:divider" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/lpm_divide_6cp.tdf Line: 33
-Info (12128): Elaborating entity "MULT" for hierarchy "UART:duart|MULT:umult" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd Line: 222
-Info (12128): Elaborating entity "lpm_mult" for hierarchy "UART:duart|MULT:umult|lpm_mult:lpm_mult_component" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/MULT.vhd Line: 81
-Info (12130): Elaborated megafunction instantiation "UART:duart|MULT:umult|lpm_mult:lpm_mult_component" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/MULT.vhd Line: 81
-Info (12133): Instantiated megafunction "UART:duart|MULT:umult|lpm_mult:lpm_mult_component" with the following parameter: File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/MULT.vhd Line: 81
+    Info (12023): Found entity 1: sign_div_unsign_plh File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/sign_div_unsign_plh.tdf Line: 25
+Info (12128): Elaborating entity "sign_div_unsign_plh" for hierarchy "UART:duart|UnsignedDiv:udiv|lpm_divide:LPM_DIVIDE_component|lpm_divide_6cp:auto_generated|sign_div_unsign_plh:divider" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/lpm_divide_6cp.tdf Line: 33
+Info (12128): Elaborating entity "MULT" for hierarchy "UART:duart|MULT:umult" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART.vhd Line: 222
+Info (12128): Elaborating entity "lpm_mult" for hierarchy "UART:duart|MULT:umult|lpm_mult:lpm_mult_component" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/MULT.vhd Line: 81
+Info (12130): Elaborated megafunction instantiation "UART:duart|MULT:umult|lpm_mult:lpm_mult_component" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/MULT.vhd Line: 81
+Info (12133): Instantiated megafunction "UART:duart|MULT:umult|lpm_mult:lpm_mult_component" with the following parameter: File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/MULT.vhd Line: 81
     Info (12134): Parameter "lpm_hint" = "INPUT_B_IS_CONSTANT=YES,MAXIMIZE_SPEED=9"
     Info (12134): Parameter "lpm_representation" = "UNSIGNED"
     Info (12134): Parameter "lpm_type" = "LPM_MULT"
@@ -1288,12 +1283,12 @@ Info (12133): Instantiated megafunction "UART:duart|MULT:umult|lpm_mult:lpm_mult
     Info (12134): Parameter "lpm_widthb" = "4"
     Info (12134): Parameter "lpm_widthp" = "36"
 Info (12021): Found 1 design units, including 1 entities, in source file db/mult_88p.tdf
-    Info (12023): Found entity 1: mult_88p File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/mult_88p.tdf Line: 31
-Info (12128): Elaborating entity "mult_88p" for hierarchy "UART:duart|MULT:umult|lpm_mult:lpm_mult_component|mult_88p:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 377
-Info (12128): Elaborating entity "RX_FIFO" for hierarchy "UART:duart|RX_FIFO:fifo_rx" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd Line: 229
-Info (12128): Elaborating entity "scfifo" for hierarchy "UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/RX_FIFO.vhd Line: 92
-Info (12130): Elaborated megafunction instantiation "UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/RX_FIFO.vhd Line: 92
-Info (12133): Instantiated megafunction "UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component" with the following parameter: File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/RX_FIFO.vhd Line: 92
+    Info (12023): Found entity 1: mult_88p File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/mult_88p.tdf Line: 31
+Info (12128): Elaborating entity "mult_88p" for hierarchy "UART:duart|MULT:umult|lpm_mult:lpm_mult_component|mult_88p:auto_generated" File: /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 377
+Info (12128): Elaborating entity "RX_FIFO" for hierarchy "UART:duart|RX_FIFO:fifo_rx" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART.vhd Line: 229
+Info (12128): Elaborating entity "scfifo" for hierarchy "UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/RX_FIFO.vhd Line: 92
+Info (12130): Elaborated megafunction instantiation "UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/RX_FIFO.vhd Line: 92
+Info (12133): Instantiated megafunction "UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component" with the following parameter: File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/RX_FIFO.vhd Line: 92
     Info (12134): Parameter "add_ram_output_register" = "OFF"
     Info (12134): Parameter "intended_device_family" = "MAX 10"
     Info (12134): Parameter "lpm_numwords" = "8"
@@ -1305,34 +1300,34 @@ Info (12133): Instantiated megafunction "UART:duart|RX_FIFO:fifo_rx|scfifo:scfif
     Info (12134): Parameter "underflow_checking" = "ON"
     Info (12134): Parameter "use_eab" = "ON"
 Info (12021): Found 1 design units, including 1 entities, in source file db/scfifo_5k11.tdf
-    Info (12023): Found entity 1: scfifo_5k11 File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/scfifo_5k11.tdf Line: 25
-Info (12128): Elaborating entity "scfifo_5k11" for hierarchy "UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component|scfifo_5k11:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/scfifo.tdf Line: 300
+    Info (12023): Found entity 1: scfifo_5k11 File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/scfifo_5k11.tdf Line: 25
+Info (12128): Elaborating entity "scfifo_5k11" for hierarchy "UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component|scfifo_5k11:auto_generated" File: /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/scfifo.tdf Line: 300
 Info (12021): Found 1 design units, including 1 entities, in source file db/a_dpfifo_cq11.tdf
-    Info (12023): Found entity 1: a_dpfifo_cq11 File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_dpfifo_cq11.tdf Line: 33
-Info (12128): Elaborating entity "a_dpfifo_cq11" for hierarchy "UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component|scfifo_5k11:auto_generated|a_dpfifo_cq11:dpfifo" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/scfifo_5k11.tdf Line: 36
+    Info (12023): Found entity 1: a_dpfifo_cq11 File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_dpfifo_cq11.tdf Line: 33
+Info (12128): Elaborating entity "a_dpfifo_cq11" for hierarchy "UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component|scfifo_5k11:auto_generated|a_dpfifo_cq11:dpfifo" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/scfifo_5k11.tdf Line: 36
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_f1b1.tdf
-    Info (12023): Found entity 1: altsyncram_f1b1 File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/altsyncram_f1b1.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_f1b1" for hierarchy "UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component|scfifo_5k11:auto_generated|a_dpfifo_cq11:dpfifo|altsyncram_f1b1:FIFOram" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_dpfifo_cq11.tdf Line: 45
+    Info (12023): Found entity 1: altsyncram_f1b1 File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/altsyncram_f1b1.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_f1b1" for hierarchy "UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component|scfifo_5k11:auto_generated|a_dpfifo_cq11:dpfifo|altsyncram_f1b1:FIFOram" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_dpfifo_cq11.tdf Line: 45
 Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_678.tdf
-    Info (12023): Found entity 1: cmpr_678 File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/cmpr_678.tdf Line: 23
-Info (12128): Elaborating entity "cmpr_678" for hierarchy "UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component|scfifo_5k11:auto_generated|a_dpfifo_cq11:dpfifo|cmpr_678:almost_full_comparer" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_dpfifo_cq11.tdf Line: 54
-Info (12128): Elaborating entity "cmpr_678" for hierarchy "UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component|scfifo_5k11:auto_generated|a_dpfifo_cq11:dpfifo|cmpr_678:three_comparison" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_dpfifo_cq11.tdf Line: 55
+    Info (12023): Found entity 1: cmpr_678 File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/cmpr_678.tdf Line: 23
+Info (12128): Elaborating entity "cmpr_678" for hierarchy "UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component|scfifo_5k11:auto_generated|a_dpfifo_cq11:dpfifo|cmpr_678:almost_full_comparer" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_dpfifo_cq11.tdf Line: 54
+Info (12128): Elaborating entity "cmpr_678" for hierarchy "UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component|scfifo_5k11:auto_generated|a_dpfifo_cq11:dpfifo|cmpr_678:three_comparison" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_dpfifo_cq11.tdf Line: 55
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_j2b.tdf
-    Info (12023): Found entity 1: cntr_j2b File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/cntr_j2b.tdf Line: 26
-Info (12128): Elaborating entity "cntr_j2b" for hierarchy "UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component|scfifo_5k11:auto_generated|a_dpfifo_cq11:dpfifo|cntr_j2b:rd_ptr_msb" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_dpfifo_cq11.tdf Line: 56
+    Info (12023): Found entity 1: cntr_j2b File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/cntr_j2b.tdf Line: 26
+Info (12128): Elaborating entity "cntr_j2b" for hierarchy "UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component|scfifo_5k11:auto_generated|a_dpfifo_cq11:dpfifo|cntr_j2b:rd_ptr_msb" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_dpfifo_cq11.tdf Line: 56
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_037.tdf
-    Info (12023): Found entity 1: cntr_037 File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/cntr_037.tdf Line: 26
-Info (12128): Elaborating entity "cntr_037" for hierarchy "UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component|scfifo_5k11:auto_generated|a_dpfifo_cq11:dpfifo|cntr_037:usedw_counter" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_dpfifo_cq11.tdf Line: 57
+    Info (12023): Found entity 1: cntr_037 File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/cntr_037.tdf Line: 26
+Info (12128): Elaborating entity "cntr_037" for hierarchy "UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component|scfifo_5k11:auto_generated|a_dpfifo_cq11:dpfifo|cntr_037:usedw_counter" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_dpfifo_cq11.tdf Line: 57
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_k2b.tdf
-    Info (12023): Found entity 1: cntr_k2b File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/cntr_k2b.tdf Line: 26
-Info (12128): Elaborating entity "cntr_k2b" for hierarchy "UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component|scfifo_5k11:auto_generated|a_dpfifo_cq11:dpfifo|cntr_k2b:wr_ptr" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_dpfifo_cq11.tdf Line: 58
-Info (12128): Elaborating entity "Fetch" for hierarchy "Fetch:fet" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.vhd Line: 177
-Warning (10492): VHDL Process Statement warning at Fetch.vhd(61): signal "stall" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Fetch.vhd Line: 61
-Warning (10492): VHDL Process Statement warning at Fetch.vhd(66): signal "pc" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Fetch.vhd Line: 66
-Info (12128): Elaborating entity "InstructionMemory" for hierarchy "Fetch:fet|InstructionMemory:im" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Fetch.vhd Line: 55
-Info (12128): Elaborating entity "altsyncram" for hierarchy "Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/InstructionMemory.vhd Line: 61
-Info (12130): Elaborated megafunction instantiation "Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/InstructionMemory.vhd Line: 61
-Info (12133): Instantiated megafunction "Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component" with the following parameter: File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/InstructionMemory.vhd Line: 61
+    Info (12023): Found entity 1: cntr_k2b File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/cntr_k2b.tdf Line: 26
+Info (12128): Elaborating entity "cntr_k2b" for hierarchy "UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component|scfifo_5k11:auto_generated|a_dpfifo_cq11:dpfifo|cntr_k2b:wr_ptr" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_dpfifo_cq11.tdf Line: 58
+Info (12128): Elaborating entity "Fetch" for hierarchy "Fetch:fet" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 177
+Warning (10492): VHDL Process Statement warning at Fetch.vhd(61): signal "stall" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Fetch.vhd Line: 61
+Warning (10492): VHDL Process Statement warning at Fetch.vhd(66): signal "pc" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Fetch.vhd Line: 66
+Info (12128): Elaborating entity "InstructionMemory" for hierarchy "Fetch:fet|InstructionMemory:im" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Fetch.vhd Line: 55
+Info (12128): Elaborating entity "altsyncram" for hierarchy "Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/InstructionMemory.vhd Line: 61
+Info (12130): Elaborated megafunction instantiation "Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/InstructionMemory.vhd Line: 61
+Info (12133): Instantiated megafunction "Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component" with the following parameter: File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/InstructionMemory.vhd Line: 61
     Info (12134): Parameter "address_aclr_a" = "NONE"
     Info (12134): Parameter "address_aclr_b" = "NONE"
     Info (12134): Parameter "address_reg_b" = "CLOCK1"
@@ -1384,18 +1379,20 @@ Info (12133): Instantiated megafunction "Fetch:fet|InstructionMemory:im|altsyncr
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_c7t3.tdf
-    Info (12023): Found entity 1: altsyncram_c7t3 File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/altsyncram_c7t3.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_c7t3" for hierarchy "Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component|altsyncram_c7t3:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "Decode" for hierarchy "Decode:dec" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.vhd Line: 189
-Info (12128): Elaborating entity "Execute" for hierarchy "Execute:exc" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.vhd Line: 211
-Warning (10492): VHDL Process Statement warning at Execute.vhd(107): signal "IdEx_rd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Execute.vhd Line: 107
-Warning (10492): VHDL Process Statement warning at Execute.vhd(109): signal "IdEx_rd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Execute.vhd Line: 109
-Info (12128): Elaborating entity "Memory" for hierarchy "Memory:mem" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.vhd Line: 233
-Warning (10492): VHDL Process Statement warning at Memory.vhd(80): signal "ALU_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Memory.vhd Line: 80
-Info (12128): Elaborating entity "DataMemory" for hierarchy "Memory:mem|DataMemory:dm" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Memory.vhd Line: 50
-Info (12128): Elaborating entity "altsyncram" for hierarchy "Memory:mem|DataMemory:dm|altsyncram:altsyncram_component" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DataMemory.vhd Line: 62
-Info (12130): Elaborated megafunction instantiation "Memory:mem|DataMemory:dm|altsyncram:altsyncram_component" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DataMemory.vhd Line: 62
-Info (12133): Instantiated megafunction "Memory:mem|DataMemory:dm|altsyncram:altsyncram_component" with the following parameter: File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DataMemory.vhd Line: 62
+    Info (12023): Found entity 1: altsyncram_c7t3 File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/altsyncram_c7t3.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_c7t3" for hierarchy "Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component|altsyncram_c7t3:auto_generated" File: /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Warning (113028): 947 out of 1024 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Programs/factorial_code.mif Line: 1
+    Warning (113027): Addresses ranging from 77 to 1023 are not initialized File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Programs/factorial_code.mif Line: 1
+Info (12128): Elaborating entity "Decode" for hierarchy "Decode:dec" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 189
+Info (12128): Elaborating entity "Execute" for hierarchy "Execute:exc" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 211
+Warning (10492): VHDL Process Statement warning at Execute.vhd(107): signal "IdEx_rd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Execute.vhd Line: 107
+Warning (10492): VHDL Process Statement warning at Execute.vhd(109): signal "IdEx_rd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Execute.vhd Line: 109
+Info (12128): Elaborating entity "Memory" for hierarchy "Memory:mem" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 233
+Warning (10492): VHDL Process Statement warning at Memory.vhd(80): signal "ALU_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Memory.vhd Line: 80
+Info (12128): Elaborating entity "DataMemory" for hierarchy "Memory:mem|DataMemory:dm" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Memory.vhd Line: 50
+Info (12128): Elaborating entity "altsyncram" for hierarchy "Memory:mem|DataMemory:dm|altsyncram:altsyncram_component" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DataMemory.vhd Line: 62
+Info (12130): Elaborated megafunction instantiation "Memory:mem|DataMemory:dm|altsyncram:altsyncram_component" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DataMemory.vhd Line: 62
+Info (12133): Instantiated megafunction "Memory:mem|DataMemory:dm|altsyncram:altsyncram_component" with the following parameter: File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DataMemory.vhd Line: 62
     Info (12134): Parameter "address_aclr_a" = "UNUSED"
     Info (12134): Parameter "address_aclr_b" = "NONE"
     Info (12134): Parameter "address_reg_b" = "CLOCK1"
@@ -1447,16 +1444,18 @@ Info (12133): Instantiated megafunction "Memory:mem|DataMemory:dm|altsyncram:alt
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_p8t3.tdf
-    Info (12023): Found entity 1: altsyncram_p8t3 File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/altsyncram_p8t3.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_p8t3" for hierarchy "Memory:mem|DataMemory:dm|altsyncram:altsyncram_component|altsyncram_p8t3:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+    Info (12023): Found entity 1: altsyncram_p8t3 File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/altsyncram_p8t3.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_p8t3" for hierarchy "Memory:mem|DataMemory:dm|altsyncram:altsyncram_component|altsyncram_p8t3:auto_generated" File: /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Warning (113028): 963 out of 1024 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Programs/factorial_data.mif Line: 1
+    Warning (113027): Addresses ranging from 61 to 1023 are not initialized File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Programs/factorial_data.mif Line: 1
 Info (13014): Ignored 36 buffer(s)
     Info (13019): Ignored 36 SOFT buffer(s)
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|altsyncram_k2m1:FIFOram|q_b[34]" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/altsyncram_k2m1.tdf Line: 1060
+        Warning (14320): Synthesized away node "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|altsyncram_k2m1:FIFOram|q_b[34]" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/altsyncram_k2m1.tdf Line: 1060
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|altsyncram_k2m1:FIFOram|q_b[34]" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/altsyncram_k2m1.tdf Line: 1060
+        Warning (14320): Synthesized away node "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|altsyncram_k2m1:FIFOram|q_b[34]" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/altsyncram_k2m1.tdf Line: 1060
 Warning (19016): Clock multiplexers are found and protected
     Warning (19017): Found clock multiplexer Fetch:fet|OpIsTypeB~0
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
@@ -1469,10 +1468,10 @@ Info (21057): Implemented 9185 device resources after synthesis - the final reso
     Info (21061): Implemented 9038 logic cells
     Info (21064): Implemented 139 RAM segments
     Info (21062): Implemented 4 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 19 warnings
-    Info: Peak virtual memory: 4952 megabytes
-    Info: Processing ended: Tue Mar 29 20:53:57 2022
-    Info: Elapsed time: 00:00:52
-    Info: Total CPU time (on all processors): 00:00:51
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 23 warnings
+    Info: Peak virtual memory: 513 megabytes
+    Info: Processing ended: Wed Mar 30 18:06:33 2022
+    Info: Elapsed time: 00:00:36
+    Info: Total CPU time (on all processors): 00:00:47
 
 
