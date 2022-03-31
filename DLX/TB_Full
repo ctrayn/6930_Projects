@@ -2,10 +2,10 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 use IEEE.NUMERIC_STD.all;
 
-entity TestBench is
-end entity TestBench;
+entity TB_Full is
+end entity TB_Full;
 
-architecture behavioral of TestBench is
+architecture behavioral of TB_Full is
 	component DLX
       port(
          -- INPUT
