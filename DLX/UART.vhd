@@ -287,7 +287,7 @@ begin
 							rx_state <= WRITING;
 							negative <= negative;
 							mult_data <= (others => '0');
-							resend_data <= X"45";
+							resend_data <= (others => '0');
 							resend_flag <= '1';
 						else
 							true <= '0';
