@@ -53,21 +53,10 @@ endprint2
 ; The initial n in R1
 ADDI	R1, R0, 0
 cin
-	GDU	R2
+	GDU	R1
 	NOP
 	NOP
-	BEQZ	R2, cin
-; if the enter key was pressed
-	SEQI	R3, R2, 13
-	BNEZ	R3, endcin
-; shift the current input (*10)
-	SLLI	R4, R1, 3
-	SLLI	R1, R1, 1
-	ADD	R1, R4, R1
-; add the new digit
-	SUBUI	R2, R2, 48
-	ADD	R1, R1, R2
-	J	cin
+	BEQZ	R1, cin
 endcin
 
 ; Print ! = ...
@@ -135,7 +124,5 @@ exit
 ; Send the solution over UART and store it
 	PDU	R1
 	SW		f(R0), R1
-	GD	R9
-	GDU	R10
 done
 	J		done
