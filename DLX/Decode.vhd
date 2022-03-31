@@ -61,7 +61,7 @@ begin
 	im_val 	<= inst_in(15 downto 0);
 	
 	--Non-delayed signals
-	process(SW) begin
+	process(SW, ram) begin
 		tap_ram <= ram(to_integer(unsigned(SW(4 downto 0))));
 	end process;
 

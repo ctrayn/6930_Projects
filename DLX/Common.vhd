@@ -132,7 +132,7 @@ package body common is
 
 	function OpIsUARTtx (opcode : std_logic_vector(5 downto 0)) return std_logic is
 	begin
-		if (unsigned(opcode) >= unsigned(OP_PCH)) or (unsigned(opcode) <= unsigned(OP_PDU)) then
+		if (unsigned(opcode) >= unsigned(OP_PCH)) and (unsigned(opcode) <= unsigned(OP_PDU)) then
 			return '1';
 		else
 			return '0';
@@ -141,7 +141,7 @@ package body common is
 
 	function OpIsUARTrx (opcode : std_logic_vector(5 downto 0)) return std_logic is
 		begin
-			if (unsigned(opcode) >= unsigned(OP_GD)) or (unsigned(opcode) <= unsigned(OP_GDU)) then
+			if (unsigned(opcode) >= unsigned(OP_GD)) and (unsigned(opcode) <= unsigned(OP_GDU)) then
 				return '1';
 			else
 				return '0';
