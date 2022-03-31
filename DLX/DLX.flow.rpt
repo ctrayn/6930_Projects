@@ -1,5 +1,5 @@
 Flow report for DLX
-Thu Mar 31 13:40:53 2022
+Thu Mar 31 14:00:29 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -41,17 +41,17 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Thu Mar 31 13:40:45 2022       ;
+; Flow Status                        ; Successful - Thu Mar 31 14:00:21 2022       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; DLX                                         ;
 ; Top-level Entity Name              ; DLX                                         ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 8,784 / 49,760 ( 18 % )                     ;
-;     Total combinational functions  ; 8,374 / 49,760 ( 17 % )                     ;
-;     Dedicated logic registers      ; 2,780 / 49,760 ( 6 % )                      ;
-; Total registers                    ; 2780                                        ;
+; Total logic elements               ; 8,786 / 49,760 ( 18 % )                     ;
+;     Total combinational functions  ; 8,352 / 49,760 ( 17 % )                     ;
+;     Dedicated logic registers      ; 2,779 / 49,760 ( 6 % )                      ;
+; Total registers                    ; 2779                                        ;
 ; Total pins                         ; 72 / 360 ( 20 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 91,136 / 1,677,312 ( 5 % )                  ;
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/31/2022 13:39:29 ;
+; Start date & time ; 03/31/2022 13:59:05 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DLX                 ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 110341701272771.164875556908315        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 110341701272771.164875674521440        ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; MISC_FILE                           ; DataMemory.cmp                         ; --            ; --          ; --         ;
@@ -102,11 +102,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:32     ; 1.0                     ; 522 MB              ; 00:00:43                           ;
-; Fitter               ; 00:00:37     ; 1.6                     ; 1207 MB             ; 00:01:09                           ;
+; Analysis & Synthesis ; 00:00:33     ; 1.0                     ; 523 MB              ; 00:00:44                           ;
+; Fitter               ; 00:00:36     ; 1.6                     ; 1193 MB             ; 00:01:06                           ;
 ; Assembler            ; 00:00:03     ; 1.0                     ; 383 MB              ; 00:00:03                           ;
 ; Timing Analyzer      ; 00:00:07     ; 2.4                     ; 599 MB              ; 00:00:17                           ;
-; Total                ; 00:01:19     ; --                      ; --                  ; 00:02:12                           ;
+; Total                ; 00:01:19     ; --                      ; --                  ; 00:02:10                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
