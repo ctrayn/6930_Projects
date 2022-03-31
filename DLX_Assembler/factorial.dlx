@@ -14,6 +14,7 @@ s3	4	"! = "
 
 ; The code
 .text
+start
 ; Print the Welcome
 	LW	R10, s1(R0)
 	ADDI	R11, R0, 1
@@ -58,6 +59,12 @@ cin
 	NOP
 	BEQZ	R1, cin
 endcin
+; Carriage return
+	ADDI	R4, R0, 10
+	PCH	R4
+; Line feed
+	ADDI	R4, R0, 13
+	PCH	R4
 
 ; Print ! = ...
 	PDU	R1
@@ -121,8 +128,13 @@ continue
 break
 	JR		R31
 exit
-; Send the solution over UART and store it
+; Send the solution over UART
 	PDU	R1
+; Carriage return
+	ADDI	R4, R0, 10
+	PCH	R4
+; Line feed
+	ADDI	R4, R0, 13
+	PCH	R4
 	SW		f(R0), R1
-done
-	J		done
+	J		start
