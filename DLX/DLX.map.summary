@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 Analysis & Synthesis Status : Failed - Wed Mar 30 18:25:51 2022
+=======
+Analysis & Synthesis Status : Successful - Tue Mar 29 20:53:56 2022
+>>>>>>> parent of f824bfd (Fixed ack assertion)
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : DLX
 Top-level Entity Name : DLX
