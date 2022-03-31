@@ -282,20 +282,22 @@ begin
 							negative <= '1';
 							resend_data <= std_logic_vector(data_rx);
 							resend_flag <= '1';
-						elsif data_rx = X"0A" then
-							true <= '1';
-							rx_state <= WRITING ;
-							negative <= negative;
-							mult_data <= (others => '0');
-							resend_data <= X"41";
-							resend_flag <= '1';
+--						elsif data_rx = X"0A" then
+--							true <= '1';
+--							rx_state <= WRITING ;
+--							negative <= negative;
+--							mult_data <= (others => '0');
+--							resend_data <= X"41";
+--							resend_flag <= '1';
 						elsif data_rx = ASCII_CR then
 							true <= '1';
 							rx_state <= WRITING;
 							negative <= negative;
 							mult_data <= (others => '0');
-							resend_data <= X"45";
-							resend_flag <= '1';
+--							resend_data <= X"45";
+--							resend_flag <= '1';
+							resend_data <= (others => '0');
+							resend_flag <= '0';
 						else
 							true <= '0';
 							mult_data <= (others => '0');
