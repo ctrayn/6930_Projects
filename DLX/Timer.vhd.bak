@@ -1,0 +1,25 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use IEEE.NUMERIC_STD.all;
+use work.common.all;
+
+entity Timer is
+	Generic (
+	
+	);
+	port (
+		--INPUT
+		clk		: in std_logic;
+		rst_l		: in std_logic;
+		Run		: in std_logic;
+		
+		--OUTPUT
+		HEX0 : out std_logic_vector(7 downto 0);
+		HEX1 : out std_logic_vector(7 downto 0);
+		HEX2 : out std_logic_vector(7 downto 0);
+		HEX3 : out std_logic_vector(7 downto 0);
+		HEX4 : out std_logic_vector(7 downto 0);
+		HEX5 : out std_logic_vector(7 downto 0)
+	);
+
+end entity Timer;

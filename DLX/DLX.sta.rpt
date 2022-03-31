@@ -1,5 +1,9 @@
 Timing Analyzer report for DLX
-Wed Mar 30 12:37:30 2022
+<<<<<<< HEAD
+Wed Mar 30 16:35:33 2022
+=======
+Tue Mar 29 20:54:51 2022
+>>>>>>> parent of f824bfd (Fixed ack assertion)
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -93,15 +97,26 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 12          ;
 ; Maximum allowed            ; 12          ;
 ;                            ;             ;
-; Average used               ; 3.93        ;
+<<<<<<< HEAD
+; Average used               ; 3.78        ;
+=======
+; Average used               ; 3.86        ;
+>>>>>>> parent of f824bfd (Fixed ack assertion)
 ; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  30.0%      ;
-;     Processor 3            ;  28.0%      ;
-;     Processor 4            ;  27.7%      ;
-;     Processors 5-12        ;  25.9%      ;
+<<<<<<< HEAD
+;     Processor 2            ;  28.6%      ;
+;     Processor 3            ;  27.3%      ;
+;     Processor 4            ;  26.3%      ;
+;     Processors 5-12        ;  24.4%      ;
+=======
+;     Processor 2            ;  29.0%      ;
+;     Processor 3            ;  27.1%      ;
+;     Processor 4            ;  26.4%      ;
+;     Processors 5-12        ;  25.4%      ;
+>>>>>>> parent of f824bfd (Fixed ack assertion)
 +----------------------------+-------------+
 
 
@@ -110,7 +125,11 @@ https://fpgasoftware.intel.com/eula.
 +---------------+--------+--------------------------+
 ; SDC File Path ; Status ; Read at                  ;
 +---------------+--------+--------------------------+
-; DLX.SDC       ; OK     ; Wed Mar 30 12:37:23 2022 ;
+<<<<<<< HEAD
+; DLX.SDC       ; OK     ; Wed Mar 30 16:35:26 2022 ;
+=======
+; DLX.SDC       ; OK     ; Tue Mar 29 20:54:44 2022 ;
+>>>>>>> parent of f824bfd (Fixed ack assertion)
 +---------------+--------+--------------------------+
 
 
@@ -128,7 +147,11 @@ https://fpgasoftware.intel.com/eula.
 +-----------+-----------------+------------+------+
 ; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
 +-----------+-----------------+------------+------+
-; 14.34 MHz ; 14.34 MHz       ; ADC_CLK_10 ;      ;
+<<<<<<< HEAD
+; 14.25 MHz ; 14.25 MHz       ; ADC_CLK_10 ;      ;
+=======
+; 14.41 MHz ; 14.41 MHz       ; ADC_CLK_10 ;      ;
+>>>>>>> parent of f824bfd (Fixed ack assertion)
 +-----------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -138,17 +161,25 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------+--------+---------------+
 ; Clock      ; Slack  ; End Point TNS ;
 +------------+--------+---------------+
-; ADC_CLK_10 ; 30.288 ; 0.000         ;
+<<<<<<< HEAD
+; ADC_CLK_10 ; 29.814 ; 0.000         ;
+=======
+; ADC_CLK_10 ; 30.619 ; 0.000         ;
+>>>>>>> parent of f824bfd (Fixed ack assertion)
 +------------+--------+---------------+
 
 
-+-------------------------------------+
-; Slow 1200mV 85C Model Hold Summary  ;
-+------------+--------+---------------+
-; Clock      ; Slack  ; End Point TNS ;
-+------------+--------+---------------+
-; ADC_CLK_10 ; -0.030 ; -0.030        ;
-+------------+--------+---------------+
++------------------------------------+
+; Slow 1200mV 85C Model Hold Summary ;
++------------+-------+---------------+
+; Clock      ; Slack ; End Point TNS ;
++------------+-------+---------------+
+<<<<<<< HEAD
+; ADC_CLK_10 ; 0.213 ; 0.000         ;
+=======
+; ADC_CLK_10 ; 0.228 ; 0.000         ;
+>>>>>>> parent of f824bfd (Fixed ack assertion)
++------------+-------+---------------+
 
 
 ------------------------------------------
@@ -168,7 +199,7 @@ No paths to report.
 +------------+--------+-----------------------------+
 ; Clock      ; Slack  ; End Point TNS               ;
 +------------+--------+-----------------------------+
-; ADC_CLK_10 ; 49.443 ; 0.000                       ;
+; ADC_CLK_10 ; 49.534 ; 0.000                       ;
 +------------+--------+-----------------------------+
 
 
@@ -179,7 +210,11 @@ The design MTBF is not calculated because there are no specified synchronizers i
 Number of Synchronizer Chains Found: 10
 Shortest Synchronizer Chain: 3 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 282.856 ns
+<<<<<<< HEAD
+Worst Case Available Settling Time: 277.417 ns
+=======
+Worst Case Available Settling Time: 281.511 ns
+>>>>>>> parent of f824bfd (Fixed ack assertion)
 
 
 
@@ -189,7 +224,11 @@ Worst Case Available Settling Time: 282.856 ns
 +-----------+-----------------+------------+------+
 ; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
 +-----------+-----------------+------------+------+
-; 15.73 MHz ; 15.73 MHz       ; ADC_CLK_10 ;      ;
+<<<<<<< HEAD
+; 15.62 MHz ; 15.62 MHz       ; ADC_CLK_10 ;      ;
+=======
+; 15.84 MHz ; 15.84 MHz       ; ADC_CLK_10 ;      ;
+>>>>>>> parent of f824bfd (Fixed ack assertion)
 +-----------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -199,7 +238,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------+--------+---------------+
 ; Clock      ; Slack  ; End Point TNS ;
 +------------+--------+---------------+
-; ADC_CLK_10 ; 36.429 ; 0.000         ;
+<<<<<<< HEAD
+; ADC_CLK_10 ; 35.973 ; 0.000         ;
 +------------+--------+---------------+
 
 
@@ -208,8 +248,21 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------+--------+---------------+
 ; Clock      ; Slack  ; End Point TNS ;
 +------------+--------+---------------+
-; ADC_CLK_10 ; -0.191 ; -0.343        ;
+; ADC_CLK_10 ; -0.045 ; -0.045        ;
 +------------+--------+---------------+
+=======
+; ADC_CLK_10 ; 36.880 ; 0.000         ;
++------------+--------+---------------+
+
+
++------------------------------------+
+; Slow 1200mV 0C Model Hold Summary  ;
++------------+-------+---------------+
+; Clock      ; Slack ; End Point TNS ;
++------------+-------+---------------+
+; ADC_CLK_10 ; 0.075 ; 0.000         ;
++------------+-------+---------------+
+>>>>>>> parent of f824bfd (Fixed ack assertion)
 
 
 -----------------------------------------
@@ -229,7 +282,11 @@ No paths to report.
 +------------+--------+----------------------------+
 ; Clock      ; Slack  ; End Point TNS              ;
 +------------+--------+----------------------------+
-; ADC_CLK_10 ; 49.458 ; 0.000                      ;
+<<<<<<< HEAD
+; ADC_CLK_10 ; 49.547 ; 0.000                      ;
+=======
+; ADC_CLK_10 ; 49.456 ; 0.000                      ;
+>>>>>>> parent of f824bfd (Fixed ack assertion)
 +------------+--------+----------------------------+
 
 
@@ -240,7 +297,11 @@ The design MTBF is not calculated because there are no specified synchronizers i
 Number of Synchronizer Chains Found: 10
 Shortest Synchronizer Chain: 3 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 284.010 ns
+<<<<<<< HEAD
+Worst Case Available Settling Time: 278.828 ns
+=======
+Worst Case Available Settling Time: 282.724 ns
+>>>>>>> parent of f824bfd (Fixed ack assertion)
 
 
 
@@ -250,7 +311,11 @@ Worst Case Available Settling Time: 284.010 ns
 +------------+--------+---------------+
 ; Clock      ; Slack  ; End Point TNS ;
 +------------+--------+---------------+
-; ADC_CLK_10 ; 71.828 ; 0.000         ;
+<<<<<<< HEAD
+; ADC_CLK_10 ; 71.582 ; 0.000         ;
+=======
+; ADC_CLK_10 ; 71.962 ; 0.000         ;
+>>>>>>> parent of f824bfd (Fixed ack assertion)
 +------------+--------+---------------+
 
 
@@ -259,7 +324,7 @@ Worst Case Available Settling Time: 284.010 ns
 +------------+-------+---------------+
 ; Clock      ; Slack ; End Point TNS ;
 +------------+-------+---------------+
-; ADC_CLK_10 ; 0.146 ; 0.000         ;
+; ADC_CLK_10 ; 0.147 ; 0.000         ;
 +------------+-------+---------------+
 
 
@@ -280,7 +345,11 @@ No paths to report.
 +------------+--------+----------------------------+
 ; Clock      ; Slack  ; End Point TNS              ;
 +------------+--------+----------------------------+
-; ADC_CLK_10 ; 49.116 ; 0.000                      ;
+<<<<<<< HEAD
+; ADC_CLK_10 ; 49.042 ; 0.000                      ;
+=======
+; ADC_CLK_10 ; 49.137 ; 0.000                      ;
+>>>>>>> parent of f824bfd (Fixed ack assertion)
 +------------+--------+----------------------------+
 
 
@@ -291,21 +360,38 @@ The design MTBF is not calculated because there are no specified synchronizers i
 Number of Synchronizer Chains Found: 10
 Shortest Synchronizer Chain: 3 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 292.174 ns
+<<<<<<< HEAD
+Worst Case Available Settling Time: 289.725 ns
+=======
+Worst Case Available Settling Time: 291.699 ns
+>>>>>>> parent of f824bfd (Fixed ack assertion)
 
 
 
 
+<<<<<<< HEAD
 +-------------------------------------------------------------------------------+
 ; Multicorner Timing Analysis Summary                                           ;
 +------------------+--------+--------+----------+---------+---------------------+
 ; Clock            ; Setup  ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------+--------+--------+----------+---------+---------------------+
-; Worst-case Slack ; 30.288 ; -0.191 ; N/A      ; N/A     ; 49.116              ;
-;  ADC_CLK_10      ; 30.288 ; -0.191 ; N/A      ; N/A     ; 49.116              ;
-; Design-wide TNS  ; 0.0    ; -0.343 ; 0.0      ; 0.0     ; 0.0                 ;
-;  ADC_CLK_10      ; 0.000  ; -0.343 ; N/A      ; N/A     ; 0.000               ;
+; Worst-case Slack ; 29.814 ; -0.045 ; N/A      ; N/A     ; 49.042              ;
+;  ADC_CLK_10      ; 29.814 ; -0.045 ; N/A      ; N/A     ; 49.042              ;
+; Design-wide TNS  ; 0.0    ; -0.045 ; 0.0      ; 0.0     ; 0.0                 ;
+;  ADC_CLK_10      ; 0.000  ; -0.045 ; N/A      ; N/A     ; 0.000               ;
 +------------------+--------+--------+----------+---------+---------------------+
+=======
++------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                          ;
++------------------+--------+-------+----------+---------+---------------------+
+; Clock            ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+--------+-------+----------+---------+---------------------+
+; Worst-case Slack ; 30.619 ; 0.075 ; N/A      ; N/A     ; 49.137              ;
+;  ADC_CLK_10      ; 30.619 ; 0.075 ; N/A      ; N/A     ; 49.137              ;
+; Design-wide TNS  ; 0.0    ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
+;  ADC_CLK_10      ; 0.000  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
++------------------+--------+-------+----------+---------+---------------------+
+>>>>>>> parent of f824bfd (Fixed ack assertion)
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -406,7 +492,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 2     ; 2    ;
-; Unconstrained Input Port Paths  ; 1499  ; 1499 ;
+; Unconstrained Input Port Paths  ; 1363  ; 1363 ;
 ; Unconstrained Output Ports      ; 1     ; 1    ;
 ; Unconstrained Output Port Paths ; 1     ; 1    ;
 +---------------------------------+-------+------+
@@ -465,7 +551,11 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Wed Mar 30 12:37:20 2022
+<<<<<<< HEAD
+    Info: Processing started: Wed Mar 30 16:35:22 2022
+=======
+    Info: Processing started: Tue Mar 29 20:54:41 2022
+>>>>>>> parent of f824bfd (Fixed ack assertion)
 Info: Command: quartus_sta DLX -c DLX
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -484,83 +574,143 @@ Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Tim
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
-Info (332146): Worst-case setup slack is 30.288
+<<<<<<< HEAD
+Info (332146): Worst-case setup slack is 29.814
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    30.288               0.000 ADC_CLK_10 
-Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case hold slack is -0.030
+    Info (332119):    29.814               0.000 ADC_CLK_10 
+Info (332146): Worst-case hold slack is 0.213
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.030              -0.030 ADC_CLK_10 
+    Info (332119):     0.213               0.000 ADC_CLK_10 
+=======
+Info (332146): Worst-case setup slack is 30.619
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    30.619               0.000 ADC_CLK_10 
+Info (332146): Worst-case hold slack is 0.228
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.228               0.000 ADC_CLK_10 
+>>>>>>> parent of f824bfd (Fixed ack assertion)
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is 49.443
+Info (332146): Worst-case minimum pulse width slack is 49.534
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    49.443               0.000 ADC_CLK_10 
+    Info (332119):    49.534               0.000 ADC_CLK_10 
 Info (332114): Report Metastability: Found 10 synchronizer chains.
     Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
     Info (332114): Number of Synchronizer Chains Found: 10
     Info (332114): Shortest Synchronizer Chain: 3 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 282.856 ns
+<<<<<<< HEAD
+    Info (332114): Worst Case Available Settling Time: 277.417 ns
+=======
+    Info (332114): Worst Case Available Settling Time: 281.511 ns
+>>>>>>> parent of f824bfd (Fixed ack assertion)
     Info (332114): 
 Info: Analyzing Slow 1200mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
-Info (332146): Worst-case setup slack is 36.429
+<<<<<<< HEAD
+Info (332146): Worst-case setup slack is 35.973
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    36.429               0.000 ADC_CLK_10 
+    Info (332119):    35.973               0.000 ADC_CLK_10 
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case hold slack is -0.191
+Info (332146): Worst-case hold slack is -0.045
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.191              -0.343 ADC_CLK_10 
+    Info (332119):    -0.045              -0.045 ADC_CLK_10 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is 49.458
+Info (332146): Worst-case minimum pulse width slack is 49.547
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    49.458               0.000 ADC_CLK_10 
+    Info (332119):    49.547               0.000 ADC_CLK_10 
+=======
+Info (332146): Worst-case setup slack is 36.880
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    36.880               0.000 ADC_CLK_10 
+Info (332146): Worst-case hold slack is 0.075
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.075               0.000 ADC_CLK_10 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 49.456
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    49.456               0.000 ADC_CLK_10 
+>>>>>>> parent of f824bfd (Fixed ack assertion)
 Info (332114): Report Metastability: Found 10 synchronizer chains.
     Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
     Info (332114): Number of Synchronizer Chains Found: 10
     Info (332114): Shortest Synchronizer Chain: 3 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 284.010 ns
+<<<<<<< HEAD
+    Info (332114): Worst Case Available Settling Time: 278.828 ns
     Info (332114): 
 Info: Analyzing Fast 1200mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
-Info (332146): Worst-case setup slack is 71.828
+Info (332146): Worst-case setup slack is 71.582
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    71.828               0.000 ADC_CLK_10 
-Info (332146): Worst-case hold slack is 0.146
+    Info (332119):    71.582               0.000 ADC_CLK_10 
+=======
+    Info (332114): Worst Case Available Settling Time: 282.724 ns
+    Info (332114): 
+Info: Analyzing Fast 1200mV 0C Model
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Info (332146): Worst-case setup slack is 71.962
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.146               0.000 ADC_CLK_10 
+    Info (332119):    71.962               0.000 ADC_CLK_10 
+>>>>>>> parent of f824bfd (Fixed ack assertion)
+Info (332146): Worst-case hold slack is 0.147
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.147               0.000 ADC_CLK_10 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is 49.116
+<<<<<<< HEAD
+Info (332146): Worst-case minimum pulse width slack is 49.042
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    49.116               0.000 ADC_CLK_10 
+    Info (332119):    49.042               0.000 ADC_CLK_10 
+=======
+Info (332146): Worst-case minimum pulse width slack is 49.137
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    49.137               0.000 ADC_CLK_10 
+>>>>>>> parent of f824bfd (Fixed ack assertion)
 Info (332114): Report Metastability: Found 10 synchronizer chains.
     Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
     Info (332114): Number of Synchronizer Chains Found: 10
     Info (332114): Shortest Synchronizer Chain: 3 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 292.174 ns
+<<<<<<< HEAD
+    Info (332114): Worst Case Available Settling Time: 289.725 ns
     Info (332114): 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus Prime Timing Analyzer was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 4993 megabytes
-    Info: Processing ended: Wed Mar 30 12:37:30 2022
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 4999 megabytes
+    Info: Processing ended: Wed Mar 30 16:35:33 2022
+    Info: Elapsed time: 00:00:11
+=======
+    Info (332114): Worst Case Available Settling Time: 291.699 ns
+    Info (332114): 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 5000 megabytes
+    Info: Processing ended: Tue Mar 29 20:54:51 2022
     Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:25
+>>>>>>> parent of f824bfd (Fixed ack assertion)
+    Info: Total CPU time (on all processors): 00:00:24
 
 
