@@ -90,7 +90,7 @@ begin
 					ram(to_integer(unsigned((wb_inst(20 downto 16))))) <= rx_data;
 				-- If there isn't data ready
 				else
-					ram(to_integer(unsigned((wb_inst(20 downto 16))))) <= ZEROS;
+					ram(0) <= ZEROS;
 				end if;
 			else
 				ram(0) <= X"00000000"; -- Register 0 must allways contain 0
