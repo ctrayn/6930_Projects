@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DLX
-Thu Mar 31 15:10:31 2022
+Thu Mar 31 19:07:08 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -77,13 +77,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Mar 31 15:10:31 2022       ;
+; Analysis & Synthesis Status        ; Successful - Thu Mar 31 19:07:08 2022       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; DLX                                         ;
 ; Top-level Entity Name              ; DLX                                         ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 9,519                                       ;
-;     Total combinational functions  ; 8,445                                       ;
+; Total logic elements               ; 9,605                                       ;
+;     Total combinational functions  ; 8,531                                       ;
 ;     Dedicated logic registers      ; 2,779                                       ;
 ; Total registers                    ; 2779                                        ;
 ; Total pins                         ; 72                                          ;
@@ -285,16 +285,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+------------------+
 ; Resource                                    ; Usage            ;
 +---------------------------------------------+------------------+
-; Estimated Total logic elements              ; 9,519            ;
+; Estimated Total logic elements              ; 9,605            ;
 ;                                             ;                  ;
-; Total combinational functions               ; 8445             ;
+; Total combinational functions               ; 8531             ;
 ; Logic element usage by number of LUT inputs ;                  ;
-;     -- 4 input functions                    ; 6477             ;
-;     -- 3 input functions                    ; 1320             ;
-;     -- <=2 input functions                  ; 648              ;
+;     -- 4 input functions                    ; 6559             ;
+;     -- 3 input functions                    ; 1325             ;
+;     -- <=2 input functions                  ; 647              ;
 ;                                             ;                  ;
 ; Logic elements by mode                      ;                  ;
-;     -- normal mode                          ; 7797             ;
+;     -- normal mode                          ; 7883             ;
 ;     -- arithmetic mode                      ; 648              ;
 ;                                             ;                  ;
 ; Total registers                             ; 2779             ;
@@ -308,7 +308,7 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                  ;
 ; Maximum fan-out node                        ; ADC_CLK_10~input ;
 ; Maximum fan-out                             ; 2887             ;
-; Total fan-out                               ; 41688            ;
+; Total fan-out                               ; 42029            ;
 ; Average fan-out                             ; 3.62             ;
 +---------------------------------------------+------------------+
 
@@ -318,8 +318,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                                      ; Entity Name         ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |DLX                                         ; 8445 (1)            ; 2779 (0)                  ; 91136       ; 0          ; 4            ; 0       ; 2         ; 72   ; 0            ; 0          ; |DLX                                                                                                                                                     ; DLX                 ; work         ;
-;    |Decode:dec|                              ; 2879 (2879)         ; 1157 (1157)               ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Decode:dec                                                                                                                                          ; Decode              ; work         ;
+; |DLX                                         ; 8531 (1)            ; 2779 (0)                  ; 91136       ; 0          ; 4            ; 0       ; 2         ; 72   ; 0            ; 0          ; |DLX                                                                                                                                                     ; DLX                 ; work         ;
+;    |Decode:dec|                              ; 2880 (2880)         ; 1157 (1157)               ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Decode:dec                                                                                                                                          ; Decode              ; work         ;
 ;    |Execute:exc|                             ; 1065 (1065)         ; 126 (126)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Execute:exc                                                                                                                                         ; Execute             ; work         ;
 ;    |Fetch:fet|                               ; 61 (61)             ; 33 (33)                   ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Fetch:fet                                                                                                                                           ; Fetch               ; work         ;
 ;       |InstructionMemory:im|                 ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Fetch:fet|InstructionMemory:im                                                                                                                      ; InstructionMemory   ; work         ;
@@ -330,7 +330,7 @@ https://fpgasoftware.intel.com/eula.
 ;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Memory:mem|DataMemory:dm|altsyncram:altsyncram_component                                                                                            ; altsyncram          ; work         ;
 ;             |altsyncram_p8t3:auto_generated| ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Memory:mem|DataMemory:dm|altsyncram:altsyncram_component|altsyncram_p8t3:auto_generated                                                             ; altsyncram_p8t3     ; work         ;
 ;    |Timer:tmr|                               ; 86 (86)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Timer:tmr                                                                                                                                           ; Timer               ; work         ;
-;    |UART:duart|                              ; 4351 (3597)         ; 1415 (1280)               ; 25600       ; 0          ; 4            ; 0       ; 2         ; 0    ; 0            ; 0          ; |DLX|UART:duart                                                                                                                                          ; UART                ; work         ;
+;    |UART:duart|                              ; 4436 (3682)         ; 1415 (1280)               ; 25600       ; 0          ; 4            ; 0       ; 2         ; 0    ; 0            ; 0          ; |DLX|UART:duart                                                                                                                                          ; UART                ; work         ;
 ;       |MULT:umult|                           ; 14 (0)              ; 0 (0)                     ; 0           ; 0          ; 4            ; 0       ; 2         ; 0    ; 0            ; 0          ; |DLX|UART:duart|MULT:umult                                                                                                                               ; MULT                ; work         ;
 ;          |lpm_mult:lpm_mult_component|       ; 14 (0)              ; 0 (0)                     ; 0           ; 0          ; 4            ; 0       ; 2         ; 0    ; 0            ; 0          ; |DLX|UART:duart|MULT:umult|lpm_mult:lpm_mult_component                                                                                                   ; lpm_mult            ; work         ;
 ;             |mult_88p:auto_generated|        ; 14 (14)             ; 0 (0)                     ; 0           ; 0          ; 4            ; 0       ; 2         ; 0    ; 0            ; 0          ; |DLX|UART:duart|MULT:umult|lpm_mult:lpm_mult_component|mult_88p:auto_generated                                                                           ; mult_88p            ; work         ;
@@ -1084,23 +1084,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     SCLR              ; 10                          ;
 ;     SCLR SLD          ; 52                          ;
 ;     plain             ; 257                         ;
-; cycloneiii_lcell_comb ; 8447                        ;
+; cycloneiii_lcell_comb ; 8533                        ;
 ;     arith             ; 648                         ;
 ;         1 data inputs ; 2                           ;
 ;         2 data inputs ; 321                         ;
 ;         3 data inputs ; 325                         ;
-;     normal            ; 7799                        ;
+;     normal            ; 7885                        ;
 ;         0 data inputs ; 55                          ;
 ;         1 data inputs ; 17                          ;
-;         2 data inputs ; 255                         ;
-;         3 data inputs ; 995                         ;
-;         4 data inputs ; 6477                        ;
+;         2 data inputs ; 254                         ;
+;         3 data inputs ; 1000                        ;
+;         4 data inputs ; 6559                        ;
 ; cycloneiii_mac_mult   ; 2                           ;
 ; cycloneiii_mac_out    ; 2                           ;
 ; cycloneiii_ram_block  ; 139                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 67.20                       ;
-; Average LUT depth     ; 16.90                       ;
+; Average LUT depth     ; 17.13                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1119,7 +1119,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Thu Mar 31 15:09:57 2022
+    Info: Processing started: Thu Mar 31 19:06:34 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DLX -c DLX
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1401,8 +1401,8 @@ Info (12133): Instantiated megafunction "Fetch:fet|InstructionMemory:im|altsyncr
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_c7t3.tdf
     Info (12023): Found entity 1: altsyncram_c7t3 File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/altsyncram_c7t3.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_c7t3" for hierarchy "Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component|altsyncram_c7t3:auto_generated" File: /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (113028): 949 out of 1024 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Programs/factorial_code.mif Line: 1
-    Warning (113027): Addresses ranging from 75 to 1023 are not initialized File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Programs/factorial_code.mif Line: 1
+Warning (113028): 948 out of 1024 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Programs/factorial_code.mif Line: 1
+    Warning (113027): Addresses ranging from 76 to 1023 are not initialized File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Programs/factorial_code.mif Line: 1
 Info (12128): Elaborating entity "Decode" for hierarchy "Decode:dec" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 229
 Info (12128): Elaborating entity "Execute" for hierarchy "Execute:exc" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 253
 Warning (10492): VHDL Process Statement warning at Execute.vhd(107): signal "IdEx_rd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Execute.vhd Line: 107
@@ -2110,15 +2110,15 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 9856 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 9941 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 13 input pins
     Info (21059): Implemented 59 output pins
-    Info (21061): Implemented 9641 logic cells
+    Info (21061): Implemented 9726 logic cells
     Info (21064): Implemented 139 RAM segments
     Info (21062): Implemented 4 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 433 warnings
-    Info: Peak virtual memory: 524 megabytes
-    Info: Processing ended: Thu Mar 31 15:10:31 2022
+    Info: Peak virtual memory: 525 megabytes
+    Info: Processing ended: Thu Mar 31 19:07:08 2022
     Info: Elapsed time: 00:00:34
     Info: Total CPU time (on all processors): 00:00:45
 

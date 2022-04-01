@@ -13,7 +13,7 @@ Pcommon
 Z0 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z2 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 2656
+!i122 2674
 Z3 w1648759083
 Z4 d/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX
 Z5 8/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Common.vhd
@@ -25,9 +25,9 @@ V4?c:egC:XE9g_gj:T48hP0
 Z7 OV;C;2020.1;71
 32
 b1
-Z8 !s110 1648767291
+Z8 !s110 1648774978
 !i10b 1
-Z9 !s108 1648767290.000000
+Z9 !s108 1648774978.000000
 Z10 !s90 -reportprogress|300|-work|work|/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Common.vhd|
 Z11 !s107 /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Common.vhd|
 !i113 1
@@ -38,7 +38,7 @@ Z14 DPx4 work 6 common 0 22 4?c:egC:XE9g_gj:T48hP0
 R0
 R1
 R2
-!i122 2656
+!i122 2674
 l0
 L93 1
 V6<Pf<nP9YZFK;k:EDE0mJ0
@@ -58,7 +58,7 @@ Z15 w1648010902
 Z16 DPx9 altera_mf 20 altera_mf_components 0 22 BN6nPmY:UEbXa[^5b@FTW1
 R1
 R2
-!i122 2657
+!i122 2675
 R4
 Z17 8/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DataMemory.vhd
 Z18 F/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DataMemory.vhd
@@ -70,9 +70,9 @@ R7
 32
 R8
 !i10b 1
-Z20 !s108 1648767291.000000
-Z21 !s90 -reportprogress|300|-work|work|/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DataMemory.vhd|
-Z22 !s107 /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DataMemory.vhd|
+R9
+Z20 !s90 -reportprogress|300|-work|work|/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DataMemory.vhd|
+Z21 !s107 /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DataMemory.vhd|
 !i113 1
 R12
 R13
@@ -81,7 +81,7 @@ R16
 R1
 R2
 DEx4 work 10 datamemory 0 22 LK0A8GWHR8=HSdJ;dM=hj2
-!i122 2657
+!i122 2675
 l59
 L55 36
 VRWW`o1[hX3=HA2IO4>2W:0
@@ -90,33 +90,33 @@ R7
 32
 R8
 !i10b 1
+R9
 R20
 R21
-R22
 !i113 1
 R12
 R13
 Edecode
-Z23 w1648767273
+Z22 w1648767273
 R14
 R0
 R1
 R2
-!i122 2658
+!i122 2676
 R4
-Z24 8/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Decode.vhd
-Z25 F/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Decode.vhd
+Z23 8/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Decode.vhd
+Z24 F/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Decode.vhd
 l0
-Z26 L14 1
+Z25 L14 1
 VH5^kZTdj0>]_okVb_Z_Dg1
 !s100 WdiLPYeMgkWkU1I=kgANO2
 R7
 32
 R8
 !i10b 1
-R20
-Z27 !s90 -reportprogress|300|-work|work|/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Decode.vhd|
-Z28 !s107 /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Decode.vhd|
+R9
+Z26 !s90 -reportprogress|300|-work|work|/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Decode.vhd|
+Z27 !s107 /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Decode.vhd|
 !i113 1
 R12
 R13
@@ -126,7 +126,7 @@ R0
 R1
 R2
 DEx4 work 6 decode 0 22 H5^kZTdj0>]_okVb_Z_Dg1
-!i122 2658
+!i122 2676
 l54
 L40 198
 V`8U3W=b1T?jdGb7bQU<IA2
@@ -135,30 +135,30 @@ R7
 32
 R8
 !i10b 1
-R20
+R9
+R26
 R27
-R28
 !i113 1
 R12
 R13
 Edlx
-Z29 w1648757187
+Z28 w1648757187
 R0
 R1
 R2
-!i122 2659
+!i122 2677
 R4
-Z30 8/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd
-Z31 F/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd
+Z29 8/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd
+Z30 F/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd
 l0
 L13 1
 VJFZ1@N`^XHA?DKY<4[>UE0
 !s100 NzzjkH@O<S2[zW4eOl1z60
 R7
 32
-R8
+Z31 !s110 1648774979
 !i10b 1
-R20
+R9
 Z32 !s90 -reportprogress|300|-work|work|/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd|
 Z33 !s107 /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd|
 !i113 1
@@ -169,42 +169,42 @@ R0
 R1
 R2
 DEx4 work 3 dlx 0 22 JFZ1@N`^XHA?DKY<4[>UE0
-!i122 2659
+!i122 2677
 l197
 L37 269
 VHN4=Mhmh0Yka0]dGF;6H_1
 !s100 :4T^P^cj`J;n??SH?M6AV2
 R7
 32
-R8
+R31
 !i10b 1
-R20
+R9
 R32
 R33
 !i113 1
 R12
 R13
 Eexecute
-R29
+R28
 R14
 R0
 R1
 R2
-!i122 2660
+!i122 2678
 R4
 Z34 8/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Execute.vhd
 Z35 F/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Execute.vhd
 l0
-R26
+R25
 VzcL]S8>TK4oC=^lVXb5;<2
 !s100 dgkkVYh:lT2YXb:PFeE1D0
 R7
 32
-R8
+R31
 !i10b 1
-R20
-Z36 !s90 -reportprogress|30|-work|work|/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Execute.vhd|
-Z37 !s107 /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Execute.vhd|
+Z36 !s108 1648774979.000000
+Z37 !s90 -reportprogress|30|-work|work|/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Execute.vhd|
+Z38 !s107 /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Execute.vhd|
 !i113 1
 R12
 R13
@@ -214,42 +214,42 @@ R0
 R1
 R2
 DEx4 work 7 execute 0 22 zcL]S8>TK4oC=^lVXb5;<2
-!i122 2660
+!i122 2678
 l57
 L37 357
 VnP]>:4R<d@O17o81[]SWS2
 !s100 810iSNSZj?cTkKzUN43Qh1
 R7
 32
-R8
+R31
 !i10b 1
-R20
 R36
 R37
+R38
 !i113 1
 R12
 R13
 Efetch
-R29
+R28
 R14
 R0
 R1
 R2
-!i122 2661
+!i122 2679
 R4
-Z38 8/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Fetch.vhd
-Z39 F/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Fetch.vhd
+Z39 8/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Fetch.vhd
+Z40 F/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Fetch.vhd
 l0
-R26
+R25
 VLk2[zh9NFg4^Cj9S17UH02
 !s100 j@4jaNUYHamK3GQ1Jj_BU2
 R7
 32
-R8
+R31
 !i10b 1
-R20
-Z40 !s90 -reportprogress|30|-work|work|/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Fetch.vhd|
-Z41 !s107 /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Fetch.vhd|
+R36
+Z41 !s90 -reportprogress|30|-work|work|/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Fetch.vhd|
+Z42 !s107 /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Fetch.vhd|
 !i113 1
 R12
 R13
@@ -259,41 +259,41 @@ R0
 R1
 R2
 DEx4 work 5 fetch 0 22 Lk2[zh9NFg4^Cj9S17UH02
-!i122 2661
+!i122 2679
 l52
 L27 102
 Vl[Bi0Vno9o?1C0PT5bnYc1
 !s100 ]M3S_1:7fC?LOX^;WdkN^0
 R7
 32
-R8
+R31
 !i10b 1
-R20
-R40
+R36
 R41
+R42
 !i113 1
 R12
 R13
 Einstructionmemory
-Z42 w1648001423
+Z43 w1648001423
 R16
 R1
 R2
-!i122 2662
+!i122 2680
 R4
-Z43 8/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/InstructionMemory.vhd
-Z44 F/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/InstructionMemory.vhd
+Z44 8/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/InstructionMemory.vhd
+Z45 F/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/InstructionMemory.vhd
 l0
 R19
 VOM?z[IS9JoT[H2ko>;;@O1
 !s100 XliFnFmS`ihFB@c0C9KN?3
 R7
 32
-R8
+R31
 !i10b 1
-R20
-Z45 !s90 -reportprogress|30|-work|work|/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/InstructionMemory.vhd|
-Z46 !s107 /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/InstructionMemory.vhd|
+R36
+Z46 !s90 -reportprogress|30|-work|work|/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/InstructionMemory.vhd|
+Z47 !s107 /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/InstructionMemory.vhd|
 !i113 1
 R12
 R13
@@ -302,42 +302,42 @@ R16
 R1
 R2
 DEx4 work 17 instructionmemory 0 22 OM?z[IS9JoT[H2ko>;;@O1
-!i122 2662
+!i122 2680
 l58
 L54 34
 VSTz;4b8>[2L]e?WQ6Q49M2
 !s100 DQOWYG>Y]>Z<O5887<4:Y3
 R7
 32
-R8
+R31
 !i10b 1
-R20
-R45
+R36
 R46
+R47
 !i113 1
 R12
 R13
 Ememory
-Z47 w1648011521
+Z48 w1648011521
 R14
 R0
 R1
 R2
-!i122 2663
+!i122 2681
 R4
-Z48 8/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Memory.vhd
-Z49 F/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Memory.vhd
+Z49 8/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Memory.vhd
+Z50 F/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Memory.vhd
 l0
-R26
+R25
 VRFKiBC=[Fz;IcKNBY6^_B2
 !s100 X>MfO1?2D`oeUQFgnAPT`0
 R7
 32
-R8
+R31
 !i10b 1
-R20
-Z50 !s90 -reportprogress|30|-work|work|/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Memory.vhd|
-Z51 !s107 /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Memory.vhd|
+R36
+Z51 !s90 -reportprogress|30|-work|work|/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Memory.vhd|
+Z52 !s107 /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Memory.vhd|
 !i113 1
 R12
 R13
@@ -347,40 +347,40 @@ R0
 R1
 R2
 DEx4 work 6 memory 0 22 RFKiBC=[Fz;IcKNBY6^_B2
-!i122 2663
+!i122 2681
 l48
 L28 63
 VORLHe8?OK?K:DdSKVVCgm3
 !s100 dLjO^Nmcb<;I4jZmKbDU=3
 R7
 32
-R8
+R31
 !i10b 1
-R20
-R50
+R36
 R51
+R52
 !i113 1
 R12
 R13
 Emult
-R29
+R28
 R1
 R2
-!i122 2664
+!i122 2682
 R4
-Z52 8/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/MULT.vhd
-Z53 F/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/MULT.vhd
+Z53 8/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/MULT.vhd
+Z54 F/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/MULT.vhd
 l0
 R19
 V]kGC;i=V80TZN26Rm6LoU1
 !s100 inTlV;YdO3CEHlhMLEWXf0
 R7
 32
-R8
+R31
 !i10b 1
-R20
-Z54 !s90 -reportprogress|30|-work|work|/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/MULT.vhd|
-Z55 !s107 /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/MULT.vhd|
+R36
+Z55 !s90 -reportprogress|30|-work|work|/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/MULT.vhd|
+Z56 !s107 /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/MULT.vhd|
 !i113 1
 R12
 R13
@@ -388,41 +388,41 @@ Asyn
 R1
 R2
 DEx4 work 4 mult 0 22 ]kGC;i=V80TZN26Rm6LoU1
-!i122 2664
+!i122 2682
 l76
 L52 47
 VBPj?ZeA93Bi^Y3HKi<T:b1
 !s100 l=]jOYoY<O]h6CJ9OClkW3
 R7
 32
-R8
+R31
 !i10b 1
-R20
-R54
+R36
 R55
+R56
 !i113 1
 R12
 R13
 Emy_uart
-R29
+R28
 R0
 R1
 R2
-!i122 2665
+!i122 2683
 R4
-Z56 8/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/my_UART.vhd
-Z57 F/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/my_UART.vhd
+Z57 8/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/my_UART.vhd
+Z58 F/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/my_UART.vhd
 l0
 L5 1
 VED:Nl94A5AaXP48zBlz0b3
 !s100 ZE:ZEQHM8??IYQKkLO?[h1
 R7
 32
-R8
+R31
 !i10b 1
-R20
-Z58 !s90 -reportprogress|30|-work|work|/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/my_UART.vhd|
-Z59 !s107 /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/my_UART.vhd|
+R36
+Z59 !s90 -reportprogress|30|-work|work|/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/my_UART.vhd|
+Z60 !s107 /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/my_UART.vhd|
 !i113 1
 R12
 R13
@@ -431,40 +431,40 @@ R0
 R1
 R2
 DEx4 work 7 my_uart 0 22 ED:Nl94A5AaXP48zBlz0b3
-!i122 2665
+!i122 2683
 l40
 L22 142
 V2PSFQ1AU2m6b=z^?QJlgb0
 !s100 gVST:RCO;h?mD6I^W@EGE2
 R7
 32
-R8
+R31
 !i10b 1
-R20
-R58
+R36
 R59
+R60
 !i113 1
 R12
 R13
 Erx_fifo
-R29
+R28
 R1
 R2
-!i122 2666
+!i122 2684
 R4
-Z60 8/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/RX_FIFO.vhd
-Z61 F/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/RX_FIFO.vhd
+Z61 8/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/RX_FIFO.vhd
+Z62 F/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/RX_FIFO.vhd
 l0
 R19
 VejMzPfT_@746VW[h9D>1K3
 !s100 RlON_d<Z1VmN3lg[R[m9^0
 R7
 32
-R8
+R31
 !i10b 1
-R20
-Z62 !s90 -reportprogress|30|-work|work|/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/RX_FIFO.vhd|
-Z63 !s107 /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/RX_FIFO.vhd|
+R36
+Z63 !s90 -reportprogress|30|-work|work|/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/RX_FIFO.vhd|
+Z64 !s107 /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/RX_FIFO.vhd|
 !i113 1
 R12
 R13
@@ -472,41 +472,41 @@ Asyn
 R1
 R2
 DEx4 work 7 rx_fifo 0 22 ejMzPfT_@746VW[h9D>1K3
-!i122 2666
+!i122 2684
 l88
-Z64 L57 61
+Z65 L57 61
 V7;[a;HdF8T6Uenzn3a7b72
 !s100 _lU]JbU:?;^nUzE`:dYM50
 R7
 32
-R8
+R31
 !i10b 1
-R20
-R62
+R36
 R63
+R64
 !i113 1
 R12
 R13
 Etestbench
-Z65 w1648692562
+Z66 w1648692562
 R0
 R1
 R2
-!i122 2667
+!i122 2685
 R4
-Z66 8/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/TestBench.vhd
-Z67 F/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/TestBench.vhd
+Z67 8/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/TestBench.vhd
+Z68 F/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/TestBench.vhd
 l0
 L5 1
 Vl;PVozdTa3iV4OCRV`cik2
 !s100 R@]454d=0J1I7D_IIf[mI3
 R7
 32
-R8
+R31
 !i10b 1
-R20
-Z68 !s90 -reportprogress|30|-work|work|/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/TestBench.vhd|
-Z69 !s107 /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/TestBench.vhd|
+R36
+Z69 !s90 -reportprogress|30|-work|work|/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/TestBench.vhd|
+Z70 !s107 /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/TestBench.vhd|
 !i113 1
 R12
 R13
@@ -515,42 +515,42 @@ R0
 R1
 R2
 DEx4 work 9 testbench 0 22 l;PVozdTa3iV4OCRV`cik2
-!i122 2667
+!i122 2685
 l28
 L8 46
 VJgW40j]g3aG;z;oYP<iBn2
 !s100 eFU1b2i:I9_dkU:AY_AoZ0
 R7
 32
-R8
+R31
 !i10b 1
-R20
-R68
+R36
 R69
+R70
 !i113 1
 R12
 R13
 Etimer
-R29
+R28
 R14
 R0
 R1
 R2
-!i122 2668
+!i122 2686
 R4
-Z70 8/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd
-Z71 F/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd
+Z71 8/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd
+Z72 F/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd
 l0
 L6 1
 VEQG;SJ<n`Yo23ZRL3R8bP2
 !s100 ih9fA9]iRCzGc`1nAR28l2
 R7
 32
-R8
+R31
 !i10b 1
-R20
-Z72 !s90 -reportprogress|30|-work|work|/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd|
-Z73 !s107 /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd|
+R36
+Z73 !s90 -reportprogress|30|-work|work|/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd|
+Z74 !s107 /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd|
 !i113 1
 R12
 R13
@@ -560,40 +560,40 @@ R0
 R1
 R2
 DEx4 work 5 timer 0 22 EQG;SJ<n`Yo23ZRL3R8bP2
-!i122 2668
+!i122 2686
 l44
 L27 135
 VcaGJhE8[Re1?cWzD_;XBc0
 !s100 HNYHmeP;XPImValF?`Mkh2
 R7
 32
-R8
+R31
 !i10b 1
-R20
-R72
+R36
 R73
+R74
 !i113 1
 R12
 R13
 Etx_fifo
-Z74 w1647969142
+Z75 w1647969142
 R1
 R2
-!i122 2669
+!i122 2687
 R4
-Z75 8/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/TX_FIFO.vhd
-Z76 F/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/TX_FIFO.vhd
+Z76 8/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/TX_FIFO.vhd
+Z77 F/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/TX_FIFO.vhd
 l0
 R19
 VOj>bTAccEb`<2gVa17CI70
 !s100 Bd;LIK5]DI44g61E2:koR1
 R7
 32
-R8
+R31
 !i10b 1
-R20
-Z77 !s90 -reportprogress|30|-work|work|/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/TX_FIFO.vhd|
-Z78 !s107 /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/TX_FIFO.vhd|
+R36
+Z78 !s90 -reportprogress|30|-work|work|/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/TX_FIFO.vhd|
+Z79 !s107 /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/TX_FIFO.vhd|
 !i113 1
 R12
 R13
@@ -601,38 +601,38 @@ Asyn
 R1
 R2
 DEx4 work 7 tx_fifo 0 22 Oj>bTAccEb`<2gVa17CI70
-!i122 2669
+!i122 2687
 l88
-R64
+R65
 VUJ^;3?ZAj5?C4l253>G2E3
 !s100 CF]bDf^Q8f5NmOW28CIOY1
 R7
 32
-R8
+R31
 !i10b 1
-R20
-R77
+R36
 R78
+R79
 !i113 1
 R12
 R13
 Eu_div
-R74
+R75
 R1
 R2
-!i122 2670
+!i122 2688
 R4
-Z79 8/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/U_DIV.vhd
-Z80 F/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/U_DIV.vhd
+Z80 8/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/U_DIV.vhd
+Z81 F/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/U_DIV.vhd
 l0
 R19
 VPF>>36OHd3A2j2BX?RlSL2
 !s100 hbzVf3XfTmHh^HbER?a;13
 R7
 32
-Z81 !s110 1648767292
+R31
 !i10b 1
-R20
+R36
 Z82 !s90 -reportprogress|30|-work|work|/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/U_DIV.vhd|
 Z83 !s107 /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/U_DIV.vhd|
 !i113 1
@@ -642,28 +642,28 @@ Asyn
 R1
 R2
 DEx4 work 5 u_div 0 22 PF>>36OHd3A2j2BX?RlSL2
-!i122 2670
+!i122 2688
 l78
 Z84 L54 47
 VY[R=dd;oWH;86P8a16ZAD0
 !s100 SIc_L1A@c7RSQDP`C=g4F2
 R7
 32
-R81
+R31
 !i10b 1
-R20
+R36
 R82
 R83
 !i113 1
 R12
 R13
 Euart
-R29
+R28
 R14
 R0
 R1
 R2
-!i122 2671
+!i122 2689
 R4
 Z85 8/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART.vhd
 Z86 F/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART.vhd
@@ -673,11 +673,11 @@ VmPfFzl=dLnSFC^5]c?o`z1
 !s100 b?2LJlk`BS[ZnjR_f5XJ]3
 R7
 32
-R81
+R31
 !i10b 1
-Z87 !s108 1648767292.000000
-Z88 !s90 -reportprogress|30|-work|work|/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART.vhd|
-Z89 !s107 /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART.vhd|
+R36
+Z87 !s90 -reportprogress|30|-work|work|/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART.vhd|
+Z88 !s107 /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART.vhd|
 !i113 1
 R12
 R13
@@ -687,40 +687,40 @@ R0
 R1
 R2
 DEx4 work 4 uart 0 22 mPfFzl=dLnSFC^5]c?o`z1
-!i122 2671
+!i122 2689
 l156
 L26 486
 Vd^471I@ZJE<iBNZ^EfiV00
 !s100 LCa<5X0[GzX<9M?Tkj4bm2
 R7
 32
-R81
+R31
 !i10b 1
+R36
 R87
 R88
-R89
 !i113 1
 R12
 R13
 Euart_fifo
-R74
+R75
 R1
 R2
-!i122 2672
+!i122 2690
 R4
-Z90 8/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART_FIFO.vhd
-Z91 F/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART_FIFO.vhd
+Z89 8/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART_FIFO.vhd
+Z90 F/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART_FIFO.vhd
 l0
 R19
 V=L<:VE<KzU@E4CBA?ciWG0
 !s100 eL3m]M[V>AaG6b49YGJVA1
 R7
 32
-R81
+R31
 !i10b 1
-R87
-Z92 !s90 -reportprogress|30|-work|work|/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART_FIFO.vhd|
-Z93 !s107 /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART_FIFO.vhd|
+R36
+Z91 !s90 -reportprogress|30|-work|work|/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART_FIFO.vhd|
+Z92 !s107 /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART_FIFO.vhd|
 !i113 1
 R12
 R13
@@ -728,39 +728,39 @@ Asyn
 R1
 R2
 DEx4 work 9 uart_fifo 0 22 =L<:VE<KzU@E4CBA?ciWG0
-!i122 2672
+!i122 2690
 l91
 L58 65
 VjT]z2I8gcK;4a[jTYRJRd2
 !s100 2z70QdKLPQO=lz99BcoDd1
 R7
 32
-R81
+R31
 !i10b 1
-R87
+R36
+R91
 R92
-R93
 !i113 1
 R12
 R13
 Euart_tb
-Z94 w1648766800
+Z93 w1648766800
 R0
 R1
 R2
-!i122 2673
+!i122 2691
 R4
-Z95 8/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART_TB.vhd
-Z96 F/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART_TB.vhd
+Z94 8/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART_TB.vhd
+Z95 F/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART_TB.vhd
 l0
 L5 1
 V?ZFK4LXeJPNf1XeGQJiN<1
 !s100 SoKFDPN0PF`Kj>fQTcfR20
 R7
 32
-R81
+Z96 !s110 1648774980
 !i10b 1
-R87
+R36
 Z97 !s90 -reportprogress|30|-work|work|/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART_TB.vhd|
 Z98 !s107 /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART_TB.vhd|
 !i113 1
@@ -770,60 +770,60 @@ Abehavioral
 R0
 R1
 R2
-Z99 DEx4 work 7 uart_tb 0 22 ?ZFK4LXeJPNf1XeGQJiN<1
-!i122 2673
+DEx4 work 7 uart_tb 0 22 ?ZFK4LXeJPNf1XeGQJiN<1
+!i122 2691
 l55
-Z100 L8 133
-Z101 VNkN:]JZiM5bM=dU_C1_d^0
-Z102 !s100 _>`24SlO2Q1ic<?C>XJaF2
+L8 133
+VNkN:]JZiM5bM=dU_C1_d^0
+!s100 _>`24SlO2Q1ic<?C>XJaF2
 R7
 32
-R81
+R96
 !i10b 1
-R87
+R36
 R97
 R98
 !i113 1
 R12
 R13
 Eunsigneddiv
-R74
+R75
 R1
 R2
-!i122 2637
+!i122 2692
 R4
-Z103 8/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UnsignedDiv.vhd
-Z104 F/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UnsignedDiv.vhd
+Z99 8/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UnsignedDiv.vhd
+Z100 F/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UnsignedDiv.vhd
 l0
 R19
 V_7Qb77oT2LzRZ9_hjiZT82
 !s100 Rd0TDHo3PoLm2gP:?<[aB0
 R7
 32
-Z105 !s110 1648766362
+R96
 !i10b 1
-Z106 !s108 1648766362.000000
-Z107 !s90 -reportprogress|30|-work|work|/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UnsignedDiv.vhd|
-Z108 !s107 /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UnsignedDiv.vhd|
+Z101 !s108 1648774980.000000
+Z102 !s90 -reportprogress|30|-work|work|/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UnsignedDiv.vhd|
+Z103 !s107 /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UnsignedDiv.vhd|
 !i113 1
 R12
 R13
 Asyn
 R1
 R2
-DEx4 work 11 unsigneddiv 0 22 _7Qb77oT2LzRZ9_hjiZT82
-!i122 2637
+Z104 DEx4 work 11 unsigneddiv 0 22 _7Qb77oT2LzRZ9_hjiZT82
+!i122 2692
 l78
 R84
-VjA0a`5?Jnz4lgbZF3kC>I2
-!s100 =_]`G[Ka:NTibQCncGN@M0
+Z105 VjA0a`5?Jnz4lgbZF3kC>I2
+Z106 !s100 =_]`G[Ka:NTibQCncGN@M0
 R7
 32
-R105
+R96
 !i10b 1
-R106
-R107
-R108
+R101
+R102
+R103
 !i113 1
 R12
 R13

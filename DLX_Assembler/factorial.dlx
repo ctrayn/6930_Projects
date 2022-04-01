@@ -57,6 +57,7 @@ cin
 	GDU	R1
 	NOP
 	NOP
+	NOP
 	BEQZ	R1, cin
 endcin
 ; Carriage return
