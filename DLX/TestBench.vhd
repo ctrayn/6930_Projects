@@ -9,12 +9,24 @@ architecture behavioral of TestBench is
 	component DLX
       port(
          -- INPUT
-         ADC_CLK_10 		: in 	std_logic;
-         RST_L				: in  std_logic;
-         
-			-- UART
-			RX					: in  std_logic;
-			TX					: out std_logic
+			ADC_CLK_10 			: in 	std_logic;
+			RST_L					: in  std_logic;
+			RX						: in  std_logic;
+			SW						: in std_logic_vector(9 downto 0);
+			
+			--OUTPUT
+			HEX0 					: out std_logic_vector(7 downto 0);
+			HEX1 					: out std_logic_vector(7 downto 0);
+			HEX2 					: out std_logic_vector(7 downto 0);
+			HEX3 					: out std_logic_vector(7 downto 0);
+			HEX4 					: out std_logic_vector(7 downto 0);
+			HEX5 					: out std_logic_vector(7 downto 0);
+			LEDR					: out std_logic_vector(9 downto 0);
+			TX						: out std_logic
+			-- UNUSED
+			--MAX10_CLK1_50		: in  std_logic;
+			--MAX10_CLK2_50		: in  std_logic;
+			--KEY 					: in std_logic_vector(1 downto 0);
       );
 	end component;
 
@@ -25,6 +37,7 @@ architecture behavioral of TestBench is
 	signal rst_l         : std_logic := '1';
 	signal RX				: std_logic := '0';
 	signal TX				: std_logic;
+	signal SW				: std_logic_vector(9 downto 0) := (others => '0');
 begin
 
    -- Our unit under test
@@ -33,7 +46,8 @@ begin
 			ADC_CLK_10 => clk,
 			RST_L => rst_l,
 			RX => RX,
-			TX => TX
+			TX => TX,
+			SW => SW
 		);
 
    -- Clock process

@@ -1,4 +1,10 @@
 
+State Machine - |DLX|Timer:tmr|state
+Name state.IDLE state.COUNTING state.RESET 
+state.RESET 0 0 0 
+state.COUNTING 0 1 1 
+state.IDLE 1 0 1 
+
 State Machine - |DLX|UART:duart|div_state
 Name div_state.DIVIDE div_state.WRITING div_state.UINT div_state.SINT div_state.CHAR div_state.READING div_state.WAITING 
 div_state.WAITING 0 0 0 0 0 0 0 

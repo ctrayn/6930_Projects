@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DLX
-Thu Apr  7 13:27:46 2022
+Thu Apr  7 14:44:56 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -16,40 +16,41 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   8. Analysis & Synthesis RAM Summary
   9. Analysis & Synthesis DSP Block Usage Summary
  10. Analysis & Synthesis IP Cores Summary
- 11. State Machine - |DLX|UART:duart|div_state
- 12. State Machine - |DLX|UART:duart|state
- 13. State Machine - |DLX|UART:duart|rx_state
- 14. State Machine - |DLX|UART:duart|my_UART:dut|state_tx
- 15. State Machine - |DLX|UART:duart|my_UART:dut|state_rx
- 16. Registers Removed During Synthesis
- 17. General Register Statistics
- 18. Inverted Register Statistics
- 19. Multiplexer Restructuring Statistics (Restructuring Performed)
- 20. Source assignments for UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|altsyncram_k2m1:FIFOram
- 21. Source assignments for UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|altsyncram_85m1:FIFOram
- 22. Source assignments for UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component|scfifo_5k11:auto_generated|a_dpfifo_cq11:dpfifo|altsyncram_f1b1:FIFOram
- 23. Source assignments for Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component|altsyncram_c7t3:auto_generated
- 24. Source assignments for Memory:mem|DataMemory:dm|altsyncram:altsyncram_component|altsyncram_p8t3:auto_generated
- 25. Parameter Settings for User Entity Instance: UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component
- 26. Parameter Settings for User Entity Instance: UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component
- 27. Parameter Settings for User Entity Instance: UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component
- 28. Parameter Settings for User Entity Instance: UART:duart|UnsignedDiv:udiv|lpm_divide:LPM_DIVIDE_component
- 29. Parameter Settings for User Entity Instance: UART:duart|MULT:umult|lpm_mult:lpm_mult_component
- 30. Parameter Settings for User Entity Instance: UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component
- 31. Parameter Settings for User Entity Instance: Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component
- 32. Parameter Settings for User Entity Instance: Memory:mem|DataMemory:dm|altsyncram:altsyncram_component
- 33. scfifo Parameter Settings by Entity Instance
- 34. lpm_mult Parameter Settings by Entity Instance
- 35. altsyncram Parameter Settings by Entity Instance
- 36. Port Connectivity Checks: "Fetch:fet|InstructionMemory:im"
- 37. Port Connectivity Checks: "UART:duart|MULT:umult"
- 38. Port Connectivity Checks: "UART:duart|UnsignedDiv:udiv"
- 39. Port Connectivity Checks: "UART:duart|U_DIV:div"
- 40. Port Connectivity Checks: "UART:duart|my_UART:dut"
- 41. Port Connectivity Checks: "UART:duart"
- 42. Post-Synthesis Netlist Statistics for Top Partition
- 43. Elapsed Time Per Partition
- 44. Analysis & Synthesis Messages
+ 11. State Machine - |DLX|Timer:tmr|state
+ 12. State Machine - |DLX|UART:duart|div_state
+ 13. State Machine - |DLX|UART:duart|state
+ 14. State Machine - |DLX|UART:duart|rx_state
+ 15. State Machine - |DLX|UART:duart|my_UART:dut|state_tx
+ 16. State Machine - |DLX|UART:duart|my_UART:dut|state_rx
+ 17. Registers Removed During Synthesis
+ 18. General Register Statistics
+ 19. Inverted Register Statistics
+ 20. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 21. Source assignments for UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|altsyncram_k2m1:FIFOram
+ 22. Source assignments for UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component|scfifo_rr11:auto_generated|a_dpfifo_2221:dpfifo|altsyncram_85m1:FIFOram
+ 23. Source assignments for UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component|scfifo_5k11:auto_generated|a_dpfifo_cq11:dpfifo|altsyncram_f1b1:FIFOram
+ 24. Source assignments for Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component|altsyncram_c7t3:auto_generated
+ 25. Source assignments for Memory:mem|DataMemory:dm|altsyncram:altsyncram_component|altsyncram_p8t3:auto_generated
+ 26. Parameter Settings for User Entity Instance: UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component
+ 27. Parameter Settings for User Entity Instance: UART:duart|TX_FIFO:fifo_tx|scfifo:scfifo_component
+ 28. Parameter Settings for User Entity Instance: UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component
+ 29. Parameter Settings for User Entity Instance: UART:duart|UnsignedDiv:udiv|lpm_divide:LPM_DIVIDE_component
+ 30. Parameter Settings for User Entity Instance: UART:duart|MULT:umult|lpm_mult:lpm_mult_component
+ 31. Parameter Settings for User Entity Instance: UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component
+ 32. Parameter Settings for User Entity Instance: Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component
+ 33. Parameter Settings for User Entity Instance: Memory:mem|DataMemory:dm|altsyncram:altsyncram_component
+ 34. scfifo Parameter Settings by Entity Instance
+ 35. lpm_mult Parameter Settings by Entity Instance
+ 36. altsyncram Parameter Settings by Entity Instance
+ 37. Port Connectivity Checks: "Fetch:fet|InstructionMemory:im"
+ 38. Port Connectivity Checks: "UART:duart|MULT:umult"
+ 39. Port Connectivity Checks: "UART:duart|UnsignedDiv:udiv"
+ 40. Port Connectivity Checks: "UART:duart|U_DIV:div"
+ 41. Port Connectivity Checks: "UART:duart|my_UART:dut"
+ 42. Port Connectivity Checks: "UART:duart"
+ 43. Post-Synthesis Netlist Statistics for Top Partition
+ 44. Elapsed Time Per Partition
+ 45. Analysis & Synthesis Messages
 
 
 
@@ -76,15 +77,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Apr  7 13:27:46 2022       ;
+; Analysis & Synthesis Status        ; Successful - Thu Apr  7 14:44:56 2022       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; DLX                                         ;
 ; Top-level Entity Name              ; DLX                                         ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 9,437                                       ;
-;     Total combinational functions  ; 8,363                                       ;
-;     Dedicated logic registers      ; 2,779                                       ;
-; Total registers                    ; 2779                                        ;
+; Total logic elements               ; 9,808                                       ;
+;     Total combinational functions  ; 8,734                                       ;
+;     Dedicated logic registers      ; 3,002                                       ;
+; Total registers                    ; 3002                                        ;
 ; Total pins                         ; 72                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 91,136                                      ;
@@ -194,7 +195,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.2%      ;
+;     Processor 2            ;   0.3%      ;
 ;     Processor 3            ;   0.1%      ;
 ;     Processor 4            ;   0.1%      ;
 +----------------------------+-------------+
@@ -275,7 +276,7 @@ https://fpgasoftware.intel.com/eula.
 ; db/altsyncram_c7t3.tdf           ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/altsyncram_c7t3.tdf      ;         ;
 ; ./Programs/factorial_code.mif    ; yes             ; Auto-Found Memory Initialization File  ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Programs/factorial_code.mif ;         ;
 ; db/altsyncram_p8t3.tdf           ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/altsyncram_p8t3.tdf      ;         ;
-; ./Programs/factorial_data.mif    ; yes             ; Auto-Found Memory Initialization File  ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Programs/factorial_data.mif ;         ;
+; Programs/factorial_data.mif      ; yes             ; Auto-Found Memory Initialization File  ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Programs/factorial_data.mif ;         ;
 +----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------------------------------------------+---------+
 
 
@@ -284,20 +285,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+------------------+
 ; Resource                                    ; Usage            ;
 +---------------------------------------------+------------------+
-; Estimated Total logic elements              ; 9,437            ;
+; Estimated Total logic elements              ; 9,808            ;
 ;                                             ;                  ;
-; Total combinational functions               ; 8363             ;
+; Total combinational functions               ; 8734             ;
 ; Logic element usage by number of LUT inputs ;                  ;
-;     -- 4 input functions                    ; 6398             ;
-;     -- 3 input functions                    ; 1350             ;
-;     -- <=2 input functions                  ; 615              ;
+;     -- 4 input functions                    ; 6537             ;
+;     -- 3 input functions                    ; 1355             ;
+;     -- <=2 input functions                  ; 842              ;
 ;                                             ;                  ;
 ; Logic elements by mode                      ;                  ;
-;     -- normal mode                          ; 7715             ;
-;     -- arithmetic mode                      ; 648              ;
+;     -- normal mode                          ; 7876             ;
+;     -- arithmetic mode                      ; 858              ;
 ;                                             ;                  ;
-; Total registers                             ; 2779             ;
-;     -- Dedicated logic registers            ; 2779             ;
+; Total registers                             ; 3002             ;
+;     -- Dedicated logic registers            ; 3002             ;
 ;     -- I/O registers                        ; 0                ;
 ;                                             ;                  ;
 ; I/O pins                                    ; 72               ;
@@ -306,9 +307,9 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 4                ;
 ;                                             ;                  ;
 ; Maximum fan-out node                        ; ADC_CLK_10~input ;
-; Maximum fan-out                             ; 2887             ;
-; Total fan-out                               ; 41396            ;
-; Average fan-out                             ; 3.62             ;
+; Maximum fan-out                             ; 3110             ;
+; Total fan-out                               ; 43295            ;
+; Average fan-out                             ; 3.60             ;
 +---------------------------------------------+------------------+
 
 
@@ -317,9 +318,9 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                                      ; Entity Name         ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |DLX                                         ; 8363 (1)            ; 2779 (0)                  ; 91136       ; 0          ; 4            ; 0       ; 2         ; 72   ; 0            ; 0          ; |DLX                                                                                                                                                     ; DLX                 ; work         ;
-;    |Decode:dec|                              ; 2847 (2847)         ; 1157 (1157)               ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Decode:dec                                                                                                                                          ; Decode              ; work         ;
-;    |Execute:exc|                             ; 1064 (1064)         ; 126 (126)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Execute:exc                                                                                                                                         ; Execute             ; work         ;
+; |DLX                                         ; 8734 (1)            ; 3002 (0)                  ; 91136       ; 0          ; 4            ; 0       ; 2         ; 72   ; 0            ; 0          ; |DLX                                                                                                                                                     ; DLX                 ; work         ;
+;    |Decode:dec|                              ; 2849 (2849)         ; 1160 (1160)               ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Decode:dec                                                                                                                                          ; Decode              ; work         ;
+;    |Execute:exc|                             ; 1065 (1065)         ; 126 (126)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Execute:exc                                                                                                                                         ; Execute             ; work         ;
 ;    |Fetch:fet|                               ; 61 (61)             ; 33 (33)                   ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Fetch:fet                                                                                                                                           ; Fetch               ; work         ;
 ;       |InstructionMemory:im|                 ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Fetch:fet|InstructionMemory:im                                                                                                                      ; InstructionMemory   ; work         ;
 ;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component                                                                                      ; altsyncram          ; work         ;
@@ -328,8 +329,8 @@ https://fpgasoftware.intel.com/eula.
 ;       |DataMemory:dm|                        ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Memory:mem|DataMemory:dm                                                                                                                            ; DataMemory          ; work         ;
 ;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Memory:mem|DataMemory:dm|altsyncram:altsyncram_component                                                                                            ; altsyncram          ; work         ;
 ;             |altsyncram_p8t3:auto_generated| ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Memory:mem|DataMemory:dm|altsyncram:altsyncram_component|altsyncram_p8t3:auto_generated                                                             ; altsyncram_p8t3     ; work         ;
-;    |Timer:tmr|                               ; 86 (86)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Timer:tmr                                                                                                                                           ; Timer               ; work         ;
-;    |UART:duart|                              ; 4302 (3550)         ; 1415 (1280)               ; 25600       ; 0          ; 4            ; 0       ; 2         ; 0    ; 0            ; 0          ; |DLX|UART:duart                                                                                                                                          ; UART                ; work         ;
+;    |Timer:tmr|                               ; 438 (438)           ; 220 (220)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |DLX|Timer:tmr                                                                                                                                           ; Timer               ; work         ;
+;    |UART:duart|                              ; 4318 (3566)         ; 1415 (1280)               ; 25600       ; 0          ; 4            ; 0       ; 2         ; 0    ; 0            ; 0          ; |DLX|UART:duart                                                                                                                                          ; UART                ; work         ;
 ;       |MULT:umult|                           ; 14 (0)              ; 0 (0)                     ; 0           ; 0          ; 4            ; 0       ; 2         ; 0    ; 0            ; 0          ; |DLX|UART:duart|MULT:umult                                                                                                                               ; MULT                ; work         ;
 ;          |lpm_mult:lpm_mult_component|       ; 14 (0)              ; 0 (0)                     ; 0           ; 0          ; 4            ; 0       ; 2         ; 0    ; 0            ; 0          ; |DLX|UART:duart|MULT:umult|lpm_mult:lpm_mult_component                                                                                                   ; lpm_mult            ; work         ;
 ;             |mult_88p:auto_generated|        ; 14 (14)             ; 0 (0)                     ; 0           ; 0          ; 4            ; 0       ; 2         ; 0    ; 0            ; 0          ; |DLX|UART:duart|MULT:umult|lpm_mult:lpm_mult_component|mult_88p:auto_generated                                                                           ; mult_88p            ; work         ;
@@ -418,6 +419,18 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 
 
 Encoding Type:  One-Hot
++------------------------------------------------------------+
+; State Machine - |DLX|Timer:tmr|state                       ;
++----------------+------------+----------------+-------------+
+; Name           ; state.IDLE ; state.COUNTING ; state.RESET ;
++----------------+------------+----------------+-------------+
+; state.RESET    ; 0          ; 0              ; 0           ;
+; state.COUNTING ; 0          ; 1              ; 1           ;
+; state.IDLE     ; 1          ; 0              ; 1           ;
++----------------+------------+----------------+-------------+
+
+
+Encoding Type:  One-Hot
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+
 ; State Machine - |DLX|UART:duart|div_state                                                                                                           ;
 +-------------------+------------------+-------------------+----------------+----------------+----------------+-------------------+-------------------+
@@ -493,15 +506,12 @@ Encoding Type:  One-Hot
 +----------------------------------------+----------------------------------------+
 ; Execute:exc|data_tx[34,35]             ; Stuck at GND due to stuck port data_in ;
 ; Decode:dec|Imm[27..31]                 ; Merged with Decode:dec|Imm[26]         ;
-; Decode:dec|tmr_stop                    ; Lost fanout                            ;
-; Decode:dec|tmr_go                      ; Lost fanout                            ;
 ; UART:duart|resend_data[6,7]            ; Stuck at GND due to stuck port data_in ;
-; Decode:dec|tmr_rst                     ; Lost fanout                            ;
 ; UART:duart|div_state.DIVIDE            ; Merged with UART:duart|div_state.CHAR  ;
 ; UART:duart|div_state.READING           ; Merged with UART:duart|div_state.CHAR  ;
 ; UART:duart|div_state.WRITING           ; Merged with UART:duart|div_state.CHAR  ;
 ; UART:duart|div_state.CHAR              ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 16 ;                                        ;
+; Total Number of Removed Registers = 13 ;                                        ;
 +----------------------------------------+----------------------------------------+
 
 
@@ -510,12 +520,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 2779  ;
-; Number of registers using Synchronous Clear  ; 168   ;
+; Total registers                              ; 3002  ;
+; Number of registers using Synchronous Clear  ; 386   ;
 ; Number of registers using Synchronous Load   ; 104   ;
 ; Number of registers using Asynchronous Clear ; 1293  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1298  ;
+; Number of registers using Clock Enable       ; 1515  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -530,63 +540,70 @@ Encoding Type:  One-Hot
 +----------------------------------------+---------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
-; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |DLX|UART:duart|d_rx_out[25]                    ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DLX|UART:duart|resend_data[3]                  ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DLX|Decode:dec|ram[31][27]                     ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |DLX|Fetch:fet|pc[5]                            ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |DLX|UART:duart|my_UART:dut|position_tx[3]      ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |DLX|UART:duart|my_UART:dut|position_rx[3]      ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |DLX|UART:duart|numer[15]                       ;
-; 6:1                ; 32 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |DLX|Decode:dec|ram[0][24]                      ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |DLX|UART:duart|d_tx_temp[29]                   ;
-; 18:1               ; 32 bits   ; 384 LEs       ; 32 LEs               ; 352 LEs                ; Yes        ; |DLX|Execute:exc|data_tx[5]                     ;
-; 7:1                ; 29 bits   ; 116 LEs       ; 58 LEs               ; 58 LEs                 ; Yes        ; |DLX|UART:duart|d_tx_temp[24]                   ;
-; 7:1                ; 31 bits   ; 124 LEs       ; 62 LEs               ; 62 LEs                 ; Yes        ; |DLX|UART:duart|stk_ptr[5]                      ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 16 LEs               ; 64 LEs                 ; Yes        ; |DLX|UART:duart|my_UART:dut|sync_tx[12]         ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 16 LEs               ; 64 LEs                 ; Yes        ; |DLX|UART:duart|my_UART:dut|sync_rx[11]         ;
-; 35:1               ; 10 bits   ; 230 LEs       ; 10 LEs               ; 220 LEs                ; Yes        ; |DLX|Execute:exc|br_addr[2]                     ;
-; 9:1                ; 5 bits    ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |DLX|Decode:dec|Imm[23]                         ;
-; 11:1               ; 15 bits   ; 105 LEs       ; 30 LEs               ; 75 LEs                 ; Yes        ; |DLX|Decode:dec|Imm[12]                         ;
-; 12:1               ; 4 bits    ; 32 LEs        ; 12 LEs               ; 20 LEs                 ; Yes        ; |DLX|Decode:dec|Imm[20]                         ;
-; 46:1               ; 16 bits   ; 480 LEs       ; 352 LEs              ; 128 LEs                ; Yes        ; |DLX|Decode:dec|RS2[18]                         ;
-; 68:1               ; 7 bits    ; 315 LEs       ; 49 LEs               ; 266 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[19]                 ;
-; 67:1               ; 5 bits    ; 220 LEs       ; 35 LEs               ; 185 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[12]                 ;
-; 67:1               ; 2 bits    ; 88 LEs        ; 16 LEs               ; 72 LEs                 ; Yes        ; |DLX|Execute:exc|ALU_result[8]                  ;
-; 69:1               ; 4 bits    ; 184 LEs       ; 32 LEs               ; 152 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[27]                 ;
-; 68:1               ; 4 bits    ; 180 LEs       ; 32 LEs               ; 148 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[7]                  ;
-; 43:1               ; 32 bits   ; 896 LEs       ; 704 LEs              ; 192 LEs                ; Yes        ; |DLX|Decode:dec|RS1[30]                         ;
-; 41:1               ; 16 bits   ; 432 LEs       ; 368 LEs              ; 64 LEs                 ; Yes        ; |DLX|Decode:dec|RS2[4]                          ;
-; 70:1               ; 2 bits    ; 92 LEs        ; 18 LEs               ; 74 LEs                 ; Yes        ; |DLX|Execute:exc|ALU_result[28]                 ;
-; 69:1               ; 2 bits    ; 92 LEs        ; 18 LEs               ; 74 LEs                 ; Yes        ; |DLX|Execute:exc|ALU_result[3]                  ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DLX|UART:duart|stack                           ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |DLX|Execute:exc|InTwo[26]                      ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |DLX|Timer:tmr|HEX0[4]                          ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |DLX|Timer:tmr|HEX1[1]                          ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |DLX|Timer:tmr|HEX2[1]                          ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |DLX|Timer:tmr|HEX3[1]                          ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |DLX|Timer:tmr|HEX4[4]                          ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |DLX|Timer:tmr|HEX5[4]                          ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |DLX|UART:duart|my_UART:dut|next_state_tx.START ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |DLX|UART:duart|my_UART:dut|next_state_rx.DATA  ;
-; 11:1               ; 4 bits    ; 28 LEs        ; 24 LEs               ; 4 LEs                  ; No         ; |DLX|Timer:tmr|HEX0[0]                          ;
-; 32:1               ; 24 bits   ; 504 LEs       ; 504 LEs              ; 0 LEs                  ; No         ; |DLX|Decode:dec|Mux28                           ;
-; 11:1               ; 4 bits    ; 28 LEs        ; 24 LEs               ; 4 LEs                  ; No         ; |DLX|Timer:tmr|HEX1[0]                          ;
-; 11:1               ; 4 bits    ; 28 LEs        ; 24 LEs               ; 4 LEs                  ; No         ; |DLX|Timer:tmr|HEX2[6]                          ;
-; 11:1               ; 4 bits    ; 28 LEs        ; 24 LEs               ; 4 LEs                  ; No         ; |DLX|Timer:tmr|HEX3[6]                          ;
-; 11:1               ; 4 bits    ; 28 LEs        ; 24 LEs               ; 4 LEs                  ; No         ; |DLX|Timer:tmr|HEX4[0]                          ;
-; 11:1               ; 4 bits    ; 28 LEs        ; 24 LEs               ; 4 LEs                  ; No         ; |DLX|Timer:tmr|HEX5[6]                          ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |DLX|UART:duart|Selector1172                    ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |DLX|Decode:dec|Mux37                           ;
-; 11:1               ; 32 bits   ; 224 LEs       ; 32 LEs               ; 192 LEs                ; No         ; |DLX|Execute:exc|Add0                           ;
-; 7:1                ; 32 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; No         ; |DLX|Execute:exc|InOne[12]                      ;
-; 129:1              ; 8 bits    ; 688 LEs       ; 688 LEs              ; 0 LEs                  ; No         ; |DLX|UART:duart|d_tx_out                        ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; No         ; |DLX|Execute:exc|Add0                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |DLX|UART:duart|d_rx_out[3]                    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DLX|UART:duart|resend_data[6]                 ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |DLX|Timer:tmr|count[21]                       ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |DLX|Timer:tmr|mil1[24]                        ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DLX|Decode:dec|ram[31][26]                    ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |DLX|Timer:tmr|mil2[29]                        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |DLX|Timer:tmr|sec1[18]                        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |DLX|Timer:tmr|sec2[23]                        ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |DLX|Timer:tmr|min1[2]                         ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |DLX|Timer:tmr|min2[4]                         ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |DLX|Fetch:fet|pc[6]                           ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |DLX|UART:duart|my_UART:dut|position_tx[3]     ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |DLX|UART:duart|my_UART:dut|position_rx[0]     ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |DLX|UART:duart|numer[2]                       ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |DLX|Decode:dec|ram[0][24]                     ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |DLX|UART:duart|d_tx_temp[31]                  ;
+; 18:1               ; 32 bits   ; 384 LEs       ; 32 LEs               ; 352 LEs                ; Yes        ; |DLX|Execute:exc|data_tx[16]                   ;
+; 7:1                ; 29 bits   ; 116 LEs       ; 58 LEs               ; 58 LEs                 ; Yes        ; |DLX|UART:duart|d_tx_temp[13]                  ;
+; 7:1                ; 31 bits   ; 124 LEs       ; 62 LEs               ; 62 LEs                 ; Yes        ; |DLX|UART:duart|stk_ptr[27]                    ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 16 LEs               ; 64 LEs                 ; Yes        ; |DLX|UART:duart|my_UART:dut|sync_tx[15]        ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 16 LEs               ; 64 LEs                 ; Yes        ; |DLX|UART:duart|my_UART:dut|sync_rx[0]         ;
+; 35:1               ; 10 bits   ; 230 LEs       ; 10 LEs               ; 220 LEs                ; Yes        ; |DLX|Execute:exc|br_addr[9]                    ;
+; 9:1                ; 5 bits    ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |DLX|Decode:dec|Imm[21]                        ;
+; 11:1               ; 15 bits   ; 105 LEs       ; 30 LEs               ; 75 LEs                 ; Yes        ; |DLX|Decode:dec|Imm[6]                         ;
+; 12:1               ; 4 bits    ; 32 LEs        ; 12 LEs               ; 20 LEs                 ; Yes        ; |DLX|Decode:dec|Imm[17]                        ;
+; 46:1               ; 16 bits   ; 480 LEs       ; 352 LEs              ; 128 LEs                ; Yes        ; |DLX|Decode:dec|RS2[26]                        ;
+; 68:1               ; 7 bits    ; 315 LEs       ; 49 LEs               ; 266 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[19]                ;
+; 67:1               ; 5 bits    ; 220 LEs       ; 35 LEs               ; 185 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[11]                ;
+; 67:1               ; 2 bits    ; 88 LEs        ; 16 LEs               ; 72 LEs                 ; Yes        ; |DLX|Execute:exc|ALU_result[8]                 ;
+; 69:1               ; 4 bits    ; 184 LEs       ; 32 LEs               ; 152 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[24]                ;
+; 68:1               ; 4 bits    ; 180 LEs       ; 32 LEs               ; 148 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[4]                 ;
+; 43:1               ; 32 bits   ; 896 LEs       ; 704 LEs              ; 192 LEs                ; Yes        ; |DLX|Decode:dec|RS1[12]                        ;
+; 41:1               ; 16 bits   ; 432 LEs       ; 368 LEs              ; 64 LEs                 ; Yes        ; |DLX|Decode:dec|RS2[14]                        ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 18 LEs               ; 74 LEs                 ; Yes        ; |DLX|Execute:exc|ALU_result[28]                ;
+; 69:1               ; 2 bits    ; 92 LEs        ; 18 LEs               ; 74 LEs                 ; Yes        ; |DLX|Execute:exc|ALU_result[2]                 ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DLX|UART:duart|stack                          ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |DLX|Execute:exc|InTwo[21]                     ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |DLX|Timer:tmr|HEX0[4]                         ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |DLX|Timer:tmr|HEX1[1]                         ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |DLX|Timer:tmr|HEX2[1]                         ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |DLX|Timer:tmr|HEX3[1]                         ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |DLX|Timer:tmr|HEX4[1]                         ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |DLX|Timer:tmr|HEX5[4]                         ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |DLX|UART:duart|my_UART:dut|next_state_tx.IDLE ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |DLX|UART:duart|my_UART:dut|next_state_rx.DATA ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 24 LEs               ; 4 LEs                  ; No         ; |DLX|Timer:tmr|HEX0[6]                         ;
+; 32:1               ; 24 bits   ; 504 LEs       ; 504 LEs              ; 0 LEs                  ; No         ; |DLX|Decode:dec|Mux24                          ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 24 LEs               ; 4 LEs                  ; No         ; |DLX|Timer:tmr|HEX1[0]                         ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 24 LEs               ; 4 LEs                  ; No         ; |DLX|Timer:tmr|HEX2[0]                         ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 24 LEs               ; 4 LEs                  ; No         ; |DLX|Timer:tmr|HEX3[5]                         ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 24 LEs               ; 4 LEs                  ; No         ; |DLX|Timer:tmr|HEX4[0]                         ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 24 LEs               ; 4 LEs                  ; No         ; |DLX|Timer:tmr|HEX5[0]                         ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |DLX|UART:duart|Selector1172                   ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |DLX|Decode:dec|Mux33                          ;
+; 11:1               ; 32 bits   ; 224 LEs       ; 32 LEs               ; 192 LEs                ; No         ; |DLX|Execute:exc|Add0                          ;
+; 7:1                ; 32 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; No         ; |DLX|Execute:exc|InOne[12]                     ;
+; 129:1              ; 8 bits    ; 688 LEs       ; 688 LEs              ; 0 LEs                  ; No         ; |DLX|UART:duart|d_tx_out                       ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; No         ; |DLX|Execute:exc|Add0                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1075,35 +1092,35 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 72                          ;
-; cycloneiii_ff         ; 2779                        ;
+; cycloneiii_ff         ; 3002                        ;
 ;     CLR               ; 1129                        ;
 ;     CLR SCLR          ; 33                          ;
 ;     ENA               ; 1083                        ;
 ;     ENA CLR           ; 100                         ;
 ;     ENA CLR SCLR      ; 31                          ;
-;     ENA SCLR          ; 32                          ;
+;     ENA SCLR          ; 249                         ;
 ;     ENA SCLR SLD      ; 10                          ;
 ;     ENA SLD           ; 42                          ;
-;     SCLR              ; 10                          ;
+;     SCLR              ; 11                          ;
 ;     SCLR SLD          ; 52                          ;
-;     plain             ; 257                         ;
-; cycloneiii_lcell_comb ; 8365                        ;
-;     arith             ; 648                         ;
+;     plain             ; 262                         ;
+; cycloneiii_lcell_comb ; 8736                        ;
+;     arith             ; 858                         ;
 ;         1 data inputs ; 2                           ;
-;         2 data inputs ; 321                         ;
+;         2 data inputs ; 531                         ;
 ;         3 data inputs ; 325                         ;
-;     normal            ; 7717                        ;
+;     normal            ; 7878                        ;
 ;         0 data inputs ; 55                          ;
-;         1 data inputs ; 17                          ;
-;         2 data inputs ; 222                         ;
-;         3 data inputs ; 1025                        ;
-;         4 data inputs ; 6398                        ;
+;         1 data inputs ; 24                          ;
+;         2 data inputs ; 232                         ;
+;         3 data inputs ; 1030                        ;
+;         4 data inputs ; 6537                        ;
 ; cycloneiii_mac_mult   ; 2                           ;
 ; cycloneiii_mac_out    ; 2                           ;
 ; cycloneiii_ram_block  ; 139                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 67.20                       ;
-; Average LUT depth     ; 17.02                       ;
+; Average LUT depth     ; 16.16                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1122,7 +1139,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Thu Apr  7 13:27:10 2022
+    Info: Processing started: Thu Apr  7 14:44:22 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DLX -c DLX
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1401,8 +1418,8 @@ Info (12133): Instantiated megafunction "Fetch:fet|InstructionMemory:im|altsyncr
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_c7t3.tdf
     Info (12023): Found entity 1: altsyncram_c7t3 File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/altsyncram_c7t3.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_c7t3" for hierarchy "Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component|altsyncram_c7t3:auto_generated" File: /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (113028): 795 out of 1024 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Programs/factorial_code.mif Line: 1
-    Warning (113027): Addresses ranging from 229 to 1023 are not initialized File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Programs/factorial_code.mif Line: 1
+Warning (113028): 794 out of 1024 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Programs/factorial_code.mif Line: 1
+    Warning (113027): Addresses ranging from 230 to 1023 are not initialized File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Programs/factorial_code.mif Line: 1
 Info (12128): Elaborating entity "Decode" for hierarchy "Decode:dec" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 234
 Info (12128): Elaborating entity "Execute" for hierarchy "Execute:exc" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 262
 Warning (10492): VHDL Process Statement warning at Execute.vhd(107): signal "IdEx_rd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Execute.vhd Line: 107
@@ -1466,261 +1483,10 @@ Info (12133): Instantiated megafunction "Memory:mem|DataMemory:dm|altsyncram:alt
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_p8t3.tdf
     Info (12023): Found entity 1: altsyncram_p8t3 File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/altsyncram_p8t3.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_p8t3" for hierarchy "Memory:mem|DataMemory:dm|altsyncram:altsyncram_component|altsyncram_p8t3:auto_generated" File: /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (113028): 998 out of 1024 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Programs/factorial_data.mif Line: 1
-    Warning (113027): Addresses ranging from 26 to 1023 are not initialized File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Programs/factorial_data.mif Line: 1
 Info (12128): Elaborating entity "Timer" for hierarchy "Timer:tmr" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 296
 Warning (10540): VHDL Signal Declaration warning at Timer.vhd(39): used explicit default value for signal "DELAY" because signal was never assigned a value File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 39
-Warning (10492): VHDL Process Statement warning at Timer.vhd(74): signal "state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 74
-Warning (10492): VHDL Process Statement warning at Timer.vhd(84): signal "mil1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 84
-Warning (10492): VHDL Process Statement warning at Timer.vhd(85): signal "mil2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 85
-Warning (10492): VHDL Process Statement warning at Timer.vhd(86): signal "sec1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 86
-Warning (10492): VHDL Process Statement warning at Timer.vhd(87): signal "sec2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 87
-Warning (10492): VHDL Process Statement warning at Timer.vhd(88): signal "min1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 88
-Warning (10492): VHDL Process Statement warning at Timer.vhd(89): signal "min2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 89
-Warning (10492): VHDL Process Statement warning at Timer.vhd(90): signal "count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 90
-Warning (10492): VHDL Process Statement warning at Timer.vhd(101): signal "count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 101
-Warning (10492): VHDL Process Statement warning at Timer.vhd(101): signal "DELAY" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 101
-Warning (10492): VHDL Process Statement warning at Timer.vhd(103): signal "mil1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 103
-Warning (10492): VHDL Process Statement warning at Timer.vhd(104): signal "mil1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 104
-Warning (10492): VHDL Process Statement warning at Timer.vhd(106): signal "mil2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 106
-Warning (10492): VHDL Process Statement warning at Timer.vhd(108): signal "sec1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 108
-Warning (10492): VHDL Process Statement warning at Timer.vhd(110): signal "sec2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 110
-Warning (10492): VHDL Process Statement warning at Timer.vhd(112): signal "min1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 112
-Warning (10492): VHDL Process Statement warning at Timer.vhd(114): signal "min2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 114
-Warning (10492): VHDL Process Statement warning at Timer.vhd(117): signal "min2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 117
-Warning (10492): VHDL Process Statement warning at Timer.vhd(120): signal "min1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 120
-Warning (10492): VHDL Process Statement warning at Timer.vhd(123): signal "sec2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 123
-Warning (10492): VHDL Process Statement warning at Timer.vhd(126): signal "sec1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 126
-Warning (10492): VHDL Process Statement warning at Timer.vhd(129): signal "mil2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 129
-Warning (10492): VHDL Process Statement warning at Timer.vhd(132): signal "mil1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 132
-Warning (10631): VHDL Process Statement warning at Timer.vhd(63): inferring latch(es) for signal or variable "mil1", which holds its previous value in one or more paths through the process File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (10631): VHDL Process Statement warning at Timer.vhd(63): inferring latch(es) for signal or variable "mil2", which holds its previous value in one or more paths through the process File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (10631): VHDL Process Statement warning at Timer.vhd(63): inferring latch(es) for signal or variable "sec1", which holds its previous value in one or more paths through the process File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (10631): VHDL Process Statement warning at Timer.vhd(63): inferring latch(es) for signal or variable "sec2", which holds its previous value in one or more paths through the process File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (10631): VHDL Process Statement warning at Timer.vhd(63): inferring latch(es) for signal or variable "min1", which holds its previous value in one or more paths through the process File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (10631): VHDL Process Statement warning at Timer.vhd(63): inferring latch(es) for signal or variable "min2", which holds its previous value in one or more paths through the process File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (10631): VHDL Process Statement warning at Timer.vhd(63): inferring latch(es) for signal or variable "count", which holds its previous value in one or more paths through the process File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (10631): VHDL Process Statement warning at Timer.vhd(63): inferring latch(es) for signal or variable "state", which holds its previous value in one or more paths through the process File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "state.RESET" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "state.COUNTING" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "state.IDLE" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "count[0]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "count[1]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "count[2]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "count[3]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "count[4]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "count[5]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "count[6]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "count[7]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "count[8]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "count[9]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "count[10]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "count[11]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "count[12]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "count[13]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "count[14]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "count[15]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "count[16]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "count[17]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "count[18]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "count[19]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "count[20]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "count[21]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "count[22]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "count[23]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "count[24]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "count[25]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "count[26]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "count[27]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "count[28]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "count[29]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "count[30]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min2[0]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min2[1]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min2[2]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min2[3]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min2[4]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min2[5]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min2[6]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min2[7]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min2[8]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min2[9]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min2[10]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min2[11]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min2[12]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min2[13]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min2[14]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min2[15]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min2[16]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min2[17]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min2[18]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min2[19]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min2[20]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min2[21]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min2[22]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min2[23]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min2[24]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min2[25]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min2[26]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min2[27]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min2[28]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min2[29]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min2[30]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min1[0]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min1[1]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min1[2]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min1[3]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min1[4]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min1[5]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min1[6]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min1[7]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min1[8]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min1[9]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min1[10]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min1[11]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min1[12]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min1[13]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min1[14]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min1[15]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min1[16]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min1[17]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min1[18]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min1[19]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min1[20]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min1[21]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min1[22]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min1[23]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min1[24]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min1[25]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min1[26]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min1[27]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min1[28]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min1[29]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "min1[30]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec2[0]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec2[1]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec2[2]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec2[3]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec2[4]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec2[5]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec2[6]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec2[7]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec2[8]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec2[9]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec2[10]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec2[11]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec2[12]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec2[13]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec2[14]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec2[15]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec2[16]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec2[17]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec2[18]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec2[19]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec2[20]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec2[21]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec2[22]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec2[23]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec2[24]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec2[25]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec2[26]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec2[27]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec2[28]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec2[29]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec2[30]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec1[0]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec1[1]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec1[2]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec1[3]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec1[4]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec1[5]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec1[6]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec1[7]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec1[8]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec1[9]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec1[10]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec1[11]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec1[12]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec1[13]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec1[14]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec1[15]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec1[16]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec1[17]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec1[18]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec1[19]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec1[20]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec1[21]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec1[22]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec1[23]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec1[24]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec1[25]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec1[26]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec1[27]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec1[28]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec1[29]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "sec1[30]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil2[0]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil2[1]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil2[2]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil2[3]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil2[4]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil2[5]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil2[6]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil2[7]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil2[8]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil2[9]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil2[10]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil2[11]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil2[12]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil2[13]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil2[14]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil2[15]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil2[16]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil2[17]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil2[18]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil2[19]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil2[20]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil2[21]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil2[22]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil2[23]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil2[24]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil2[25]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil2[26]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil2[27]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil2[28]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil2[29]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil2[30]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil1[0]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil1[1]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil1[2]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil1[3]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil1[4]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil1[5]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil1[6]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil1[7]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil1[8]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil1[9]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil1[10]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil1[11]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil1[12]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil1[13]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil1[14]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil1[15]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil1[16]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil1[17]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil1[18]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil1[19]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil1[20]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil1[21]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil1[22]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil1[23]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil1[24]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil1[25]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil1[26]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil1[27]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil1[28]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil1[29]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Info (10041): Inferred latch for "mil1[30]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
+Warning (10492): VHDL Process Statement warning at Timer.vhd(128): signal "state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 128
+Warning (10492): VHDL Process Statement warning at Timer.vhd(148): signal "state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 148
 Info (13014): Ignored 36 buffer(s)
     Info (13019): Ignored 36 SOFT buffer(s)
 Warning (14284): Synthesized away the following node(s):
@@ -1738,19 +1504,18 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX3[7]" is stuck at VCC File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 25
     Warning (13410): Pin "HEX5[7]" is stuck at VCC File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 27
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 9774 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 10145 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 13 input pins
     Info (21059): Implemented 59 output pins
-    Info (21061): Implemented 9559 logic cells
+    Info (21061): Implemented 9930 logic cells
     Info (21064): Implemented 139 RAM segments
     Info (21062): Implemented 4 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 60 warnings
-    Info: Peak virtual memory: 495 megabytes
-    Info: Processing ended: Thu Apr  7 13:27:46 2022
-    Info: Elapsed time: 00:00:36
-    Info: Total CPU time (on all processors): 00:00:47
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 29 warnings
+    Info: Peak virtual memory: 530 megabytes
+    Info: Processing ended: Thu Apr  7 14:44:56 2022
+    Info: Elapsed time: 00:00:34
+    Info: Total CPU time (on all processors): 00:00:46
 
 

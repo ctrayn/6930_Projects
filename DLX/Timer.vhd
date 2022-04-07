@@ -40,6 +40,7 @@ architecture behavioral of Timer is
 	signal count : natural := 0;
 	type STATE_TYPE is (IDLE, COUNTING, RESET);
 	signal state : STATE_TYPE := IDLE;
+	signal nextState : STATE_TYPE := IDLE;
 	
 begin
 	process(mil1, mil2, sec1, sec2, min1, min2, SW, tap_ram) begin
@@ -60,100 +61,91 @@ begin
 		end if;
 	end process;
 	
-	process(clk, rst_l, Restart, Go, STOP) begin
-		if (rst_l = '0') then
-			mil1  <= 0;
-			mil2  <= 0;
-			sec1  <= 0;
-			sec2  <= 0;
-			min1  <= 0;
-			min2  <= 0;
-			count <= 0;
-		else
-		
-			case state is
-			
-				when IDLE =>
-					if (Restart = '1') then
-						state <= RESET;
-					elsif (Go = '1') then
-						state <= COUNTING;
-					else
-						state <= IDLE;
-					end if;
-					mil1  <= mil1;
-					mil2  <= mil2;
-					sec1  <= sec1;
-					sec2  <= sec2;
-					min1  <= min1;
-					min2  <= min2;
-					count <= count;
-					
-					
-				when COUNTING =>
-					if (Restart = '1') then
-						state <= RESET;
-					elsif (STOP = '1') then
-						state <= IDLE;
-					else
-						state <= COUNTING;
-					end if;
-					if (count > DELAY) then
-						count <= 0;
-						mil1 <= mil1 + 1;
-						if (mil1 = 9) then
-							mil1 <= 0;
-							if (mil2 = 9) then
-								mil2 <= 0;
-								if (sec1 = 9) then
-									sec1 <= 0;
-									if (sec2 = 6) then
-										sec2 <= 0;
-										if (min1 = 9) then
-											min1 <= 0;
-											if (min2 = 6) then
-												min2 <= 0;
-											else
-												min2 <= min2 + 1;
-											end if;
+	process(clk) begin
+		if rising_edge(clk) then
+			if state = IDLE then
+				mil1  <= mil1;
+				mil2  <= mil2;
+				sec1  <= sec1;
+				sec2  <= sec2;
+				min1  <= min1;
+				min2  <= min2;
+				count <= count;
+			elsif state = counting then
+				count <= count + 1;
+				if (count > DELAY) then
+					count <= 0;
+					mil1 <= mil1 + 1;
+					if (mil1 = 9) then
+						mil1 <= 0;
+						if (mil2 = 9) then
+							mil2 <= 0;
+							if (sec1 = 9) then
+								sec1 <= 0;
+								if (sec2 = 6) then
+									sec2 <= 0;
+									if (min1 = 9) then
+										min1 <= 0;
+										if (min2 = 6) then
+											min2 <= 0;
 										else
-											min1 <= min1 + 1;
+											min2 <= min2 + 1;
 										end if;
 									else
-										sec2 <= sec2 + 1;
+										min1 <= min1 + 1;
 									end if;
 								else
-									sec1 <= sec1 + 1;
+									sec2 <= sec2 + 1;
 								end if;
 							else
-								mil2 <= mil2 + 1;
+								sec1 <= sec1 + 1;
 							end if;
 						else
-							mil1 <= mil1 + 1;
-						end if;					
+							mil2 <= mil2 + 1;
+						end if;
+					else
+						mil1 <= mil1 + 1;
 					end if;
-				
+				end if;
+			elsif state = reset then
+				mil1  <= 0;
+				mil2  <= 0;
+				sec1  <= 0;
+				sec2  <= 0;
+				min1  <= 0;
+				min2  <= 0;
+				count <= 0;
+			else
+			end if;
+			state <= nextState;
+		end if;
+	end process;
+	
+	process(rst_l, Restart, Go, STOP) begin
+		if (rst_l = '0') then
+			nextState <= RESET;
+		else
+			case state is
+				when IDLE =>
+					if (Restart = '1') then
+						nextState <= RESET;
+					elsif (Go = '1') then
+						nextState <= COUNTING;
+					else
+						nextState <= IDLE;
+					end if;
+				when COUNTING =>
+					if (Restart = '1') then
+						nextState <= RESET;
+					elsif (STOP = '1') then
+						nextState <= IDLE;
+					else
+						nextState <= COUNTING;
+					end if;
 				when RESET =>
-					state <= IDLE;
-					mil1  <= 0;
-					mil2  <= 0;
-					sec1  <= 0;
-					sec2  <= 0;
-					min1  <= 0;
-					min2  <= 0;
-					count <= 0;
-					
+					nextState <= IDLE;
 				when others =>
-					state <= IDLE;
-					mil1  <= 0;
-					mil2  <= 0;
-					sec1  <= 0;
-					sec2  <= 0;
-					min1  <= 0;
-					min2  <= 0;
-					count <= 0;
-					
-			
+					nextState <= state;
 			end case;
 		end if;
 	end process;

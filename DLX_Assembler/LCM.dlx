@@ -72,6 +72,7 @@ get_input
 ; start the clock and order the list
 list
 	TR
+	NOP
 	TGO
 	ADDUI	R13, R0, 0
 order_list
