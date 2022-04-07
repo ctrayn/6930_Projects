@@ -1,0 +1,79 @@
+; Program for calculating the factorial of a number.
+; By: Jonah Boe & Calvin Passmore
+; For ECE 6930 - Utah State University
+
+; The data
+.data
+f	1	0
+
+
+; Then constants
+.const
+s1	18	"Enter 10 numbers: "
+s2	6	"LCM = "
+
+
+; The code
+.text
+
+; In case we want tot jump to the start at the end
+start
+
+; Print the prompt
+startPrompt
+	LW		R1, s1(R0)
+	ADDUI	R2, R0, 1
+	NOP
+	NOP
+	NOP
+promptLoop
+	SLEU	R3, R2, R1
+	BEQZ	R3, endPrompt
+	LW		R4, s1(R2)
+	PCH		R4
+	ADDUI	R2, R2, 1
+	J		promptLoop
+endPrompt
+
+; Load the data in to the right register
+	JAL		getInput
+	ADDUI	R2, R1, 0
+	JAL		getInput
+	ADDUI	R3, R1, 0
+	JAL		getInput
+	ADDUI	R4, R1, 0
+	JAL		getInput
+	ADDUI	R5, R1, 0
+	JAL		getInput
+	ADDUI	R6, R1, 0
+	JAL		getInput
+	ADDUI	R7, R1, 0
+	JAL		getInput
+	ADDUI	R8, R1, 0
+	JAL		getInput
+	ADDUI	R9, R1, 0
+	JAL		getInput
+	ADDUI	R10, R1, 0
+	JAL		getInput
+	ADDUI	R11, R1, 0
+	
+	J		endInput
+
+; Get user input
+startInput
+	ADDUI	R1, R0, 0
+	GDU		R1
+	NOP
+	NOP
+	NOP
+	BEQZ	R1, startInput
+	NOP
+	NOP
+	NOP
+	J		R31
+endInput
+	
+; End of program
+end
+	J		end
+
