@@ -108,7 +108,7 @@ def run():
             pass
         else:
             line = line.strip("\n")
-            items = line.split("\t")
+            items = line.split()
             while '' in items:  # Remove blank entries
                 items.remove('')
 
