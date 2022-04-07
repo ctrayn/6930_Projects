@@ -147,7 +147,7 @@ orderi
 order_end
 	ADDUI	R13, R13, 1
 	SEQI	R1, R13, 9
-	BNEZ	R1, kill
+	BNEZ	R1, startlcm
 	J		order_list
 
 ; Run the LCM
@@ -155,128 +155,136 @@ startlcm
 ; R2 and R3
 	ADDUI	R12, R2, 0
 	ADDUI	R13, R3, 0
-rounda
+loopa
 	SEQ	R1, R12, R13
 	BNEZ	R1, roundb
 	SLTU	R1, R12, R13
 	BEQZ	R1, rass
 	ADDU	R12, R12, R2
-	J		rounda
+	J		loopa
 rass
 	ADDU	R13, R13, R3
-	J		rounda
+	J		loopa
 
 ; R3 and R4
+roundb
 	ADDUI	R3, R12, 0
 	ADDUI	R13, R4, 0
-roundb
+loopb
 	SEQ	R1, R12, R13
 	BNEZ	R1, roundc
 	SLTU	R1, R12, R13
 	BEQZ	R1, rbss
 	ADDU	R12, R12, R3
-	J		roundb
+	J		loopb
 rbss
 	ADDU	R13, R13, R4
-	J		roundb
+	J		loopb
 	
 ; R4 and R5
+roundc
 	ADDUI	R4, R12, 0
 	ADDUI	R13, R5, 0
-roundc
+loopc
 	SEQ	R1, R12, R13
 	BNEZ	R1, roundd
 	SLTU	R1, R12, R13
 	BEQZ	R1, rcss
 	ADDU	R12, R12, R4
-	J		roundc
+	J		loopc
 rcss
 	ADDU	R13, R13, R5
-	J		roundc
+	J		loopc
 	
 ; R5 and R6
+roundd
 	ADDUI	R5, R12, 0
 	ADDUI	R13, R6, 0
-roundd
+loopd
 	SEQ	R1, R12, R13
 	BNEZ	R1, rounde
 	SLTU	R1, R12, R13
 	BEQZ	R1, rdss
 	ADDU	R12, R12, R5
-	J		roundd
+	J		loopd
 rdss
 	ADDU	R13, R13, R6
-	J		roundd
+	J		loopd
 	
 ; R6 and R7
+rounde
 	ADDUI	R6, R12, 0
 	ADDUI	R13, R7, 0
-rounde
+loope
 	SEQ	R1, R12, R13
 	BNEZ	R1, roundf
 	SLTU	R1, R12, R13
 	BEQZ	R1, ress
 	ADDU	R12, R12, R6
-	J		rounde
+	J		loope
 ress
 	ADDU	R13, R13, R7
-	J		rounde
+	J		loope
 	
 ; R7 and R8
+roundf
 	ADDUI	R7, R12, 0
 	ADDUI	R13, R8, 0
-roundf
+loopf
 	SEQ	R1, R12, R13
 	BNEZ	R1, roundg
 	SLTU	R1, R12, R13
 	BEQZ	R1, rfss
 	ADDU	R12, R12, R7
-	J		roundf
+	J		loopf
 rfss
 	ADDU	R13, R13, R8
-	J		roundf
+	J		loopf
 	
 ; R8 and R9
+roundg
 	ADDUI	R8, R12, 0
 	ADDUI	R13, R9, 0
-roundg
+loopg
 	SEQ	R1, R12, R13
 	BNEZ	R1, roundh
 	SLTU	R1, R12, R13
 	BEQZ	R1, rgss
 	ADDU	R12, R12, R8
-	J		roundg
+	J		loopg
 rgss
 	ADDU	R13, R13, R9
-	J		roundg
+	J		loopg
 	
 ; R9 and R10
+roundh
 	ADDUI	R9, R12, 0
 	ADDUI	R13, R10, 0
-roundh
+looph
 	SEQ	R1, R12, R13
 	BNEZ	R1, roundi
 	SLTU	R1, R12, R13
 	BEQZ	R1, rhss
 	ADDU	R12, R12, R9
-	J		roundh
+	J		looph
 rhss
 	ADDU	R13, R13, R10
-	J		roundh
+	J		looph
 	
 ; R10 and R11
+roundi
 	ADDUI	R10, R12, 0
 	ADDUI	R13, R11, 0
-roundi
-	SEQ		R1, R12, R13
+loopi
+	SEQ	R1, R12, R13
 	BNEZ	R1, stop
 	SLTU	R1, R12, R13
 	BEQZ	R1, riss
 	ADDU	R12, R12, R10
-	J		roundi
+	J		loopi
 riss
 	ADDU	R13, R13, R11
-	J		roundi
+	J		loopi
 	
 ; Print the output and stop the clock
 stop
@@ -296,7 +304,7 @@ print_out_loop
 	SLEU	R3, R2, R1
 	BEQZ	R3, end_print_out
 	LW		R4, s2(R2)
-	PCH	R13
+	PCH	R4
 	ADDI	R2, R2, 1
 	J		print_out_loop
 end_print_out
@@ -305,6 +313,12 @@ end_print_out
 	NOP
 	PDU	R13
 	TSP
+; Carriage return
+	ADDI	R1, R0, 10
+	PCH	R1
+; Line feed
+	ADDI	R1, R0, 13
+	PCH	R1
 	
 ; Jump back to the begining
 	J		start
