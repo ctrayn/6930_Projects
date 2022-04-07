@@ -26,38 +26,38 @@ prompt_loop
 	SLEU	R3, R2, R1
 	BEQZ	R3, end_prompt
 	LW		R4, s1(R2)
-	PCH		R4
+	PCH	R4
 	ADDUI	R2, R2, 1
 	J		prompt_loop
 end_prompt
 
 ; Load the data in to the right register
-	JAL		get_input
+	JAL	get_input
 	ADDUI	R2, R1, 0
-	JAL		get_input
+	JAL	get_input
 	ADDUI	R3, R1, 0
-	JAL		get_input
+	JAL	get_input
 	ADDUI	R4, R1, 0
-	JAL		get_input
+	JAL	get_input
 	ADDUI	R5, R1, 0
-	JAL		get_input
+	JAL	get_input
 	ADDUI	R6, R1, 0
-	JAL		get_input
+	JAL	get_input
 	ADDUI	R7, R1, 0
-	JAL		get_input
+	JAL	get_input
 	ADDUI	R8, R1, 0
-	JAL		get_input
+	JAL	get_input
 	ADDUI	R9, R1, 0
-	JAL		get_input
+	JAL	get_input
 	ADDUI	R10, R1, 0
-	JAL		get_input
+	JAL	get_input
 	ADDUI	R11, R1, 0
 	J		list
 
 ; Get user input
 get_input
 	ADDUI	R1, R0, 0
-	GDU		R1
+	GDU	R1
 	NOP
 	NOP
 	NOP
@@ -66,12 +66,11 @@ get_input
 	NOP
 	NOP
 	ADDI	R12, R0, 32
-	PCH		R12
+	PCH	R12
 	JR		R31
 
 ; start the clock and order the list
 list
-	J		kill
 	TR
 	TGO
 	ADDUI	R13, R0, 0
@@ -157,7 +156,7 @@ startlcm
 	ADDUI	R12, R2, 0
 	ADDUI	R13, R3, 0
 rounda
-	SEQ		R1, R12, R13
+	SEQ	R1, R12, R13
 	BNEZ	R1, roundb
 	SLTU	R1, R12, R13
 	BEQZ	R1, rass
@@ -171,7 +170,7 @@ rass
 	ADDUI	R3, R12, 0
 	ADDUI	R13, R4, 0
 roundb
-	SEQ		R1, R12, R13
+	SEQ	R1, R12, R13
 	BNEZ	R1, roundc
 	SLTU	R1, R12, R13
 	BEQZ	R1, rbss
@@ -185,7 +184,7 @@ rbss
 	ADDUI	R4, R12, 0
 	ADDUI	R13, R5, 0
 roundc
-	SEQ		R1, R12, R13
+	SEQ	R1, R12, R13
 	BNEZ	R1, roundd
 	SLTU	R1, R12, R13
 	BEQZ	R1, rcss
@@ -199,7 +198,7 @@ rcss
 	ADDUI	R5, R12, 0
 	ADDUI	R13, R6, 0
 roundd
-	SEQ		R1, R12, R13
+	SEQ	R1, R12, R13
 	BNEZ	R1, rounde
 	SLTU	R1, R12, R13
 	BEQZ	R1, rdss
@@ -213,7 +212,7 @@ rdss
 	ADDUI	R6, R12, 0
 	ADDUI	R13, R7, 0
 rounde
-	SEQ		R1, R12, R13
+	SEQ	R1, R12, R13
 	BNEZ	R1, roundf
 	SLTU	R1, R12, R13
 	BEQZ	R1, ress
@@ -227,7 +226,7 @@ ress
 	ADDUI	R7, R12, 0
 	ADDUI	R13, R8, 0
 roundf
-	SEQ		R1, R12, R13
+	SEQ	R1, R12, R13
 	BNEZ	R1, roundg
 	SLTU	R1, R12, R13
 	BEQZ	R1, rfss
@@ -241,7 +240,7 @@ rfss
 	ADDUI	R8, R12, 0
 	ADDUI	R13, R9, 0
 roundg
-	SEQ		R1, R12, R13
+	SEQ	R1, R12, R13
 	BNEZ	R1, roundh
 	SLTU	R1, R12, R13
 	BEQZ	R1, rgss
@@ -255,7 +254,7 @@ rgss
 	ADDUI	R9, R12, 0
 	ADDUI	R13, R10, 0
 roundh
-	SEQ		R1, R12, R13
+	SEQ	R1, R12, R13
 	BNEZ	R1, roundi
 	SLTU	R1, R12, R13
 	BEQZ	R1, rhss
@@ -283,10 +282,10 @@ riss
 stop
 ; Carriage return
 	ADDI	R1, R0, 10
-	PCH		R1
+	PCH	R1
 ; Line feed
 	ADDI	R1, R0, 13
-	PCH		R1
+	PCH	R1
 ; Print LCM = ...
 	LW		R1, s2(R0)
 	ADDI	R2, R0, 1
@@ -304,7 +303,7 @@ end_print_out
 	NOP
 	NOP
 	NOP
-	PDU		R13
+	PDU	R13
 	TSP
 	
 ; Jump back to the begining
@@ -312,4 +311,6 @@ end_print_out
 	
 ; Kill the program (for debugging): 76, 150
 kill
-	J		kill
+	TSP
+killoop
+	J		killoop

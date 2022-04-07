@@ -1,5 +1,5 @@
 Timing Analyzer report for DLX
-Thu Mar 31 19:55:32 2022
+Thu Apr  7 09:17:40 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -90,18 +90,17 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 12          ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 3.76        ;
-; Maximum used               ; 12          ;
+; Average used               ; 2.36        ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  28.1%      ;
-;     Processor 3            ;  26.1%      ;
-;     Processor 4            ;  25.4%      ;
-;     Processors 5-12        ;  24.6%      ;
+;     Processor 2            ;  46.6%      ;
+;     Processor 3            ;  45.2%      ;
+;     Processor 4            ;  44.4%      ;
 +----------------------------+-------------+
 
 
@@ -110,7 +109,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------+--------+--------------------------+
 ; SDC File Path ; Status ; Read at                  ;
 +---------------+--------+--------------------------+
-; DLX.SDC       ; OK     ; Thu Mar 31 19:55:25 2022 ;
+; DLX.SDC       ; OK     ; Thu Apr  7 09:17:33 2022 ;
 +---------------+--------+--------------------------+
 
 
@@ -123,13 +122,13 @@ https://fpgasoftware.intel.com/eula.
 +------------+------+---------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------+
 
 
-+------------------------------------------------+
-; Slow 1200mV 85C Model Fmax Summary             ;
-+----------+-----------------+------------+------+
-; Fmax     ; Restricted Fmax ; Clock Name ; Note ;
-+----------+-----------------+------------+------+
-; 14.4 MHz ; 14.4 MHz        ; ADC_CLK_10 ;      ;
-+----------+-----------------+------------+------+
++-------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary              ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 14.01 MHz ; 14.01 MHz       ; ADC_CLK_10 ;      ;
++-----------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -138,7 +137,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------+--------+---------------+
 ; Clock      ; Slack  ; End Point TNS ;
 +------------+--------+---------------+
-; ADC_CLK_10 ; 30.558 ; 0.000         ;
+; ADC_CLK_10 ; 28.610 ; 0.000         ;
 +------------+--------+---------------+
 
 
@@ -168,7 +167,7 @@ No paths to report.
 +------------+--------+-----------------------------+
 ; Clock      ; Slack  ; End Point TNS               ;
 +------------+--------+-----------------------------+
-; ADC_CLK_10 ; 49.443 ; 0.000                       ;
+; ADC_CLK_10 ; 49.439 ; 0.000                       ;
 +------------+--------+-----------------------------+
 
 
@@ -179,7 +178,7 @@ The design MTBF is not calculated because there are no specified synchronizers i
 Number of Synchronizer Chains Found: 10
 Shortest Synchronizer Chain: 3 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 281.385 ns
+Worst Case Available Settling Time: 279.894 ns
 
 
 
@@ -189,7 +188,7 @@ Worst Case Available Settling Time: 281.385 ns
 +-----------+-----------------+------------+------+
 ; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
 +-----------+-----------------+------------+------+
-; 15.75 MHz ; 15.75 MHz       ; ADC_CLK_10 ;      ;
+; 15.38 MHz ; 15.38 MHz       ; ADC_CLK_10 ;      ;
 +-----------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -199,7 +198,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------+--------+---------------+
 ; Clock      ; Slack  ; End Point TNS ;
 +------------+--------+---------------+
-; ADC_CLK_10 ; 36.519 ; 0.000         ;
+; ADC_CLK_10 ; 34.999 ; 0.000         ;
 +------------+--------+---------------+
 
 
@@ -229,7 +228,7 @@ No paths to report.
 +------------+--------+----------------------------+
 ; Clock      ; Slack  ; End Point TNS              ;
 +------------+--------+----------------------------+
-; ADC_CLK_10 ; 49.459 ; 0.000                      ;
+; ADC_CLK_10 ; 49.458 ; 0.000                      ;
 +------------+--------+----------------------------+
 
 
@@ -240,7 +239,7 @@ The design MTBF is not calculated because there are no specified synchronizers i
 Number of Synchronizer Chains Found: 10
 Shortest Synchronizer Chain: 3 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 282.738 ns
+Worst Case Available Settling Time: 281.257 ns
 
 
 
@@ -250,7 +249,7 @@ Worst Case Available Settling Time: 282.738 ns
 +------------+--------+---------------+
 ; Clock      ; Slack  ; End Point TNS ;
 +------------+--------+---------------+
-; ADC_CLK_10 ; 71.997 ; 0.000         ;
+; ADC_CLK_10 ; 70.966 ; 0.000         ;
 +------------+--------+---------------+
 
 
@@ -280,7 +279,7 @@ No paths to report.
 +------------+--------+----------------------------+
 ; Clock      ; Slack  ; End Point TNS              ;
 +------------+--------+----------------------------+
-; ADC_CLK_10 ; 49.043 ; 0.000                      ;
+; ADC_CLK_10 ; 49.138 ; 0.000                      ;
 +------------+--------+----------------------------+
 
 
@@ -291,7 +290,7 @@ The design MTBF is not calculated because there are no specified synchronizers i
 Number of Synchronizer Chains Found: 10
 Shortest Synchronizer Chain: 3 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 291.687 ns
+Worst Case Available Settling Time: 290.959 ns
 
 
 
@@ -301,8 +300,8 @@ Worst Case Available Settling Time: 291.687 ns
 +------------------+--------+-------+----------+---------+---------------------+
 ; Clock            ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------+--------+-------+----------+---------+---------------------+
-; Worst-case Slack ; 30.558 ; 0.148 ; N/A      ; N/A     ; 49.043              ;
-;  ADC_CLK_10      ; 30.558 ; 0.148 ; N/A      ; N/A     ; 49.043              ;
+; Worst-case Slack ; 28.610 ; 0.148 ; N/A      ; N/A     ; 49.138              ;
+;  ADC_CLK_10      ; 28.610 ; 0.148 ; N/A      ; N/A     ; 49.138              ;
 ; Design-wide TNS  ; 0.0    ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
 ;  ADC_CLK_10      ; 0.000  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
 +------------------+--------+-------+----------+---------+---------------------+
@@ -835,100 +834,100 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Thu Mar 31 19:55:21 2022
+    Info: Processing started: Thu Apr  7 09:17:32 2022
 Info: Command: quartus_sta DLX -c DLX
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
 Info (332104): Reading SDC File: 'DLX.SDC'
-Warning (332174): Ignored filter at DLX.SDC(10): MAX10_CLK1_50 could not be matched with a port File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.SDC Line: 10
-Warning (332049): Ignored create_clock at DLX.SDC(10): Argument <targets> is an empty collection File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.SDC Line: 10
-    Info (332050): create_clock -period "50.0 MHz" [get_ports MAX10_CLK1_50] File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.SDC Line: 10
-Warning (332174): Ignored filter at DLX.SDC(11): MAX10_CLK2_50 could not be matched with a port File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.SDC Line: 11
-Warning (332049): Ignored create_clock at DLX.SDC(11): Argument <targets> is an empty collection File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.SDC Line: 11
-    Info (332050): create_clock -period "50.0 MHz" [get_ports MAX10_CLK2_50] File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.SDC Line: 11
+Warning (332174): Ignored filter at DLX.SDC(10): MAX10_CLK1_50 could not be matched with a port File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.SDC Line: 10
+Warning (332049): Ignored create_clock at DLX.SDC(10): Argument <targets> is an empty collection File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.SDC Line: 10
+    Info (332050): create_clock -period "50.0 MHz" [get_ports MAX10_CLK1_50] File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.SDC Line: 10
+Warning (332174): Ignored filter at DLX.SDC(11): MAX10_CLK2_50 could not be matched with a port File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.SDC Line: 11
+Warning (332049): Ignored create_clock at DLX.SDC(11): Argument <targets> is an empty collection File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.SDC Line: 11
+    Info (332050): create_clock -period "50.0 MHz" [get_ports MAX10_CLK2_50] File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.SDC Line: 11
 Info (332151): Clock uncertainty is not calculated until you update the timing netlist.
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
-Info (332146): Worst-case setup slack is 30.558
+Info (332146): Worst-case setup slack is 28.610
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    30.558               0.000 ADC_CLK_10 
+    Info (332119):    28.610               0.000 ADC_CLK_10 
 Info (332146): Worst-case hold slack is 0.341
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     0.341               0.000 ADC_CLK_10 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is 49.443
+Info (332146): Worst-case minimum pulse width slack is 49.439
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    49.443               0.000 ADC_CLK_10 
+    Info (332119):    49.439               0.000 ADC_CLK_10 
 Info (332114): Report Metastability: Found 10 synchronizer chains.
     Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
     Info (332114): Number of Synchronizer Chains Found: 10
     Info (332114): Shortest Synchronizer Chain: 3 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 281.385 ns
+    Info (332114): Worst Case Available Settling Time: 279.894 ns
     Info (332114): 
 Info: Analyzing Slow 1200mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
-Info (332146): Worst-case setup slack is 36.519
+Info (332146): Worst-case setup slack is 34.999
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    36.519               0.000 ADC_CLK_10 
+    Info (332119):    34.999               0.000 ADC_CLK_10 
 Info (332146): Worst-case hold slack is 0.305
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     0.305               0.000 ADC_CLK_10 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is 49.459
+Info (332146): Worst-case minimum pulse width slack is 49.458
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    49.459               0.000 ADC_CLK_10 
+    Info (332119):    49.458               0.000 ADC_CLK_10 
 Info (332114): Report Metastability: Found 10 synchronizer chains.
     Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
     Info (332114): Number of Synchronizer Chains Found: 10
     Info (332114): Shortest Synchronizer Chain: 3 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 282.738 ns
+    Info (332114): Worst Case Available Settling Time: 281.257 ns
     Info (332114): 
 Info: Analyzing Fast 1200mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
-Info (332146): Worst-case setup slack is 71.997
+Info (332146): Worst-case setup slack is 70.966
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    71.997               0.000 ADC_CLK_10 
+    Info (332119):    70.966               0.000 ADC_CLK_10 
 Info (332146): Worst-case hold slack is 0.148
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     0.148               0.000 ADC_CLK_10 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is 49.043
+Info (332146): Worst-case minimum pulse width slack is 49.138
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    49.043               0.000 ADC_CLK_10 
+    Info (332119):    49.138               0.000 ADC_CLK_10 
 Info (332114): Report Metastability: Found 10 synchronizer chains.
     Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
     Info (332114): Number of Synchronizer Chains Found: 10
     Info (332114): Shortest Synchronizer Chain: 3 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 291.687 ns
+    Info (332114): Worst Case Available Settling Time: 290.959 ns
     Info (332114): 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 5008 megabytes
-    Info: Processing ended: Thu Mar 31 19:55:32 2022
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:26
+    Info: Peak virtual memory: 595 megabytes
+    Info: Processing ended: Thu Apr  7 09:17:40 2022
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:17
 
 

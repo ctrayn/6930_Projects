@@ -1,5 +1,5 @@
 Flow report for DLX
-Thu Mar 31 19:55:32 2022
+Thu Apr  7 09:17:40 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -41,14 +41,14 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Thu Mar 31 19:55:20 2022       ;
+; Flow Status                        ; Successful - Thu Apr  7 09:17:31 2022       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; DLX                                         ;
 ; Top-level Entity Name              ; DLX                                         ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 8,787 / 49,760 ( 18 % )                     ;
+; Total logic elements               ; 8,837 / 49,760 ( 18 % )                     ;
 ;     Total combinational functions  ; 8,363 / 49,760 ( 17 % )                     ;
 ;     Dedicated logic registers      ; 2,779 / 49,760 ( 6 % )                      ;
 ; Total registers                    ; 2779                                        ;
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/31/2022 19:53:32 ;
+; Start date & time ; 04/07/2022 09:16:14 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DLX                 ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 123719800733538.164877801108224        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 110341701272771.164934457447851        ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; MISC_FILE                           ; DataMemory.cmp                         ; --            ; --          ; --         ;
@@ -102,24 +102,24 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:01:03     ; 1.0                     ; 4940 MB             ; 00:00:54                           ;
-; Fitter               ; 00:00:36     ; 2.4                     ; 6335 MB             ; 00:01:32                           ;
-; Assembler            ; 00:00:05     ; 1.0                     ; 4713 MB             ; 00:00:04                           ;
-; Timing Analyzer      ; 00:00:11     ; 3.7                     ; 5008 MB             ; 00:00:26                           ;
-; Total                ; 00:01:55     ; --                      ; --                  ; 00:02:56                           ;
+; Analysis & Synthesis ; 00:00:33     ; 1.0                     ; 507 MB              ; 00:00:45                           ;
+; Fitter               ; 00:00:37     ; 1.5                     ; 1207 MB             ; 00:01:08                           ;
+; Assembler            ; 00:00:03     ; 1.0                     ; 384 MB              ; 00:00:03                           ;
+; Timing Analyzer      ; 00:00:08     ; 2.4                     ; 595 MB              ; 00:00:17                           ;
+; Total                ; 00:01:21     ; --                      ; --                  ; 00:02:13                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                    ;
-+----------------------+------------------+------------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; PassmorePower    ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; PassmorePower    ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; PassmorePower    ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; PassmorePower    ; Windows 10 ; 10.0       ; x86_64         ;
-+----------------------+------------------+------------+------------+----------------+
++------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                          ;
++----------------------+------------------+---------------+---------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name       ; OS Version    ; Processor type ;
++----------------------+------------------+---------------+---------------+----------------+
+; Analysis & Synthesis ; jonah-macbook    ; Manjaro Linux ; Manjaro Linux ; x86_64         ;
+; Fitter               ; jonah-macbook    ; Manjaro Linux ; Manjaro Linux ; x86_64         ;
+; Assembler            ; jonah-macbook    ; Manjaro Linux ; Manjaro Linux ; x86_64         ;
+; Timing Analyzer      ; jonah-macbook    ; Manjaro Linux ; Manjaro Linux ; x86_64         ;
++----------------------+------------------+---------------+---------------+----------------+
 
 
 ------------
