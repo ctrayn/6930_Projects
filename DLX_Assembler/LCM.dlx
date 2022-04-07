@@ -56,7 +56,6 @@ endPrompt
 	ADDUI	R10, R1, 0
 	JAL		getInput
 	ADDUI	R11, R1, 0
-	
 	J		endInput
 
 ; Get user input
