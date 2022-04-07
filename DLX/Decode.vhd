@@ -33,7 +33,12 @@ entity Decode is
 		--UART
 		rx_data_empty		: in std_logic;
 		rx_data				: in std_logic_vector(31 downto 0);
-		rx_ack				: out std_logic := '0'
+		rx_ack				: out std_logic := '0';
+
+		-- Timer
+		tmr_go				: out std_logic := '0';
+		tmr_stop				: out std_logic := '0';
+		tmr_rst				: out std_logic := '0'
 	);
 end entity Decode;
 
@@ -77,6 +82,40 @@ begin
 		end if;
 	end process;
 
+	-- UART
+	process(clk) begin
+		if rising_edge(clk) then
+			if opIsUARTrx(wb_inst(31 downto 26)) = '1' and rx_data_empty = '0' then
+				rx_ack <= '1';
+			else
+				rx_ack <= '0';
+			end if;
+		end if;
+	end process;
+
+	-- Timer
+	process(clk) begin
+		if rising_edge(clk) then
+			if wb_inst(31 downto 26) = OP_TGO then
+				tmr_go <= '1';
+				tmr_stop <= '0';
+				tmr_rst <= '0';
+			elsif wb_inst(31 downto 26) = OP_TSP then
+				tmr_go <= '0';
+				tmr_stop <= '1';
+				tmr_rst <= '0';
+			elsif wb_inst(31 downto 26) = OP_TR then
+				tmr_go <= '0';
+				tmr_stop <= '0';
+				tmr_rst <= '1';
+			else
+				tmr_go <= '0';
+				tmr_stop <= '0';
+				tmr_rst <= '0';
+			end if;
+		end if;
+	end process;
+
 	--Write
 	process(clk) begin
 		if rising_edge(clk) then
@@ -94,17 +133,6 @@ begin
 				end if;
 			else
 				ram(0) <= X"00000000"; -- Register 0 must allways contain 0
-			end if;
-		end if;
-	end process;
-
-	-- UART
-	process(clk) begin
-		if rising_edge(clk) then
-			if opIsUARTrx(wb_inst(31 downto 26)) = '1' and rx_data_empty = '0' then
-				rx_ack <= '1';
-			else
-				rx_ack <= '0';
 			end if;
 		end if;
 	end process;

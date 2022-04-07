@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DLX
-Thu Apr  7 10:11:31 2022
+Thu Apr  7 12:33:02 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -41,16 +41,15 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
  33. scfifo Parameter Settings by Entity Instance
  34. lpm_mult Parameter Settings by Entity Instance
  35. altsyncram Parameter Settings by Entity Instance
- 36. Port Connectivity Checks: "Timer:tmr"
- 37. Port Connectivity Checks: "Fetch:fet|InstructionMemory:im"
- 38. Port Connectivity Checks: "UART:duart|MULT:umult"
- 39. Port Connectivity Checks: "UART:duart|UnsignedDiv:udiv"
- 40. Port Connectivity Checks: "UART:duart|U_DIV:div"
- 41. Port Connectivity Checks: "UART:duart|my_UART:dut"
- 42. Port Connectivity Checks: "UART:duart"
- 43. Post-Synthesis Netlist Statistics for Top Partition
- 44. Elapsed Time Per Partition
- 45. Analysis & Synthesis Messages
+ 36. Port Connectivity Checks: "Fetch:fet|InstructionMemory:im"
+ 37. Port Connectivity Checks: "UART:duart|MULT:umult"
+ 38. Port Connectivity Checks: "UART:duart|UnsignedDiv:udiv"
+ 39. Port Connectivity Checks: "UART:duart|U_DIV:div"
+ 40. Port Connectivity Checks: "UART:duart|my_UART:dut"
+ 41. Port Connectivity Checks: "UART:duart"
+ 42. Post-Synthesis Netlist Statistics for Top Partition
+ 43. Elapsed Time Per Partition
+ 44. Analysis & Synthesis Messages
 
 
 
@@ -77,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Apr  7 10:11:31 2022       ;
+; Analysis & Synthesis Status        ; Successful - Thu Apr  7 12:33:02 2022       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; DLX                                         ;
 ; Top-level Entity Name              ; DLX                                         ;
@@ -195,7 +194,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.3%      ;
+;     Processor 2            ;   0.1%      ;
 ;     Processor 3            ;   0.1%      ;
 ;     Processor 4            ;   0.1%      ;
 +----------------------------+-------------+
@@ -274,7 +273,7 @@ https://fpgasoftware.intel.com/eula.
 ; altram.inc                       ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/altram.inc                                               ;         ;
 ; altdpram.inc                     ; yes             ; Megafunction                           ; /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/altdpram.inc                                             ;         ;
 ; db/altsyncram_c7t3.tdf           ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/altsyncram_c7t3.tdf      ;         ;
-; ./Programs/factorial_code.mif    ; yes             ; Auto-Found Memory Initialization File  ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Programs/factorial_code.mif ;         ;
+; Programs/factorial_code.mif      ; yes             ; Auto-Found Memory Initialization File  ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Programs/factorial_code.mif ;         ;
 ; db/altsyncram_p8t3.tdf           ; yes             ; Auto-Generated Megafunction            ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/altsyncram_p8t3.tdf      ;         ;
 ; Programs/factorial_data.mif      ; yes             ; Auto-Found Memory Initialization File  ; /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Programs/factorial_data.mif ;         ;
 +----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------------------------------------------+---------+
@@ -289,9 +288,9 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                  ;
 ; Total combinational functions               ; 8363             ;
 ; Logic element usage by number of LUT inputs ;                  ;
-;     -- 4 input functions                    ; 6397             ;
+;     -- 4 input functions                    ; 6398             ;
 ;     -- 3 input functions                    ; 1350             ;
-;     -- <=2 input functions                  ; 616              ;
+;     -- <=2 input functions                  ; 615              ;
 ;                                             ;                  ;
 ; Logic elements by mode                      ;                  ;
 ;     -- normal mode                          ; 7715             ;
@@ -308,7 +307,7 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                  ;
 ; Maximum fan-out node                        ; ADC_CLK_10~input ;
 ; Maximum fan-out                             ; 2887             ;
-; Total fan-out                               ; 41394            ;
+; Total fan-out                               ; 41396            ;
 ; Average fan-out                             ; 3.62             ;
 +---------------------------------------------+------------------+
 
@@ -494,12 +493,15 @@ Encoding Type:  One-Hot
 +----------------------------------------+----------------------------------------+
 ; Execute:exc|data_tx[34,35]             ; Stuck at GND due to stuck port data_in ;
 ; Decode:dec|Imm[27..31]                 ; Merged with Decode:dec|Imm[26]         ;
+; Decode:dec|tmr_stop                    ; Lost fanout                            ;
+; Decode:dec|tmr_go                      ; Lost fanout                            ;
 ; UART:duart|resend_data[6,7]            ; Stuck at GND due to stuck port data_in ;
+; Decode:dec|tmr_rst                     ; Lost fanout                            ;
 ; UART:duart|div_state.DIVIDE            ; Merged with UART:duart|div_state.CHAR  ;
 ; UART:duart|div_state.READING           ; Merged with UART:duart|div_state.CHAR  ;
 ; UART:duart|div_state.WRITING           ; Merged with UART:duart|div_state.CHAR  ;
 ; UART:duart|div_state.CHAR              ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 13 ;                                        ;
+; Total Number of Removed Registers = 16 ;                                        ;
 +----------------------------------------+----------------------------------------+
 
 
@@ -528,51 +530,63 @@ Encoding Type:  One-Hot
 +----------------------------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
-; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |DLX|UART:duart|d_rx_out[24]                   ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DLX|UART:duart|resend_data[0]                 ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DLX|Decode:dec|ram[31][25]                    ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |DLX|Fetch:fet|pc[2]                           ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |DLX|UART:duart|my_UART:dut|position_tx[3]     ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |DLX|UART:duart|my_UART:dut|position_rx[3]     ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |DLX|UART:duart|numer[18]                      ;
-; 6:1                ; 32 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |DLX|Decode:dec|ram[0][10]                     ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |DLX|UART:duart|d_tx_temp[29]                  ;
-; 18:1               ; 32 bits   ; 384 LEs       ; 32 LEs               ; 352 LEs                ; Yes        ; |DLX|Execute:exc|data_tx[14]                   ;
-; 7:1                ; 29 bits   ; 116 LEs       ; 58 LEs               ; 58 LEs                 ; Yes        ; |DLX|UART:duart|d_tx_temp[13]                  ;
-; 7:1                ; 31 bits   ; 124 LEs       ; 62 LEs               ; 62 LEs                 ; Yes        ; |DLX|UART:duart|stk_ptr[27]                    ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 16 LEs               ; 64 LEs                 ; Yes        ; |DLX|UART:duart|my_UART:dut|sync_tx[15]        ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 16 LEs               ; 64 LEs                 ; Yes        ; |DLX|UART:duart|my_UART:dut|sync_rx[0]         ;
-; 35:1               ; 10 bits   ; 230 LEs       ; 10 LEs               ; 220 LEs                ; Yes        ; |DLX|Execute:exc|br_addr[0]                    ;
-; 9:1                ; 5 bits    ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |DLX|Decode:dec|Imm[21]                        ;
-; 11:1               ; 15 bits   ; 105 LEs       ; 30 LEs               ; 75 LEs                 ; Yes        ; |DLX|Decode:dec|Imm[12]                        ;
-; 12:1               ; 4 bits    ; 32 LEs        ; 12 LEs               ; 20 LEs                 ; Yes        ; |DLX|Decode:dec|Imm[20]                        ;
-; 46:1               ; 16 bits   ; 480 LEs       ; 352 LEs              ; 128 LEs                ; Yes        ; |DLX|Decode:dec|RS2[16]                        ;
-; 68:1               ; 7 bits    ; 315 LEs       ; 49 LEs               ; 266 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[21]                ;
-; 67:1               ; 5 bits    ; 220 LEs       ; 35 LEs               ; 185 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[13]                ;
-; 67:1               ; 2 bits    ; 88 LEs        ; 16 LEs               ; 72 LEs                 ; Yes        ; |DLX|Execute:exc|ALU_result[8]                 ;
-; 69:1               ; 4 bits    ; 184 LEs       ; 32 LEs               ; 152 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[25]                ;
-; 68:1               ; 4 bits    ; 180 LEs       ; 32 LEs               ; 148 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[4]                 ;
-; 43:1               ; 32 bits   ; 896 LEs       ; 704 LEs              ; 192 LEs                ; Yes        ; |DLX|Decode:dec|RS1[12]                        ;
-; 41:1               ; 16 bits   ; 432 LEs       ; 368 LEs              ; 64 LEs                 ; Yes        ; |DLX|Decode:dec|RS2[2]                         ;
-; 70:1               ; 2 bits    ; 92 LEs        ; 18 LEs               ; 74 LEs                 ; Yes        ; |DLX|Execute:exc|ALU_result[28]                ;
-; 69:1               ; 2 bits    ; 92 LEs        ; 18 LEs               ; 74 LEs                 ; Yes        ; |DLX|Execute:exc|ALU_result[2]                 ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DLX|UART:duart|stack                          ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |DLX|Execute:exc|InTwo[0]                      ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |DLX|UART:duart|my_UART:dut|next_state_tx.IDLE ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |DLX|UART:duart|my_UART:dut|next_state_rx.DATA ;
-; 32:1               ; 24 bits   ; 504 LEs       ; 504 LEs              ; 0 LEs                  ; No         ; |DLX|Decode:dec|Mux28                          ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |DLX|UART:duart|Selector1168                   ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |DLX|Decode:dec|Mux37                          ;
-; 11:1               ; 32 bits   ; 224 LEs       ; 32 LEs               ; 192 LEs                ; No         ; |DLX|Execute:exc|Add0                          ;
-; 7:1                ; 32 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; No         ; |DLX|Execute:exc|InOne[13]                     ;
-; 129:1              ; 8 bits    ; 688 LEs       ; 688 LEs              ; 0 LEs                  ; No         ; |DLX|UART:duart|d_tx_out                       ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; No         ; |DLX|Execute:exc|Add0                          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |DLX|UART:duart|d_rx_out[25]                    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DLX|UART:duart|resend_data[3]                  ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DLX|Decode:dec|ram[31][27]                     ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |DLX|Fetch:fet|pc[5]                            ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |DLX|UART:duart|my_UART:dut|position_tx[3]      ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |DLX|UART:duart|my_UART:dut|position_rx[3]      ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |DLX|UART:duart|numer[15]                       ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |DLX|Decode:dec|ram[0][24]                      ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |DLX|UART:duart|d_tx_temp[29]                   ;
+; 18:1               ; 32 bits   ; 384 LEs       ; 32 LEs               ; 352 LEs                ; Yes        ; |DLX|Execute:exc|data_tx[5]                     ;
+; 7:1                ; 29 bits   ; 116 LEs       ; 58 LEs               ; 58 LEs                 ; Yes        ; |DLX|UART:duart|d_tx_temp[24]                   ;
+; 7:1                ; 31 bits   ; 124 LEs       ; 62 LEs               ; 62 LEs                 ; Yes        ; |DLX|UART:duart|stk_ptr[5]                      ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 16 LEs               ; 64 LEs                 ; Yes        ; |DLX|UART:duart|my_UART:dut|sync_tx[12]         ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 16 LEs               ; 64 LEs                 ; Yes        ; |DLX|UART:duart|my_UART:dut|sync_rx[11]         ;
+; 35:1               ; 10 bits   ; 230 LEs       ; 10 LEs               ; 220 LEs                ; Yes        ; |DLX|Execute:exc|br_addr[2]                     ;
+; 9:1                ; 5 bits    ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |DLX|Decode:dec|Imm[23]                         ;
+; 11:1               ; 15 bits   ; 105 LEs       ; 30 LEs               ; 75 LEs                 ; Yes        ; |DLX|Decode:dec|Imm[12]                         ;
+; 12:1               ; 4 bits    ; 32 LEs        ; 12 LEs               ; 20 LEs                 ; Yes        ; |DLX|Decode:dec|Imm[20]                         ;
+; 46:1               ; 16 bits   ; 480 LEs       ; 352 LEs              ; 128 LEs                ; Yes        ; |DLX|Decode:dec|RS2[18]                         ;
+; 68:1               ; 7 bits    ; 315 LEs       ; 49 LEs               ; 266 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[19]                 ;
+; 67:1               ; 5 bits    ; 220 LEs       ; 35 LEs               ; 185 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[12]                 ;
+; 67:1               ; 2 bits    ; 88 LEs        ; 16 LEs               ; 72 LEs                 ; Yes        ; |DLX|Execute:exc|ALU_result[8]                  ;
+; 69:1               ; 4 bits    ; 184 LEs       ; 32 LEs               ; 152 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[27]                 ;
+; 68:1               ; 4 bits    ; 180 LEs       ; 32 LEs               ; 148 LEs                ; Yes        ; |DLX|Execute:exc|ALU_result[7]                  ;
+; 43:1               ; 32 bits   ; 896 LEs       ; 704 LEs              ; 192 LEs                ; Yes        ; |DLX|Decode:dec|RS1[30]                         ;
+; 41:1               ; 16 bits   ; 432 LEs       ; 368 LEs              ; 64 LEs                 ; Yes        ; |DLX|Decode:dec|RS2[4]                          ;
+; 70:1               ; 2 bits    ; 92 LEs        ; 18 LEs               ; 74 LEs                 ; Yes        ; |DLX|Execute:exc|ALU_result[28]                 ;
+; 69:1               ; 2 bits    ; 92 LEs        ; 18 LEs               ; 74 LEs                 ; Yes        ; |DLX|Execute:exc|ALU_result[3]                  ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DLX|UART:duart|stack                           ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |DLX|Execute:exc|InTwo[26]                      ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |DLX|Timer:tmr|HEX0[4]                          ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |DLX|Timer:tmr|HEX1[1]                          ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |DLX|Timer:tmr|HEX2[1]                          ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |DLX|Timer:tmr|HEX3[1]                          ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |DLX|Timer:tmr|HEX4[4]                          ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |DLX|Timer:tmr|HEX5[4]                          ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |DLX|UART:duart|my_UART:dut|next_state_tx.START ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |DLX|UART:duart|my_UART:dut|next_state_rx.DATA  ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 24 LEs               ; 4 LEs                  ; No         ; |DLX|Timer:tmr|HEX0[0]                          ;
+; 32:1               ; 24 bits   ; 504 LEs       ; 504 LEs              ; 0 LEs                  ; No         ; |DLX|Decode:dec|Mux28                           ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 24 LEs               ; 4 LEs                  ; No         ; |DLX|Timer:tmr|HEX1[0]                          ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 24 LEs               ; 4 LEs                  ; No         ; |DLX|Timer:tmr|HEX2[6]                          ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 24 LEs               ; 4 LEs                  ; No         ; |DLX|Timer:tmr|HEX3[6]                          ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 24 LEs               ; 4 LEs                  ; No         ; |DLX|Timer:tmr|HEX4[0]                          ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 24 LEs               ; 4 LEs                  ; No         ; |DLX|Timer:tmr|HEX5[6]                          ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; No         ; |DLX|UART:duart|Selector1172                    ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |DLX|Decode:dec|Mux37                           ;
+; 11:1               ; 32 bits   ; 224 LEs       ; 32 LEs               ; 192 LEs                ; No         ; |DLX|Execute:exc|Add0                           ;
+; 7:1                ; 32 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; No         ; |DLX|Execute:exc|InOne[12]                      ;
+; 129:1              ; 8 bits    ; 688 LEs       ; 688 LEs              ; 0 LEs                  ; No         ; |DLX|UART:duart|d_tx_out                        ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; No         ; |DLX|Execute:exc|Add0                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -988,17 +1002,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+----------------------------------------------------------------+
 
 
-+-------------------------------------------+
-; Port Connectivity Checks: "Timer:tmr"     ;
-+---------+-------+----------+--------------+
-; Port    ; Type  ; Severity ; Details      ;
-+---------+-------+----------+--------------+
-; go      ; Input ; Info     ; Stuck at GND ;
-; stop    ; Input ; Info     ; Stuck at GND ;
-; restart ; Input ; Info     ; Stuck at GND ;
-+---------+-------+----------+--------------+
-
-
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "Fetch:fet|InstructionMemory:im"                                                                                                              ;
 +-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1092,9 +1095,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     normal            ; 7717                        ;
 ;         0 data inputs ; 55                          ;
 ;         1 data inputs ; 17                          ;
-;         2 data inputs ; 223                         ;
+;         2 data inputs ; 222                         ;
 ;         3 data inputs ; 1025                        ;
-;         4 data inputs ; 6397                        ;
+;         4 data inputs ; 6398                        ;
 ; cycloneiii_mac_mult   ; 2                           ;
 ; cycloneiii_mac_out    ; 2                           ;
 ; cycloneiii_ram_block  ; 139                         ;
@@ -1119,7 +1122,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Thu Apr  7 10:10:56 2022
+    Info: Processing started: Thu Apr  7 12:32:27 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DLX -c DLX
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1163,14 +1166,14 @@ Info (12021): Found 2 design units, including 1 entities, in source file Fetch.v
     Info (12022): Found design unit 1: Fetch-behavioral File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Fetch.vhd Line: 27
     Info (12023): Found entity 1: Fetch File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Fetch.vhd Line: 14
 Info (12021): Found 2 design units, including 1 entities, in source file Decode.vhd
-    Info (12022): Found design unit 1: Decode-behavioral File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Decode.vhd Line: 40
+    Info (12022): Found design unit 1: Decode-behavioral File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Decode.vhd Line: 45
     Info (12023): Found entity 1: Decode File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Decode.vhd Line: 14
 Info (12021): Found 2 design units, including 1 entities, in source file DLX.vhd
     Info (12022): Found design unit 1: DLX-behavioral File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 37
     Info (12023): Found entity 1: DLX File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 13
 Info (12021): Found 2 design units, including 0 entities, in source file Common.vhd
     Info (12022): Found design unit 1: common File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Common.vhd Line: 15
-    Info (12022): Found design unit 2: common-body File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Common.vhd Line: 93
+    Info (12022): Found design unit 2: common-body File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Common.vhd Line: 96
 Info (12021): Found 2 design units, including 1 entities, in source file MULT.vhd
     Info (12022): Found design unit 1: mult-SYN File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/MULT.vhd Line: 52
     Info (12023): Found entity 1: MULT File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/MULT.vhd Line: 43
@@ -1178,12 +1181,9 @@ Info (12021): Found 2 design units, including 1 entities, in source file RX_FIFO
     Info (12022): Found design unit 1: rx_fifo-SYN File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/RX_FIFO.vhd Line: 57
     Info (12023): Found entity 1: RX_FIFO File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/RX_FIFO.vhd Line: 43
 Info (12127): Elaborating entity "DLX" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at DLX.vhd(183): object "tx_empty" assigned a value but never read File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 183
-Warning (10036): Verilog HDL or VHDL warning at DLX.vhd(184): object "tx_full" assigned a value but never read File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 184
-Warning (10540): VHDL Signal Declaration warning at DLX.vhd(191): used explicit default value for signal "tmr_go" because signal was never assigned a value File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 191
-Warning (10540): VHDL Signal Declaration warning at DLX.vhd(192): used explicit default value for signal "tmr_stop" because signal was never assigned a value File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 192
-Warning (10540): VHDL Signal Declaration warning at DLX.vhd(193): used explicit default value for signal "tmr_rst" because signal was never assigned a value File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 193
-Info (12128): Elaborating entity "UART" for hierarchy "UART:duart" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 200
+Warning (10036): Verilog HDL or VHDL warning at DLX.vhd(188): object "tx_empty" assigned a value but never read File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 188
+Warning (10036): Verilog HDL or VHDL warning at DLX.vhd(189): object "tx_full" assigned a value but never read File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 189
+Info (12128): Elaborating entity "UART" for hierarchy "UART:duart" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 205
 Warning (10036): Verilog HDL or VHDL warning at UART.vhd(55): object "true" assigned a value but never read File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART.vhd Line: 55
 Info (12128): Elaborating entity "UART_FIFO" for hierarchy "UART:duart|UART_FIFO:fifo_uart" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART.vhd Line: 164
 Info (12128): Elaborating entity "scfifo" for hierarchy "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/UART_FIFO.vhd Line: 96
@@ -1341,7 +1341,7 @@ Info (12128): Elaborating entity "cntr_037" for hierarchy "UART:duart|RX_FIFO:fi
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_k2b.tdf
     Info (12023): Found entity 1: cntr_k2b File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/cntr_k2b.tdf Line: 26
 Info (12128): Elaborating entity "cntr_k2b" for hierarchy "UART:duart|RX_FIFO:fifo_rx|scfifo:scfifo_component|scfifo_5k11:auto_generated|a_dpfifo_cq11:dpfifo|cntr_k2b:wr_ptr" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/a_dpfifo_cq11.tdf Line: 58
-Info (12128): Elaborating entity "Fetch" for hierarchy "Fetch:fet" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 217
+Info (12128): Elaborating entity "Fetch" for hierarchy "Fetch:fet" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 222
 Warning (10492): VHDL Process Statement warning at Fetch.vhd(61): signal "stall" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Fetch.vhd Line: 61
 Warning (10492): VHDL Process Statement warning at Fetch.vhd(66): signal "pc" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Fetch.vhd Line: 66
 Info (12128): Elaborating entity "InstructionMemory" for hierarchy "Fetch:fet|InstructionMemory:im" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Fetch.vhd Line: 55
@@ -1401,13 +1401,11 @@ Info (12133): Instantiated megafunction "Fetch:fet|InstructionMemory:im|altsyncr
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_c7t3.tdf
     Info (12023): Found entity 1: altsyncram_c7t3 File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/altsyncram_c7t3.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_c7t3" for hierarchy "Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component|altsyncram_c7t3:auto_generated" File: /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (113028): 795 out of 1024 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Programs/factorial_code.mif Line: 1
-    Warning (113027): Addresses ranging from 229 to 1023 are not initialized File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Programs/factorial_code.mif Line: 1
-Info (12128): Elaborating entity "Decode" for hierarchy "Decode:dec" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 229
-Info (12128): Elaborating entity "Execute" for hierarchy "Execute:exc" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 253
+Info (12128): Elaborating entity "Decode" for hierarchy "Decode:dec" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 234
+Info (12128): Elaborating entity "Execute" for hierarchy "Execute:exc" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 262
 Warning (10492): VHDL Process Statement warning at Execute.vhd(107): signal "IdEx_rd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Execute.vhd Line: 107
 Warning (10492): VHDL Process Statement warning at Execute.vhd(109): signal "IdEx_rd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Execute.vhd Line: 109
-Info (12128): Elaborating entity "Memory" for hierarchy "Memory:mem" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 275
+Info (12128): Elaborating entity "Memory" for hierarchy "Memory:mem" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 284
 Warning (10492): VHDL Process Statement warning at Memory.vhd(80): signal "ALU_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Memory.vhd Line: 80
 Info (12128): Elaborating entity "DataMemory" for hierarchy "Memory:mem|DataMemory:dm" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Memory.vhd Line: 50
 Info (12128): Elaborating entity "altsyncram" for hierarchy "Memory:mem|DataMemory:dm|altsyncram:altsyncram_component" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DataMemory.vhd Line: 62
@@ -1466,7 +1464,7 @@ Info (12133): Instantiated megafunction "Memory:mem|DataMemory:dm|altsyncram:alt
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_p8t3.tdf
     Info (12023): Found entity 1: altsyncram_p8t3 File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/altsyncram_p8t3.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_p8t3" for hierarchy "Memory:mem|DataMemory:dm|altsyncram:altsyncram_component|altsyncram_p8t3:auto_generated" File: /home/jonah/intelFPGA_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "Timer" for hierarchy "Timer:tmr" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 287
+Info (12128): Elaborating entity "Timer" for hierarchy "Timer:tmr" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 296
 Warning (10540): VHDL Signal Declaration warning at Timer.vhd(39): used explicit default value for signal "DELAY" because signal was never assigned a value File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 39
 Warning (10492): VHDL Process Statement warning at Timer.vhd(74): signal "state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 74
 Warning (10492): VHDL Process Statement warning at Timer.vhd(84): signal "mil1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 84
@@ -1721,381 +1719,9 @@ Info (10041): Inferred latch for "mil1[29]" at Timer.vhd(63) File: /home/jonah/D
 Info (10041): Inferred latch for "mil1[30]" at Timer.vhd(63) File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
 Info (13014): Ignored 36 buffer(s)
     Info (13019): Ignored 36 SOFT buffer(s)
-Warning (14025): LATCH primitive "Timer:tmr|min2[0]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[1]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[2]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[3]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[4]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[5]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[6]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[7]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[8]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[9]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[10]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[11]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[12]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[13]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[14]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[15]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[16]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[17]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[18]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[19]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[20]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[21]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[22]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[23]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[24]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[25]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[26]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[27]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[28]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[29]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[30]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[0]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[1]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[2]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[3]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[4]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[5]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[6]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[7]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[8]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[9]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[10]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[11]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[12]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[13]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[14]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[15]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[16]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[17]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[18]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[19]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[20]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[21]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[22]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[23]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[24]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[25]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[26]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[27]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[28]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[29]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[30]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[0]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[1]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[2]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[3]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[4]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[5]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[6]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[7]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[8]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[9]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[10]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[11]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[12]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[13]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[14]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[15]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[16]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[17]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[18]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[19]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[20]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[21]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[22]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[23]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[24]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[25]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[26]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[27]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[28]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[29]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[30]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[0]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[1]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[2]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[3]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[4]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[5]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[6]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[7]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[8]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[9]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[10]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[11]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[12]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[13]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[14]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[15]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[16]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[17]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[18]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[19]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[20]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[21]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[22]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[23]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[24]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[25]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[26]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[27]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[28]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[29]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[30]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[0]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[1]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[2]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[3]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[4]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[5]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[6]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[7]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[8]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[9]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[10]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[11]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[12]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[13]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[14]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[15]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[16]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[17]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[18]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[19]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[20]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[21]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[22]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[23]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[24]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[25]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[26]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[27]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[28]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[29]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[30]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[0]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[1]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[2]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[3]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[4]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[5]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[6]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[7]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[8]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[9]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[10]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[11]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[12]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[13]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[14]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[15]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[16]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[17]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[18]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[19]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[20]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[21]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[22]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[23]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[24]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[25]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[26]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[27]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[28]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[29]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[30]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
         Warning (14320): Synthesized away node "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|altsyncram_k2m1:FIFOram|q_b[34]" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/altsyncram_k2m1.tdf Line: 1060
-Warning (14025): LATCH primitive "Timer:tmr|min2[0]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[1]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[2]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[3]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[4]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[5]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[6]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[7]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[8]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[9]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[10]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[11]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[12]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[13]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[14]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[15]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[16]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[17]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[18]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[19]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[20]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[21]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[22]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[23]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[24]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[25]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[26]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[27]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[28]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[29]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min2[30]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[0]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[1]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[2]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[3]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[4]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[5]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[6]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[7]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[8]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[9]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[10]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[11]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[12]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[13]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[14]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[15]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[16]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[17]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[18]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[19]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[20]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[21]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[22]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[23]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[24]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[25]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[26]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[27]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[28]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[29]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|min1[30]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[0]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[1]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[2]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[3]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[4]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[5]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[6]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[7]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[8]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[9]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[10]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[11]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[12]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[13]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[14]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[15]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[16]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[17]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[18]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[19]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[20]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[21]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[22]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[23]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[24]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[25]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[26]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[27]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[28]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[29]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec2[30]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[0]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[1]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[2]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[3]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[4]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[5]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[6]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[7]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[8]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[9]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[10]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[11]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[12]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[13]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[14]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[15]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[16]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[17]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[18]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[19]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[20]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[21]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[22]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[23]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[24]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[25]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[26]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[27]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[28]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[29]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|sec1[30]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[0]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[1]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[2]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[3]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[4]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[5]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[6]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[7]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[8]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[9]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[10]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[11]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[12]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[13]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[14]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[15]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[16]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[17]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[18]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[19]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[20]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[21]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[22]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[23]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[24]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[25]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[26]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[27]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[28]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[29]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil2[30]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[0]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[1]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[2]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[3]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[4]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[5]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[6]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[7]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[8]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[9]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[10]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[11]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[12]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[13]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[14]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[15]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[16]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[17]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[18]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[19]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[20]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[21]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[22]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[23]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[24]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[25]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[26]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[27]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[28]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[29]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
-Warning (14025): LATCH primitive "Timer:tmr|mil1[30]" is permanently disabled File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/Timer.vhd Line: 63
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
         Warning (14320): Synthesized away node "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|altsyncram_k2m1:FIFOram|q_b[34]" File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/db/altsyncram_k2m1.tdf Line: 1060
@@ -2108,6 +1734,7 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX3[7]" is stuck at VCC File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 25
     Warning (13410): Pin "HEX5[7]" is stuck at VCC File: /home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/DLX.vhd Line: 27
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Info (21057): Implemented 9774 device resources after synthesis - the final resource count might be different
@@ -2116,10 +1743,10 @@ Info (21057): Implemented 9774 device resources after synthesis - the final reso
     Info (21061): Implemented 9559 logic cells
     Info (21064): Implemented 139 RAM segments
     Info (21062): Implemented 4 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 433 warnings
-    Info: Peak virtual memory: 522 megabytes
-    Info: Processing ended: Thu Apr  7 10:11:31 2022
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 56 warnings
+    Info: Peak virtual memory: 519 megabytes
+    Info: Processing ended: Thu Apr  7 12:33:02 2022
     Info: Elapsed time: 00:00:35
-    Info: Total CPU time (on all processors): 00:00:46
+    Info: Total CPU time (on all processors): 00:00:47
 
 

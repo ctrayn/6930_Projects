@@ -69,10 +69,15 @@ architecture behavioral of DLX is
 			RS2				: out std_logic_vector(31 downto 0);
 			tap_ram			: out std_logic_vector(31 downto 0);
 
-			--UART
+			-- UART
 			rx_data_empty	: in std_logic;
 			rx_data			: in std_logic_vector(31 downto 0);
-			rx_ack			: out std_logic := '0'
+			rx_ack			: out std_logic := '0';
+
+			-- Timer
+			tmr_go			: out std_logic;
+			tmr_stop			: out std_logic;
+			tmr_rst			: out std_logic	
 		);
 	end component;
 
@@ -188,9 +193,9 @@ architecture behavioral of DLX is
 	signal rx_ack			: std_logic;
 	signal rx_empty		: std_logic;
 	-- Timer signals
-	signal tmr_go			: std_logic := '0';
-	signal tmr_stop		: std_logic := '0';
-	signal tmr_rst			: std_logic := '0';
+	signal tmr_go			: std_logic;
+	signal tmr_stop		: std_logic;
+	signal tmr_rst			: std_logic;
 	-- Tap signals
 	signal tap_ram			: std_logic_vector(31 downto 0);
 
@@ -243,10 +248,14 @@ begin
 		RS1 => rs1_DE,
 		RS2 => rs2_DE,
 		tap_ram => tap_ram,
-		--UART
+		-- UART
 		rx_data_empty => rx_empty,
 		rx_data => rx_data,
-		rx_ack => rx_ack
+		rx_ack => rx_ack,
+		-- Timer
+		tmr_go => tmr_go,
+		tmr_stop => tmr_stop,
+		tmr_rst => tmr_rst
 	);
 
 	-- Instance of execute

@@ -68,6 +68,9 @@ package common is
 	constant	OP_PDU	: std_logic_vector(5 downto 0) := B"110011";
 	constant OP_GD		: std_logic_vector(5 downto 0) := B"110100";
 	constant OP_GDU	: std_logic_vector(5 downto 0) := B"110101";
+	constant	OP_TR		: std_logic_vector(5 downto 0) := B"110110";
+	constant OP_TGO	: std_logic_vector(5 downto 0) := B"110111";
+	constant OP_TSP	: std_logic_vector(5 downto 0) := B"111000";
 
 	constant ONES		: std_logic_vector(31 downto 0) := X"FFFFFFFF";
 	constant ZEROS 	: std_logic_vector(31 downto 0) := X"00000000";
