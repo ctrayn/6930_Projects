@@ -8,6 +8,7 @@ entity UART is
 	(
 		--INPUT
 		clk			: in std_logic;
+		clk_10MHz	: in std_logic;
 		rst_l			: in std_logic;
 		RX 			: in std_logic;			--Connected to pin 40 on J1 (white wire)
 		wr_req		: in std_logic;
@@ -95,16 +96,27 @@ architecture behavioral of UART is
 		);
 	end component;
 	
+--	component TX_FIFO IS
+--	port
+--		(
+--			aclr		: IN STD_LOGIC ;
+--			clock		: IN STD_LOGIC ;
+--			data		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+--			rdreq		: IN STD_LOGIC ;
+--			wrreq		: IN STD_LOGIC ;
+--			empty		: OUT STD_LOGIC ;
+--			q			: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+--		);
 	component TX_FIFO IS
-	port
-		(
-			aclr		: IN STD_LOGIC ;
-			clock		: IN STD_LOGIC ;
+	PORT (
+			aclr		: IN STD_LOGIC  := '0';
 			data		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+			rdclk		: IN STD_LOGIC ;
 			rdreq		: IN STD_LOGIC ;
+			wrclk		: IN STD_LOGIC ;
 			wrreq		: IN STD_LOGIC ;
-			empty		: OUT STD_LOGIC ;
-			q			: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+			q		: OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
+			rdempty		: OUT STD_LOGIC 
 		);
 	end component;
 	
@@ -143,14 +155,27 @@ architecture behavioral of UART is
 	component RX_FIFO IS
 	PORT
 	(
-		aclr		: IN STD_LOGIC ;
-		clock		: IN STD_LOGIC ;
+		aclr		: IN STD_LOGIC  := '0';
 		data		: IN STD_LOGIC_VECTOR (31 DOWNTO 0);
+		rdclk		: IN STD_LOGIC ;
 		rdreq		: IN STD_LOGIC ;
+		wrclk		: IN STD_LOGIC ;
 		wrreq		: IN STD_LOGIC ;
-		empty		: OUT STD_LOGIC ;
-		q			: OUT STD_LOGIC_VECTOR (31 DOWNTO 0)
+		q			: OUT STD_LOGIC_VECTOR (31 DOWNTO 0);
+		rdempty	: OUT STD_LOGIC ;
+		wrfull	: OUT STD_LOGIC 
 	);
+--	component RX_FIFO IS
+--	PORT
+--	(
+--		aclr		: IN STD_LOGIC ;
+--		clock		: IN STD_LOGIC ;
+--		data		: IN STD_LOGIC_VECTOR (31 DOWNTO 0);
+--		rdreq		: IN STD_LOGIC ;
+--		wrreq		: IN STD_LOGIC ;
+--		empty		: OUT STD_LOGIC ;
+--		q			: OUT STD_LOGIC_VECTOR (31 DOWNTO 0)
+--	);
 	end component;
 	
 begin
@@ -177,19 +202,20 @@ begin
 	fifo_tx: TX_FIFO
 		port map
 		(
-			aclr	=> rst_h,
-			clock	=> clk,
-			data	=> d_tx_write,
-			rdreq => in_rd_req,
-			wrreq	=> d_tx_wr_flag,
-			empty	=> in_empty,
-			q		=> d_tx_8b
+			aclr		=> rst_h,
+			data		=> d_tx_write,
+			rdclk		=> clk_10MHz,
+			rdreq		=> in_rd_req,
+			wrclk		=> clk,
+			wrreq		=> d_tx_wr_flag,
+			q			=> d_tx_8b,
+			rdempty	=> in_empty
 		);
 		
 	dut : my_UART
 		port map
 		(
-			clk => clk,
+			clk => clk_10MHz,
 			clk_div => clk_div,
 			rst_l => rst_l,
 			TX => TX,
@@ -228,15 +254,27 @@ begin
 		
 	fifo_rx : RX_FIFO
 		port map
-		(
-			aclr		=> rst_h,
-			clock		=> clk,
-			data		=> d_rx_out,
-			rdreq		=> rd_req,
-			wrreq		=> d_rx_wr,
-			empty		=> RX_empty,
-			q			=> d_rx
-		);
+--		(
+--			aclr		=> rst_h,
+--			clock		=> clk,
+--			data		=> d_rx_out,
+--			rdreq		=> rd_req,
+--			wrreq		=> d_rx_wr,
+--			empty		=> RX_empty,
+--			q			=> d_rx
+--		);
+--		RX_FIFO IS
+--	PORT
+	(
+		aclr		=> rst_h,
+		data		=> d_rx_out,
+		rdclk		=> clk,
+		rdreq		=> rd_req,
+		wrclk		=> clk_10MHz,
+		wrreq		=> d_rx_wr,
+		q			=> d_rx,
+		rdempty	=> RX_empty
+	);
 		
 	--RX
 	--Process to take RX data and accumulate it until an <enter> is pressed by the user

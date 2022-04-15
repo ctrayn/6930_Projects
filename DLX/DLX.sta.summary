@@ -2,40 +2,76 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
+Type  : Slow 1200mV 85C Model Setup 'pl|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 2.525
+TNS   : 0.000
+
 Type  : Slow 1200mV 85C Model Setup 'ADC_CLK_10'
-Slack : 29.824
+Slack : 27.059
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'ADC_CLK_10'
-Slack : 0.340
+Slack : 0.265
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'pl|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.319
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'pl|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 32.920
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ADC_CLK_10'
-Slack : 49.437
+Slack : 49.544
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'pl|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 8.385
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'ADC_CLK_10'
-Slack : 36.145
+Slack : 27.108
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'ADC_CLK_10'
-Slack : 0.304
+Slack : 0.265
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'pl|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.275
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pl|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 32.935
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ADC_CLK_10'
-Slack : 49.458
+Slack : 49.551
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'pl|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 28.449
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'ADC_CLK_10'
-Slack : 71.737
+Slack : 29.871
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'ADC_CLK_10'
-Slack : 0.147
+Slack : 0.105
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'pl|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.158
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'pl|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 32.899
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ADC_CLK_10'
-Slack : 49.021
+Slack : 49.276
 TNS   : 0.000
 
 ------------------------------------------------------------

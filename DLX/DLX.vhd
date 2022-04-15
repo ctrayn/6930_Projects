@@ -122,6 +122,7 @@ architecture behavioral of DLX is
 		port (
 			--INPUT
 			clk			: in std_logic;
+			clk_10MHz	: in std_logic;
 			rst_l			: in std_logic;
 			RX 			: in std_logic;			--Connected to pin 40 on J1 (white wire)
 			wr_req		: in std_logic;
@@ -157,6 +158,16 @@ architecture behavioral of DLX is
 			HEX5 		: out std_logic_vector(7 downto 0)
 		);
 	end component;
+	
+	component pll IS
+	PORT
+	(
+		areset		: IN STD_LOGIC  := '0';
+		inclk0		: IN STD_LOGIC  := '0';
+		c0				: OUT STD_LOGIC 
+	);
+	end component;
+	signal clk_pll : std_logic;
 
 	-- Singnals
 	-- Between fetch and decode
@@ -198,13 +209,16 @@ architecture behavioral of DLX is
 	signal tmr_rst			: std_logic;
 	-- Tap signals
 	signal tap_ram			: std_logic_vector(31 downto 0);
+	signal RST_H			: std_logic;
 
 begin
 	LEDR <= SW;
+	RST_H <= not RST_L;
 
 	duart : UART port map (
 		-- INPUT
-		clk 			=> ADC_CLK_10,
+		clk 			=> clk_pll,
+		clk_10MHz	=> ADC_CLK_10,
 		rst_l 		=> RST_L,
 		RX 			=> RX,
 		wr_req 		=> tx_write,	
@@ -221,7 +235,7 @@ begin
 	-- Instance of fetch
 	fet : Fetch port map(
 		-- INPUT
-		clk => ADC_CLK_10,
+		clk => clk_pll,
 		rst_l => RST_L,
 		br_taken => br_taken,
 		br_addr => br_addr,
@@ -233,7 +247,7 @@ begin
 	-- Instance of decode
 	dec : Decode port map(
 		-- INPUT
-		clk => ADC_CLK_10,
+		clk => clk_pll,
 		rst_l	=> RST_L,
 		SW => SW,
 		pc_in	=> pc_FD,
@@ -261,7 +275,7 @@ begin
 	-- Instance of execute
 	exc : Execute port map(
 		--INPUT
-		clk => ADC_CLK_10,
+		clk => clk_pll,
 		rst_l => RST_L,
 		pc_in => pc_DE,
 		inst_in => inst_DE,
@@ -283,7 +297,7 @@ begin
 	-- Instance of memory
 	mem : Memory port map(
 		--INPUT
-		clk => ADC_CLK_10,
+		clk => clk_pll,
 		rst_l => rst_l,
 		ALU_in => alu_EM,
 		RS2_in => rs2_EM,
@@ -309,6 +323,12 @@ begin
 		HEX3 => HEX3,
 		HEX4 => HEX4,
 		HEX5 => HEX5
+	);
+	
+	pl : pll port map (
+		areset		=> RST_H,
+		inclk0		=> ADC_CLK_10,
+		c0				=> clk_pll
 	);
 
 end architecture behavioral;
