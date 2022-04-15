@@ -36,7 +36,7 @@ architecture behavioral of Timer is
 	constant hnumbers : HSegArray := (X"C0", X"F9", X"A4", X"B0", X"99", X"92", X"82", X"F8", X"80", X"90", X"88", X"83", X"C6", X"A1", X"86", X"8E");
 	
 	signal min1, min2, sec1, sec2, mil1, mil2 : natural := 0;
-	signal DELAY : natural := 100000;
+	signal DELAY : natural := 10000;
 	signal count : natural := 0;
 	type STATE_TYPE is (IDLE, COUNTING, RESET);
 	signal state : STATE_TYPE := IDLE;
@@ -82,11 +82,11 @@ begin
 							mil2 <= 0;
 							if (sec1 = 9) then
 								sec1 <= 0;
-								if (sec2 = 5) then
+								if (sec2 = 6) then
 									sec2 <= 0;
 									if (min1 = 9) then
 										min1 <= 0;
-										if (min2 = 9) then
+										if (min2 = 6) then
 											min2 <= 0;
 										else
 											min2 <= min2 + 1;
