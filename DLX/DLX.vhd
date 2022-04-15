@@ -157,16 +157,6 @@ architecture behavioral of DLX is
 			HEX5 		: out std_logic_vector(7 downto 0)
 		);
 	end component;
-	
-	component pll IS
-	PORT
-	(
-		areset		: IN STD_LOGIC  := '0';
-		inclk0		: IN STD_LOGIC  := '0';
-		c0				: OUT STD_LOGIC 
-	);
-	end component;
-	signal CLK : std_logic;
 
 	-- Singnals
 	-- Between fetch and decode
@@ -214,7 +204,7 @@ begin
 
 	duart : UART port map (
 		-- INPUT
-		clk 			=> CLK,
+		clk 			=> ADC_CLK_10,
 		rst_l 		=> RST_L,
 		RX 			=> RX,
 		wr_req 		=> tx_write,	
@@ -231,7 +221,7 @@ begin
 	-- Instance of fetch
 	fet : Fetch port map(
 		-- INPUT
-		clk => CLK,
+		clk => ADC_CLK_10,
 		rst_l => RST_L,
 		br_taken => br_taken,
 		br_addr => br_addr,
@@ -243,7 +233,7 @@ begin
 	-- Instance of decode
 	dec : Decode port map(
 		-- INPUT
-		clk => CLK,
+		clk => ADC_CLK_10,
 		rst_l	=> RST_L,
 		SW => SW,
 		pc_in	=> pc_FD,
@@ -271,7 +261,7 @@ begin
 	-- Instance of execute
 	exc : Execute port map(
 		--INPUT
-		clk => CLK,
+		clk => ADC_CLK_10,
 		rst_l => RST_L,
 		pc_in => pc_DE,
 		inst_in => inst_DE,
@@ -293,7 +283,7 @@ begin
 	-- Instance of memory
 	mem : Memory port map(
 		--INPUT
-		clk => CLK,
+		clk => ADC_CLK_10,
 		rst_l => rst_l,
 		ALU_in => alu_EM,
 		RS2_in => rs2_EM,
@@ -319,12 +309,6 @@ begin
 		HEX3 => HEX3,
 		HEX4 => HEX4,
 		HEX5 => HEX5
-	);
-	
-	clk_pll : PLL port map (
-		areset => rst_l,
-		inclk0 => ADC_CLK_10,
-		c0		 => CLK
 	);
 
 end architecture behavioral;

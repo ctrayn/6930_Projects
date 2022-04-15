@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(10M50DAF484) Path("G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/") File("DLX.sof") MfrSpec(OpMask(1));
+		Device PartName(10M50DAF484) Path("/home/jonah/Documents/School/Graduate/Classes/2022 - Spring/ECE 6930 - Reconfig/Projects/DLX/") File("DLX.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
