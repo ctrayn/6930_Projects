@@ -96,17 +96,6 @@ architecture behavioral of UART is
 		);
 	end component;
 	
---	component TX_FIFO IS
---	port
---		(
---			aclr		: IN STD_LOGIC ;
---			clock		: IN STD_LOGIC ;
---			data		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
---			rdreq		: IN STD_LOGIC ;
---			wrreq		: IN STD_LOGIC ;
---			empty		: OUT STD_LOGIC ;
---			q			: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
---		);
 	component TX_FIFO IS
 	PORT (
 			aclr		: IN STD_LOGIC  := '0';
@@ -165,17 +154,6 @@ architecture behavioral of UART is
 		rdempty	: OUT STD_LOGIC ;
 		wrfull	: OUT STD_LOGIC 
 	);
---	component RX_FIFO IS
---	PORT
---	(
---		aclr		: IN STD_LOGIC ;
---		clock		: IN STD_LOGIC ;
---		data		: IN STD_LOGIC_VECTOR (31 DOWNTO 0);
---		rdreq		: IN STD_LOGIC ;
---		wrreq		: IN STD_LOGIC ;
---		empty		: OUT STD_LOGIC ;
---		q			: OUT STD_LOGIC_VECTOR (31 DOWNTO 0)
---	);
 	end component;
 	
 begin
@@ -254,17 +232,6 @@ begin
 		
 	fifo_rx : RX_FIFO
 		port map
---		(
---			aclr		=> rst_h,
---			clock		=> clk,
---			data		=> d_rx_out,
---			rdreq		=> rd_req,
---			wrreq		=> d_rx_wr,
---			empty		=> RX_empty,
---			q			=> d_rx
---		);
---		RX_FIFO IS
---	PORT
 	(
 		aclr		=> rst_h,
 		data		=> d_rx_out,

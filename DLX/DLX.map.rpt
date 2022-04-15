@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DLX
-Fri Apr 15 15:51:54 2022
+Fri Apr 15 16:07:38 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -98,7 +98,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Apr 15 15:51:54 2022       ;
+; Analysis & Synthesis Status        ; Successful - Fri Apr 15 16:07:38 2022       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; DLX                                         ;
 ; Top-level Entity Name              ; DLX                                         ;
@@ -223,8 +223,7 @@ https://fpgasoftware.intel.com/eula.
 ;     Processor 6            ;   0.1%      ;
 ;     Processor 7            ;   0.1%      ;
 ;     Processor 8            ;   0.1%      ;
-;     Processor 9            ;   0.0%      ;
-;     Processors 10-12       ;   0.0%      ;
+;     Processors 9-12        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -316,9 +315,9 @@ https://fpgasoftware.intel.com/eula.
 ; altrom.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altrom.inc                                      ;         ;
 ; altram.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altram.inc                                      ;         ;
 ; db/altsyncram_c7t3.tdf           ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/altsyncram_c7t3.tdf      ;         ;
-; ./Programs/factorial_code.mif    ; yes             ; Auto-Found Memory Initialization File  ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Programs/factorial_code.mif ;         ;
+; programs/factorial_code.mif      ; yes             ; Auto-Found Memory Initialization File  ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/programs/factorial_code.mif ;         ;
 ; db/altsyncram_p8t3.tdf           ; yes             ; Auto-Generated Megafunction            ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/altsyncram_p8t3.tdf      ;         ;
-; ./Programs/factorial_data.mif    ; yes             ; Auto-Found Memory Initialization File  ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Programs/factorial_data.mif ;         ;
+; programs/factorial_data.mif      ; yes             ; Auto-Found Memory Initialization File  ; G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/programs/factorial_data.mif ;         ;
 ; altpll.tdf                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altpll.tdf                                      ;         ;
 ; stratix_pll.inc                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_pll.inc                                 ;         ;
 ; stratixii_pll.inc                ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratixii_pll.inc                               ;         ;
@@ -1838,7 +1837,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Fri Apr 15 15:50:50 2022
+    Info: Processing started: Fri Apr 15 16:06:39 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DLX -c DLX
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -1904,7 +1903,7 @@ Warning (10036): Verilog HDL or VHDL warning at DLX.vhd(199): object "tx_empty" 
 Warning (10036): Verilog HDL or VHDL warning at DLX.vhd(200): object "tx_full" assigned a value but never read File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.vhd Line: 200
 Info (12128): Elaborating entity "UART" for hierarchy "UART:duart" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.vhd Line: 218
 Warning (10036): Verilog HDL or VHDL warning at UART.vhd(56): object "true" assigned a value but never read File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd Line: 56
-Info (12128): Elaborating entity "UART_FIFO" for hierarchy "UART:duart|UART_FIFO:fifo_uart" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd Line: 189
+Info (12128): Elaborating entity "UART_FIFO" for hierarchy "UART:duart|UART_FIFO:fifo_uart" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd Line: 167
 Info (12128): Elaborating entity "scfifo" for hierarchy "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART_FIFO.vhd Line: 96
 Info (12130): Elaborated megafunction instantiation "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART_FIFO.vhd Line: 96
 Info (12133): Instantiated megafunction "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component" with the following parameter: File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART_FIFO.vhd Line: 96
@@ -1936,7 +1935,7 @@ Info (12128): Elaborating entity "altsyncram_k2m1" for hierarchy "UART:duart|UAR
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_p2b.tdf
     Info (12023): Found entity 1: cntr_p2b File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/cntr_p2b.tdf Line: 26
 Info (12128): Elaborating entity "cntr_p2b" for hierarchy "UART:duart|UART_FIFO:fifo_uart|scfifo:scfifo_component|scfifo_4921:auto_generated|a_dpfifo_bf21:dpfifo|cntr_p2b:rd_ptr_count" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/a_dpfifo_bf21.tdf Line: 44
-Info (12128): Elaborating entity "TX_FIFO" for hierarchy "UART:duart|TX_FIFO:fifo_tx" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd Line: 202
+Info (12128): Elaborating entity "TX_FIFO" for hierarchy "UART:duart|TX_FIFO:fifo_tx" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd Line: 180
 Info (12128): Elaborating entity "dcfifo" for hierarchy "UART:duart|TX_FIFO:fifo_tx|dcfifo:dcfifo_component" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/TX_FIFO.vhd Line: 97
 Info (12130): Elaborated megafunction instantiation "UART:duart|TX_FIFO:fifo_tx|dcfifo:dcfifo_component" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/TX_FIFO.vhd Line: 97
 Info (12133): Instantiated megafunction "UART:duart|TX_FIFO:fifo_tx|dcfifo:dcfifo_component" with the following parameter: File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/TX_FIFO.vhd Line: 97
@@ -1980,9 +1979,9 @@ Info (12128): Elaborating entity "dffpipe_id9" for hierarchy "UART:duart|TX_FIFO
 Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_5h5.tdf
     Info (12023): Found entity 1: cmpr_5h5 File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/cmpr_5h5.tdf Line: 23
 Info (12128): Elaborating entity "cmpr_5h5" for hierarchy "UART:duart|TX_FIFO:fifo_tx|dcfifo:dcfifo_component|dcfifo_d4i1:auto_generated|cmpr_5h5:rdempty_eq_comp" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/dcfifo_d4i1.tdf Line: 60
-Info (12128): Elaborating entity "my_UART" for hierarchy "UART:duart|my_UART:dut" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd Line: 215
+Info (12128): Elaborating entity "my_UART" for hierarchy "UART:duart|my_UART:dut" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd Line: 193
 Warning (10036): Verilog HDL or VHDL warning at my_UART.vhd(38): object "sample_rx" assigned a value but never read File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/my_UART.vhd Line: 38
-Info (12128): Elaborating entity "U_DIV" for hierarchy "UART:duart|U_DIV:div" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd Line: 230
+Info (12128): Elaborating entity "U_DIV" for hierarchy "UART:duart|U_DIV:div" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd Line: 208
 Info (12128): Elaborating entity "lpm_divide" for hierarchy "UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/U_DIV.vhd Line: 82
 Info (12130): Elaborated megafunction instantiation "UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/U_DIV.vhd Line: 82
 Info (12133): Instantiated megafunction "UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component" with the following parameter: File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/U_DIV.vhd Line: 82
@@ -2007,7 +2006,7 @@ Info (12128): Elaborating entity "add_sub_t3c" for hierarchy "UART:duart|U_DIV:d
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_u3c.tdf
     Info (12023): Found entity 1: add_sub_u3c File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/add_sub_u3c.tdf Line: 23
 Info (12128): Elaborating entity "add_sub_u3c" for hierarchy "UART:duart|U_DIV:div|lpm_divide:LPM_DIVIDE_component|lpm_divide_0uo:auto_generated|sign_div_unsign_j7h:divider|alt_u_div_she:divider|add_sub_u3c:add_sub_1" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/alt_u_div_she.tdf Line: 36
-Info (12128): Elaborating entity "UnsignedDiv" for hierarchy "UART:duart|UnsignedDiv:udiv" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd Line: 239
+Info (12128): Elaborating entity "UnsignedDiv" for hierarchy "UART:duart|UnsignedDiv:udiv" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd Line: 217
 Info (12128): Elaborating entity "lpm_divide" for hierarchy "UART:duart|UnsignedDiv:udiv|lpm_divide:LPM_DIVIDE_component" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UnsignedDiv.vhd Line: 82
 Info (12130): Elaborated megafunction instantiation "UART:duart|UnsignedDiv:udiv|lpm_divide:LPM_DIVIDE_component" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UnsignedDiv.vhd Line: 82
 Info (12133): Instantiated megafunction "UART:duart|UnsignedDiv:udiv|lpm_divide:LPM_DIVIDE_component" with the following parameter: File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UnsignedDiv.vhd Line: 82
@@ -2023,7 +2022,7 @@ Info (12128): Elaborating entity "lpm_divide_6cp" for hierarchy "UART:duart|Unsi
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_plh.tdf
     Info (12023): Found entity 1: sign_div_unsign_plh File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/sign_div_unsign_plh.tdf Line: 25
 Info (12128): Elaborating entity "sign_div_unsign_plh" for hierarchy "UART:duart|UnsignedDiv:udiv|lpm_divide:LPM_DIVIDE_component|lpm_divide_6cp:auto_generated|sign_div_unsign_plh:divider" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/lpm_divide_6cp.tdf Line: 33
-Info (12128): Elaborating entity "MULT" for hierarchy "UART:duart|MULT:umult" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd Line: 248
+Info (12128): Elaborating entity "MULT" for hierarchy "UART:duart|MULT:umult" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd Line: 226
 Info (12128): Elaborating entity "lpm_mult" for hierarchy "UART:duart|MULT:umult|lpm_mult:lpm_mult_component" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/MULT.vhd Line: 81
 Info (12130): Elaborated megafunction instantiation "UART:duart|MULT:umult|lpm_mult:lpm_mult_component" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/MULT.vhd Line: 81
 Info (12133): Instantiated megafunction "UART:duart|MULT:umult|lpm_mult:lpm_mult_component" with the following parameter: File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/MULT.vhd Line: 81
@@ -2036,7 +2035,7 @@ Info (12133): Instantiated megafunction "UART:duart|MULT:umult|lpm_mult:lpm_mult
 Info (12021): Found 1 design units, including 1 entities, in source file db/mult_88p.tdf
     Info (12023): Found entity 1: mult_88p File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/mult_88p.tdf Line: 31
 Info (12128): Elaborating entity "mult_88p" for hierarchy "UART:duart|MULT:umult|lpm_mult:lpm_mult_component|mult_88p:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 377
-Info (12128): Elaborating entity "RX_FIFO" for hierarchy "UART:duart|RX_FIFO:fifo_rx" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd Line: 255
+Info (12128): Elaborating entity "RX_FIFO" for hierarchy "UART:duart|RX_FIFO:fifo_rx" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/UART.vhd Line: 233
 Info (12128): Elaborating entity "dcfifo" for hierarchy "UART:duart|RX_FIFO:fifo_rx|dcfifo:dcfifo_component" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/RX_FIFO.vhd Line: 101
 Info (12130): Elaborated megafunction instantiation "UART:duart|RX_FIFO:fifo_rx|dcfifo:dcfifo_component" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/RX_FIFO.vhd Line: 101
 Info (12133): Instantiated megafunction "UART:duart|RX_FIFO:fifo_rx|dcfifo:dcfifo_component" with the following parameter: File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/RX_FIFO.vhd Line: 101
@@ -2140,8 +2139,6 @@ Info (12133): Instantiated megafunction "Fetch:fet|InstructionMemory:im|altsyncr
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_c7t3.tdf
     Info (12023): Found entity 1: altsyncram_c7t3 File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/altsyncram_c7t3.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_c7t3" for hierarchy "Fetch:fet|InstructionMemory:im|altsyncram:altsyncram_component|altsyncram_c7t3:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (113028): 794 out of 1024 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Programs/factorial_code.mif Line: 1
-    Warning (113027): Addresses ranging from 230 to 1023 are not initialized File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Programs/factorial_code.mif Line: 1
 Info (12128): Elaborating entity "Decode" for hierarchy "Decode:dec" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.vhd Line: 248
 Info (12128): Elaborating entity "Execute" for hierarchy "Execute:exc" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.vhd Line: 276
 Warning (10492): VHDL Process Statement warning at Execute.vhd(107): signal "IdEx_rd" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Execute.vhd Line: 107
@@ -2205,8 +2202,6 @@ Info (12133): Instantiated megafunction "Memory:mem|DataMemory:dm|altsyncram:alt
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_p8t3.tdf
     Info (12023): Found entity 1: altsyncram_p8t3 File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/db/altsyncram_p8t3.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_p8t3" for hierarchy "Memory:mem|DataMemory:dm|altsyncram:altsyncram_component|altsyncram_p8t3:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (113028): 998 out of 1024 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Programs/factorial_data.mif Line: 1
-    Warning (113027): Addresses ranging from 26 to 1023 are not initialized File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Programs/factorial_data.mif Line: 1
 Info (12128): Elaborating entity "Timer" for hierarchy "Timer:tmr" File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/DLX.vhd Line: 310
 Warning (10540): VHDL Signal Declaration warning at Timer.vhd(39): used explicit default value for signal "DELAY" because signal was never assigned a value File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Timer.vhd Line: 39
 Warning (10492): VHDL Process Statement warning at Timer.vhd(128): signal "state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: G:/My Drive/USU Spring 2022/Adv Reconfigurable Computing/6930_Projects/DLX/Timer.vhd Line: 128
@@ -2300,10 +2295,10 @@ Info (21057): Implemented 10337 device resources after synthesis - the final res
     Info (21064): Implemented 139 RAM segments
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 4 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 31 warnings
-    Info: Peak virtual memory: 4945 megabytes
-    Info: Processing ended: Fri Apr 15 15:51:54 2022
-    Info: Elapsed time: 00:01:04
-    Info: Total CPU time (on all processors): 00:00:57
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 27 warnings
+    Info: Peak virtual memory: 4961 megabytes
+    Info: Processing ended: Fri Apr 15 16:07:38 2022
+    Info: Elapsed time: 00:00:59
+    Info: Total CPU time (on all processors): 00:00:56
 
 
